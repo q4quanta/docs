@@ -53,7 +53,7 @@
 
 
   <li class="navtree toctree-l1 inactive">
-    <a class="" href="../../../welcome/">Home</a>
+    <a class="" href="../../..">Home</a>
   </li>
     
       
@@ -315,10 +315,20 @@ G <span style="color: #555555">=</span> nx<span style="color: #555555">.</span>r
 
 
 <div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">matplotlib.pyplot</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">plt</span>
+
 plt<span style="color: #555555">.</span>figure(figsize <span style="color: #555555">=</span> [<span style="color: #FF6600">12</span>,<span style="color: #FF6600">10</span>])
+
 node_colors <span style="color: #555555">=</span> [coloring<span style="color: #555555">.</span>get(node) <span style="color: #006699; font-weight: bold">for</span> node <span style="color: #000000; font-weight: bold">in</span> G<span style="color: #555555">.</span>nodes()]
-<span style="color: #006699; font-weight: bold">if</span> dnx<span style="color: #555555">.</span>is_vertex_coloring(G, coloring):  <span style="color: #0099FF; font-style: italic"># adjust the next line if using a different map</span>
-    nx<span style="color: #555555">.</span>draw(G, pos<span style="color: #555555">=</span>nx<span style="color: #555555">.</span>shell_layout(G, nlist <span style="color: #555555">=</span> [<span style="color: #336666">list</span>(G<span style="color: #555555">.</span>nodes)[x:x<span style="color: #555555">+</span><span style="color: #FF6600">10</span>] <span style="color: #006699; font-weight: bold">for</span> x <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">range</span>(<span style="color: #FF6600">0</span>, <span style="color: #FF6600">50</span>, <span style="color: #FF6600">10</span>)] <span style="color: #555555">+</span> [[<span style="color: #336666">list</span>(G<span style="color: #555555">.</span>nodes)[<span style="color: #FF6600">50</span>]]]), with_labels<span style="color: #555555">=</span><span style="color: #336666">True</span>, node_color<span style="color: #555555">=</span>node_colors, node_size<span style="color: #555555">=</span><span style="color: #FF6600">400</span>, cmap<span style="color: #555555">=</span>plt<span style="color: #555555">.</span>cm<span style="color: #555555">.</span>rainbow)
+
+<span style="color: #0099FF; font-style: italic"># adjust the next line if using a different map</span>
+
+<span style="color: #006699; font-weight: bold">if</span> dnx<span style="color: #555555">.</span>is_vertex_coloring(G, coloring):  
+    nx<span style="color: #555555">.</span>draw(G, pos<span style="color: #555555">=</span>nx<span style="color: #555555">.</span>shell_layout(G, nlist <span style="color: #555555">=</span> [<span style="color: #336666">list</span>(G<span style="color: #555555">.</span>nodes)[x:x<span style="color: #555555">+</span><span style="color: #FF6600">10</span>] \
+        <span style="color: #006699; font-weight: bold">for</span> x <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">range</span>(<span style="color: #FF6600">0</span>, <span style="color: #FF6600">50</span>, <span style="color: #FF6600">10</span>)] <span style="color: #555555">+</span> [[<span style="color: #336666">list</span>(G<span style="color: #555555">.</span>nodes)[<span style="color: #FF6600">50</span>]]]),\
+                                         with_labels<span style="color: #555555">=</span><span style="color: #336666">True</span>, \
+                                         node_color<span style="color: #555555">=</span>node_colors,\
+                                          node_size<span style="color: #555555">=</span><span style="color: #FF6600">400</span>,\
+                                           cmap<span style="color: #555555">=</span>plt<span style="color: #555555">.</span>cm<span style="color: #555555">.</span>rainbow)
 plt<span style="color: #555555">.</span>show()
 </pre></div>
 
