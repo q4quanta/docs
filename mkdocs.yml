@@ -10,7 +10,7 @@ markdown_extensions:
     - mdx_math
     
 theme:
-  name: 'material'
+  name: 'rtd-dropdown'
   highlightjs: true
   hljs_languages: []
   include_homepage_in_sidebar: true
