@@ -1,0 +1,790 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.0.2">
+    
+    
+      
+        <title>Setting up Python Environment - Quanta.Guru</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.982221ab.css">
+      
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.1f0bcf2b.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#python-environment" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="Quanta.Guru" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Quanta.Guru
+            </span>
+            <span class="md-header-nav__topic">
+              Setting up Python Environment
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../.." title="Quanta.Guru" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Quanta.Guru
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../welcome/" title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Getting started
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Getting started
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../anaconda/" title="Guide to starting Python" class="md-nav__link">
+      Guide to starting Python
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../lib/" title="Guide to Python Libraries" class="md-nav__link">
+      Guide to Python Libraries
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Setting up Python Environment
+      </label>
+    
+    <a href="./" title="Setting up Python Environment" class="md-nav__link md-nav__link--active">
+      Setting up Python Environment
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#basics" title="Basics" class="md-nav__link">
+    Basics
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#environments" title="Environments" class="md-nav__link">
+    Environments
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#saving-and-loading-environments" title="Saving and loading environments" class="md-nav__link">
+    Saving and loading environments
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#listing-environments" title="Listing environments" class="md-nav__link">
+    Listing environments
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#removing-environments" title="Removing environments" class="md-nav__link">
+    Removing environments
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-environments" title="Using environments" class="md-nav__link">
+    Using environments
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sharing-environments" title="Sharing environments" class="md-nav__link">
+    Sharing environments
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#more-to-learn" title="More to learn" class="md-nav__link">
+    More to learn
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../jupyter/" title="Installing Jupyter Notebook" class="md-nav__link">
+      Installing Jupyter Notebook
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../git/" title="How to Git" class="md-nav__link">
+      How to Git
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Fundamentals
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Fundamentals
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Fundamentals/dwave/dwave/" title="D-wave" class="md-nav__link">
+      D-wave
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Fundamentals/ibmq/ibmq/" title="IMB-Q" class="md-nav__link">
+      IMB-Q
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Fundamentals/Q/q/" title="Q#" class="md-nav__link">
+      Q#
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Fundamentals/cirq/cirq/" title="Cirq" class="md-nav__link">
+      Cirq
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      References
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        References
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../References/ref/" title="Reference" class="md-nav__link">
+      Reference
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#basics" title="Basics" class="md-nav__link">
+    Basics
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#environments" title="Environments" class="md-nav__link">
+    Environments
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#saving-and-loading-environments" title="Saving and loading environments" class="md-nav__link">
+    Saving and loading environments
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#listing-environments" title="Listing environments" class="md-nav__link">
+    Listing environments
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#removing-environments" title="Removing environments" class="md-nav__link">
+    Removing environments
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-environments" title="Using environments" class="md-nav__link">
+    Using environments
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sharing-environments" title="Sharing environments" class="md-nav__link">
+    Sharing environments
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#more-to-learn" title="More to learn" class="md-nav__link">
+    More to learn
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="python-environment">Python Environment</h1>
+<h3 id="basics">Basics</h3>
+<p>To avoid errors later, it's best to update all the packages in the default environment. Open the Anaconda Prompt application. In the prompt, run the following commands:</p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>conda upgrade conda
+conda upgrade --all
+</pre></div>
+
+
+<p>If you are seeing the following "conda command not found" and are using ZShell, you have to do the following:</p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #336666">export</span> <span style="color: #003333">PATH</span><span style="color: #555555">=</span><span style="color: #CC3300">&quot;/Users/username/anaconda/bin:</span><span style="color: #003333">$PATH</span><span style="color: #CC3300">&quot;</span>
+</pre></div>
+
+
+<p>or update above command line to your .zsh_config file.</p>
+<p>Once you have Anaconda installed, managing packages is fairly straightforward. To install a package, type</p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>conda install package_name 
+</pre></div>
+
+
+<p>in your terminal. For example, to install numpy, type </p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>conda install numpy.
+</pre></div>
+
+
+<p>You can install multiple packages at the same time. Something like conda install numpy scipy pandas will install all those packages simultaneously. It's also possible to specify which version of a package you want by adding the version number such as</p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>conda install <span style="color: #003333">numpy</span><span style="color: #555555">=</span><span style="color: #FF6600">1</span>.10.
+</pre></div>
+
+
+<p>Conda also automatically installs dependencies for you. For example scipy depends on numpy, it uses and requires numpy. If you install just scipy (conda install scipy), Conda will also install numpy if it isn't already installed.</p>
+<p>Most of the commands are pretty intuitive. To uninstall, use</p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>conda remove package_name
+</pre></div>
+
+
+<p>To update a package </p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>conda update package_name
+</pre></div>
+
+
+<p>If you want to update all packages in an environment, which is often useful, use </p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>conda update --all
+</pre></div>
+
+
+<p>And finally, to list installed packages, it's </p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>conda list 
+</pre></div>
+
+
+<p>If you don't know the exact name of the package you're looking for, you can try searching with</p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>conda search search_term
+</pre></div>
+
+
+<p>For example, I know I want to install Beautiful Soup, but I'm not sure of the exact package name. So, I try </p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>conda search beautifulsoup
+</pre></div>
+
+
+<h3 id="environments">Environments</h3>
+<p>Conda can be used to create environments to isolate your projects. To create an environment, use </p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>conda create -n env_name list of packages in your terminal
+</pre></div>
+
+
+<p>Here -n env_name sets the name of your environment (-n for name) and list of packages is the list of packages you want installed in the environment. For example, to create an environment named my_env and install numpy in it, type </p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>conda create -n my_env numpy
+</pre></div>
+
+
+<p>When creating an environment, you can specify which version of Python to install in the environment. This is useful when you're working with code in both Python 2.x and Python 3.x. To create an environment with a specific Python version, do something like </p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>conda create -n py3 <span style="color: #003333">python</span><span style="color: #555555">=</span><span style="color: #FF6600">3</span> or conda create -n py2 <span style="color: #003333">python</span><span style="color: #555555">=</span><span style="color: #FF6600">2</span>
+</pre></div>
+
+
+<p>I actually have both of these environments on my personal computer. I use them as general environments not tied to any specific project, but rather for general work with each Python version easily accessible. These commands will install the most recent version of Python 3 and 2, respectively. To install a specific version, use </p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>conda create -n py <span style="color: #003333">python</span><span style="color: #555555">=</span><span style="color: #FF6600">3</span>.3
+</pre></div>
+
+
+<p>for Python 3.3.</p>
+<p>Once you have an environment created, use </p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #336666">source</span> activate my_env 
+</pre></div>
+
+
+<p>to enter it on OSX/Linux. On Windows, use </p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>activate my_env
+</pre></div>
+
+
+<p>When you're in the environment, you'll see the environment name in the terminal prompt. Something like (my_env) ~ $. The environment has only a few packages installed by default, plus the ones you installed when creating it. You can check this out with conda list. Installing packages in the environment is the same as before: </p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>conda install package_name
+</pre></div>
+
+
+<p>Only this time, the specific packages you install will only be available when you're in the environment. To leave the environment, type </p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #336666">source</span> deactivate <span style="color: #555555">(</span>on OSX/Linux<span style="color: #555555">)</span>
+</pre></div>
+
+
+<p>On Windows, use</p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>deactivate
+</pre></div>
+
+
+<h3 id="saving-and-loading-environments">Saving and loading environments</h3>
+<p>A really useful feature is sharing environments so others can install all the packages used in your code, with the correct versions. You can save the packages to a YAML file with </p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>conda env <span style="color: #336666">export</span> &gt; environment.yaml
+</pre></div>
+
+
+<p>The first part </p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>conda env <span style="color: #336666">export</span> 
+</pre></div>
+
+
+<p>writes out all the packages in the environment, including the Python version. 
+Above you can see the name of the environment and all the dependencies (along with versions) are listed. The second part of the export command,</p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>&gt; environment.yaml 
+</pre></div>
+
+
+<p>writes the exported text to a YAML file <code>environment.yaml</code>. This file can now be shared and others will be able to create the same environment you used for the project.</p>
+<p>To create an environment from an environment file use</p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>conda env create -f environment.yaml
+</pre></div>
+
+
+<p>This will create a new environment with the same name listed in <code>environment.yaml</code>.</p>
+<h3 id="listing-environments">Listing environments</h3>
+<p>If you forget what your environments are named (happens to me sometimes), use </p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>conda env list 
+</pre></div>
+
+
+<p>to list out all the environments you've created. You should see a list of environments, there will be an asterisk next to the environment you're currently in. The default environment, the environment used when you aren't in one, is called <code>root</code>.</p>
+<h3 id="removing-environments">Removing environments</h3>
+<p>If there are environments you don't use anymore, </p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>conda env remove -n env_name 
+</pre></div>
+
+
+<p>will remove the specified environment (here, named <code>env_name</code>).</p>
+<h3 id="using-environments">Using environments</h3>
+<p>One thing that’s helped me tremendously is having separate environments for Python 2 and Python 3. I used</p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>conda create -n py2 <span style="color: #003333">python</span><span style="color: #555555">=</span><span style="color: #FF6600">2</span>
+</pre></div>
+
+
+<p>and </p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>conda create -n py3 <span style="color: #003333">python</span><span style="color: #555555">=</span><span style="color: #FF6600">3</span> 
+</pre></div>
+
+
+<p>to create two separate environments, <code>py2</code> and <code>py3</code>. Now I have a general use environment for each Python version. In each of those environments, I've installed most of the standard data science packages (numpy, scipy, pandas, etc.)</p>
+<p>I’ve also found it useful to create environments for each project I’m working on. It works great for non-data related projects too like web apps with Flask. For example, I have an environment for my personal blog using <a href="http://docs.getpelican.com/en/stable/">Pelican</a>.</p>
+<h3 id="sharing-environments">Sharing environments</h3>
+<p>When sharing your code on GitHub, it's good practice to make an environment file and include it in the repository. This will make it easier for people to install all the dependencies for your code. I also usually include a <code>pip requirements.txt</code> file using <code>pip freeze</code> (<a href="https://pip.pypa.io/en/stable/reference/pip_freeze/">learn more here</a>) for people not using conda.</p>
+<h3 id="more-to-learn">More to learn</h3>
+<p>To learn more about conda and how it fits in the Python ecosystem, check out this article by Jake Vanderplas: <a href="https://jakevdp.github.io/blog/2016/08/25/conda-myths-and-misconceptions/">Conda myths</a> and misconceptions. And here's the <a href="https://conda.io/docs/using/index.html">conda documentation</a> you can reference later.</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../lib/" title="Guide to Python Libraries" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Guide to Python Libraries
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../jupyter/" title="Installing Jupyter Notebook" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Installing Jupyter Notebook
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.d9aa80ab.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      
+    
+  </body>
+</html>
