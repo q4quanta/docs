@@ -33,7 +33,7 @@ markdown_extensions:
 
 
 nav:
-- Home: welcome.md
+- Home: index.md
 
 - Getting started:
   - Guide to starting Python: GettingStarted/anaconda.md
