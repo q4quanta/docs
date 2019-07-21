@@ -7,24 +7,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   
-  <link rel="shortcut icon" href="../../../../img/favicon.ico">
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
   <title>Quantum Fourier Transform - Quanta.Guru</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
   <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
 
-  <link rel="stylesheet" href="../../../../css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
   
   <script>
     // Current page data
     var mkdocs_page_name = "Quantum Fourier Transform";
-    var mkdocs_page_input_path = "Fundamentals/ibmq/QFT/qft.md";
+    var mkdocs_page_input_path = "algorithms/qft/qft.md";
     var mkdocs_page_url = null;
   </script>
   
-  <script src="../../../../js/jquery-2.1.1.min.js" defer></script>
-  <script src="../../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script> 
   
@@ -37,9 +37,9 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
       <div class="wy-side-nav-search">
-        <a href="../../../.." class="icon icon-home"> Quanta.Guru</a>
+        <a href="../../.." class="icon icon-home"> Quanta.Guru</a>
         <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
   </form>
 </div>
@@ -53,7 +53,7 @@
 
 
   <li class="navtree toctree-l1 inactive">
-    <a class="" href="../../../..">Home</a>
+    <a class="" href="../../..">Home</a>
   </li>
     
       
@@ -71,35 +71,35 @@
 
 
   <li class="navtree toctree-l2 inactive">
-    <a class="" href="../../../../GettingStarted/anaconda/">Guide to starting Python</a>
+    <a class="" href="../../../GettingStarted/anaconda/">Guide to starting Python</a>
   </li>
         
           
 
 
   <li class="navtree toctree-l2 inactive">
-    <a class="" href="../../../../GettingStarted/lib/">Guide to Python Libraries</a>
+    <a class="" href="../../../GettingStarted/lib/">Guide to Python Libraries</a>
   </li>
         
           
 
 
   <li class="navtree toctree-l2 inactive">
-    <a class="" href="../../../../GettingStarted/env/">Setting up Python Environment</a>
+    <a class="" href="../../../GettingStarted/env/">Setting up Python Environment</a>
   </li>
         
           
 
 
   <li class="navtree toctree-l2 inactive">
-    <a class="" href="../../../../GettingStarted/jupyter/">Installing Jupyter Notebook</a>
+    <a class="" href="../../../GettingStarted/jupyter/">Installing Jupyter Notebook</a>
   </li>
         
           
 
 
   <li class="navtree toctree-l2 inactive">
-    <a class="" href="../../../../GettingStarted/git/">How to Git</a>
+    <a class="" href="../../../GettingStarted/git/">How to Git</a>
   </li>
         
       </ul>
@@ -107,7 +107,7 @@
     
       
   <li class="navtree toctree-l1 label">
-    <p class="caption">Fundamentals</p>
+    <p class="caption">Quantum Gates</p>
   </li>
 
 
@@ -120,23 +120,58 @@
 
 
   <li class="navtree toctree-l2 inactive">
-    <a class="" href="../../../dwave/dwave/">D-wave QBM model</a>
+    <a class="" href="../../../gates/sgates/sgates/">Single Qubit Gates</a>
   </li>
         
           
 
 
   <li class="navtree toctree-l2 inactive">
-    <a class="" href="../../Hadamard/Hadamard/">Hadamart Gate</a>
+    <a class="" href="../../../gates/mgates/mgates/">Multiple Qubits Gates</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Quantum Circuits</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../circuits/hadamard/hadamard/">Superposition</a>
   </li>
         
           
 
 
   <li class="navtree toctree-l2 inactive">
-    <a class="" href="../../Bell/QuantumCircuits/">Bell state</a>
+    <a class="" href="../../../circuits/bell/bell/">Bell state</a>
   </li>
         
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Algorithms</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
           
 
 
@@ -407,6 +442,41 @@
 
   
         
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../shor/shor/">Shor's Algorithm</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../grover/grover/">Grover's Algorithm</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Optimization</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../optimization/dwave/">Binary Quadratic Model (BQM)</a>
+  </li>
+        
       </ul>
     </li>
     
@@ -425,7 +495,7 @@
 
 
   <li class="navtree toctree-l2 inactive">
-    <a class="" href="../../../../References/ref/">Reference</a>
+    <a class="" href="../../../References/ref/">Reference</a>
   </li>
         
       </ul>
@@ -441,7 +511,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../../../..">Quanta.Guru</a>
+        <a href="../../..">Quanta.Guru</a>
       </nav>
 
       
@@ -449,11 +519,11 @@
         <div class="rst-content">
           <div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../../../..">Docs</a> &raquo;</li>
+    <li><a href="../../..">Docs</a> &raquo;</li>
     
       
         
-          <li>Fundamentals &raquo;</li>
+          <li>Algorithms &raquo;</li>
         
       
     
@@ -789,8 +859,8 @@ qc<span style="color: #555555">.</span>draw(output<span style="color: #555555">=
 
 
 <p><img alt="png" src="../output_22_0.png" /></p>
-<h6 id="manual-approach">Manual approach:</h6>
 <hr />
+<h6 id="manual-approach">Manual approach:</h6>
 <ul>
 <li>Initial state: |00&gt;</li>
 <li>After Hadamard Gate on qubit 2 : \(\frac{1}{\sqrt{2}}|00&gt; + \frac{1}{\sqrt{2}}|01&gt; \)</li>
@@ -867,7 +937,6 @@ qc<span style="color: #555555">.</span>draw(output<span style="color: #555555">=
 <p><img alt="png" src="../output_31_0.png" /></p>
 <hr />
 <h6 id="manual-approach_1">Manual Approach:</h6>
-<hr />
 <ul>
 <li>Initial state: |000&gt;</li>
 <li>After Hadamard Gate on 3rd qubit : \(\frac{1}{\sqrt{2}}(|000&gt; + |001&gt;) \)</li>
@@ -1103,10 +1172,10 @@ unitary <span style="color: #555555">=</span> result<span style="color: #555555"
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../../../References/ref/" class="btn btn-neutral float-right" title="Reference">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../../shor/shor/" class="btn btn-neutral float-right" title="Shor's Algorithm">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../../Bell/QuantumCircuits/" class="btn btn-neutral" title="Bell state"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../../circuits/bell/bell/" class="btn btn-neutral" title="Bell state"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -1132,17 +1201,17 @@ unitary <span style="color: #555555">=</span> result<span style="color: #555555"
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../../Bell/QuantumCircuits/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../../../circuits/bell/bell/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../../../../References/ref/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../../shor/shor/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
-    <script>var base_url = '../../../..';</script>
-    <script src="../../../../js/theme.js" defer></script>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js" defer></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>
-      <script src="../../../../search/main.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
 
 </body>
 </html>
