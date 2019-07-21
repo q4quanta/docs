@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Qiskit - Quanta.Guru</title>
+  <title>Getting Started - Quanta.Guru</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
   <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
 
@@ -18,7 +18,7 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Qiskit";
+    var mkdocs_page_name = "Getting Started";
     var mkdocs_page_input_path = "intro/qiskit.md";
     var mkdocs_page_url = null;
   </script>
@@ -116,6 +116,138 @@
   
     <li class="navtree toctree-l1 group">
       <ul class="navtree subnav-l1 current">
+          
+
+
+  
+    
+    <li class="navtree toctree-l2 page current">
+      <a class="current" href="./">
+        Getting Started
+          <span class="toctree-expand"></span>
+      </a>
+    </li>
+    
+      
+
+  <li class="toctree-l2 current with-children">
+    <a href="#getting-started-with-qiskit">
+      Getting Started with Qiskit
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l2 current">
+    <ul class="subnav-l2 current">
+    
+      
+          
+
+  <li class="toctree-l3 current with-children">
+    <a href="#circuit-basics">
+      Circuit Basics 
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l3 current">
+    <ul class="subnav-l3 current">
+    
+      
+        <li class="toctree-l4">
+          <a class="toctree-l5" href="#building-the-circuit">Building the circuit</a>
+        </li>
+    
+    </ul>
+  </li>
+
+      
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#visualize-circuit">Visualize Circuit</a>
+        </li>
+    
+      
+          
+
+  <li class="toctree-l3">
+    <a href="#simulating-circuits-using-qiskit-aer">
+      Simulating circuits using Qiskit Aer 
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l3">
+    <ul class="subnav-l3 toc-hidden">
+    
+      
+        <li class="toctree-l4">
+          <a class="toctree-l5" href="#statevector-backend">Statevector backend</a>
+        </li>
+    
+      
+        <li class="toctree-l4">
+          <a class="toctree-l5" href="#unitary-backend">Unitary backend</a>
+        </li>
+    
+      
+        <li class="toctree-l4">
+          <a class="toctree-l5" href="#openqasm-backend">OpenQASM backend</a>
+        </li>
+    
+    </ul>
+  </li>
+
+      
+    
+      
+          
+
+  <li class="toctree-l3">
+    <a href="#running-circuits-using-the-ibm-q-provider">
+      Running circuits using the IBM Q provider 
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l3">
+    <ul class="subnav-l3 toc-hidden">
+    
+      
+        <li class="toctree-l4">
+          <a class="toctree-l5" href="#running-circuits-on-real-devices">Running circuits on real devices</a>
+        </li>
+    
+      
+        <li class="toctree-l4">
+          <a class="toctree-l5" href="#simulating-circuits-using-a-hpc-simulator">Simulating circuits using a HPC simulator</a>
+        </li>
+    
+      
+        <li class="toctree-l4">
+          <a class="toctree-l5" href="#retrieving-a-previously-run-job">Retrieving a previously run job</a>
+        </li>
+    
+    </ul>
+  </li>
+
+      
+    
+    </ul>
+  </li>
+
+
+  
+        
           
 
 
@@ -308,8 +440,12 @@
     <li><a href="../..">Docs</a> &raquo;</li>
     
       
+        
+          <li>Quantum Gates &raquo;</li>
+        
+      
     
-    <li>Qiskit</li>
+    <li>Getting Started</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -319,8 +455,7 @@
           <div role="main">
             <div class="section">
               
-                <p><img src="../../images/qiskit-heading.gif" alt="Note: In order for images to show up in this jupyter notebook you need to select File => Trusted Notebook" width="500 px" align="left"&gt;</p>
-<h1 id="getting-started-with-qiskit">Getting Started with Qiskit</h1>
+                <h1 id="getting-started-with-qiskit">Getting Started with Qiskit</h1>
 <p>Here, we provide an overview of working with Qiskit. Qiskit provides the basic building blocks necessary to program quantum computers. The fundamental unit of Qiskit is the <strong>quantum circuit</strong>. A workflow using Qiskit consists of two stages: <strong>Build</strong> and <strong>Execute</strong>. <strong>Build</strong> allows you to make different quantum circuits that represent the problem you are solving, and <strong>Execute</strong> allows you to run them on different backends.  After the jobs have been run, the data is collected. There are methods for putting this data together, depending on the program. This either gives you the answer you wanted, or allows you to make a better program for the next instance.</p>
 <div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">numpy</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">np</span>
 <span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">qiskit</span> <span style="color: #006699; font-weight: bold">import</span> <span style="color: #555555">*</span>
@@ -345,8 +480,8 @@ circ <span style="color: #555555">=</span> QuantumCircuit(q)
 
 <p>After you create the circuit with its registers, you can add gates ("operations") to manipulate the registers. As you proceed through the tutorials you will find more gates and circuits; below is an example of a quantum circuit that makes a three-qubit GHZ state</p>
 <p>$$|\psi\rangle = \left(|000\rangle+|111\rangle\right)/\sqrt{2}.$$</p>
-<p>To create such a state, we start with a three-qubit quantum register. By default, each qubit in the register is initialized to $|0\rangle$. To make the GHZ state, we apply the following gates:
-<em> A Hadamard gate $H$ on qubit 0, which puts it into a superposition state.
+<p>To create such a state, we start with a three-qubit quantum register. By default, each qubit in the register is initialized to\(|0\rangle\)To make the GHZ state, we apply the following gates:
+<em> A Hadamard gate\(H\)on qubit 0, which puts it into a superposition state.
 </em> A controlled-Not operation ($C_{X}$) between qubit 0 and qubit 1.
 * A controlled-Not operation between qubit 0 and qubit 2.</p>
 <p>On an ideal quantum computer, the state produced by running this circuit would be the GHZ state above.</p>
@@ -384,21 +519,22 @@ For those that want the full LaTeX experience, you can also set the circuit_draw
 
 </div>
 
+<hr />
 <h2 id="simulating-circuits-using-qiskit-aer">Simulating circuits using Qiskit Aer <a id='aer_simulation'></a></h2>
 <p>Qiskit Aer is our package for simulating quantum circuits. It provides many different backends for doing a simulation. Here we use the basic Python version.</p>
 <h3 id="statevector-backend">Statevector backend</h3>
 <p>The most common backend in Qiskit Aer is the <code>statevector_simulator</code>. This simulator returns the quantum 
-state, which is a complex vector of dimensions $2^n$, where $n$ is the number of qubits 
+state, which is a complex vector of dimensions\(2^n\), where \(n\) is the number of qubits 
 (so be careful using this as it will quickly get too large to run on your machine).</p>
 <div class="alert alert-block alert-info">
 
-When representing the state of a multi-qubit system, the tensor order used in Qiskit is different than that used in most physics textbooks. Suppose there are $n$ qubits, and qubit $j$ is labeled as $Q_{j}$. Qiskit uses an ordering in which the $n^{\mathrm{th}}$ qubit is on the <em><strong>left</strong></em> side of the tensor product, so that the basis vectors are labeled as  $Q_n\otimes \cdots  \otimes  Q_1\otimes Q_0$.
+When representing the state of a multi-qubit system, the tensor order used in Qiskit is different than that used in most physics textbooks. Suppose there are \\( n \\) qubits, and qubit \\(j\\) is labeled as \\(Q_{j}\\) Qiskit uses an ordering in which the \\(n^{\mathrm{th}} \\) qubit is on the <em><strong>left</strong></em> side of the tensor product, so that the basis vectors are labeled as \\(Q_n\otimes \cdots  \otimes  Q_1\otimes Q_0\\).
 
-For example, if qubit zero is in state 0, qubit 1 is in state 0, and qubit 2 is in state 1, Qiskit would represent this state as $|100\rangle$, whereas many physics textbooks would represent it as $|001\rangle$.
+For example, if qubit zero is in state 0, qubit 1 is in state 0, and qubit 2 is in state 1, Qiskit would represent this state as\\(|100\rangle$, whereas many physics textbooks would represent it as\\(|001\rangle\\).
 
-This difference in labeling affects the way multi-qubit operations are represented as matrices. For example, Qiskit represents a controlled-X ($C_{X}$) operation with qubit 0 being the control and qubit 1 being the target as
+This difference in labeling affects the way multi-qubit operations are represented as matrices. For example, Qiskit represents a controlled-X (\\( C_{X}\\) operation with qubit 0 being the control and qubit 1 being the target as
 
-$$C_X = \begin{pmatrix} 1 & 0 & 0 & 0 \\  0 & 0 & 0 & 1 \\ 0 & 0 & 1 & 0 \\ 0 & 1 & 0 & 0 \\\end{pmatrix}.$$
+$$C_X = \begin{pmatrix} 1 & 0 & 0 & 0 \\\  0 & 0 & 0 & 1 \\\ 0 & 0 & 1 & 0 \\\ 0 & 1 & 0 & 0 \\\ \end{pmatrix}.$$
 
 </div>
 
@@ -452,7 +588,7 @@ plot_state_city(outputstate)
 
 <p><img alt="png" src="../output_20_0.png" /></p>
 <h3 id="unitary-backend">Unitary backend</h3>
-<p>Qiskit Aer also includes a <code>unitary_simulator</code> that works <em>provided all the elements in the circuit are unitary operations</em>. This backend calculates the $2^n \times 2^n$ matrix representing the gates in the quantum circuit. </p>
+<p>Qiskit Aer also includes a <code>unitary_simulator</code> that works <em>provided all the elements in the circuit are unitary operations</em>. This backend calculates the \(2^n \times 2^n\) matrix representing the gates in the quantum circuit. </p>
 <div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #0099FF; font-style: italic"># Run the quantum circuit on a unitary simulator backend</span>
 backend <span style="color: #555555">=</span> BasicAer<span style="color: #555555">.</span>get_backend(<span style="color: #CC3300">&#39;unitary_simulator&#39;</span>)
 job <span style="color: #555555">=</span> execute(circ, backend)
@@ -483,16 +619,16 @@ result <span style="color: #555555">=</span> job<span style="color: #555555">.</
 
 
 <h3 id="openqasm-backend">OpenQASM backend</h3>
-<p>The simulators above are useful because they provide information about the state output by the ideal circuit and the matrix representation of the circuit. However, a real experiment terminates by <em>measuring</em> each qubit (usually in the computational $|0\rangle, |1\rangle$ basis). Without measurement, we cannot gain information about the state. Measurements cause the quantum system to collapse into classical bits. </p>
+<p>The simulators above are useful because they provide information about the state output by the ideal circuit and the matrix representation of the circuit. However, a real experiment terminates by <em>measuring</em> each qubit (usually in the computational\(|0\rangle, |1\rangle\)basis). Without measurement, we cannot gain information about the state. Measurements cause the quantum system to collapse into classical bits. </p>
 <p>For example, suppose we make independent measurements on each qubit of the three-qubit GHZ state
 $$|\psi\rangle = |000\rangle +|111\rangle)/\sqrt{2},$$
-and let $xyz$ denote the bitstring that results. Recall that, under the qubit labeling used by Qiskit, $x$ would correspond to the outcome on qubit 2, $y$ to the outcome on qubit 1, and $z$ to the outcome on qubit 0. </p>
+and let\(xyz\)denote the bitstring that results. Recall that, under the qubit labeling used by Qiskit,\(x\)would correspond to the outcome on qubit 2,\(y\)to the outcome on qubit 1, and\(z\)to the outcome on qubit 0. </p>
 <div class="alert alert-block alert-info">
 <b>Note:</b> This representation of the bitstring puts the most significant bit (MSB) on the left, and the least significant bit (LSB) on the right. This is the standard ordering of binary bitstrings. We order the qubits in the same way, which is why Qiskit uses a non-standard tensor product order.
 </div>
 
-<p>Recall the probability of obtaining outcome $xyz$ is given by
-$$\mathrm{Pr}(xyz) = |\langle xyz | \psi \rangle |^{2}$$ and as such for the GHZ state probability of obtaining 000 or 111 are both 1/2.</p>
+<p>Recall the probability of obtaining outcome\(xyz\)is given by
+$$\mathrm{Pr}(xyz) = |\langle xyz | \psi \rangle |^{2}$\)and as such for the GHZ state probability of obtaining 000 or 111 are both 1/2.</p>
 <p>To simulate a circuit that includes measurement, we need to add measurements to the original circuit above, and use a different Aer backend.</p>
 <div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #0099FF; font-style: italic"># Create a Classical Register with 3 bits.</span>
 c <span style="color: #555555">=</span> ClassicalRegister(<span style="color: #FF6600">3</span>, <span style="color: #CC3300">&#39;c&#39;</span>)
@@ -513,7 +649,7 @@ qc<span style="color: #555555">.</span>draw()
 
 <p><img alt="png" src="../output_26_0.png" /></p>
 <p>This circuit adds a classical register, and three measurements that are used to map the outcome of qubits to the classical bits. </p>
-<p>To simulate this circuit, we use the <code>qasm_simulator</code> in Qiskit Aer. Each run of this circuit will yield either the bitstring 000 or 111. To build up statistics about the distribution of the bitstrings (to, e.g., estimate $\mathrm{Pr}(000)$), we need to repeat the circuit many times. The number of times the circuit is repeated can be specified in the <code>execute</code> function, via the <code>shots</code> keyword.</p>
+<p>To simulate this circuit, we use the <code>qasm_simulator</code> in Qiskit Aer. Each run of this circuit will yield either the bitstring 000 or 111. To build up statistics about the distribution of the bitstrings (to, e.g., estimate\(\mathrm{Pr}(000)$), we need to repeat the circuit many times. The number of times the circuit is repeated can be specified in the <code>execute</code> function, via the <code>shots</code> keyword.</p>
 <div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #0099FF; font-style: italic"># Use Aer&#39;s qasm_simulator</span>
 backend_sim <span style="color: #555555">=</span> BasicAer<span style="color: #555555">.</span>get_backend(<span style="color: #CC3300">&#39;qasm_simulator&#39;</span>)
 
@@ -544,7 +680,7 @@ plot_histogram(counts)
 
 
 <p><img alt="png" src="../output_32_0.png" /></p>
-<p>The estimated outcome probabilities $\mathrm{Pr}(000)$ and  $\mathrm{Pr}(111)$ are computed by taking the aggregate counts and dividing by the number of shots (times the circuit was repeated). Try changing the <code>shots</code> keyword in the <code>execute</code> function and see how the estimated probabilities change.</p>
+<p>The estimated outcome probabilities\(\mathrm{Pr}(000)\)and \(\mathrm{Pr}(111)\)are computed by taking the aggregate counts and dividing by the number of shots (times the circuit was repeated). Try changing the <code>shots</code> keyword in the <code>execute</code> function and see how the estimated probabilities change.</p>
 <h2 id="running-circuits-using-the-ibm-q-provider">Running circuits using the IBM Q provider <a id='ibmq_provider'></a></h2>
 <p>To faciliate access to real quantum computing hardware, we have provided a simple API interface.
 To access IBM Q devices, you'll need an API token. For the public IBM Q devices, you can generate an API token <a href="https://quantumexperience.ng.bluemix.net/qx/account/advanced">here</a> (create an account if you don't already have one). For Q Network devices, login to the q-console, click your hub, group, and project, and expand "Get Access" to generate your API token and access url.</p>
@@ -566,11 +702,6 @@ IBMQ<span style="color: #555555">.</span>backends()
 
 
 <div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>Available backends:
-
-
-
-
-
 [&amp;lt;IBMQBackend(&#39;ibmqx4&#39;) from IBMQ()&amp;gt;,
  &amp;lt;IBMQBackend(&#39;ibmqx2&#39;) from IBMQ()&amp;gt;,
  &amp;lt;IBMQBackend(&#39;ibmq_16_melbourne&#39;) from IBMQ()&amp;gt;,
@@ -583,8 +714,9 @@ IBMQ<span style="color: #555555">.</span>backends()
 <p>The IBM Q provider uses a queue to allocate the devices to users. We now choose a device with the least busy queue that can support our program (has at least 3 qubits).</p>
 <div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">qiskit.providers.ibmq</span> <span style="color: #006699; font-weight: bold">import</span> least_busy
 
-large_enough_devices <span style="color: #555555">=</span> IBMQ<span style="color: #555555">.</span>backends(filters<span style="color: #555555">=</span><span style="color: #006699; font-weight: bold">lambda</span> x: x<span style="color: #555555">.</span>configuration()<span style="color: #555555">.</span>n_qubits <span style="color: #555555">&lt;</span> <span style="color: #FF6600">10</span> <span style="color: #000000; font-weight: bold">and</span>
-                                                       <span style="color: #000000; font-weight: bold">not</span> x<span style="color: #555555">.</span>configuration()<span style="color: #555555">.</span>simulator)
+large_enough_devices <span style="color: #555555">=</span> IBMQ<span style="color: #555555">.</span>backends(filters<span style="color: #555555">=</span><span style="color: #006699; font-weight: bold">lambda</span> x: \
+          x<span style="color: #555555">.</span>configuration()<span style="color: #555555">.</span>n_qubits <span style="color: #555555">&lt;</span> <span style="color: #FF6600">10</span> <span style="color: #000000; font-weight: bold">and</span>
+         <span style="color: #000000; font-weight: bold">not</span> x<span style="color: #555555">.</span>configuration()<span style="color: #555555">.</span>simulator)
 backend <span style="color: #555555">=</span> least_busy(large_enough_devices)
 <span style="color: #006699; font-weight: bold">print</span>(<span style="color: #CC3300">&quot;The best backend is &quot;</span> <span style="color: #555555">+</span> backend<span style="color: #555555">.</span>name())
 </pre></div>
@@ -596,10 +728,13 @@ backend <span style="color: #555555">=</span> least_busy(large_enough_devices)
 
 <p>To run the circuit on the backend, we need to specify the number of shots and the number of credits we are willing to spend to run the circuit. Then, we execute the circuit on the backend using the <code>execute</code> function.</p>
 <div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">qiskit.tools.monitor</span> <span style="color: #006699; font-weight: bold">import</span> job_monitor
-shots <span style="color: #555555">=</span> <span style="color: #FF6600">1024</span>           <span style="color: #0099FF; font-style: italic"># Number of shots to run the program (experiment); maximum is 8192 shots.</span>
-max_credits <span style="color: #555555">=</span> <span style="color: #FF6600">3</span>        <span style="color: #0099FF; font-style: italic"># Maximum number of credits to spend on executions. </span>
+<span style="color: #0099FF; font-style: italic"># Number of shots to run the program (experiment); maximum is 8192 shots.</span>
+<span style="color: #0099FF; font-style: italic"># Maximum number of credits to spend on executions. </span>
+shots <span style="color: #555555">=</span> <span style="color: #FF6600">1024</span>          
+max_credits <span style="color: #555555">=</span> <span style="color: #FF6600">3</span>        
 
-job_exp <span style="color: #555555">=</span> execute(qc, backend<span style="color: #555555">=</span>backend, shots<span style="color: #555555">=</span>shots, max_credits<span style="color: #555555">=</span>max_credits)
+job_exp <span style="color: #555555">=</span> execute(qc, backend<span style="color: #555555">=</span>backend, \
+          shots<span style="color: #555555">=</span>shots, max_credits<span style="color: #555555">=</span>max_credits)
 job_monitor(job_exp)
 </pre></div>
 
@@ -631,10 +766,13 @@ same way as the remote real backends. </p>
 </pre></div>
 
 
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>shots <span style="color: #555555">=</span> <span style="color: #FF6600">1024</span>           <span style="color: #0099FF; font-style: italic"># Number of shots to run the program (experiment); maximum is 8192 shots.</span>
-max_credits <span style="color: #555555">=</span> <span style="color: #FF6600">3</span>        <span style="color: #0099FF; font-style: italic"># Maximum number of credits to spend on executions. </span>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #0099FF; font-style: italic"># Number of shots to run the program (experiment); maximum is 8192 shots.</span>
+<span style="color: #0099FF; font-style: italic"># Maximum number of credits to spend on executions. </span>
+shots <span style="color: #555555">=</span> <span style="color: #FF6600">1024</span>           
+max_credits <span style="color: #555555">=</span> <span style="color: #FF6600">3</span>       
 
-job_hpc <span style="color: #555555">=</span> execute(qc, backend<span style="color: #555555">=</span>simulator_backend, shots<span style="color: #555555">=</span>shots, max_credits<span style="color: #555555">=</span>max_credits)
+job_hpc <span style="color: #555555">=</span> execute(qc, backend<span style="color: #555555">=</span>simulator_backend,\
+             shots<span style="color: #555555">=</span>shots, max_credits<span style="color: #555555">=</span>max_credits)
 </pre></div>
 
 
@@ -689,6 +827,15 @@ First you would need to note your job's ID:</p>
           </div>
           <footer>
   
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../gates/sgates/sgates/" class="btn btn-neutral float-right" title="Single Qubit Gates">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../GettingStarted/git/" class="btn btn-neutral" title="How to Git"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
 
   <hr/>
 
@@ -711,6 +858,10 @@ First you would need to note your job's ID:</p>
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
+        <span><a href="../../GettingStarted/git/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../gates/sgates/sgates/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
