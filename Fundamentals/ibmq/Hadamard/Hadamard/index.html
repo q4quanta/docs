@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../../img/favicon.ico">
+  <title>Hadamart Gate - Quanta.Guru</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Hadamart Gate";
+    var mkdocs_page_input_path = "Fundamentals/ibmq/Hadamard/Hadamard.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../../.." class="icon icon-home"> Quanta.Guru</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="tocbase current">
+    
+    
+      
+
+
+  <li class="navtree toctree-l1 inactive">
+    <a class="" href="../../../..">Home</a>
+  </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Getting started</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../../GettingStarted/anaconda/">Guide to starting Python</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../../GettingStarted/lib/">Guide to Python Libraries</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../../GettingStarted/env/">Setting up Python Environment</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../../GettingStarted/jupyter/">Installing Jupyter Notebook</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../../GettingStarted/git/">How to Git</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Fundamentals</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../dwave/dwave/">D-wave QBM model</a>
+  </li>
+        
+          
+
+
+  
+    
+    <li class="navtree toctree-l2 page current">
+      <a class="current" href="./">
+        Hadamart Gate
+          <span class="toctree-expand"></span>
+      </a>
+    </li>
+    
+      
+
+  <li class="toctree-l2 current with-children">
+    <a href="#hadamard-gate-and-circuits">
+      Hadamard Gate and Circuits
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l2 current">
+    <ul class="subnav-l2 current">
+    
+      
+          
+
+  <li class="toctree-l3 current with-children">
+    <a href="#hadamard-gate-1-qubit">
+      Hadamard Gate (1 qubit)
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l3 current">
+    <ul class="subnav-l3 current">
+    
+      
+        <li class="toctree-l4">
+          <a class="toctree-l5" href="#manual-approach">Manual approach:</a>
+        </li>
+    
+      
+        <li class="toctree-l4">
+          <a class="toctree-l5" href="#tensor-algebra">Tensor Algebra:</a>
+        </li>
+    
+      
+        <li class="toctree-l4">
+          <a class="toctree-l5" href="#simulation">Simulation</a>
+        </li>
+    
+      
+        <li class="toctree-l4">
+          <a class="toctree-l5" href="#unitary-representation">Unitary representation</a>
+        </li>
+    
+    </ul>
+  </li>
+
+      
+    
+      
+          
+
+  <li class="toctree-l3">
+    <a href="#hadamard-gate-2-qubits">
+      Hadamard Gate (2 qubits)
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l3">
+    <ul class="subnav-l3 toc-hidden">
+    
+      
+          
+
+  <li class="toctree-l4 current with-children">
+    <a href="#type-i-hadamart-on-first-qubit">
+      Type -I : Hadamart on first qubit
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l4 current">
+    <ul class="subnav-l4 current">
+    
+      
+        <li class="toctree-l5">
+          <a class="toctree-l6" href="#unitary-representation_1">Unitary representation</a>
+        </li>
+    
+    </ul>
+  </li>
+
+      
+    
+      
+          
+
+  <li class="toctree-l4">
+    <a href="#type-ii-hadamart-on-second-qubit">
+      Type -II : Hadamart on second qubit
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l4">
+    <ul class="subnav-l4 toc-hidden">
+    
+      
+        <li class="toctree-l5">
+          <a class="toctree-l6" href="#unitary-representation_2">Unitary representation</a>
+        </li>
+    
+    </ul>
+  </li>
+
+      
+    
+      
+          
+
+  <li class="toctree-l4">
+    <a href="#type-iii-hadamart-on-both-qubit">
+      Type -III : Hadamart on both qubit
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l4">
+    <ul class="subnav-l4 toc-hidden">
+    
+      
+        <li class="toctree-l5">
+          <a class="toctree-l6" href="#manual-approach_1">Manual Approach</a>
+        </li>
+    
+      
+        <li class="toctree-l5">
+          <a class="toctree-l6" href="#tensor-algebra-source">Tensor Algebra: source</a>
+        </li>
+    
+      
+        <li class="toctree-l5">
+          <a class="toctree-l6" href="#tensor-product-of-linear-map">Tensor product of linear map:</a>
+        </li>
+    
+      
+        <li class="toctree-l5">
+          <a class="toctree-l6" href="#simulation_1">Simulation</a>
+        </li>
+    
+      
+        <li class="toctree-l5">
+          <a class="toctree-l6" href="#unitary-representation_3">Unitary representation</a>
+        </li>
+    
+    </ul>
+  </li>
+
+      
+    
+    </ul>
+  </li>
+
+      
+    
+      
+          
+
+  <li class="toctree-l3">
+    <a href="#hadamard-gate-3-qubits">
+      Hadamard Gate (3 qubits)
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l3">
+    <ul class="subnav-l3 toc-hidden">
+    
+      
+        <li class="toctree-l4">
+          <a class="toctree-l5" href="#manual-approach_2">Manual Approach</a>
+        </li>
+    
+      
+        <li class="toctree-l4">
+          <a class="toctree-l5" href="#tensor-algebra-source_1">Tensor Algebra: source</a>
+        </li>
+    
+      
+        <li class="toctree-l4">
+          <a class="toctree-l5" href="#simulation_2">Simulation</a>
+        </li>
+    
+      
+        <li class="toctree-l4">
+          <a class="toctree-l5" href="#unitary-representation_4">Unitary representation</a>
+        </li>
+    
+    </ul>
+  </li>
+
+      
+    
+      
+          
+
+  <li class="toctree-l3">
+    <a href="#hadamard-10-qubit">
+      Hadamard (10 Qubit)
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l3">
+    <ul class="subnav-l3 toc-hidden">
+    
+      
+        <li class="toctree-l4">
+          <a class="toctree-l5" href="#simulation_3">Simulation</a>
+        </li>
+    
+      
+        <li class="toctree-l4">
+          <a class="toctree-l5" href="#unitary-representation_5">Unitary representation</a>
+        </li>
+    
+    </ul>
+  </li>
+
+      
+    
+    </ul>
+  </li>
+
+
+  
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../Bell/QuantumCircuits/">Bell state</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../QFT/qft/">Quantum Fourier Transform</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">References</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../../References/ref/">Reference</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+  </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../..">Quanta.Guru</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Fundamentals &raquo;</li>
+        
+      
+    
+    <li>Hadamart Gate</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="hadamard-gate-and-circuits">Hadamard Gate and Circuits</h1>
+<p>Hadamard gate is single qubit operator. This transforms |0&gt; state to a superposed state \(\frac{1}{\sqrt{2}}|0&gt; + \frac{1}{\sqrt{2}}|1&gt;\) and stae|1&gt; to a superposed state \(\frac{1}{\sqrt{2}}|0&gt; - \frac{1}{\sqrt{2}}|1&gt;\). This gate is very important gate to construct Bell state, Quantum Fourier Transform (QFT) and many more.</p>
+<hr />
+<p>Import python library to perform computation in 'Qiskit' environment.</p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #555555">%</span>matplotlib inline
+<span style="color: #0099FF; font-style: italic"># Importing standard Qiskit libraries and configuring account</span>
+<span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">qiskit</span> <span style="color: #006699; font-weight: bold">import</span> QuantumCircuit, QuantumRegister,ClassicalRegister
+<span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">qiskit</span> <span style="color: #006699; font-weight: bold">import</span>  execute, Aer, IBMQ
+<span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">qiskit.compiler</span> <span style="color: #006699; font-weight: bold">import</span> transpile, assemble
+<span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">qiskit.tools.jupyter</span> <span style="color: #006699; font-weight: bold">import</span> <span style="color: #555555">*</span>
+<span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">qiskit.visualization</span> <span style="color: #006699; font-weight: bold">import</span> <span style="color: #555555">*</span>
+<span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">qiskit.providers.aer</span> <span style="color: #006699; font-weight: bold">import</span> UnitarySimulator
+</pre></div>
+
+
+<hr />
+<h3 id="hadamard-gate-1-qubit">Hadamard Gate (1 qubit)</h3>
+<p>Design the single Hadamard gate quantum circuit</p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>n <span style="color: #555555">=</span><span style="color: #FF6600">1</span>
+q <span style="color: #555555">=</span> QuantumRegister(n)
+c <span style="color: #555555">=</span> ClassicalRegister(n)
+circ <span style="color: #555555">=</span> QuantumCircuit(q,c)
+circ<span style="color: #555555">.</span>h(q[<span style="color: #FF6600">0</span>])
+circ<span style="color: #555555">.</span>measure(q,c)
+
+<span style="color: #0099FF; font-style: italic"># Change the background color in mpl</span>
+style <span style="color: #555555">=</span> {<span style="color: #CC3300">&#39;backgroundcolor&#39;</span>: <span style="color: #CC3300">&#39;lightgreen&#39;</span>}
+circ<span style="color: #555555">.</span>draw(output<span style="color: #555555">=</span><span style="color: #CC3300">&#39;mpl&#39;</span>, style <span style="color: #555555">=</span> style)
+</pre></div>
+
+
+<p><img alt="png" src="../output_2_0.png" /></p>
+<hr />
+<h6 id="manual-approach">Manual approach:</h6>
+<ul>
+<li>Initial state: |0&gt;</li>
+<li>After Hadamard Gate: \(\frac{1}{\sqrt{2}}|0&gt; + \frac{1}{\sqrt{2}}|1&gt;\)</li>
+</ul>
+<hr />
+<h6 id="tensor-algebra">Tensor Algebra:</h6>
+<p>$$ H = \frac{1}{\sqrt{2}} \begin{bmatrix}
+    1  &amp; 1 \\
+    1 &amp; -1
+\end{bmatrix}; |1 &gt; = \begin{bmatrix}
+    1  \\
+    0
+\end{bmatrix} ; |0&gt; = \begin{bmatrix}
+    0\\
+    1
+\end{bmatrix}$$</p>
+<hr />
+<h6 id="simulation">Simulation</h6>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>simulator <span style="color: #555555">=</span> Aer<span style="color: #555555">.</span>get_backend(<span style="color: #CC3300">&#39;qasm_simulator&#39;</span>)
+result <span style="color: #555555">=</span> execute(circ, simulator)<span style="color: #555555">.</span>result()
+counts <span style="color: #555555">=</span> result<span style="color: #555555">.</span>get_counts(circ)
+plot_histogram(counts, title<span style="color: #555555">=</span><span style="color: #CC3300">&#39;Bell-State counts&#39;</span>)
+</pre></div>
+
+
+<p><img alt="png" src="../output_4_0.png" /></p>
+<hr />
+<h6 id="unitary-representation">Unitary representation</h6>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>n <span style="color: #555555">=</span><span style="color: #FF6600">1</span>
+q <span style="color: #555555">=</span> QuantumRegister(n)
+c <span style="color: #555555">=</span> ClassicalRegister(n)
+circ <span style="color: #555555">=</span> QuantumCircuit(q,c)
+circ<span style="color: #555555">.</span>h(q[<span style="color: #FF6600">0</span>])
+<span style="color: #0099FF; font-style: italic"># Select the UnitarySimulator from the Aer provider</span>
+simulator <span style="color: #555555">=</span> Aer<span style="color: #555555">.</span>get_backend(<span style="color: #CC3300">&#39;unitary_simulator&#39;</span>)
+<span style="color: #0099FF; font-style: italic"># Execute and get counts</span>
+result <span style="color: #555555">=</span> execute(circ, simulator)<span style="color: #555555">.</span>result()
+unitary <span style="color: #555555">=</span> result<span style="color: #555555">.</span>get_unitary(circ)
+<span style="color: #006699; font-weight: bold">print</span>( unitary)
+</pre></div>
+
+
+<hr />
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>[[ 0.70710678+0.j  0.70710678+0.j]
+ [ 0.70710678+0.j -0.70710678+0.j]]
+</pre></div>
+
+
+<hr />
+<h3 id="hadamard-gate-2-qubits">Hadamard Gate (2 qubits)</h3>
+<p>Lets perform three different configuration of quantum circuit with two qubits and hadamart gates.</p>
+<h4 id="type-i-hadamart-on-first-qubit">Type -I : Hadamart on first qubit</h4>
+<p>$$I \otimes H  =  \begin{bmatrix}
+    1  &amp;   0 \\
+    0  &amp;   1
+\end{bmatrix} \otimes \frac{1}{\sqrt{2}} \begin{bmatrix}
+    1  &amp;   1 \\
+    1  &amp;  -1
+\end{bmatrix}  = \frac{1}{\sqrt{2}}\begin{bmatrix}
+1 &amp; 1 &amp; 0 &amp; 0\\
+1 &amp; -1 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 1 &amp; 1 \\
+0 &amp; 0 &amp; 1 &amp; -1
+\end{bmatrix} $$</p>
+<hr />
+<p>Design circuit with two qubit with Hadamard on first qubit and perform the measurement</p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>n <span style="color: #555555">=</span><span style="color: #FF6600">2</span>
+q <span style="color: #555555">=</span> QuantumRegister(n)
+c <span style="color: #555555">=</span> ClassicalRegister(n)
+circ <span style="color: #555555">=</span> QuantumCircuit(q,c)
+circ<span style="color: #555555">.</span>h(q[<span style="color: #FF6600">0</span>])
+circ<span style="color: #555555">.</span>measure(q,c)
+
+<span style="color: #0099FF; font-style: italic"># Change the background color in mpl</span>
+style <span style="color: #555555">=</span> {<span style="color: #CC3300">&#39;backgroundcolor&#39;</span>: <span style="color: #CC3300">&#39;lightgreen&#39;</span>}
+circ<span style="color: #555555">.</span>draw(output<span style="color: #555555">=</span><span style="color: #CC3300">&#39;mpl&#39;</span>, style <span style="color: #555555">=</span> style)
+</pre></div>
+
+
+<p><img alt="png" src="../output_9_0.png" /></p>
+<hr />
+<h6 id="unitary-representation_1">Unitary representation</h6>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>n <span style="color: #555555">=</span><span style="color: #FF6600">2</span>
+q <span style="color: #555555">=</span> QuantumRegister(n)
+c <span style="color: #555555">=</span> ClassicalRegister(n)
+circ <span style="color: #555555">=</span> QuantumCircuit(q,c)
+circ<span style="color: #555555">.</span>h(q[<span style="color: #FF6600">0</span>])
+<span style="color: #0099FF; font-style: italic"># Select the UnitarySimulator from the Aer provider</span>
+simulator <span style="color: #555555">=</span> Aer<span style="color: #555555">.</span>get_backend(<span style="color: #CC3300">&#39;unitary_simulator&#39;</span>)
+<span style="color: #0099FF; font-style: italic"># Execute and get counts</span>
+result <span style="color: #555555">=</span> execute(circ, simulator)<span style="color: #555555">.</span>result()
+unitary <span style="color: #555555">=</span> result<span style="color: #555555">.</span>get_unitary(circ)
+<span style="color: #006699; font-weight: bold">print</span>( unitary)
+</pre></div>
+
+
+<hr />
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>[[ 0.70710678+0.j  0.70710678+0.j  0.        +0.j  0.        +0.j]
+ [ 0.70710678+0.j -0.70710678+0.j  0.        +0.j  0.        +0.j]
+ [ 0.        +0.j  0.        +0.j  0.70710678+0.j  0.70710678+0.j]
+ [ 0.        +0.j  0.        +0.j  0.70710678+0.j -0.70710678+0.j]]
+</pre></div>
+
+
+<hr />
+<h4 id="type-ii-hadamart-on-second-qubit">Type -II : Hadamart on second qubit</h4>
+<p>$$ H \otimes I  = \frac{1}{\sqrt{2}} \begin{bmatrix}
+    1  &amp;   1 \\
+    1  &amp;  -1
+\end{bmatrix} \otimes \begin{bmatrix}
+    1  &amp;   0 \\
+    0  &amp;   1
+\end{bmatrix}  = \frac{1}{\sqrt{2}}\begin{bmatrix}
+1 &amp; 0 &amp; 1 &amp; 0\\
+0 &amp; 1 &amp; 0 &amp; 1\\
+1 &amp; 0 &amp; -1 &amp; 0 \\
+0 &amp; 1 &amp; 0 &amp; -1
+\end{bmatrix} $$</p>
+<hr />
+<p>Design circuit with two qubit with Hadamard on first qubit and perform the measurement</p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>n <span style="color: #555555">=</span><span style="color: #FF6600">2</span>
+q <span style="color: #555555">=</span> QuantumRegister(n)
+c <span style="color: #555555">=</span> ClassicalRegister(n)
+circ <span style="color: #555555">=</span> QuantumCircuit(q,c)
+circ<span style="color: #555555">.</span>h(q[<span style="color: #FF6600">1</span>])
+circ<span style="color: #555555">.</span>measure(q,c)
+
+<span style="color: #0099FF; font-style: italic"># Change the background color in mpl</span>
+style <span style="color: #555555">=</span> {<span style="color: #CC3300">&#39;backgroundcolor&#39;</span>: <span style="color: #CC3300">&#39;lightgreen&#39;</span>}
+circ<span style="color: #555555">.</span>draw(output<span style="color: #555555">=</span><span style="color: #CC3300">&#39;mpl&#39;</span>, style <span style="color: #555555">=</span> style)
+</pre></div>
+
+
+<p><img alt="png" src="../output_13_0.png" /></p>
+<hr />
+<h6 id="unitary-representation_2">Unitary representation</h6>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>n <span style="color: #555555">=</span><span style="color: #FF6600">2</span>
+q <span style="color: #555555">=</span> QuantumRegister(n)
+c <span style="color: #555555">=</span> ClassicalRegister(n)
+circ <span style="color: #555555">=</span> QuantumCircuit(q,c)
+circ<span style="color: #555555">.</span>h(q[<span style="color: #FF6600">1</span>])
+<span style="color: #0099FF; font-style: italic"># Select the UnitarySimulator from the Aer provider</span>
+simulator <span style="color: #555555">=</span> Aer<span style="color: #555555">.</span>get_backend(<span style="color: #CC3300">&#39;unitary_simulator&#39;</span>)
+<span style="color: #0099FF; font-style: italic"># Execute and get counts</span>
+result <span style="color: #555555">=</span> execute(circ, simulator)<span style="color: #555555">.</span>result()
+unitary <span style="color: #555555">=</span> result<span style="color: #555555">.</span>get_unitary(circ)
+<span style="color: #006699; font-weight: bold">print</span>( unitary)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>[[ 0.70710678+0.j  0.        +0.j  0.70710678+0.j  0.        +0.j]
+ [ 0.        +0.j  0.70710678+0.j  0.        +0.j  0.70710678+0.j]
+ [ 0.70710678+0.j  0.        +0.j -0.70710678+0.j  0.        +0.j]
+ [ 0.        +0.j  0.70710678+0.j  0.        +0.j -0.70710678+0.j]]
+</pre></div>
+
+
+<hr />
+<h4 id="type-iii-hadamart-on-both-qubit">Type -III : Hadamart on both qubit</h4>
+<p>$$ H_1 \otimes H_1 = \frac{1}{\sqrt{2}}\begin{bmatrix}
+    1  &amp;  1 \\
+    1  &amp; -1
+\end{bmatrix} \otimes \frac{1}{\sqrt{2}}\begin{bmatrix}
+    1  &amp;  1 \\
+    1  &amp; -1
+\end{bmatrix} = \frac{1}{2} \begin{bmatrix}
+    1  &amp;  1  &amp;  1  &amp;  1 \\
+    1  &amp;  -1  &amp;  1  &amp;  -1 \\
+    1  &amp;  1  &amp;  -1  &amp;  -1 \\
+    1  &amp;  -1  &amp;  -1  &amp;  1 \\
+\end{bmatrix}$$</p>
+<hr />
+<p>Design the quantum circuit and perform measurement</p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>n <span style="color: #555555">=</span><span style="color: #FF6600">2</span>
+q <span style="color: #555555">=</span> QuantumRegister(n)
+c <span style="color: #555555">=</span> ClassicalRegister(n)
+circ <span style="color: #555555">=</span> QuantumCircuit(q,c)
+circ<span style="color: #555555">.</span>h(q[<span style="color: #FF6600">0</span>])
+circ<span style="color: #555555">.</span>h(q[<span style="color: #FF6600">1</span>])
+circ<span style="color: #555555">.</span>measure(q,c)
+
+<span style="color: #0099FF; font-style: italic"># Change the background color in mpl</span>
+style <span style="color: #555555">=</span> {<span style="color: #CC3300">&#39;backgroundcolor&#39;</span>: <span style="color: #CC3300">&#39;lightgreen&#39;</span>}
+circ<span style="color: #555555">.</span>draw(output<span style="color: #555555">=</span><span style="color: #CC3300">&#39;mpl&#39;</span>, style <span style="color: #555555">=</span> style)
+</pre></div>
+
+
+<p><img alt="png" src="../output_17_0.png" /></p>
+<hr />
+<h6 id="manual-approach_1">Manual Approach</h6>
+<ul>
+<li>Initial state: |00&gt;</li>
+<li>After Hadamard Gate: \(\frac{1}{\sqrt{2}}|00&gt; + \frac{1}{\sqrt{2}}|10&gt;\)</li>
+<li>After Hadamard Gate: \(\frac{1}{{2}}|00&gt; + \frac{1}{{2}}|01&gt;  +  \frac{1}{{2}}|10&gt; + \frac{1}{{2}}|11&gt;\)</li>
+<li>This is tensor product of two Hedamard transform:
+\(H|0&gt;_A \otimes H|0&gt;_B\)</li>
+<li>i.e., \((\frac{1}{\sqrt{2}}|0&gt; + \frac{1}{\sqrt{2}}|1&gt;) \otimes (\frac{1}{\sqrt{2}}|0&gt; + \frac{1}{\sqrt{2}}|1&gt;) = \frac{1}{{2}}|00&gt; + \frac{1}{{2}}|01&gt;  +  \frac{1}{{2}}|10&gt; + \frac{1}{{2}}|11&gt; \)</li>
+</ul>
+<hr />
+<h6 id="tensor-algebra-source">Tensor Algebra: <a href="https://quantumcomputing.stackexchange.com/questions/2270/how-to-input-2-qubits-in-2-hadamard-gates">source</a></h6>
+<ul>
+<li>H operator in product space, \(H_2 = H_1 \otimes H_1\) :</li>
+</ul>
+<p>$$\frac{1}{\sqrt{2}}\begin{bmatrix}
+    1  &amp;  1 \\
+    1  &amp; -1
+\end{bmatrix} \otimes \frac{1}{\sqrt{2}}\begin{bmatrix}
+    1  &amp;  1 \\
+    1  &amp; -1
+\end{bmatrix} = \frac{1}{2} \begin{bmatrix}
+    1  &amp;  1  &amp;  1  &amp;  1 \\
+    1  &amp;  -1  &amp;  1  &amp;  -1 \\
+    1  &amp;  1  &amp;  -1  &amp;  -1 \\
+    1  &amp;  -1  &amp;  -1  &amp;  1 \\
+\end{bmatrix}$$</p>
+<ul>
+<li>Basis States in product space, \(|q_1q_2&gt; = q_1 \otimes q_2\) : </li>
+</ul>
+<p>$$|00&gt; = \begin{bmatrix}
+    1  \\
+    0 \\
+    0\\
+    0
+\end{bmatrix} ; |01&gt; = \begin{bmatrix}
+    0\\
+    1\\
+    0\\
+    0
+\end{bmatrix} ; |10&gt; = \begin{bmatrix}
+    0  \\
+    0 \\
+    1\\
+    0
+\end{bmatrix} ; |11&gt; = \begin{bmatrix}
+    0\\
+    0\\
+    0\\
+    1
+\end{bmatrix}$$</p>
+<hr />
+<ul>
+<li>Linear transformation in product space:</li>
+</ul>
+<p>Above transformation can be represented as :</p>
+<p>$$H_2|00&gt; = \frac{1}{{2}}|00&gt; + \frac{1}{{2}}|01&gt;  +  \frac{1}{{2}}|10&gt; + \frac{1}{{2}}|11&gt;$$</p>
+<p>With above basis vector, a state \( \frac{1}{{2}}|00&gt; + \frac{1}{{2}}|01&gt;  +  \frac{1}{{2}}|10&gt; + \frac{1}{{2}}|11&gt;\) can be expressed as: 
+$$\begin{bmatrix}
+    \frac{1}{2} \\
+    \frac{1}{2} \\
+    \frac{1}{2}\\
+    \frac{1}{2}
+\end{bmatrix}$$</p>
+<p>Thus in Matrix Form:</p>
+<p>$$ H_2|00&gt;  = \frac{1}{2} \begin{bmatrix}
+    1  &amp;  1  &amp;  1  &amp;  1 \\
+    1  &amp;  -1  &amp;  1  &amp;  -1 \\
+    1  &amp;  1  &amp;  -1  &amp;  -1 \\
+    1  &amp;  -1  &amp;  -1  &amp;  1 \\
+\end{bmatrix}\begin{bmatrix}<br />
+    1  \\
+    0 \\
+    0\\
+    0
+    \end{bmatrix}
+    = \begin{bmatrix}
+    \frac{1}{2} \\
+    \frac{1}{2} \\
+    \frac{1}{2}\\
+    \frac{1}{2}
+\end{bmatrix}$$</p>
+<p>$$=  \frac{1}{{2}}|00&gt; + \frac{1}{{2}}|01&gt;  +  \frac{1}{{2}}|10&gt; + \frac{1}{{2}}|11&gt; $$</p>
+<hr />
+<h6 id="tensor-product-of-linear-map">Tensor product of linear map:</h6>
+<p>The tensor product also operates on linear maps between vector spaces. Specifically, given two linear maps \(𝑆:𝑉→𝑋\) and \(𝑇:𝑊→𝑌\) between vector spaces, the tensor product of the two linear maps 𝑆 and 𝑇 is a linear map</p>
+<p>\((𝑆 \otimes 𝑇)(v \otimes w) = 𝑆(v) \otimes 𝑇(w) \).</p>
+<hr />
+<h6 id="simulation_1">Simulation</h6>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>simulator <span style="color: #555555">=</span> Aer<span style="color: #555555">.</span>get_backend(<span style="color: #CC3300">&#39;qasm_simulator&#39;</span>)
+result <span style="color: #555555">=</span> execute(circ, simulator)<span style="color: #555555">.</span>result()
+counts <span style="color: #555555">=</span> result<span style="color: #555555">.</span>get_counts(circ)
+plot_histogram(counts, title<span style="color: #555555">=</span><span style="color: #CC3300">&#39;Bell-State counts&#39;</span>)
+</pre></div>
+
+
+<p><img alt="png" src="../output_22_0.png" /></p>
+<h6 id="unitary-representation_3">Unitary representation</h6>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>n <span style="color: #555555">=</span><span style="color: #FF6600">2</span>
+q <span style="color: #555555">=</span> QuantumRegister(n)
+c <span style="color: #555555">=</span> ClassicalRegister(n)
+circ <span style="color: #555555">=</span> QuantumCircuit(q,c)
+circ<span style="color: #555555">.</span>h(q[<span style="color: #FF6600">0</span>])
+circ<span style="color: #555555">.</span>h(q[<span style="color: #FF6600">1</span>])
+<span style="color: #0099FF; font-style: italic"># Select the UnitarySimulator from the Aer provider</span>
+simulator <span style="color: #555555">=</span> Aer<span style="color: #555555">.</span>get_backend(<span style="color: #CC3300">&#39;unitary_simulator&#39;</span>)
+<span style="color: #0099FF; font-style: italic"># Execute and get counts</span>
+result <span style="color: #555555">=</span> execute(circ, simulator)<span style="color: #555555">.</span>result()
+unitary <span style="color: #555555">=</span> result<span style="color: #555555">.</span>get_unitary(circ)
+<span style="color: #006699; font-weight: bold">print</span>( unitary)
+</pre></div>
+
+
+<hr />
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>[[ 0.5+0.j  0.5+0.j  0.5+0.j  0.5+0.j]
+ [ 0.5+0.j -0.5+0.j  0.5+0.j -0.5+0.j]
+ [ 0.5+0.j  0.5+0.j -0.5+0.j -0.5+0.j]
+ [ 0.5+0.j -0.5+0.j -0.5+0.j  0.5+0.j]]
+</pre></div>
+
+
+<hr />
+<h3 id="hadamard-gate-3-qubits">Hadamard Gate (3 qubits)</h3>
+<p>Desigh the quantum circuit and perform measurement </p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>n <span style="color: #555555">=</span> <span style="color: #FF6600">3</span>
+q <span style="color: #555555">=</span> QuantumRegister(n)
+c <span style="color: #555555">=</span> ClassicalRegister(n)
+circ <span style="color: #555555">=</span> QuantumCircuit(q,c)
+circ<span style="color: #555555">.</span>h(q[<span style="color: #FF6600">0</span>])
+circ<span style="color: #555555">.</span>h(q[<span style="color: #FF6600">1</span>])
+circ<span style="color: #555555">.</span>h(q[<span style="color: #FF6600">2</span>])
+circ<span style="color: #555555">.</span>measure(q,c)
+
+<span style="color: #0099FF; font-style: italic"># Change the background color in mpl</span>
+style <span style="color: #555555">=</span> {<span style="color: #CC3300">&#39;backgroundcolor&#39;</span>: <span style="color: #CC3300">&#39;lightgreen&#39;</span>}
+circ<span style="color: #555555">.</span>draw(output<span style="color: #555555">=</span><span style="color: #CC3300">&#39;mpl&#39;</span>, style <span style="color: #555555">=</span> style)
+</pre></div>
+
+
+<p><img alt="png" src="../output_26_0.png" /></p>
+<hr />
+<h6 id="manual-approach_2">Manual Approach</h6>
+<ul>
+<li>Initial state: |000&gt;</li>
+<li>After Hadamard gate on first qubit: \( \frac{1}{\sqrt{2}}|000&gt; + \frac{1}{\sqrt{2}}|100&gt; \)</li>
+<li>After Hadamard gate on second qubit: \(\frac{1}{{2}}|000&gt; + \frac{1}{{2}}|010&gt;  +  \frac{1}{{2}}|100&gt; + \frac{1}{{2}}|110&gt;\)</li>
+<li>After Hadamard gate on third qubit: \( \frac{1}{2\sqrt{2}}(|000&gt;  + |001&gt; + |010&gt; + |011&gt;  +  |100&gt; +  |101&gt; + |110&gt; + |111&gt;) \)</li>
+</ul>
+<p>which is equivalent to </p>
+<p>\((\frac{1}{\sqrt{2}}|0&gt; + \frac{1}{\sqrt{2}}|1&gt;) \otimes (\frac{1}{\sqrt{2}}|0&gt; + \frac{1}{\sqrt{2}}|1&gt;) \otimes (\frac{1}{\sqrt{2}}|0&gt; + \frac{1}{\sqrt{2}}|1&gt;) \)</p>
+<hr />
+<h6 id="tensor-algebra-source_1">Tensor Algebra: <a href="https://quantumcomputing.stackexchange.com/questions/2270/how-to-input-2-qubits-in-2-hadamard-gates">source</a></h6>
+<ul>
+<li>H operator in product space: \( H_3 = H_1 \otimes H_1 \otimes H_1  = H_2 \otimes H_1\):</li>
+</ul>
+<p>$$ \frac{1}{\sqrt{2}}\begin{bmatrix}
+    1  &amp;  1 \\
+    1  &amp; -1
+\end{bmatrix} \otimes \frac{1}{\sqrt{2}}\begin{bmatrix}
+    1  &amp;  1 \\
+    1  &amp; -1
+\end{bmatrix} \otimes \frac{1}{\sqrt{2}}\begin{bmatrix}
+    1  &amp;  1 \\
+    1  &amp; -1
+\end{bmatrix}  = \frac{1}{2} \begin{bmatrix}
+    1  &amp;  1  &amp;  1  &amp;  1 \\
+    1  &amp;  -1  &amp;  1  &amp;  -1 \\
+    1  &amp;  1  &amp;  -1  &amp;  -1 \\
+    1  &amp;  -1  &amp;  -1  &amp;  1 \\
+\end{bmatrix} \otimes \frac{1}{\sqrt{2}}\begin{bmatrix}
+    1  &amp;  1 \\
+    1  &amp; -1
+\end{bmatrix}$$</p>
+<p>$$ = \frac{1}{2\sqrt{2}} \begin{bmatrix}
+    1  &amp;   1  &amp;  1  &amp;   1  &amp;  1  &amp;   1  &amp;  1  &amp;   1 \\
+    1  &amp;  -1  &amp;  1  &amp;  -1  &amp;  1  &amp;  -1  &amp;  1  &amp;  -1 \\
+    1  &amp;   1  &amp; -1  &amp;  -1  &amp;  1  &amp;   1  &amp; -1  &amp;  -1 \\
+    1  &amp;  -1  &amp; -1  &amp;   1  &amp;  1  &amp;  -1  &amp; -1  &amp;   1 \\
+    1  &amp;   1  &amp;  1  &amp;   1  &amp;  -1  &amp; -1  &amp;  -1  &amp; -1 \\
+    1  &amp;  -1  &amp;  1  &amp;  -1  &amp;  -1  &amp;  1  &amp;  -1  &amp;  1 \\
+    1  &amp;   1  &amp; -1  &amp;  -1  &amp;  -1  &amp;   -1  &amp;  1  &amp;   1 \\
+    1  &amp;  -1  &amp; -1  &amp;   1  &amp;  -1  &amp;    1  &amp;  1  &amp;  -1 \\
+\end{bmatrix}$$</p>
+<ul>
+<li>Basis states in product space: \( |q_1q_2q_3&gt; = q_1 \otimes q_2 \otimes q_3\) : </li>
+</ul>
+<p>$$ |000&gt; = \begin{bmatrix}
+    1  \\
+    0 \\
+    0\\
+    0\\
+    0\\
+    0\\
+    0\\
+    0\\
+\end{bmatrix} ; |001&gt; = \begin{bmatrix}
+    0\\
+    1\\
+    0\\
+    0\\
+    0\\
+    0\\
+    0\\
+    0
+\end{bmatrix}; |010&gt; = \begin{bmatrix}
+    0\\
+    0\\
+    1\\
+    0\\
+    0\\
+    0\\
+    0\\
+    0
+\end{bmatrix}; |011&gt; = \begin{bmatrix}
+    0\\
+    0\\
+    0\\
+    1\\
+    0\\
+    0\\
+    0\\
+    0
+\end{bmatrix}; |100&gt; = \begin{bmatrix}
+    0\\
+    0\\
+    0\\
+    0\\
+    1\\
+    0\\
+    0\\
+    0
+\end{bmatrix}$$</p>
+<p>$$ |101&gt; = \begin{bmatrix}
+    0\\
+    0\\
+    0\\
+    0\\
+    0\\
+    1\\
+    0\\
+    0
+\end{bmatrix}; |110&gt; = \begin{bmatrix}
+    0\\
+    0\\
+    0\\
+    0\\
+    0\\
+    0\\
+    1\\
+    0
+\end{bmatrix}; |111&gt; = \begin{bmatrix}
+    0\\
+    0\\
+    0\\
+    0\\
+    0\\
+    0\\
+    0\\
+    1
+\end{bmatrix}$$</p>
+<hr />
+<ul>
+<li>Above transformation can be represented as : \( H_3|000&gt; = \frac{1}{2\sqrt{2}}(|000&gt;  + |001&gt; + |010&gt; + |011&gt;  +  |100&gt; +  |101&gt; + |110&gt; +|111&gt;)\). With above basis vector this quantum state can be expressed as:</li>
+</ul>
+<p>$$\begin{bmatrix}
+    \frac{1}{2\sqrt{2}} \\
+    \frac{1}{2\sqrt{2}} \\
+    \frac{1}{2\sqrt{2}}\\
+    \frac{1}{2\sqrt{2}}\\
+    \frac{1}{2\sqrt{2}} \\
+    \frac{1}{2\sqrt{2}} \\
+    \frac{1}{2\sqrt{2}}\\
+    \frac{1}{2\sqrt{2}}
+\end{bmatrix}$$</p>
+<p>Thus in Matrix Form:</p>
+<p>$$ H_3|000&gt; = \frac{1}{2\sqrt{2}} \begin{bmatrix}
+    1  &amp;   1  &amp;  1  &amp;   1  &amp;  1  &amp;   1  &amp;  1  &amp;   1 \\
+    1  &amp;  -1  &amp;  1  &amp;  -1  &amp;  1  &amp;  -1  &amp;  1  &amp;  -1 \\
+    1  &amp;   1  &amp; -1  &amp;  -1  &amp;  1  &amp;   1  &amp; -1  &amp;  -1 \\
+    1  &amp;  -1  &amp; -1  &amp;   1  &amp;  1  &amp;  -1  &amp; -1  &amp;   1 \\
+    1  &amp;   1  &amp;  1  &amp;   1  &amp;  -1  &amp; -1  &amp;  -1  &amp; -1 \\
+    1  &amp;  -1  &amp;  1  &amp;  -1  &amp;  -1  &amp;  1  &amp;  -1  &amp;  1 \\
+    1  &amp;   1  &amp; -1  &amp;  -1  &amp;  -1  &amp;   -1  &amp;  1  &amp;   1 \\
+    1  &amp;  -1  &amp; -1  &amp;   1  &amp;  -1  &amp;    1  &amp;  1  &amp;  -1 \\
+\end{bmatrix} \begin{bmatrix}<br />
+    1  \\
+    0 \\
+    0\\
+    0\\
+    0\\
+    0\\
+    0\\
+    0
+    \end{bmatrix}
+    = \begin{bmatrix}
+    \frac{1}{2\sqrt{2}} \\
+    \frac{1}{2\sqrt{2}} \\
+    \frac{1}{2\sqrt{2}}\\
+    \frac{1}{2\sqrt{2}}\\
+    \frac{1}{2\sqrt{2}} \\
+    \frac{1}{2\sqrt{2}} \\
+    \frac{1}{2\sqrt{2}}\\
+    \frac{1}{2\sqrt{2}}
+\end{bmatrix} $$</p>
+<p>$$ = \frac{1}{2\sqrt{2}}(|000&gt;  + |001&gt; + |010&gt; + |011&gt;  +  |100&gt; +  |101&gt; + |110&gt; +|111&gt;)$$</p>
+<hr />
+<h6 id="simulation_2">Simulation</h6>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>simulator <span style="color: #555555">=</span> Aer<span style="color: #555555">.</span>get_backend(<span style="color: #CC3300">&#39;qasm_simulator&#39;</span>)
+result <span style="color: #555555">=</span> execute(circ, simulator)<span style="color: #555555">.</span>result()
+counts <span style="color: #555555">=</span> result<span style="color: #555555">.</span>get_counts(circ)
+plot_histogram(counts, title<span style="color: #555555">=</span><span style="color: #CC3300">&#39;Bell-State counts&#39;</span>)
+</pre></div>
+
+
+<p><img alt="png" src="../output_32_0.png" /></p>
+<hr />
+<h6 id="unitary-representation_4">Unitary representation</h6>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>n <span style="color: #555555">=</span><span style="color: #FF6600">3</span>
+q <span style="color: #555555">=</span> QuantumRegister(n)
+c <span style="color: #555555">=</span> ClassicalRegister(n)
+circ <span style="color: #555555">=</span> QuantumCircuit(q,c)
+circ<span style="color: #555555">.</span>h(q[<span style="color: #FF6600">0</span>])
+circ<span style="color: #555555">.</span>h(q[<span style="color: #FF6600">1</span>])
+circ<span style="color: #555555">.</span>h(q[<span style="color: #FF6600">2</span>])
+<span style="color: #0099FF; font-style: italic"># Select the UnitarySimulator from the Aer provider</span>
+simulator <span style="color: #555555">=</span> Aer<span style="color: #555555">.</span>get_backend(<span style="color: #CC3300">&#39;unitary_simulator&#39;</span>)
+<span style="color: #0099FF; font-style: italic"># Execute and get counts</span>
+result <span style="color: #555555">=</span> execute(circ, simulator)<span style="color: #555555">.</span>result()
+unitary <span style="color: #555555">=</span> result<span style="color: #555555">.</span>get_unitary(circ)
+<span style="color: #006699; font-weight: bold">print</span>( unitary)
+</pre></div>
+
+
+<hr />
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>[[ 0.35355339+0.j  0.35355339+0.j  0.35355339+0.j  0.35355339+0.j
+   0.35355339+0.j  0.35355339+0.j  0.35355339+0.j  0.35355339+0.j]
+ [ 0.35355339+0.j -0.35355339+0.j  0.35355339+0.j -0.35355339+0.j
+   0.35355339+0.j -0.35355339+0.j  0.35355339+0.j -0.35355339+0.j]
+ [ 0.35355339+0.j  0.35355339+0.j -0.35355339+0.j -0.35355339+0.j
+   0.35355339+0.j  0.35355339+0.j -0.35355339+0.j -0.35355339+0.j]
+ [ 0.35355339+0.j -0.35355339+0.j -0.35355339+0.j  0.35355339+0.j
+   0.35355339+0.j -0.35355339+0.j -0.35355339+0.j  0.35355339+0.j]
+ [ 0.35355339+0.j  0.35355339+0.j  0.35355339+0.j  0.35355339+0.j
+  -0.35355339+0.j -0.35355339+0.j -0.35355339+0.j -0.35355339+0.j]
+ [ 0.35355339+0.j -0.35355339+0.j  0.35355339+0.j -0.35355339+0.j
+  -0.35355339+0.j  0.35355339+0.j -0.35355339+0.j  0.35355339+0.j]
+ [ 0.35355339+0.j  0.35355339+0.j -0.35355339+0.j -0.35355339+0.j
+  -0.35355339+0.j -0.35355339+0.j  0.35355339+0.j  0.35355339+0.j]
+ [ 0.35355339+0.j -0.35355339+0.j -0.35355339+0.j  0.35355339+0.j
+  -0.35355339+0.j  0.35355339+0.j  0.35355339+0.j -0.35355339+0.j]]
+</pre></div>
+
+
+<hr />
+<h3 id="hadamard-10-qubit">Hadamard (10 Qubit)</h3>
+<p>Design the quantum circuit and performance measurement</p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>n <span style="color: #555555">=</span> <span style="color: #FF6600">8</span>
+q <span style="color: #555555">=</span> QuantumRegister(n)
+c <span style="color: #555555">=</span> ClassicalRegister(n)
+circ <span style="color: #555555">=</span> QuantumCircuit(q,c)
+<span style="color: #006699; font-weight: bold">for</span> k <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">range</span>(<span style="color: #FF6600">8</span>):
+    circ<span style="color: #555555">.</span>h(q[k])
+
+circ<span style="color: #555555">.</span>measure(q,c)
+
+<span style="color: #0099FF; font-style: italic"># Change the background color in mpl</span>
+style <span style="color: #555555">=</span> {<span style="color: #CC3300">&#39;backgroundcolor&#39;</span>: <span style="color: #CC3300">&#39;lightpink&#39;</span>}
+circ<span style="color: #555555">.</span>draw(output<span style="color: #555555">=</span><span style="color: #CC3300">&#39;mpl&#39;</span>, style <span style="color: #555555">=</span> style)
+</pre></div>
+
+
+<p><img alt="png" src="../output_36_0.png" /></p>
+<hr />
+<h6 id="simulation_3">Simulation</h6>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>simulator <span style="color: #555555">=</span> Aer<span style="color: #555555">.</span>get_backend(<span style="color: #CC3300">&#39;qasm_simulator&#39;</span>)
+result <span style="color: #555555">=</span> execute(circ, simulator)<span style="color: #555555">.</span>result()
+counts <span style="color: #555555">=</span> result<span style="color: #555555">.</span>get_counts(circ)
+plot_histogram(counts, title<span style="color: #555555">=</span><span style="color: #CC3300">&#39;Bell-State counts&#39;</span>)
+</pre></div>
+
+
+<p><img alt="png" src="../output_39_0.png" /></p>
+<hr />
+<h6 id="unitary-representation_5">Unitary representation</h6>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>n <span style="color: #555555">=</span><span style="color: #FF6600">8</span>
+q <span style="color: #555555">=</span> QuantumRegister(n)
+c <span style="color: #555555">=</span> ClassicalRegister(n)
+circ <span style="color: #555555">=</span> QuantumCircuit(q,c)
+
+<span style="color: #006699; font-weight: bold">for</span> k <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">range</span>(<span style="color: #FF6600">8</span>):
+    circ<span style="color: #555555">.</span>h(q[k])
+
+<span style="color: #0099FF; font-style: italic"># Select the UnitarySimulator from the Aer provider</span>
+simulator <span style="color: #555555">=</span> Aer<span style="color: #555555">.</span>get_backend(<span style="color: #CC3300">&#39;unitary_simulator&#39;</span>)
+<span style="color: #0099FF; font-style: italic"># Execute and get counts</span>
+result <span style="color: #555555">=</span> execute(circ, simulator)<span style="color: #555555">.</span>result()
+unitary <span style="color: #555555">=</span> result<span style="color: #555555">.</span>get_unitary(circ)
+<span style="color: #006699; font-weight: bold">print</span>( unitary)
+</pre></div>
+
+
+<hr />
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>[[ 0.0625+0.j  0.0625+0.j  0.0625+0.j ...  0.0625+0.j  0.0625+0.j
+   0.0625+0.j]
+ [ 0.0625+0.j -0.0625+0.j  0.0625+0.j ... -0.0625+0.j  0.0625+0.j
+  -0.0625+0.j]
+ [ 0.0625+0.j  0.0625+0.j -0.0625+0.j ...  0.0625+0.j -0.0625+0.j
+  -0.0625+0.j]
+ ...
+ [ 0.0625+0.j -0.0625+0.j  0.0625+0.j ... -0.0625+0.j  0.0625+0.j
+  -0.0625+0.j]
+ [ 0.0625+0.j  0.0625+0.j -0.0625+0.j ...  0.0625+0.j -0.0625+0.j
+  -0.0625+0.j]
+ [ 0.0625+0.j -0.0625+0.j -0.0625+0.j ... -0.0625+0.j -0.0625+0.j
+   0.0625+0.j]]
+</pre></div>
+
+
+<hr />
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>unitary<span style="color: #555555">.</span>shape
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>(256, 256)
+</pre></div>
+
+
+<p>The End</p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>
+</pre></div>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../Bell/QuantumCircuits/" class="btn btn-neutral float-right" title="Bell state">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../../dwave/dwave/" class="btn btn-neutral" title="D-wave QBM model"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../../../dwave/dwave/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../Bell/QuantumCircuits/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../../../..';</script>
+    <script src="../../../../js/theme.js" defer></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>
+      <script src="../../../../search/main.js" defer></script>
+
+</body>
+</html>
