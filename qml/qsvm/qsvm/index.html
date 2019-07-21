@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>Quantum SVM - Quanta.Guru</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Quantum SVM";
+    var mkdocs_page_input_path = "qml/qsvm/qsvm.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> Quanta.Guru</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="tocbase current">
+    
+    
+      
+
+
+  <li class="navtree toctree-l1 inactive">
+    <a class="" href="../../..">Home</a>
+  </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Getting started</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../GettingStarted/anaconda/">Guide to starting Python</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../GettingStarted/lib/">Guide to Python Libraries</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../GettingStarted/env/">Setting up Python Environment</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../GettingStarted/jupyter/">Installing Jupyter Notebook</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../GettingStarted/git/">How to Git</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Quantum Gates</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../gates/sgates/sgates/">Single Qubit Gates</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../gates/mgates/mgates/">Multiple Qubits Gates</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Quantum Circuits</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../circuits/hadamard/hadamard/">Superposition</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../circuits/bell/bell/">Bell state</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../circuits/random/random/">Random Variables</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Algorithms</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../algorithms/qft/qft/">Quantum Fourier Transform</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../algorithms/hhl/hhl/">Linear Equation (HHL)</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../algorithms/shor/shor/">Shor's Algorithm</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../algorithms/grover/grover/">Grover's Algorithm</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Optimization</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../optimization/dwave/dwave/">Binary Quadratic Model (BQM)</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../optimization/routing/routing/">Vahicle Routing</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../optimization/salesman/salesman/">Travelling Salsesman</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Quantum Machine Learning</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  
+    
+    <li class="navtree toctree-l2 page current">
+      <a class="current" href="./">
+        Quantum SVM
+          <span class="toctree-expand"></span>
+      </a>
+    </li>
+    
+      
+
+  <li class="toctree-l2 current with-children">
+    <a href="#qiskit-aqua-quantum-support-vector-machine">
+      Qiskit Aqua: Quantum Support Vector Machine
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l2 current">
+    <ul class="subnav-l2 current">
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#contributors">Contributors</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#affiliation">Affiliation</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#introduction">Introduction</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#optional-setup-token-to-run-the-experiment-on-a-real-device">[Optional] Setup token to run the experiment on a real device</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#the-breast-cancer-dataset">The breast cancer dataset</a>
+        </li>
+    
+    </ul>
+  </li>
+
+
+  
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">References</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../References/ref/">Reference</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+  </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">Quanta.Guru</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Quantum Machine Learning &raquo;</li>
+        
+      
+    
+    <li>Quantum SVM</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="qiskit-aqua-quantum-support-vector-machine">Qiskit Aqua: Quantum Support Vector Machine</h1>
+<p><strong>Experiment with classification problem with quantum-enhanced support vector machines</strong></p>
+<p>The latest version of this notebook is available <a href="https://github.com/qiskit/qiskit-tutorial">here</a>.</p>
+<hr />
+<h3 id="contributors">Contributors</h3>
+<p>Vojtech Havlicek<sup>[1]</sup>, Kristan Temme<sup>[1]</sup>, Antonio Córcoles<sup>[1]</sup>, Peng Liu<sup>[1]</sup>, Richard Chen<sup>[1]</sup>, Marco Pistoia<sup>[1]</sup> and Jay Gambetta<sup>[1]</sup></p>
+<h3 id="affiliation">Affiliation</h3>
+<ul>
+<li><sup>[1]</sup>IBMQ</li>
+</ul>
+<h3 id="introduction">Introduction</h3>
+<p>Classification algorithms and methods for machine learning are essential for pattern recognition and data mining applications. Well known techniques such as support vector machines and neural networks have blossomed over the last two decades as a result of the spectacular advances in classical hardware computational capabilities and speed. This progress in computer power made it possible to apply techniques, that were theoretically developed towards the middle of the 20th century, on classification problems that were becoming increasingly challenging.</p>
+<p>A key concept in classification methods is that of a kernel. Data cannot typically be separated by a hyperplane in its original space. A common technique used to find such a hyperplane consists on applying a non-linear transformation function to the data. This function is called a feature map, as it transforms the raw features, or measurable properties, of the phenomenon or subject under study. Classifying in this new feature space -and, as a matter of fact, also in any other space, including the raw original one- is nothing more than seeing how close data points are to each other. This is the same as computing the inner product for each pair of data in the set. So, in fact we do not need to compute the non-linear feature map for each datum, but only the inner product of each pair of data points in the new feature space. This collection of inner products is called the kernel and it is perfectly possible to have feature maps that are hard to compute but whose kernels are not.</p>
+<p>In this notebook we provide an example of a classification problem that requires a feature map for which computing the kernel is not efficient classically -this means that the required computational resources are expected to scale exponentially with the size of the problem. We show how this can be solved in a quantum processor by a direct estimation of the kernel in the feature space. The method we used falls in the category of what is called supervised learning, consisting of a training phase (where the kernel is calculated and the support vectors obtained) and a test or classification phase (where new unlabelled data is classified according to the solution found in the training phase).</p>
+<p>References and additional details:</p>
+<p>[1] Vojtech Havlicek, Antonio D. C´orcoles, Kristan Temme, Aram W. Harrow, Abhinav Kandala, Jerry M. Chow, and Jay M. Gambetta1, "Supervised learning with quantum enhanced feature spaces," <a href="https://arxiv.org/pdf/1804.11326.pdf">arXiv: 1804.11326</a></p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">datasets</span> <span style="color: #006699; font-weight: bold">import</span> <span style="color: #555555">*</span>
+
+<span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">qiskit</span> <span style="color: #006699; font-weight: bold">import</span> BasicAer
+<span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">qiskit.aqua.utils</span> <span style="color: #006699; font-weight: bold">import</span> split_dataset_to_data_and_labels
+<span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">qiskit.aqua.utils</span> <span style="color: #006699; font-weight: bold">import</span> map_label_to_class_name
+<span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">qiskit.aqua.input</span> <span style="color: #006699; font-weight: bold">import</span> ClassificationInput
+<span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">qiskit.aqua</span> <span style="color: #006699; font-weight: bold">import</span> run_algorithm, QuantumInstance
+<span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">qiskit.aqua.algorithms</span> <span style="color: #006699; font-weight: bold">import</span> QSVM
+<span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">qiskit.aqua.components.feature_maps</span> <span style="color: #006699; font-weight: bold">import</span> SecondOrderExpansion
+
+<span style="color: #0099FF; font-style: italic"># setup aqua logging</span>
+<span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">logging</span>
+<span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">qiskit.aqua</span> <span style="color: #006699; font-weight: bold">import</span> set_qiskit_aqua_logging
+<span style="color: #0099FF; font-style: italic"># set_qiskit_aqua_logging(logging.DEBUG) </span>
+<span style="color: #0099FF; font-style: italic"># choose INFO, DEBUG to see the log</span>
+</pre></div>
+
+
+<h3 id="optional-setup-token-to-run-the-experiment-on-a-real-device">[Optional] Setup token to run the experiment on a real device</h3>
+<p>If you would like to run the experiement on a real device, you need to setup your account first.</p>
+<p>Note: If you do not store your token yet, use <code>IBMQ.save_accounts()</code> to store it first.</p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #0099FF; font-style: italic"># from qiskit import IBMQ</span>
+<span style="color: #0099FF; font-style: italic"># IBMQ.load_accounts()</span>
+</pre></div>
+
+
+<p>First we prepare the dataset, which is used for training, testing and the finally prediction.</p>
+<p><em>Note: You can easily switch to a different dataset, such as the Breast Cancer dataset, by replacing 'ad_hoc_data' to 'Breast_cancer' below.</em></p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>feature_dim<span style="color: #555555">=</span><span style="color: #FF6600">2</span> <span style="color: #0099FF; font-style: italic"># we support feature_dim 2 or 3</span>
+sample_Total, training_input, test_input, class_labels <span style="color: #555555">=</span> ad_hoc_data(
+    training_size<span style="color: #555555">=</span><span style="color: #FF6600">20</span>, 
+    test_size<span style="color: #555555">=</span><span style="color: #FF6600">10</span>, 
+    n<span style="color: #555555">=</span>feature_dim, 
+    gap<span style="color: #555555">=</span><span style="color: #FF6600">0.3</span>, 
+    PLOT_DATA<span style="color: #555555">=</span><span style="color: #336666">True</span>
+)
+extra_test_data <span style="color: #555555">=</span> sample_ad_hoc_data(sample_Total, <span style="color: #FF6600">10</span>, n<span style="color: #555555">=</span>feature_dim)
+datapoints, class_to_label <span style="color: #555555">=</span> \
+split_dataset_to_data_and_labels(extra_test_data)
+<span style="color: #006699; font-weight: bold">print</span>(class_to_label)
+</pre></div>
+
+
+<p><img alt="png" src="../output_7_0.png" /></p>
+<p><img alt="png" src="../output_7_1.png" /></p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>{&#39;A&#39;: 0, &#39;B&#39;: 1}
+</pre></div>
+
+
+<p>With the dataset ready we initialize the necessary inputs for the algorithm:
+- the input dictionary (params) 
+- the input object containing the dataset info (algo_input).</p>
+<p>With everything setup, we can now run the algorithm.</p>
+<p>For the testing, the result includes the details and the success ratio.</p>
+<p>For the prediction, the result includes the predicted labels. </p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>seed <span style="color: #555555">=</span> <span style="color: #FF6600">10598</span>
+
+feature_map <span style="color: #555555">=</span> SecondOrderExpansion(feature_dimension<span style="color: #555555">=</span>feature_dim,\
+                                 depth<span style="color: #555555">=</span><span style="color: #FF6600">2</span>,\
+                                entanglement<span style="color: #555555">=</span><span style="color: #CC3300">&#39;linear&#39;</span>)
+
+qsvm <span style="color: #555555">=</span> QSVM(feature_map, training_input, test_input, datapoints[<span style="color: #FF6600">0</span>])
+
+backend <span style="color: #555555">=</span> BasicAer<span style="color: #555555">.</span>get_backend(<span style="color: #CC3300">&#39;qasm_simulator&#39;</span>)
+
+quantum_instance <span style="color: #555555">=</span> QuantumInstance(backend, shots<span style="color: #555555">=</span><span style="color: #FF6600">1024</span>,\
+                                 seed<span style="color: #555555">=</span>seed, seed_transpiler<span style="color: #555555">=</span>seed)
+
+result <span style="color: #555555">=</span> qsvm<span style="color: #555555">.</span>run(quantum_instance)
+
+<span style="color: #CC3300; font-style: italic">&quot;&quot;&quot;declarative approach</span>
+<span style="color: #CC3300; font-style: italic">params = {</span>
+<span style="color: #CC3300; font-style: italic">    &#39;problem&#39;: {&#39;name&#39;: &#39;classification&#39;, &#39;random_seed&#39;: 10598},</span>
+<span style="color: #CC3300; font-style: italic">    &#39;algorithm&#39;: {</span>
+<span style="color: #CC3300; font-style: italic">        &#39;name&#39;: &#39;QSVM&#39;</span>
+<span style="color: #CC3300; font-style: italic">    },</span>
+<span style="color: #CC3300; font-style: italic">    &#39;backend&#39;: {&#39;provider&#39;: &#39;qiskit.BasicAer&#39;,\</span>
+<span style="color: #CC3300; font-style: italic">                 &#39;name&#39;: &#39;qasm_simulator&#39;, &#39;shots&#39;: 1024},</span>
+<span style="color: #CC3300; font-style: italic">    &#39;feature_map&#39;: {&#39;name&#39;: &#39;SecondOrderExpansion&#39;, \</span>
+<span style="color: #CC3300; font-style: italic">                &#39;depth&#39;: 2, &#39;entanglement&#39;: &#39;linear&#39;}</span>
+<span style="color: #CC3300; font-style: italic">}</span>
+<span style="color: #CC3300; font-style: italic">algo_input = ClassificationInput(training_input, \</span>
+<span style="color: #CC3300; font-style: italic">                                test_input, datapoints[0])</span>
+<span style="color: #CC3300; font-style: italic">result = run_algorithm(params, algo_input)</span>
+<span style="color: #CC3300; font-style: italic">&quot;&quot;&quot;</span>
+
+<span style="color: #006699; font-weight: bold">print</span>(<span style="color: #CC3300">&quot;testing success ratio: {}&quot;</span><span style="color: #555555">.</span>format(result[<span style="color: #CC3300">&#39;testing_accuracy&#39;</span>]))
+<span style="color: #006699; font-weight: bold">print</span>(<span style="color: #CC3300">&quot;preduction of datapoints:&quot;</span>)
+<span style="color: #006699; font-weight: bold">print</span>(<span style="color: #CC3300">&quot;ground truth: {}&quot;</span><span style="color: #555555">.</span>format(map_label_to_class_name(datapoints[<span style="color: #FF6600">1</span>],\
+                                 qsvm<span style="color: #555555">.</span>label_to_class)))
+<span style="color: #006699; font-weight: bold">print</span>(<span style="color: #CC3300">&quot;prediction:   {}&quot;</span><span style="color: #555555">.</span>format(result[<span style="color: #CC3300">&#39;predicted_classes&#39;</span>]))
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>testing success ratio: 1.0
+preduction of datapoints:
+ground truth: [&#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;,\
+               &#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;]
+prediction:   [&#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, \
+               &#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;]
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">print</span>(<span style="color: #CC3300">&quot;kernel matrix during the training:&quot;</span>)
+kernel_matrix <span style="color: #555555">=</span> result[<span style="color: #CC3300">&#39;kernel_matrix_training&#39;</span>]
+img <span style="color: #555555">=</span> plt<span style="color: #555555">.</span>imshow(np<span style="color: #555555">.</span>asmatrix(kernel_matrix),interpolation<span style="color: #555555">=</span><span style="color: #CC3300">&#39;nearest&#39;</span>,\
+                                            origin<span style="color: #555555">=</span><span style="color: #CC3300">&#39;upper&#39;</span>,cmap<span style="color: #555555">=</span><span style="color: #CC3300">&#39;bone_r&#39;</span>)
+plt<span style="color: #555555">.</span>show()
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>kernel matrix during the training:
+</pre></div>
+
+
+<p><img alt="png" src="../output_10_1.png" /></p>
+<h3 id="the-breast-cancer-dataset">The breast cancer dataset</h3>
+<p>Now we run our algorithm with the real-world dataset: the breast cancer dataset, we use the first two principal components as features.</p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>sample_Total, training_input, test_input, class_labels <span style="color: #555555">=</span> Breast_cancer(
+    training_size<span style="color: #555555">=</span><span style="color: #FF6600">20</span>,
+    test_size<span style="color: #555555">=</span><span style="color: #FF6600">10</span>,
+    n<span style="color: #555555">=</span><span style="color: #FF6600">2</span>,
+    PLOT_DATA<span style="color: #555555">=</span><span style="color: #336666">True</span>
+)
+</pre></div>
+
+
+<p><img alt="png" src="../output_12_0.png" /></p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>seed <span style="color: #555555">=</span> <span style="color: #FF6600">10598</span>
+
+feature_map <span style="color: #555555">=</span> SecondOrderExpansion(feature_dimension<span style="color: #555555">=</span>feature_dim,\
+                                   depth<span style="color: #555555">=</span><span style="color: #FF6600">2</span>, entanglement<span style="color: #555555">=</span><span style="color: #CC3300">&#39;linear&#39;</span>)
+qsvm <span style="color: #555555">=</span> QSVM(feature_map, training_input, test_input)
+
+backend <span style="color: #555555">=</span> BasicAer<span style="color: #555555">.</span>get_backend(<span style="color: #CC3300">&#39;qasm_simulator&#39;</span>)
+quantum_instance <span style="color: #555555">=</span> QuantumInstance(backend, shots<span style="color: #555555">=</span><span style="color: #FF6600">1024</span>, \
+                                    seed<span style="color: #555555">=</span>seed, seed_transpiler<span style="color: #555555">=</span>seed)
+
+result <span style="color: #555555">=</span> qsvm<span style="color: #555555">.</span>run(quantum_instance)
+
+<span style="color: #CC3300; font-style: italic">&quot;&quot;&quot;declarative approach, re-use the params above</span>
+<span style="color: #CC3300; font-style: italic">algo_input = ClassificationInput(training_input, test_input)</span>
+<span style="color: #CC3300; font-style: italic">result = run_algorithm(params, algo_input)</span>
+<span style="color: #CC3300; font-style: italic">&quot;&quot;&quot;</span>
+<span style="color: #006699; font-weight: bold">print</span>(<span style="color: #CC3300">&quot;testing success ratio: &quot;</span>, result[<span style="color: #CC3300">&#39;testing_accuracy&#39;</span>])
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>testing success ratio:  0.8
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">print</span>(<span style="color: #CC3300">&quot;kernel matrix during the training:&quot;</span>)
+kernel_matrix <span style="color: #555555">=</span> result[<span style="color: #CC3300">&#39;kernel_matrix_training&#39;</span>]
+img <span style="color: #555555">=</span> plt<span style="color: #555555">.</span>imshow(np<span style="color: #555555">.</span>asmatrix(kernel_matrix),interpolation<span style="color: #555555">=</span><span style="color: #CC3300">&#39;nearest&#39;</span>,\
+                                origin<span style="color: #555555">=</span><span style="color: #CC3300">&#39;upper&#39;</span>,cmap<span style="color: #555555">=</span><span style="color: #CC3300">&#39;bone_r&#39;</span>)
+plt<span style="color: #555555">.</span>show()
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>kernel matrix during the training:
+</pre></div>
+
+
+<p><img alt="png" src="../output_14_1.png" /></p>
+<hr />
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../../References/ref/" class="btn btn-neutral float-right" title="Reference">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../../optimization/salesman/salesman/" class="btn btn-neutral" title="Travelling Salsesman"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../../../optimization/salesman/salesman/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../../References/ref/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>
+      <script src="../../../search/main.js" defer></script>
+
+</body>
+</html>

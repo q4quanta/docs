@@ -1,0 +1,1202 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>Vahicle Routing - Quanta.Guru</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Vahicle Routing";
+    var mkdocs_page_input_path = "optimization/routing/routing.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> Quanta.Guru</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="tocbase current">
+    
+    
+      
+
+
+  <li class="navtree toctree-l1 inactive">
+    <a class="" href="../../..">Home</a>
+  </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Getting started</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../GettingStarted/anaconda/">Guide to starting Python</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../GettingStarted/lib/">Guide to Python Libraries</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../GettingStarted/env/">Setting up Python Environment</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../GettingStarted/jupyter/">Installing Jupyter Notebook</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../GettingStarted/git/">How to Git</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Quantum Gates</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../gates/sgates/sgates/">Single Qubit Gates</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../gates/mgates/mgates/">Multiple Qubits Gates</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Quantum Circuits</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../circuits/hadamard/hadamard/">Superposition</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../circuits/bell/bell/">Bell state</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../circuits/random/random/">Random Variables</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Algorithms</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../algorithms/qft/qft/">Quantum Fourier Transform</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../algorithms/hhl/hhl/">Linear Equation (HHL)</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../algorithms/shor/shor/">Shor's Algorithm</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../algorithms/grover/grover/">Grover's Algorithm</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Optimization</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../dwave/dwave/">Binary Quadratic Model (BQM)</a>
+  </li>
+        
+          
+
+
+  
+    
+    <li class="navtree toctree-l2 page current">
+      <a class="current" href="./">
+        Vahicle Routing
+          <span class="toctree-expand"></span>
+      </a>
+    </li>
+    
+      
+
+  <li class="toctree-l2 current with-children">
+    <a href="#qiskit-aqua-vehicle-routing">
+      Qiskit Aqua: Vehicle Routing
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l2 current">
+    <ul class="subnav-l2 current">
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#contributors">Contributors</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#affiliation">Affiliation</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#the-introduction">The Introduction</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#the-model">The Model</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#classical-solution">Classical solution</a>
+        </li>
+    
+      
+          
+
+  <li class="toctree-l3">
+    <a href="#quantum-solution">
+      Quantum solution
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l3">
+    <ul class="subnav-l3 toc-hidden">
+    
+      
+        <li class="toctree-l4">
+          <a class="toctree-l5" href="#construct-the-ising-hamiltonian">Construct the Ising Hamiltonian</a>
+        </li>
+    
+      
+        <li class="toctree-l4">
+          <a class="toctree-l5" href="#from-hamiltonian-to-qp-formulation">From Hamiltonian to QP formulation</a>
+        </li>
+    
+    </ul>
+  </li>
+
+      
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#references">References</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#initialization">Initialization</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#classical-solution-using-ibm-ilog-cplex">Classical solution using IBM ILOG CPLEX</a>
+        </li>
+    
+      
+          
+
+  <li class="toctree-l3">
+    <a href="#quantum-solution-from-the-ground-up">
+      Quantum solution from the ground up
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l3">
+    <ul class="subnav-l3 toc-hidden">
+    
+      
+        <li class="toctree-l4">
+          <a class="toctree-l5" href="#step-1">Step 1</a>
+        </li>
+    
+      
+        <li class="toctree-l4">
+          <a class="toctree-l5" href="#step-2">Step 2</a>
+        </li>
+    
+      
+        <li class="toctree-l4">
+          <a class="toctree-l5" href="#step-3">Step 3</a>
+        </li>
+    
+      
+        <li class="toctree-l4">
+          <a class="toctree-l5" href="#step-4">Step 4</a>
+        </li>
+    
+      
+        <li class="toctree-l4">
+          <a class="toctree-l5" href="#step-5">Step 5</a>
+        </li>
+    
+    </ul>
+  </li>
+
+      
+    
+    </ul>
+  </li>
+
+
+  
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../salesman/salesman/">Travelling Salsesman</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Quantum Machine Learning</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../qml/qsvm/qsvm/">Quantum SVM</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">References</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../References/ref/">Reference</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+  </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">Quanta.Guru</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Optimization &raquo;</li>
+        
+      
+    
+    <li>Vahicle Routing</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="qiskit-aqua-vehicle-routing"><em><em>Qiskit Aqua: Vehicle Routing</em></em></h1>
+<p>The latest version of this notebook is available <a href="https://github.com/qiskit/qiskit-tutorials">here</a>.</p>
+<hr />
+<h3 id="contributors">Contributors</h3>
+<p>Andrea Simonetto<sup>[1]</sup>, Jakub Marecek<sup>[1]</sup>, Martin Mevissen<sup>[1]</sup></p>
+<h3 id="affiliation">Affiliation</h3>
+<ul>
+<li><sup>[1]</sup>IBMQ</li>
+</ul>
+<h2 id="the-introduction">The Introduction</h2>
+<p>Logistics is a major industry, with some estimates valuing it at USD 8183 billion globally in 2015. Most service providers operate a number of vehicles (e.g., trucks and container ships), a number of depots, where the vehicles are based overnight, and serve a number of client locations with each vehicle during each day. There are many optimisation and control problems that consider these parameters. Computationally, the key challenge is how to design routes from depots to a number of client locations and back to the depot, so as to minimise vehicle-miles travelled, time spent, or similar objective functions. In this notebook we formalise an idealised version of the problem and showcase its solution using the quantum approximate optimization approach of Farhi, Goldstone, and Gutman (2014). </p>
+<p>The overall workflow we demonstrate comprises:</p>
+<ol>
+<li>establish the client locations. Normally, these would be available ahead of the day of deliveries from a database. In our use case, we generate these randomly.</li>
+<li>compute the pair-wise distances, travel times, or similar. In our case, we consider the Euclidean distance, "as the crow flies", which is perhaps the simplest possible.</li>
+<li>compute the actual routes. This step is run twice, actually. First, we obtain a reference value by a run of a classical solver (IBM CPLEX) on the classical computer. Second, we run an alternative, hybrid algorithm partly on the quantum computer.</li>
+<li>visualisation of the results. In our case, this is again a simplistic plot.</li>
+</ol>
+<p>In the following, we first explain the model, before we proceed with the installation of the pre-requisites and the data loading.</p>
+<h2 id="the-model">The Model</h2>
+<p>Mathematically speaking, the vehicle routing problem (VRP) is a combinatorial problem, wherein the best routes from a depot to a number of clients and back to the depot are sought, given a number of available vehicles. There are a number of formulations possible, extending a number of formulations of the travelling salesman problem [Applegate et al, 2006]. Here, we present a formulation known as MTZ [Miller, Tucker, Zemlin, 1960]. </p>
+<p>Let \(n\) be the number of clients (indexed as\(1,\dots,n\), and \(K\) be the number of available vehicles. Let\(x_{ij} = {0,1}\) be the binary decision variable which, if it is \(1\) activates the segment from node \(i\) to node \(j\) The node index runs from\(0\)to\(n\) where\(0\)is (by convention) the depot. There are twice as many distinct decision variables as edges. For example, in a fully connected graph, there are \(n(n+1)\) inary decision variables. </p>
+<p>If two nodes \(i\) and \(j\) have a link from \(i\) to \(j\) we write \(i \sim j\) We also denote with \(\delta(i)^+\) the set of nodes to which \(i\) has a link, i.e.,\(j \in \delta(i)^+\) if and only if \(i \sim j\) Similarly, we denote with 
+$\delta(i)^-\) the set of nodes which are connected to \(i\) in the sense that \(j \in \delta(i)^-\) if and only if\(j \sim i\) </p>
+<p>In addition, we consider continuous variables, for all nodes \(i = 1,\dots, n\) denoted\(u_i\) These variables are needed in the MTZ formulation of the problem to eliminate sub-tours between clients. </p>
+<p>The VRP can be formulated as:</p>
+<p>$$
+(VRP) \quad  f = \min_{{x_{ij}}<em>{i\sim j}\in {0,1}, {u_i}</em>{i=1,\dots,n}\in \mathbb{R}} \quad \sum_{i \sim j} w_{ij} x_{ij}
+$$</p>
+<p>subject to the node-visiting constraint:</p>
+<p>$$\sum_{j \in \delta(i)^+} x_{ij} = 1, \,\sum_{j \in \delta(i)^-} x_{ji} = 1,\, \forall i \in {1,\dots,n},$$</p>
+<p>the depot-visiting constraints:</p>
+<p>$$\sum_{i \in \delta(0)^+} x_{0i} = K, \, \sum_{j \in \delta(0)^+} x_{j0} = K,$$</p>
+<p>and the sub-tour elimination constraints:</p>
+<p>$$
+u_i - u_j + Q x_{ij} \leq Q-q_j, \, \forall i \sim j, \,i ,j \neq 0, \quad q_i \leq u_i \leq Q,\, \forall i, i \neq 0.
+$$</p>
+<p>In particular, </p>
+<ul>
+<li>The cost function is linear in the cost functions and weighs the different arches based on a positive weight\(w_{ij}&gt;0\)(typically the distance between node\(i\)and node\(j\);</li>
+<li>The first set of constraints enforce that from and to every client, only one link is allowed;</li>
+<li>The second set of constraints enforce that from and to the depot, exactly \(K\)links are allowed;</li>
+<li>The third set of constraints enforce the sub-tour elimination constraints and are bounds on\(u_i\) with\(Q&gt;q_j&gt;0\) and\(Q,q_i \in \mathbb{R}\)</li>
+</ul>
+<hr />
+<h2 id="classical-solution">Classical solution</h2>
+<p>We can solve the VRP classically, e.g., by using CPLEX. CPLEX uses a branch-and-bound-and-cut method to find an approximate solution of the VRP, which, in this formulation, is a mixed-integer linear program (MILP). For the sake of notation, we pack the decision variables in one vector as</p>
+<p>$$
+{\bf z} = [x_{01},x_{02},\ldots,x_{10}, x_{12},\ldots,x_{n(n-1)}]^T,
+$$</p>
+<p>wherein \({\bf z} \in {0,1}^N\) with\(N = n (n+1)\) So the dimension of the problem scales quadratically with the number of nodes. Let us denote the optimal solution by \(z^{*}\) and the associated optimal cost \(f^{*}\) </p>
+<hr />
+<h2 id="quantum-solution">Quantum solution</h2>
+<p>Here, we demonstrate an approach that combines classical and quantum computing steps, following the quantum approximate optimization approach of Farhi, Goldstone, and Gutman (2014). In particular, we use the variational quantum eigensolver (VQE). We stress that given the use of limited depth of the quantum circuits employed (variational forms), it is hard to discuss the speed-up of the algorithm, as the solution obtained is heuristic in nature. At the same time, due to the nature and importance of the target problems, it is worth investigating heuristic approaches, which may be worthwhile for some problem classes. </p>
+<p>Following [5], the algorithm can be summarised as follows:</p>
+<ul>
+<li>
+<p>Preparation steps: </p>
+<ul>
+<li>Transform the combinatorial problem into a binary polynomial optimization problem with equality constraints only;</li>
+<li>Map the resulting problem into an Ising Hamiltonian ($H$) for variables\({\bf z}\)and basis\(Z\) via penalty methods if necessary;</li>
+<li>Choose the depth of the quantum circuit\(m\) Note that the depth can be modified adaptively.</li>
+<li>Choose a set of controls\(\theta\)and make a trial function\(\big|\psi(\boldsymbol\theta)\rangle\) built using a quantum circuit made of C-Phase gates and single-qubit Y rotations, parameterized by the components of\(\boldsymbol\theta\)</li>
+</ul>
+</li>
+<li>
+<p>Algorithm steps: </p>
+<ul>
+<li>Evaluate\(C(\boldsymbol\theta) = \langle\psi(\boldsymbol\theta)\big|H\big|\psi(\boldsymbol\theta)\rangle\)by sampling the outcome of the circuit in the Z-basis and adding the expectation values of the individual Ising terms together. In general, different control points around\(\boldsymbol\theta\)have to be estimated, depending on the classical optimizer chosen.</li>
+<li>Use a classical optimizer to choose a new set of controls.</li>
+<li>Continue until\(C(\boldsymbol\theta)\)reaches a minimum, close enough to the solution\(\boldsymbol\theta^*\)</li>
+<li>Use the last\(\boldsymbol\theta\)to generate a final set of samples from the distribution\(\Big|\langle z_i\big|\psi(\boldsymbol\theta)\rangle\Big|^2\;\forall i\)to obtain the answer.</li>
+</ul>
+</li>
+</ul>
+<p>There are many parameters throughout, notably the choice of the trial wavefunction. Below, we consider:</p>
+<p>$$
+\big|\psi(\theta)\rangle = [U_\mathrm{single}(\boldsymbol\theta) U_\mathrm{entangler}]^m \big|+\rangle
+$$</p>
+<p>where\(U_\mathrm{entangler}\)is a collection of C-Phase gates (fully-entangling gates), and\(U_\mathrm{single}(\theta) = \prod_{i=1}^N Y(\theta_{i})\) where\(N\)is the number of qubits and\(m\)is the depth of the quantum circuit. </p>
+<hr />
+<h3 id="construct-the-ising-hamiltonian">Construct the Ising Hamiltonian</h3>
+<p>From\(VRP\)one can construct a binary polynomial optimization with equality constraints only by considering cases in which\(K=n-1\) In these cases the sub-tour elimination constraints are not necessary and the problem is only on the variable\({\bf z}\) In particular, we can write an augmented Lagrangian as</p>
+<p>$$
+(IH) \quad H = \sum_{i \sim j} w_{ij} x_{ij}  + A \sum_{i \in {1,\dots,n}} \Big(\sum_{j \in \delta(i)^+} x_{ij} - 1\Big)^2 $$
+$$ + A \sum_{i \in {1,\dots,n}}\Big(\sum_{j \in \delta(i)^-} x_{ji} - 1\Big)^2 +A \Big(\sum_{i \in \delta(0)^+} x_{0i} - K\Big)^2 + A\Big(\sum_{j \in \delta(0)^+} x_{j0} - K\Big)^2
+$$</p>
+<p>where \(A\) is a big enough parameter. </p>
+<hr />
+<h3 id="from-hamiltonian-to-qp-formulation">From Hamiltonian to QP formulation</h3>
+<p>In the vector\({\bf z}\) and for a complete graph (\(\delta(i)^+ = \delta(i)^- = {0,1,\dots,i-1,i+1,\dots,n}\), \(H\) can be written as follows.</p>
+<p>$$
+\min_{{\bf z}\in {0,1}^{n(n+1)}} {\bf w}^T {\bf z}  + A \sum_{i \in {1,\dots,n}} \Big({\bf e}<em>i \otimes {\bf 1}_n^T {\bf z} - 1\Big)^2 + A \sum</em>{i \in {1,\dots,n}}\Big({\bf v}_i^T {\bf z} - 1\Big)^2 + A \Big(({\bf e}_0 \otimes {\bf 1}_n)^T{\bf z} - K\Big)^2 + A\Big({\bf v}_0^T{\bf z} - K\Big)^2.
+$$</p>
+<p>That is:</p>
+<p>$$
+\min_{\bf z\in {0,1}^{n(n+1)}} \bf z^T {\bf Q} \bf z + {\bf g}^T \bf z + c,
+$$</p>
+<p>Where: first term:</p>
+<p>$$
+{\bf Q} = A \sum_{i \in {0,1,\dots,n}}  \Big[({\bf e}_i \otimes {\bf 1}_n)({\bf e}_i \otimes {\bf 1}_n)^T + {\bf v}_i{\bf v}_i^T \Big] 
+$$</p>
+<p>Second term:</p>
+<p>$$
+{\bf g} = {\bf w} -2 A \sum_{i \in {1,\dots,n}} \Big[({\bf e}_i \otimes {\bf 1}_n) + {\bf v}_i \Big] -2 A K \Big[({\bf e}_0 \otimes {\bf 1}_n) + {\bf v}_0 \Big]
+$$</p>
+<p>Third term:</p>
+<p>$$
+c = 2An +2AK^2.
+$$</p>
+<p>The QP formulation of the Ising Hamiltonian is ready for the use of VQE. </p>
+<h2 id="references">References</h2>
+<p>[1] E. Farhi, J. Goldstone, S. Gutmann e-print arXiv 1411.4028, 2014
+[2] https://github.com/Qiskit/qiskit-tutorial/blob/master/qiskit/aqua/optimization/maxcut_and_tsp.ipynb
+[3] C. E. Miller, E. W. Tucker, and R. A. Zemlin (1960). "Integer Programming Formulations and Travelling Salesman Problems". J. ACM. 7: 326–329. doi:10.1145/321043.321046.
+[4] D. L. Applegate, R. M. Bixby, V. Chvátal, and W. J. Cook (2006). The Traveling Salesman Problem. Princeton University Press, ISBN 978-0-691-12993-8.</p>
+<hr />
+<h2 id="initialization">Initialization</h2>
+<p>First of all we load all the packages that we need: 
+  - Python 3.6 or greater is required;
+  - CPLEX 12.8 or greater is required for the classical computations;
+  - Latest Qiskit is required for the quantum computations.</p>
+<hr />
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #0099FF; font-style: italic"># Load the packages that are required</span>
+<span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">numpy</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">np</span>
+<span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">operator</span>
+<span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">matplotlib.pyplot</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">plt</span>
+
+<span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">sys</span>
+<span style="color: #006699; font-weight: bold">if</span> sys<span style="color: #555555">.</span>version_info <span style="color: #555555">&lt;</span> (<span style="color: #FF6600">3</span>, <span style="color: #FF6600">6</span>):
+    <span style="color: #006699; font-weight: bold">raise</span> <span style="color: #CC0000; font-weight: bold">Exception</span>(<span style="color: #CC3300">&#39;Please use Python version 3.6 or greater.&#39;</span>)
+
+<span style="color: #006699; font-weight: bold">try</span>:
+    <span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">cplex</span>
+    <span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">cplex.exceptions</span> <span style="color: #006699; font-weight: bold">import</span> CplexError
+<span style="color: #006699; font-weight: bold">except</span>: 
+    <span style="color: #006699; font-weight: bold">print</span>(<span style="color: #CC3300">&quot;Warning: Cplex not found.&quot;</span>)
+<span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">math</span>
+
+<span style="color: #0099FF; font-style: italic"># Qiskit packages</span>
+<span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">qiskit.quantum_info</span> <span style="color: #006699; font-weight: bold">import</span> Pauli
+<span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">qiskit.aqua.input</span> <span style="color: #006699; font-weight: bold">import</span> EnergyInput
+<span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">qiskit.aqua</span> <span style="color: #006699; font-weight: bold">import</span> Operator, run_algorithm
+
+<span style="color: #0099FF; font-style: italic"># setup aqua logging</span>
+<span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">logging</span>
+<span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">qiskit.aqua._logging</span> <span style="color: #006699; font-weight: bold">import</span> set_logging_config, build_logging_config
+<span style="color: #0099FF; font-style: italic"># set_logging_config(build_logging_config(logging.DEBUG))  </span>
+<span style="color: #0099FF; font-style: italic"># choose INFO, DEBUG to see the log</span>
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>Warning: Cplex not found.
+</pre></div>
+
+
+<p>We then initialize the variables</p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #0099FF; font-style: italic"># Initialize the problem by defining the parameters</span>
+n <span style="color: #555555">=</span> <span style="color: #FF6600">3</span>  <span style="color: #0099FF; font-style: italic"># number of nodes + depot (n+1)</span>
+K <span style="color: #555555">=</span> <span style="color: #FF6600">2</span>  <span style="color: #0099FF; font-style: italic"># number of vehicles</span>
+</pre></div>
+
+
+<p>We define an initializer class that randomly places the nodes in a 2-D plane and computes the distance between them. </p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #0099FF; font-style: italic"># Get the data</span>
+<span style="color: #006699; font-weight: bold">class</span> <span style="color: #00AA88; font-weight: bold">Initializer</span>():
+
+    <span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">__init__</span>(<span style="color: #336666">self</span>, n):
+        <span style="color: #336666">self</span><span style="color: #555555">.</span>n <span style="color: #555555">=</span> n
+
+    <span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">generate_instance</span>(<span style="color: #336666">self</span>):
+
+        n <span style="color: #555555">=</span> <span style="color: #336666">self</span><span style="color: #555555">.</span>n
+
+        <span style="color: #0099FF; font-style: italic"># np.random.seed(33)</span>
+        np<span style="color: #555555">.</span>random<span style="color: #555555">.</span>seed(<span style="color: #FF6600">1543</span>)
+
+        xc <span style="color: #555555">=</span> (np<span style="color: #555555">.</span>random<span style="color: #555555">.</span>rand(n) <span style="color: #555555">-</span> <span style="color: #FF6600">0.5</span>) <span style="color: #555555">*</span> <span style="color: #FF6600">10</span>
+        yc <span style="color: #555555">=</span> (np<span style="color: #555555">.</span>random<span style="color: #555555">.</span>rand(n) <span style="color: #555555">-</span> <span style="color: #FF6600">0.5</span>) <span style="color: #555555">*</span> <span style="color: #FF6600">10</span>
+
+        instance <span style="color: #555555">=</span> np<span style="color: #555555">.</span>zeros([n, n])
+        <span style="color: #006699; font-weight: bold">for</span> ii <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">range</span>(<span style="color: #FF6600">0</span>, n):
+            <span style="color: #006699; font-weight: bold">for</span> jj <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">range</span>(ii <span style="color: #555555">+</span> <span style="color: #FF6600">1</span>, n):
+                instance[ii, jj] <span style="color: #555555">=</span> (xc[ii] <span style="color: #555555">-</span> xc[jj]) <span style="color: #555555">**</span> <span style="color: #FF6600">2</span> <span style="color: #555555">+</span> (yc[ii] <span style="color: #555555">-</span> yc[jj]) <span style="color: #555555">**</span> <span style="color: #FF6600">2</span>
+                instance[jj, ii] <span style="color: #555555">=</span> instance[ii, jj]
+
+        <span style="color: #006699; font-weight: bold">return</span> xc, yc, instance
+</pre></div>
+
+
+<hr />
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #0099FF; font-style: italic"># Initialize the problem by randomly generating the instance</span>
+initializer <span style="color: #555555">=</span> Initializer(n)
+xc,yc,instance <span style="color: #555555">=</span> initializer<span style="color: #555555">.</span>generate_instance()
+</pre></div>
+
+
+<hr />
+<h2 id="classical-solution-using-ibm-ilog-cplex">Classical solution using IBM ILOG CPLEX</h2>
+<p>For a classical solution, we use IBM ILOG CPLEX. CPLEX is able to find the exact solution of this problem. We first define a ClassicalOptimizer class that encodes the problem in a way that CPLEX can solve, and then instantiate the class and solve it. </p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">class</span> <span style="color: #00AA88; font-weight: bold">ClassicalOptimizer</span>:
+
+    <span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">__init__</span>(<span style="color: #336666">self</span>, instance,n,K):
+
+        <span style="color: #336666">self</span><span style="color: #555555">.</span>instance <span style="color: #555555">=</span> instance
+        <span style="color: #336666">self</span><span style="color: #555555">.</span>n <span style="color: #555555">=</span> n  <span style="color: #0099FF; font-style: italic"># number of nodes</span>
+        <span style="color: #336666">self</span><span style="color: #555555">.</span>K <span style="color: #555555">=</span> K  <span style="color: #0099FF; font-style: italic"># number of vehicles</span>
+
+
+    <span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">compute_allowed_combinations</span>(<span style="color: #336666">self</span>):
+        f <span style="color: #555555">=</span> math<span style="color: #555555">.</span>factorial
+        <span style="color: #006699; font-weight: bold">return</span> f(<span style="color: #336666">self</span><span style="color: #555555">.</span>n) <span style="color: #555555">/</span> f(<span style="color: #336666">self</span><span style="color: #555555">.</span>K) <span style="color: #555555">/</span> f(<span style="color: #336666">self</span><span style="color: #555555">.</span>n<span style="color: #555555">-</span><span style="color: #336666">self</span><span style="color: #555555">.</span>K)
+
+
+    <span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">cplex_solution</span>(<span style="color: #336666">self</span>):
+
+        <span style="color: #0099FF; font-style: italic"># refactoring</span>
+        instance <span style="color: #555555">=</span> <span style="color: #336666">self</span><span style="color: #555555">.</span>instance
+        n <span style="color: #555555">=</span> <span style="color: #336666">self</span><span style="color: #555555">.</span>n
+        K <span style="color: #555555">=</span> <span style="color: #336666">self</span><span style="color: #555555">.</span>K
+
+        my_obj <span style="color: #555555">=</span> <span style="color: #336666">list</span>(instance<span style="color: #555555">.</span>reshape(<span style="color: #FF6600">1</span>, n<span style="color: #555555">**</span><span style="color: #FF6600">2</span>)[<span style="color: #FF6600">0</span>])<span style="color: #555555">+</span>\
+                        [<span style="color: #FF6600">0.</span> <span style="color: #006699; font-weight: bold">for</span> x <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">range</span>(<span style="color: #FF6600">0</span>,n<span style="color: #555555">-</span><span style="color: #FF6600">1</span>)]
+        my_ub <span style="color: #555555">=</span> [<span style="color: #FF6600">1</span> <span style="color: #006699; font-weight: bold">for</span> x <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">range</span>(<span style="color: #FF6600">0</span>,n<span style="color: #555555">**</span><span style="color: #FF6600">2</span><span style="color: #555555">+</span>n<span style="color: #555555">-</span><span style="color: #FF6600">1</span>)]
+        my_lb <span style="color: #555555">=</span> [<span style="color: #FF6600">0</span> <span style="color: #006699; font-weight: bold">for</span> x <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">range</span>(<span style="color: #FF6600">0</span>,n<span style="color: #555555">**</span><span style="color: #FF6600">2</span>)] \
+                    <span style="color: #555555">+</span> [<span style="color: #FF6600">0.1</span> <span style="color: #006699; font-weight: bold">for</span> x <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">range</span>(<span style="color: #FF6600">0</span>,n<span style="color: #555555">-</span><span style="color: #FF6600">1</span>)]
+        my_ctype <span style="color: #555555">=</span> <span style="color: #CC3300">&quot;&quot;</span><span style="color: #555555">.</span>join([<span style="color: #CC3300">&#39;I&#39;</span> <span style="color: #006699; font-weight: bold">for</span> x <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">range</span>(<span style="color: #FF6600">0</span>,n<span style="color: #555555">**</span><span style="color: #FF6600">2</span>)]) \
+                 <span style="color: #555555">+</span> <span style="color: #CC3300">&quot;&quot;</span><span style="color: #555555">.</span>join([<span style="color: #CC3300">&#39;C&#39;</span> <span style="color: #006699; font-weight: bold">for</span> x <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">range</span>(<span style="color: #FF6600">0</span>,n<span style="color: #555555">-</span><span style="color: #FF6600">1</span>)])
+
+        my_rhs <span style="color: #555555">=</span> <span style="color: #FF6600">2</span><span style="color: #555555">*</span>([K] <span style="color: #555555">+</span> [<span style="color: #FF6600">1</span> <span style="color: #006699; font-weight: bold">for</span> x <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">range</span>(<span style="color: #FF6600">0</span>,n<span style="color: #555555">-</span><span style="color: #FF6600">1</span>)]) \
+                    <span style="color: #555555">+</span> [<span style="color: #FF6600">1</span><span style="color: #555555">-</span><span style="color: #FF6600">0.1</span> <span style="color: #006699; font-weight: bold">for</span> x <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">range</span>(<span style="color: #FF6600">0</span>,(n<span style="color: #555555">-</span><span style="color: #FF6600">1</span>)<span style="color: #555555">**</span><span style="color: #FF6600">2</span><span style="color: #555555">-</span>(n<span style="color: #555555">-</span><span style="color: #FF6600">1</span>))] \
+                    <span style="color: #555555">+</span> [<span style="color: #FF6600">0</span> <span style="color: #006699; font-weight: bold">for</span> x <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">range</span>(<span style="color: #FF6600">0</span>,n)]
+        my_sense <span style="color: #555555">=</span> <span style="color: #CC3300">&quot;&quot;</span><span style="color: #555555">.</span>join([<span style="color: #CC3300">&#39;E&#39;</span> <span style="color: #006699; font-weight: bold">for</span> x <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">range</span>(<span style="color: #FF6600">0</span>,<span style="color: #FF6600">2</span><span style="color: #555555">*</span>n)]) \
+                 <span style="color: #555555">+</span> <span style="color: #CC3300">&quot;&quot;</span><span style="color: #555555">.</span>join([<span style="color: #CC3300">&#39;L&#39;</span> <span style="color: #006699; font-weight: bold">for</span> x <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">range</span>(<span style="color: #FF6600">0</span>,(n<span style="color: #555555">-</span><span style="color: #FF6600">1</span>)<span style="color: #555555">**</span><span style="color: #FF6600">2</span><span style="color: #555555">-</span>(n<span style="color: #555555">-</span><span style="color: #FF6600">1</span>))])<span style="color: #555555">+</span> \
+                   <span style="color: #CC3300">&quot;&quot;</span><span style="color: #555555">.</span>join([<span style="color: #CC3300">&#39;E&#39;</span> <span style="color: #006699; font-weight: bold">for</span> x <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">range</span>(<span style="color: #FF6600">0</span>,n)])
+
+        <span style="color: #006699; font-weight: bold">try</span>:
+            my_prob <span style="color: #555555">=</span> cplex<span style="color: #555555">.</span>Cplex()
+            <span style="color: #336666">self</span><span style="color: #555555">.</span>populatebyrow(my_prob,my_obj,my_ub,my_lb,\
+                                    my_ctype,my_sense,my_rhs)
+
+            my_prob<span style="color: #555555">.</span>solve()
+
+        <span style="color: #006699; font-weight: bold">except</span> CplexError <span style="color: #006699; font-weight: bold">as</span> exc:
+            <span style="color: #006699; font-weight: bold">print</span>(exc)
+            <span style="color: #006699; font-weight: bold">return</span>
+
+        x <span style="color: #555555">=</span> my_prob<span style="color: #555555">.</span>solution<span style="color: #555555">.</span>get_values()
+        x <span style="color: #555555">=</span> np<span style="color: #555555">.</span>array(x)
+        cost <span style="color: #555555">=</span> my_prob<span style="color: #555555">.</span>solution<span style="color: #555555">.</span>get_objective_value()
+
+        <span style="color: #006699; font-weight: bold">return</span> x,cost
+
+
+    <span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">populatebyrow</span>(<span style="color: #336666">self</span>,prob,my_obj,my_ub,my_lb,\
+                                my_ctype,my_sense,my_rhs):
+
+        n <span style="color: #555555">=</span> <span style="color: #336666">self</span><span style="color: #555555">.</span>n
+
+        prob<span style="color: #555555">.</span>objective<span style="color: #555555">.</span>set_sense(prob<span style="color: #555555">.</span>objective<span style="color: #555555">.</span>sense<span style="color: #555555">.</span>minimize)
+        prob<span style="color: #555555">.</span>variables<span style="color: #555555">.</span>add(obj <span style="color: #555555">=</span> my_obj, lb <span style="color: #555555">=</span> my_lb, \
+                                ub <span style="color: #555555">=</span> my_ub, types <span style="color: #555555">=</span> my_ctype)
+
+        prob<span style="color: #555555">.</span>set_log_stream(<span style="color: #336666">None</span>)
+        prob<span style="color: #555555">.</span>set_error_stream(<span style="color: #336666">None</span>)
+        prob<span style="color: #555555">.</span>set_warning_stream(<span style="color: #336666">None</span>)
+        prob<span style="color: #555555">.</span>set_results_stream(<span style="color: #336666">None</span>)
+
+        rows <span style="color: #555555">=</span> []
+        <span style="color: #006699; font-weight: bold">for</span> ii <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">range</span>(<span style="color: #FF6600">0</span>,n):
+            col <span style="color: #555555">=</span> [x <span style="color: #006699; font-weight: bold">for</span> x <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">range</span>(<span style="color: #FF6600">0</span><span style="color: #555555">+</span>n<span style="color: #555555">*</span>ii,n<span style="color: #555555">+</span>n<span style="color: #555555">*</span>ii)]
+            coef <span style="color: #555555">=</span> [<span style="color: #FF6600">1</span> <span style="color: #006699; font-weight: bold">for</span> x <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">range</span>(<span style="color: #FF6600">0</span>,n)]
+            rows<span style="color: #555555">.</span>append([col, coef])
+
+        <span style="color: #006699; font-weight: bold">for</span> ii <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">range</span>(<span style="color: #FF6600">0</span>,n):
+            col <span style="color: #555555">=</span> [x <span style="color: #006699; font-weight: bold">for</span> x <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">range</span>(<span style="color: #FF6600">0</span><span style="color: #555555">+</span>ii,n<span style="color: #555555">**</span><span style="color: #FF6600">2</span>,n)]
+            coef <span style="color: #555555">=</span> [<span style="color: #FF6600">1</span> <span style="color: #006699; font-weight: bold">for</span> x <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">range</span>(<span style="color: #FF6600">0</span>,n)]
+
+            rows<span style="color: #555555">.</span>append([col, coef])
+
+        <span style="color: #0099FF; font-style: italic"># Sub-tour elimination constraints:</span>
+        <span style="color: #006699; font-weight: bold">for</span> ii <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">range</span>(<span style="color: #FF6600">0</span>, n):
+            <span style="color: #006699; font-weight: bold">for</span> jj <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">range</span>(<span style="color: #FF6600">0</span>,n):
+                <span style="color: #006699; font-weight: bold">if</span> (ii <span style="color: #555555">!=</span> jj)<span style="color: #000000; font-weight: bold">and</span>(ii<span style="color: #555555">*</span>jj<span style="color: #555555">&gt;</span><span style="color: #FF6600">0</span>):
+
+                    col <span style="color: #555555">=</span> [ii<span style="color: #555555">+</span>(jj<span style="color: #555555">*</span>n), n<span style="color: #555555">**</span><span style="color: #FF6600">2</span><span style="color: #555555">+</span>ii<span style="color: #555555">-</span><span style="color: #FF6600">1</span>, n<span style="color: #555555">**</span><span style="color: #FF6600">2</span><span style="color: #555555">+</span>jj<span style="color: #555555">-</span><span style="color: #FF6600">1</span>]
+                    coef <span style="color: #555555">=</span> [<span style="color: #FF6600">1</span>, <span style="color: #FF6600">1</span>, <span style="color: #555555">-</span><span style="color: #FF6600">1</span>]
+
+                    rows<span style="color: #555555">.</span>append([col, coef])
+
+        <span style="color: #006699; font-weight: bold">for</span> ii <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">range</span>(<span style="color: #FF6600">0</span>,n):
+            col <span style="color: #555555">=</span> [(ii)<span style="color: #555555">*</span>(n<span style="color: #555555">+</span><span style="color: #FF6600">1</span>)]
+            coef <span style="color: #555555">=</span> [<span style="color: #FF6600">1</span>]
+            rows<span style="color: #555555">.</span>append([col, coef])
+
+        prob<span style="color: #555555">.</span>linear_constraints<span style="color: #555555">.</span>add(lin_expr<span style="color: #555555">=</span>rows,\
+                             senses<span style="color: #555555">=</span>my_sense, rhs<span style="color: #555555">=</span>my_rhs)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #0099FF; font-style: italic"># Instantiate the classical optimizer class</span>
+classical_optimizer <span style="color: #555555">=</span> ClassicalOptimizer(instance,n,K)
+
+<span style="color: #0099FF; font-style: italic"># Print number of feasible solutions</span>
+<span style="color: #006699; font-weight: bold">print</span>(<span style="color: #CC3300">&#39;Number of feasible solutions = &#39;</span> \
+            <span style="color: #555555">+</span> <span style="color: #336666">str</span>(classical_optimizer<span style="color: #555555">.</span>compute_allowed_combinations()))
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>Number of feasible solutions = 3.0
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #0099FF; font-style: italic"># Solve the problem in a classical fashion via CPLEX</span>
+x <span style="color: #555555">=</span> <span style="color: #336666">None</span>
+z <span style="color: #555555">=</span> <span style="color: #336666">None</span>
+<span style="color: #006699; font-weight: bold">try</span>:
+    x,classical_cost <span style="color: #555555">=</span> classical_optimizer<span style="color: #555555">.</span>cplex_solution()
+    <span style="color: #0099FF; font-style: italic"># Put the solution in the z variable</span>
+    z <span style="color: #555555">=</span> [x[ii] <span style="color: #006699; font-weight: bold">for</span> ii <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">range</span>(n<span style="color: #555555">**</span><span style="color: #FF6600">2</span>) <span style="color: #006699; font-weight: bold">if</span> ii<span style="color: #555555">//</span>n <span style="color: #555555">!=</span> ii<span style="color: #555555">%</span>n]
+    <span style="color: #0099FF; font-style: italic"># Print the solution</span>
+    <span style="color: #006699; font-weight: bold">print</span>(z)
+<span style="color: #006699; font-weight: bold">except</span>: 
+    <span style="color: #006699; font-weight: bold">print</span>(<span style="color: #CC3300">&quot;CPLEX may be missing.&quot;</span>)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>CPLEX may be missing.
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #0099FF; font-style: italic"># Visualize the solution</span>
+<span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">visualize_solution</span>(xc, yc, x, C, n, K, title_str):
+    plt<span style="color: #555555">.</span>figure()
+    plt<span style="color: #555555">.</span>scatter(xc, yc, s<span style="color: #555555">=</span><span style="color: #FF6600">200</span>)
+    <span style="color: #006699; font-weight: bold">for</span> i <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">range</span>(<span style="color: #336666">len</span>(xc)):
+        plt<span style="color: #555555">.</span>annotate(i, (xc[i] <span style="color: #555555">+</span> <span style="color: #FF6600">0.15</span>, yc[i]), size<span style="color: #555555">=</span><span style="color: #FF6600">16</span>, color<span style="color: #555555">=</span><span style="color: #CC3300">&#39;r&#39;</span>)
+    plt<span style="color: #555555">.</span>plot(xc[<span style="color: #FF6600">0</span>], yc[<span style="color: #FF6600">0</span>], <span style="color: #CC3300">&#39;r*&#39;</span>, ms<span style="color: #555555">=</span><span style="color: #FF6600">20</span>)
+
+    plt<span style="color: #555555">.</span>grid()
+
+    <span style="color: #006699; font-weight: bold">for</span> ii <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">range</span>(<span style="color: #FF6600">0</span>, n <span style="color: #555555">**</span> <span style="color: #FF6600">2</span>):
+
+        <span style="color: #006699; font-weight: bold">if</span> x[ii] <span style="color: #555555">&gt;</span> <span style="color: #FF6600">0</span>:
+            ix <span style="color: #555555">=</span> ii <span style="color: #555555">//</span> n
+            iy <span style="color: #555555">=</span> ii <span style="color: #555555">%</span> n
+            plt<span style="color: #555555">.</span>arrow(xc[ix], yc[ix], xc[iy] <span style="color: #555555">-</span> xc[ix], yc[iy] \
+                        <span style="color: #555555">-</span> yc[ix], length_includes_head<span style="color: #555555">=</span><span style="color: #336666">True</span>, head_width<span style="color: #555555">=.</span><span style="color: #FF6600">25</span>)
+
+    plt<span style="color: #555555">.</span>title(title_str<span style="color: #555555">+</span><span style="color: #CC3300">&#39; cost = &#39;</span> <span style="color: #555555">+</span> <span style="color: #336666">str</span>(<span style="color: #336666">int</span>(C <span style="color: #555555">*</span> <span style="color: #FF6600">100</span>) <span style="color: #555555">/</span> <span style="color: #FF6600">100.</span>))
+    plt<span style="color: #555555">.</span>show()    
+
+<span style="color: #006699; font-weight: bold">if</span> x: visualize_solution(xc, yc, x, classical_cost, n, K, <span style="color: #CC3300">&#39;Classical&#39;</span>)
+</pre></div>
+
+
+<p>If you have CPLEX, the solution shows the depot with a star and the selected routes for the vehicles with arrows. </p>
+<h2 id="quantum-solution-from-the-ground-up">Quantum solution from the ground up</h2>
+<p>For the quantum solution, we use Qiskit. </p>
+<p>First, we derive the solution from the ground up, using a class QuantumOptimizer that encodes the quantum approach to solve the problem and then we instantiate it and solve it. We define the following methods inside the class:
+- <code>binary_representation</code> : encodes the problem\((M)\)into a the Ising Hamiltonian QP (that's basically linear algebra);
+- <code>construct_hamiltonian</code> : constructs the Ising Hamiltonian in terms of the\(Z\)basis;
+- <code>check_hamiltonian</code> : makes sure that the Ising Hamiltonian is correctly encoded in the\(Z\)basis: to do this, it solves a eigenvalue-eigenvector problem for a symmetric matrix of dimension\(2^N \times 2^N\) For the problem at hand\(n=3\) that is\(N = 12\)seems the limit; 
+- <code>vqe_solution</code> : solves the problem\((M)\)via VQE by using the SPSA solver (with default parameters);
+- <code>_q_solution</code> : internal routine to represent the solution in a usable format.</p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">class</span> <span style="color: #00AA88; font-weight: bold">QuantumOptimizer</span>:
+
+    <span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">__init__</span>(<span style="color: #336666">self</span>, instance, n, K, max_trials<span style="color: #555555">=</span><span style="color: #FF6600">1000</span>):
+
+        <span style="color: #336666">self</span><span style="color: #555555">.</span>instance <span style="color: #555555">=</span> instance
+        <span style="color: #336666">self</span><span style="color: #555555">.</span>n <span style="color: #555555">=</span> n
+        <span style="color: #336666">self</span><span style="color: #555555">.</span>K <span style="color: #555555">=</span> K
+        <span style="color: #336666">self</span><span style="color: #555555">.</span>max_trials <span style="color: #555555">=</span> max_trials
+
+    <span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">binary_representation</span>(<span style="color: #336666">self</span>,x_sol<span style="color: #555555">=</span><span style="color: #FF6600">0</span>):
+
+        instance <span style="color: #555555">=</span> <span style="color: #336666">self</span><span style="color: #555555">.</span>instance
+        n <span style="color: #555555">=</span> <span style="color: #336666">self</span><span style="color: #555555">.</span>n
+        K <span style="color: #555555">=</span> <span style="color: #336666">self</span><span style="color: #555555">.</span>K
+
+        A <span style="color: #555555">=</span> np<span style="color: #555555">.</span>max(instance) <span style="color: #555555">*</span> <span style="color: #FF6600">100</span> 
+        <span style="color: #0099FF; font-style: italic"># A parameter of cost function</span>
+
+        <span style="color: #0099FF; font-style: italic"># Determine the weights w</span>
+        instance_vec <span style="color: #555555">=</span> instance<span style="color: #555555">.</span>reshape(n <span style="color: #555555">**</span> <span style="color: #FF6600">2</span>)
+        w_list <span style="color: #555555">=</span> [instance_vec[x] <span style="color: #006699; font-weight: bold">for</span> x <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">range</span>(n <span style="color: #555555">**</span> <span style="color: #FF6600">2</span>) \
+                                <span style="color: #006699; font-weight: bold">if</span> instance_vec[x] <span style="color: #555555">&gt;</span> <span style="color: #FF6600">0</span>]
+        w <span style="color: #555555">=</span> np<span style="color: #555555">.</span>zeros(n <span style="color: #555555">*</span> (n <span style="color: #555555">-</span> <span style="color: #FF6600">1</span>))
+        <span style="color: #006699; font-weight: bold">for</span> ii <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">range</span>(<span style="color: #336666">len</span>(w_list)):
+            w[ii] <span style="color: #555555">=</span> w_list[ii]
+
+        <span style="color: #0099FF; font-style: italic"># Some variables I will use</span>
+        Id_n <span style="color: #555555">=</span> np<span style="color: #555555">.</span>eye(n)
+        Im_n_1 <span style="color: #555555">=</span> np<span style="color: #555555">.</span>ones([n <span style="color: #555555">-</span> <span style="color: #FF6600">1</span>, n <span style="color: #555555">-</span> <span style="color: #FF6600">1</span>])
+        Iv_n_1 <span style="color: #555555">=</span> np<span style="color: #555555">.</span>ones(n)
+        Iv_n_1[<span style="color: #FF6600">0</span>] <span style="color: #555555">=</span> <span style="color: #FF6600">0</span>
+        Iv_n <span style="color: #555555">=</span> np<span style="color: #555555">.</span>ones(n<span style="color: #555555">-</span><span style="color: #FF6600">1</span>)
+        neg_Iv_n_1 <span style="color: #555555">=</span> np<span style="color: #555555">.</span>ones(n) <span style="color: #555555">-</span> Iv_n_1
+
+        v <span style="color: #555555">=</span> np<span style="color: #555555">.</span>zeros([n, n<span style="color: #555555">*</span>(n<span style="color: #555555">-</span><span style="color: #FF6600">1</span>)])
+        <span style="color: #006699; font-weight: bold">for</span> ii <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">range</span>(n):
+            count <span style="color: #555555">=</span> ii<span style="color: #555555">-</span><span style="color: #FF6600">1</span>
+            <span style="color: #006699; font-weight: bold">for</span> jj <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">range</span>(n<span style="color: #555555">*</span>(n<span style="color: #555555">-</span><span style="color: #FF6600">1</span>)):
+
+                <span style="color: #006699; font-weight: bold">if</span> jj<span style="color: #555555">//</span>(n<span style="color: #555555">-</span><span style="color: #FF6600">1</span>) <span style="color: #555555">==</span> ii:
+                    count <span style="color: #555555">=</span> ii
+
+                <span style="color: #006699; font-weight: bold">if</span> jj<span style="color: #555555">//</span>(n<span style="color: #555555">-</span><span style="color: #FF6600">1</span>) <span style="color: #555555">!=</span> ii <span style="color: #000000; font-weight: bold">and</span> jj<span style="color: #555555">%</span>(n<span style="color: #555555">-</span><span style="color: #FF6600">1</span>) <span style="color: #555555">==</span> count:
+                    v[ii][jj] <span style="color: #555555">=</span> <span style="color: #FF6600">1.</span>
+
+        vn <span style="color: #555555">=</span> np<span style="color: #555555">.</span>sum(v[<span style="color: #FF6600">1</span>:], axis<span style="color: #555555">=</span><span style="color: #FF6600">0</span>)
+
+        <span style="color: #0099FF; font-style: italic"># Q defines the interactions between variables</span>
+        Q <span style="color: #555555">=</span> A<span style="color: #555555">*</span>(np<span style="color: #555555">.</span>kron(Id_n, Im_n_1) <span style="color: #555555">+</span> np<span style="color: #555555">.</span>dot(v<span style="color: #555555">.</span>T, v))
+
+        <span style="color: #0099FF; font-style: italic"># g defines the contribution from the individual variables</span>
+        g <span style="color: #555555">=</span> w <span style="color: #555555">-</span> <span style="color: #FF6600">2</span> <span style="color: #555555">*</span> A <span style="color: #555555">*</span> (np<span style="color: #555555">.</span>kron(Iv_n_1,Iv_n) <span style="color: #555555">+</span> vn<span style="color: #555555">.</span>T) <span style="color: #555555">-</span> \
+                <span style="color: #FF6600">2</span> <span style="color: #555555">*</span> A <span style="color: #555555">*</span> K <span style="color: #555555">*</span> (np<span style="color: #555555">.</span>kron(neg_Iv_n_1, Iv_n) <span style="color: #555555">+</span> v[<span style="color: #FF6600">0</span>]<span style="color: #555555">.</span>T)
+
+        <span style="color: #0099FF; font-style: italic"># c is the constant offset</span>
+        c <span style="color: #555555">=</span> <span style="color: #FF6600">2</span> <span style="color: #555555">*</span> A <span style="color: #555555">*</span> (n<span style="color: #555555">-</span><span style="color: #FF6600">1</span>) <span style="color: #555555">+</span> <span style="color: #FF6600">2</span> <span style="color: #555555">*</span> A <span style="color: #555555">*</span> (K <span style="color: #555555">**</span> <span style="color: #FF6600">2</span>)
+
+        <span style="color: #006699; font-weight: bold">try</span>:
+            <span style="color: #336666">max</span>(x_sol)
+            <span style="color: #0099FF; font-style: italic"># Evaluates the cost distance from </span>
+            <span style="color: #0099FF; font-style: italic"># a binary representation of a path</span>
+            fun <span style="color: #555555">=</span> <span style="color: #006699; font-weight: bold">lambda</span> x: np<span style="color: #555555">.</span>dot(np<span style="color: #555555">.</span>around(x), np<span style="color: #555555">.</span>dot(Q, np<span style="color: #555555">.</span>around(x))) <span style="color: #555555">+</span>\
+                             np<span style="color: #555555">.</span>dot(g, np<span style="color: #555555">.</span>around(x)) <span style="color: #555555">+</span> c
+            cost <span style="color: #555555">=</span> fun(x_sol)
+        <span style="color: #006699; font-weight: bold">except</span>:
+            cost <span style="color: #555555">=</span> <span style="color: #FF6600">0</span>
+
+        <span style="color: #006699; font-weight: bold">return</span> Q,g,c,cost
+
+    <span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">construct_hamiltonian</span>(<span style="color: #336666">self</span>):
+
+        instance <span style="color: #555555">=</span> <span style="color: #336666">self</span><span style="color: #555555">.</span>instance
+        n <span style="color: #555555">=</span> <span style="color: #336666">self</span><span style="color: #555555">.</span>n
+        K <span style="color: #555555">=</span> <span style="color: #336666">self</span><span style="color: #555555">.</span>K
+
+        N <span style="color: #555555">=</span> (n <span style="color: #555555">-</span> <span style="color: #FF6600">1</span>) <span style="color: #555555">*</span> n  <span style="color: #0099FF; font-style: italic"># number of qubits</span>
+        Q,g,c,_ <span style="color: #555555">=</span> <span style="color: #336666">self</span><span style="color: #555555">.</span>binary_representation()
+
+        <span style="color: #0099FF; font-style: italic"># Defining the new matrices in the Z-basis</span>
+
+        Iv <span style="color: #555555">=</span> np<span style="color: #555555">.</span>ones(N)
+        Qz <span style="color: #555555">=</span> (Q <span style="color: #555555">/</span> <span style="color: #FF6600">4</span>)
+        gz <span style="color: #555555">=</span> (<span style="color: #555555">-</span>g <span style="color: #555555">/</span> <span style="color: #FF6600">2</span> <span style="color: #555555">-</span> np<span style="color: #555555">.</span>dot(Iv, Q <span style="color: #555555">/</span> <span style="color: #FF6600">4</span>) <span style="color: #555555">-</span> np<span style="color: #555555">.</span>dot(Q <span style="color: #555555">/</span> <span style="color: #FF6600">4</span>, Iv))
+        cz <span style="color: #555555">=</span> (c <span style="color: #555555">+</span> np<span style="color: #555555">.</span>dot(g <span style="color: #555555">/</span> <span style="color: #FF6600">2</span>, Iv) <span style="color: #555555">+</span> np<span style="color: #555555">.</span>dot(Iv, np<span style="color: #555555">.</span>dot(Q <span style="color: #555555">/</span> <span style="color: #FF6600">4</span>, Iv)))
+
+        cz <span style="color: #555555">=</span> cz <span style="color: #555555">+</span> np<span style="color: #555555">.</span>trace(Qz)
+        Qz <span style="color: #555555">=</span> Qz <span style="color: #555555">-</span> np<span style="color: #555555">.</span>diag(np<span style="color: #555555">.</span>diag(Qz))
+
+        <span style="color: #0099FF; font-style: italic"># Getting the Hamiltonian in the form of a list of Pauli terms</span>
+
+        pauli_list <span style="color: #555555">=</span> []
+        <span style="color: #006699; font-weight: bold">for</span> i <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">range</span>(N):
+            <span style="color: #006699; font-weight: bold">if</span> gz[i] <span style="color: #555555">!=</span> <span style="color: #FF6600">0</span>:
+                wp <span style="color: #555555">=</span> np<span style="color: #555555">.</span>zeros(N)
+                vp <span style="color: #555555">=</span> np<span style="color: #555555">.</span>zeros(N)
+                vp[i] <span style="color: #555555">=</span> <span style="color: #FF6600">1</span>
+                pauli_list<span style="color: #555555">.</span>append((gz[i], Pauli(vp, wp)))
+        <span style="color: #006699; font-weight: bold">for</span> i <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">range</span>(N):
+            <span style="color: #006699; font-weight: bold">for</span> j <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">range</span>(i):
+                <span style="color: #006699; font-weight: bold">if</span> Qz[i, j] <span style="color: #555555">!=</span> <span style="color: #FF6600">0</span>:
+                    wp <span style="color: #555555">=</span> np<span style="color: #555555">.</span>zeros(N)
+                    vp <span style="color: #555555">=</span> np<span style="color: #555555">.</span>zeros(N)
+                    vp[i] <span style="color: #555555">=</span> <span style="color: #FF6600">1</span>
+                    vp[j] <span style="color: #555555">=</span> <span style="color: #FF6600">1</span>
+                    pauli_list<span style="color: #555555">.</span>append((<span style="color: #FF6600">2</span> <span style="color: #555555">*</span> Qz[i, j], Pauli(vp, wp)))
+
+        pauli_list<span style="color: #555555">.</span>append((cz, Pauli(np<span style="color: #555555">.</span>zeros(N), np<span style="color: #555555">.</span>zeros(N))))
+
+        <span style="color: #006699; font-weight: bold">return</span> cz, pauli_list
+
+    <span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">check_hamiltonian</span>(<span style="color: #336666">self</span>):
+
+        cz, op <span style="color: #555555">=</span> <span style="color: #336666">self</span><span style="color: #555555">.</span>construct_hamiltonian()
+        Op <span style="color: #555555">=</span> Operator(paulis<span style="color: #555555">=</span>op)
+
+        qubitOp, offset <span style="color: #555555">=</span> Op, <span style="color: #FF6600">0</span>
+        algo_input <span style="color: #555555">=</span> EnergyInput(qubitOp)
+
+        <span style="color: #0099FF; font-style: italic"># Making the Hamiltonian in its full form and </span>
+        <span style="color: #0099FF; font-style: italic"># getting the lowest eigenvalue and eigenvector</span>
+
+        algorithm_cfg <span style="color: #555555">=</span> {
+            <span style="color: #CC3300">&#39;name&#39;</span>: <span style="color: #CC3300">&#39;ExactEigensolver&#39;</span>,
+        }
+
+        params <span style="color: #555555">=</span> {
+            <span style="color: #CC3300">&#39;problem&#39;</span>: {<span style="color: #CC3300">&#39;name&#39;</span>: <span style="color: #CC3300">&#39;ising&#39;</span>},
+            <span style="color: #CC3300">&#39;algorithm&#39;</span>: algorithm_cfg
+        }
+        result <span style="color: #555555">=</span> run_algorithm(params, algo_input)
+
+        quantum_solution <span style="color: #555555">=</span> <span style="color: #336666">self</span><span style="color: #555555">.</span>_q_solution(result[<span style="color: #CC3300">&#39;eigvecs&#39;</span>][<span style="color: #FF6600">0</span>],\
+                                    <span style="color: #336666">self</span><span style="color: #555555">.</span>n<span style="color: #555555">*</span>(<span style="color: #336666">self</span><span style="color: #555555">.</span>n<span style="color: #555555">+</span><span style="color: #FF6600">1</span>))
+        ground_level <span style="color: #555555">=</span> result[<span style="color: #CC3300">&#39;energy&#39;</span>] <span style="color: #555555">+</span> offset
+
+        <span style="color: #006699; font-weight: bold">return</span> quantum_solution, ground_level
+
+    <span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">vqe_solution</span>(<span style="color: #336666">self</span>):
+
+        cz, op <span style="color: #555555">=</span> <span style="color: #336666">self</span><span style="color: #555555">.</span>construct_hamiltonian()
+        Op <span style="color: #555555">=</span> Operator(paulis<span style="color: #555555">=</span>op)
+
+        qubitOp, offset <span style="color: #555555">=</span> Op, cz
+        algo_input <span style="color: #555555">=</span> EnergyInput(qubitOp)
+
+
+        algorithm_cfg <span style="color: #555555">=</span> {
+            <span style="color: #CC3300">&#39;name&#39;</span>: <span style="color: #CC3300">&#39;VQE&#39;</span>,
+            <span style="color: #CC3300">&#39;operator_mode&#39;</span>: <span style="color: #CC3300">&#39;paulis&#39;</span>
+        }
+
+        optimizer_cfg <span style="color: #555555">=</span> {
+            <span style="color: #CC3300">&#39;name&#39;</span>: <span style="color: #CC3300">&#39;SPSA&#39;</span>,
+            <span style="color: #CC3300">&#39;max_trials&#39;</span>: <span style="color: #336666">self</span><span style="color: #555555">.</span>max_trials
+        }
+
+        var_form_cfg <span style="color: #555555">=</span> {
+            <span style="color: #CC3300">&#39;name&#39;</span>: <span style="color: #CC3300">&#39;RY&#39;</span>,
+            <span style="color: #CC3300">&#39;depth&#39;</span>: <span style="color: #FF6600">5</span>,
+            <span style="color: #CC3300">&#39;entanglement&#39;</span>: <span style="color: #CC3300">&#39;linear&#39;</span>
+        }
+
+        params <span style="color: #555555">=</span> {
+            <span style="color: #CC3300">&#39;problem&#39;</span>: {<span style="color: #CC3300">&#39;name&#39;</span>: <span style="color: #CC3300">&#39;ising&#39;</span>, <span style="color: #CC3300">&#39;random_seed&#39;</span>: <span style="color: #FF6600">10598</span>},
+            <span style="color: #CC3300">&#39;algorithm&#39;</span>: algorithm_cfg,
+            <span style="color: #CC3300">&#39;optimizer&#39;</span>: optimizer_cfg,
+            <span style="color: #CC3300">&#39;variational_form&#39;</span>: var_form_cfg,
+            <span style="color: #CC3300">&#39;backend&#39;</span>: {<span style="color: #CC3300">&#39;name&#39;</span>: <span style="color: #CC3300">&#39;qasm_simulator&#39;</span>
+                        }
+        }
+
+        result <span style="color: #555555">=</span> run_algorithm(params, algo_input)
+
+        <span style="color: #0099FF; font-style: italic">#quantum_solution = self._q_solution(result[&#39;eigvecs&#39;][0],\</span>
+        <span style="color: #0099FF; font-style: italic">#                             self.n * (self.n + 1))</span>
+        quantum_solution_dict <span style="color: #555555">=</span> result[<span style="color: #CC3300">&#39;eigvecs&#39;</span>][<span style="color: #FF6600">0</span>]
+
+        q_s <span style="color: #555555">=</span> <span style="color: #336666">max</span>(quantum_solution_dict<span style="color: #555555">.</span>items(), key<span style="color: #555555">=</span>operator<span style="color: #555555">.</span>itemgetter(<span style="color: #FF6600">1</span>))[<span style="color: #FF6600">0</span>]
+        quantum_solution<span style="color: #555555">=</span> [<span style="color: #336666">int</span>(chars) <span style="color: #006699; font-weight: bold">for</span> chars <span style="color: #000000; font-weight: bold">in</span> q_s]
+        quantum_solution <span style="color: #555555">=</span> np<span style="color: #555555">.</span>flip(quantum_solution, axis<span style="color: #555555">=</span><span style="color: #FF6600">0</span>)
+
+        _,_,_,level <span style="color: #555555">=</span> <span style="color: #336666">self</span><span style="color: #555555">.</span>binary_representation(x_sol<span style="color: #555555">=</span>quantum_solution)
+        <span style="color: #006699; font-weight: bold">return</span> quantum_solution_dict, quantum_solution, level
+
+    <span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">_q_solution</span>(<span style="color: #336666">self</span>, v, N):
+
+        index_value <span style="color: #555555">=</span> [x <span style="color: #006699; font-weight: bold">for</span> x <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">range</span>(<span style="color: #336666">len</span>(v)) <span style="color: #006699; font-weight: bold">if</span> v[x] <span style="color: #555555">==</span> <span style="color: #336666">max</span>(v)][<span style="color: #FF6600">0</span>]
+        string_value <span style="color: #555555">=</span> <span style="color: #CC3300">&quot;{0:b}&quot;</span><span style="color: #555555">.</span>format(index_value)
+
+        <span style="color: #006699; font-weight: bold">while</span> <span style="color: #336666">len</span>(string_value)<span style="color: #555555">&lt;</span>N:
+            string_value <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;0&#39;</span><span style="color: #555555">+</span>string_value
+
+        sol <span style="color: #555555">=</span> <span style="color: #336666">list</span>()
+        <span style="color: #006699; font-weight: bold">for</span> elements <span style="color: #000000; font-weight: bold">in</span> string_value:
+            <span style="color: #006699; font-weight: bold">if</span> elements <span style="color: #555555">==</span> <span style="color: #CC3300">&#39;0&#39;</span>:
+                sol<span style="color: #555555">.</span>append(<span style="color: #FF6600">0</span>)
+            <span style="color: #006699; font-weight: bold">else</span>:
+                sol<span style="color: #555555">.</span>append(<span style="color: #FF6600">1</span>)
+
+        sol <span style="color: #555555">=</span> np<span style="color: #555555">.</span>flip(sol, axis<span style="color: #555555">=</span><span style="color: #FF6600">0</span>)
+
+        <span style="color: #006699; font-weight: bold">return</span> sol
+</pre></div>
+
+
+<h3 id="step-1">Step 1</h3>
+<p>Instantiate the quantum optimizer class with parameters: 
+- the instance;
+- the number of nodes and vehicles <code>n</code> and <code>K</code>;
+- the number of iterations for SPSA in VQE (default 1000)</p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #0099FF; font-style: italic"># Instantiate the quantum optimizer class with parameters: </span>
+quantum_optimizer <span style="color: #555555">=</span> QuantumOptimizer(instance,n,K, <span style="color: #FF6600">100</span>)
+</pre></div>
+
+
+<h3 id="step-2">Step 2</h3>
+<p>Encode the problem as a binary formulation (IH-QP).</p>
+<p>Sanity check: make sure that the binary formulation in the quantum optimizer is correct (i.e., yields the same cost given the same solution).</p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #0099FF; font-style: italic"># Check if the binary representation is correct</span>
+<span style="color: #006699; font-weight: bold">try</span>:
+    <span style="color: #006699; font-weight: bold">if</span> z:
+        Q,g,c,binary_cost <span style="color: #555555">=</span> quantum_optimizer<span style="color: #555555">.</span>binary_representation(x_sol <span style="color: #555555">=</span> z)
+        <span style="color: #006699; font-weight: bold">print</span>(binary_cost,classical_cost)
+        <span style="color: #006699; font-weight: bold">if</span> np<span style="color: #555555">.</span>abs(binary_cost <span style="color: #555555">-</span> classical_cost)<span style="color: #555555">&lt;</span><span style="color: #FF6600">0.01</span>:
+            <span style="color: #006699; font-weight: bold">print</span>(<span style="color: #CC3300">&#39;Binary formulation is correct&#39;</span>)
+        <span style="color: #006699; font-weight: bold">else</span>: <span style="color: #006699; font-weight: bold">print</span>(<span style="color: #CC3300">&#39;Error in the binary formulation&#39;</span>)
+    <span style="color: #006699; font-weight: bold">else</span>:
+        <span style="color: #006699; font-weight: bold">print</span>(<span style="color: #CC3300">&#39;Could not verify the correctness, due to CPLEX solution being unavailable.&#39;</span>)
+        Q,g,c,binary_cost <span style="color: #555555">=</span> quantum_optimizer<span style="color: #555555">.</span>binary_representation()
+<span style="color: #006699; font-weight: bold">except</span> <span style="color: #CC0000; font-weight: bold">NameError</span> <span style="color: #006699; font-weight: bold">as</span> e:
+    <span style="color: #006699; font-weight: bold">print</span>(<span style="color: #CC3300">&quot;Warning: Please run the cells above first.&quot;</span>)
+    <span style="color: #006699; font-weight: bold">print</span>(e)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>Could not verify the correctness, due to CPLEX solution being unavailable.
+</pre></div>
+
+
+<h3 id="step-3">Step 3</h3>
+<p>Encode the problem as an Ising Hamiltonian in the Z basis. </p>
+<p>Sanity check: make sure that the formulation is correct (i.e., yields the same cost given the same solution)</p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>ground_state, ground_level <span style="color: #555555">=</span> quantum_optimizer<span style="color: #555555">.</span>check_hamiltonian()
+<span style="color: #006699; font-weight: bold">print</span>(ground_state)
+
+<span style="color: #006699; font-weight: bold">if</span> z:
+    <span style="color: #006699; font-weight: bold">if</span> np<span style="color: #555555">.</span>abs(ground_level <span style="color: #555555">-</span> classical_cost)<span style="color: #555555">&lt;</span><span style="color: #FF6600">0.01</span>:
+        <span style="color: #006699; font-weight: bold">print</span>(<span style="color: #CC3300">&#39;Ising Hamiltonian in Z basis is correct&#39;</span>)
+    <span style="color: #006699; font-weight: bold">else</span>: <span style="color: #006699; font-weight: bold">print</span>(<span style="color: #CC3300">&#39;Error in the Ising Hamiltonian formulation&#39;</span>)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>[1 1 1 0 1 0 0 0 0 0 0 0]
+</pre></div>
+
+
+<h3 id="step-4">Step 4</h3>
+<p>Solve the problem via VQE. N.B. Depending on the number of qubits, the state-vector simulation can can take a while; for example with 12 qubits, it takes more than 12 hours. Logging useful to see what the program is doing.</p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>quantum_dictionary, quantum_solution, quantum_cost <span style="color: #555555">=</span> quantum_optimizer<span style="color: #555555">.</span>vqe_solution()
+
+<span style="color: #006699; font-weight: bold">print</span>(quantum_solution, quantum_cost)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>[1 1 1 0 1 0] 132.11148115684045
+</pre></div>
+
+
+<h3 id="step-5">Step 5</h3>
+<p>Visualize the solution</p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #0099FF; font-style: italic"># Put the solution in a way that is compatible with the classical variables</span>
+x_quantum <span style="color: #555555">=</span> np<span style="color: #555555">.</span>zeros(n<span style="color: #555555">**</span><span style="color: #FF6600">2</span>)
+kk <span style="color: #555555">=</span> <span style="color: #FF6600">0</span>
+<span style="color: #006699; font-weight: bold">for</span> ii <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">range</span>(n <span style="color: #555555">**</span> <span style="color: #FF6600">2</span>):
+    <span style="color: #006699; font-weight: bold">if</span> ii <span style="color: #555555">//</span> n <span style="color: #555555">!=</span> ii <span style="color: #555555">%</span> n:
+        x_quantum[ii] <span style="color: #555555">=</span> quantum_solution[kk]
+        kk <span style="color: #555555">+=</span>  <span style="color: #FF6600">1</span>
+
+
+<span style="color: #0099FF; font-style: italic"># visualize the solution </span>
+visualize_solution(xc, yc, x_quantum, quantum_cost, n, K, <span style="color: #CC3300">&#39;Quantum&#39;</span>)
+
+<span style="color: #0099FF; font-style: italic"># and visualize the classical for comparison</span>
+<span style="color: #006699; font-weight: bold">if</span> x: visualize_solution(xc, yc, x, classical_cost, n, K, <span style="color: #CC3300">&#39;Classical&#39;</span>)
+</pre></div>
+
+
+<p><img alt="png" src="../output_25_0.png" /></p>
+<p>The plots present the depot with a star and the selected routes for the vehicles with arrows. Note that in this particular case, we can find the optimal solution of the QP formulation, which happens to coincide with the optimal solution of the ILP.</p>
+<p>Keep in mind that VQE is an heuristic working on the QP formulation of the Ising Hamiltonian, though. For suitable choices of A, local optima of the QP formulation will be feasible solutions to the ILP. While for some small instances, as above, we can find optimal solutions of the QP formulation which coincide with optima of the ILP, finding optimal solutions of the ILP is harder than finding local optima of the QP formulation, in general, which in turn is harder than finding feasible solutions of the ILP. Even within the VQE, one may provide stronger guarantees, for specific variational forms (trial wave functions). </p>
+<p>Last but not least, you may be pleased to learn that the above has been packaged in Qiskit Aqua.</p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">qiskit</span> <span style="color: #006699; font-weight: bold">import</span> BasicAer
+<span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">qiskit.aqua</span> <span style="color: #006699; font-weight: bold">import</span> QuantumInstance
+<span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">qiskit.aqua</span> <span style="color: #006699; font-weight: bold">import</span> Operator, run_algorithm
+<span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">qiskit.aqua.input</span> <span style="color: #006699; font-weight: bold">import</span> EnergyInput
+<span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">qiskit.aqua.algorithms</span> <span style="color: #006699; font-weight: bold">import</span> VQE, QAOA, ExactEigensolver
+<span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">qiskit.aqua.components.optimizers</span> <span style="color: #006699; font-weight: bold">import</span> COBYLA
+<span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">qiskit.aqua.components.variational_forms</span> <span style="color: #006699; font-weight: bold">import</span> RY
+<span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">qiskit.aqua.translators.ising.vehicle_routing</span> <span style="color: #006699; font-weight: bold">import</span> <span style="color: #555555">*</span>
+
+qubitOp <span style="color: #555555">=</span> get_vehiclerouting_qubitops(instance, n, K)
+backend <span style="color: #555555">=</span> BasicAer<span style="color: #555555">.</span>get_backend(<span style="color: #CC3300">&#39;statevector_simulator&#39;</span>)
+seed <span style="color: #555555">=</span> <span style="color: #FF6600">50</span>
+cobyla <span style="color: #555555">=</span> COBYLA()
+cobyla<span style="color: #555555">.</span>set_options(maxiter<span style="color: #555555">=</span><span style="color: #FF6600">250</span>)
+ry <span style="color: #555555">=</span> RY(qubitOp<span style="color: #555555">.</span>num_qubits, depth<span style="color: #555555">=</span><span style="color: #FF6600">3</span>, entanglement<span style="color: #555555">=</span><span style="color: #CC3300">&#39;full&#39;</span>)
+vqe <span style="color: #555555">=</span> VQE(qubitOp, ry, cobyla, <span style="color: #CC3300">&#39;matrix&#39;</span>)
+vqe<span style="color: #555555">.</span>random_seed <span style="color: #555555">=</span> seed
+quantum_instance <span style="color: #555555">=</span> QuantumInstance(backend<span style="color: #555555">=</span>backend,\
+                 seed<span style="color: #555555">=</span>seed, seed_transpiler<span style="color: #555555">=</span>seed)
+result <span style="color: #555555">=</span> vqe<span style="color: #555555">.</span>run(quantum_instance)
+<span style="color: #0099FF; font-style: italic"># print(result)</span>
+x_quantum2 <span style="color: #555555">=</span> get_vehiclerouting_solution(instance, n, K, result)
+<span style="color: #006699; font-weight: bold">print</span>(x_quantum2)
+quantum_cost2 <span style="color: #555555">=</span> get_vehiclerouting_cost(instance, n, K, x_quantum2)
+<span style="color: #006699; font-weight: bold">print</span>(quantum_cost2)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>[1 1 1 0 0 1]
+12434.909288240102
+</pre></div>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../salesman/salesman/" class="btn btn-neutral float-right" title="Travelling Salsesman">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../dwave/dwave/" class="btn btn-neutral" title="Binary Quadratic Model (BQM)"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../../dwave/dwave/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../salesman/salesman/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>
+      <script src="../../../search/main.js" defer></script>
+
+</body>
+</html>
