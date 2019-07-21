@@ -1,11 +1,11 @@
 
-# Quantum Fourier Transform [Source](https://en.wikipedia.org/wiki/Quantum_Fourier_transform) 
+# Quantum Fourier Transform
 
-Quantum Fourier Transform is quantum analogue of Fast Fourier Transform.
+Quantum Fourier Transform is quantum analogue of Fast Fourier Transform. In quantum computing, the quantum Fourier transform (for short: QFT) is a linear transformation on quantum bits, and is the quantum analogue of the inverse discrete Fourier transform. The quantum Fourier transform is a part of many quantum algorithms, notably Shor's algorithm for factoring and computing the discrete logarithm, the quantum phase estimation algorithm for estimating the eigenvalues of a unitary operator, and algorithms for the hidden subgroup problem. [Wikipedia](https://en.wikipedia.org/wiki/Quantum_Fourier_transform)
 
 ------
 
-- Import 'Quiskit' libraries
+Import 'Quiskit' libraries
 
 ```python
 %matplotlib inline
@@ -32,19 +32,18 @@ $$ QFT_{N} =  \frac{1}{\sqrt{N}} \left( \begin{array}{cccccc}
 1  &         1   &        1       &     1          &   \cdots   &1   \\\
 1  &  \omega_{n} & \omega_{n}^{2} & \omega_{n}^{3} &   \cdots   & \omega_{n} ^{N-1} \\\ 
 1  &  \omega_{n}^{2} & \omega_{n}^{4} & \omega_{n}^{6} &   \cdots   & \omega_{n} ^{2(N-1)} \\\
- 1  &  \omega_{n}^{3} &\omega_{n}^{6} & \omega_{n}^{9} &   \cdots   & \omega_{n} ^{3(N-1)} \\\ 
- \vdots  & \vdots  & \vdots         & \vdots         &    \dots   & \vdots \\\ 
- 1  &  \omega_{n}^{(N-1)} & \omega_{n}^{2(N-1)} & \omega_{n}^{3(N-1)} &\cdots   & \omega_{n} ^{(N-1((N-1)} \\\ \end{array} \right) $$
+1  &  \omega_{n}^{3} &\omega_{n}^{6} & \omega_{n}^{9} &   \cdots   & \omega_{n} ^{3(N-1)} \\\ 
+\vdots  & \vdots  & \vdots         & \vdots         &    \dots   & \vdots \\\ 
+1  &  \omega_{n}^{(N-1)} & \omega_{n}^{2(N-1)} & \omega_{n}^{3(N-1)} &\cdots   & \omega_{n} ^{(N-1((N-1)} \\\ \end{array} \right) $$
 
 
 ---------
 
 ### Single qubit QFT
 
-For single qubit circuit \\( (n = 1, N = 2^{1} = 2)\\)
+#### Theory 
 
-
-$$\omega_n = e^{\frac{2\pi i}{2^{n}}} = -1.$$
+For single qubit circuit \\( (n = 1, N = 2^{1} = 2)\\) and \\( \omega_n = e^{\frac{2\pi i}{2^{n}}} = -1 \\).
 
 $$ QFT_{1} = \frac{1}{\sqrt{2}} \left( \begin{array}{cc}
     1  &   1 \\\
@@ -107,8 +106,7 @@ It is Hadamard gate !
 ### Quantum Circuit - single qubit QFT
 
 
-
-- Design a Quantum Circuit
+###### Quantum Circuit
 
 ```python
 def qft_1():
@@ -126,7 +124,7 @@ def qft_1():
 
 --------
 
-- Perform the measurement
+###### Measurement
 
 ```python
 qc,q,c = qft_1()
@@ -141,7 +139,7 @@ qc.draw(output='mpl', style = style)
 
 ----------------
 
-- Simulation
+###### Simulation
 
 
 ```python
@@ -157,7 +155,7 @@ plot_histogram(counts, title='QFT counts')
 
 ----------------
 
-- Unitary representation of circuit
+######  Unitary representation
 
 ```python
 from qiskit.providers.aer import UnitarySimulator
@@ -175,13 +173,14 @@ print( unitary)
     [[ 0.70710678+0.j  0.70710678+0.j]
      [ 0.70710678+0.j -0.70710678+0.j]]
 
+----------
+
 
 ### Two qubit QFT
 
-For two qubit circuit, \\( (n =2, N = 2^{2} = 4) \\)
+#### Theory:
 
-
-$$\omega_{n} = e^{\frac{2\pi i}{2^{n}}} = i$$
+For two qubit circuit, \\( (n =2, N = 2^{2} = 4) \\) where \\( \omega_{n} = e^{\frac{2\pi i}{2^{n}}} = i\\).
 
 $$QFT_2 = \frac{1}{{2}} \left( \begin{array}{cc} 
     1  &   1  &  1  &   1\\\
@@ -346,13 +345,16 @@ np.dot(HI,np.dot(CU1,np.dot(IH,SWAP)))
 
 
 
-### Quantum Circuit - two qubit QFT
+#### Quantum Circuit - two qubit QFT
+
+
 
 
 ```python
 import numpy as np
 ```
-- Design Quantum circuit
+
+###### Quantum circuit
 
 ```python
 def qft_2():
@@ -374,7 +376,7 @@ def qft_2():
 
 --------------
 
-- Measurement
+######  Measurement
 
 ```python
 qc,q,c = qft_2()
@@ -385,14 +387,11 @@ style = {'backgroundcolor': 'lightgreen'}
 qc.draw(output='mpl', style = style)
 ```
 
-
-
-
 ![png](output_22_0.png)
 
 
 
-- Manual approach:
+######  Manual approach:
 
 ------------
 
@@ -405,7 +404,7 @@ qc.draw(output='mpl', style = style)
 
 ---------------
 
-- Simulation
+###### Simulation
 
 
 ```python
@@ -422,7 +421,7 @@ plot_histogram(counts, title='QFT counts')
 ---------------
 
 
-- Unitary representation in product space
+###### Unitary representation 
 
 
 ```python
@@ -449,7 +448,7 @@ print( unitary)
 
 ### Quantum Circuit - three qubit QFT
 
-- Design the quantum circuit
+###### Quantum circuit
 
 ```python
 def qft_3():
@@ -475,7 +474,7 @@ def qft_3():
 
 ------------
 
-- Measuremrnt
+##### Measuremrnt
 
 ```python
 qc,q,c = qft_3()
@@ -489,7 +488,7 @@ qc.draw(output='mpl', style = style)
 
 ------------
 
-- Manual Approach:
+######  Manual Approach:
 
 -----------
 
@@ -501,6 +500,9 @@ qc.draw(output='mpl', style = style)
 - After CU1 gate on qubit (0,1): \\(\frac{1}{{2}}(|000> + |010> +  |001> -|011> )\\)
 - After Hadamard Gate on qubit 3 : \\(\frac{1}{2\sqrt{2}}(|000> + |001> +  |010> + |011> +  |000> - |001> - |010> + |011)\\)
 
+----------
+###### Simulation
+
 
 ```python
 simulator = Aer.get_backend('qasm_simulator')
@@ -510,13 +512,11 @@ plot_histogram(counts, title='QFT counts')
 ```
 
 
-
-
 ![png](output_33_0.png)
 
 -----------------
 
-- Unitary representation in product space
+###### Unitary representation 
 
 ```python
 from qiskit.providers.aer import UnitarySimulator
@@ -528,7 +528,9 @@ result = execute(qc, simulator).result()
 unitary = result.get_unitary(qc)
 print( unitary)
 ```
+
 -----------
+
 
     [[ 0.35355339+0.j          0.35355339+0.j          0.35355339+0.j
        0.35355339+0.j          0.35355339+0.j          0.35355339+0.j
@@ -561,7 +563,7 @@ print( unitary)
 ### Quantum Circuit - four qubit QFT
 
 
-- Define quantum circuit
+###### Quantum circuit
 
 
 ```python
@@ -593,7 +595,7 @@ def qft_4():
 
 --------------
 
-- Measurement
+######  Measurement
 
 ```python
 qc,q,c = qft_4()
@@ -608,7 +610,7 @@ qc.draw(output='mpl', style = style)
 
 --------------
 
-- Simulation
+###### Simulation
 
 ```python
 simulator = Aer.get_backend('qasm_simulator')
@@ -622,7 +624,7 @@ plot_histogram(counts, title='QFT counts')
 
 ---------------------------
 
-- Generate the Unitary matrix
+###### Unitary representation
 
 
 ```python

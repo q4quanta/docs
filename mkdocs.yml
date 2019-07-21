@@ -45,12 +45,11 @@ nav:
   
 - Fundamentals:
   - D-wave QBM model: Fundamentals/dwave/dwave.md
-  - Quantum Circuit: Fundamentals/ibmq/intro/QuantumCircuits.md
   - Hadamart Gate: Fundamentals/ibmq/Hadamard/Hadamard.md
+  - Bell state: Fundamentals/ibmq/Bell/QuantumCircuits.md
   - Quantum Fourier Transform: Fundamentals/ibmq/QFT/qft.md
   
          
-
   
 - References:
   - Reference: References/ref.md

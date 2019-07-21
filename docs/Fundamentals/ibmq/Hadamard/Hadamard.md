@@ -1,9 +1,11 @@
 
-# Hadamard Gate
+# Hadamard Gate and Circuits
 
-Hadamard gate is single qubit operator.
+Hadamard gate is single qubit operator. This transforms |0> state to a superposed state \\(\frac{1}{\sqrt{2}}|0> + \frac{1}{\sqrt{2}}|1>\\) and stae|1> to a superposed state \\(\frac{1}{\sqrt{2}}|0> - \frac{1}{\sqrt{2}}|1>\\). This gate is very important gate to construct Bell state, Quantum Fourier Transform (QFT) and many more.
 
-- Import python library to perform computation in 'Qiskit' environment.
+------------
+
+Import python library to perform computation in 'Qiskit' environment.
 
 ```python
 %matplotlib inline
@@ -19,6 +21,7 @@ from qiskit.providers.aer import UnitarySimulator
 
 ### Hadamard Gate (1 qubit)
 
+Design the single Hadamard gate quantum circuit
 
 ```python
 n =1
@@ -35,22 +38,21 @@ circ.draw(output='mpl', style = style)
 
 ![png](output_2_0.png)
 
-- Manual approach:
+---------
 
-----------
+######   Manual approach:
 
 - Initial state: |0>
 - After Hadamard Gate: \\(\frac{1}{\sqrt{2}}|0> + \frac{1}{\sqrt{2}}|1>\\)
 
 --------------
-Tensor Algebra:
+
+######  Tensor Algebra:
 
  $$ H = \frac{1}{\sqrt{2}} \begin{bmatrix}
     1  & 1 \\\
     1 & -1
-\end{bmatrix}$$
-
-$$ |1 > = \begin{bmatrix}
+\end{bmatrix}; |1 > = \begin{bmatrix}
     1  \\\
     0
 \end{bmatrix} ; |0> = \begin{bmatrix}
@@ -59,7 +61,7 @@ $$ |1 > = \begin{bmatrix}
 \end{bmatrix}$$
 
 -----------
-- Simulation
+######  Simulation
 
 
 ```python
@@ -73,7 +75,7 @@ plot_histogram(counts, title='Bell-State counts')
 
 -----------
 
--  Generate Unitary Matrix for the circuit
+###### Unitary representation
 
 
 ```python
@@ -96,6 +98,7 @@ print( unitary)
     [[ 0.70710678+0.j  0.70710678+0.j]
      [ 0.70710678+0.j -0.70710678+0.j]]
 
+------------
 
 
 ### Hadamard Gate (2 qubits)
@@ -119,8 +122,7 @@ $$I \otimes H  =  \begin{bmatrix}
 
 ---------
 
-
-- Design circuit with two qubit with Hadamard on first qubit and perform the measurement
+Design circuit with two qubit with Hadamard on first qubit and perform the measurement
 
 ```python
 n =2
@@ -141,7 +143,7 @@ circ.draw(output='mpl', style = style)
 
 --------------------
 
-- Unitary representation of quantum circuit
+######  Unitary representation 
 
 ```python
 n =2
@@ -186,7 +188,7 @@ $$ H \otimes I  = \frac{1}{\sqrt{2}} \begin{bmatrix}
 --------------
 
 
-- Design circuit with two qubit with Hadamard on first qubit and perform the measurement
+Design circuit with two qubit with Hadamard on first qubit and perform the measurement
 
 ```python
 n =2
@@ -201,14 +203,11 @@ style = {'backgroundcolor': 'lightgreen'}
 circ.draw(output='mpl', style = style)
 ```
 
-
-
-
 ![png](output_13_0.png)
 
 ----------------
 
-- Unitary representation of quantum circuit
+######  Unitary representation 
 
 
 ```python
@@ -250,7 +249,7 @@ print( unitary)
 
 --------------
 
-- Design the quantum circuit and perform measurement
+Design the quantum circuit and perform measurement
 
 ```python
 n =2
@@ -270,9 +269,8 @@ circ.draw(output='mpl', style = style)
 
 --------------
 
-- Manual Approach
+######  Manual Approach
 
----------
 - Initial state: |00>
 - After Hadamard Gate: \\(\frac{1}{\sqrt{2}}|00> + \frac{1}{\sqrt{2}}|10>\\)
 - After Hadamard Gate: \\(\frac{1}{{2}}|00> + \frac{1}{{2}}|01>  +  \frac{1}{{2}}|10> + \frac{1}{{2}}|11>\\)
@@ -283,8 +281,7 @@ circ.draw(output='mpl', style = style)
 
 -------------
 
-Tensor Algebra: [source](https://quantumcomputing.stackexchange.com/questions/2270/how-to-input-2-qubits-in-2-hadamard-gates)
-
+######  Tensor Algebra: [source](https://quantumcomputing.stackexchange.com/questions/2270/how-to-input-2-qubits-in-2-hadamard-gates)
 
 
 - H operator in product space, \\(H_2 = H_1 \otimes H_1\\) :
@@ -366,16 +363,17 @@ $$=  \frac{1}{{2}}|00> + \frac{1}{{2}}|01>  +  \frac{1}{{2}}|10> + \frac{1}{{2}}
 
 --------
 
-#### Tensor product of linear map:
+###### Tensor product of linear map:
 
 
 The tensor product also operates on linear maps between vector spaces. Specifically, given two linear maps \\(𝑆:𝑉→𝑋\\) and \\(𝑇:𝑊→𝑌\\) between vector spaces, the tensor product of the two linear maps 𝑆 and 𝑇 is a linear map
 
  \\((𝑆 \otimes 𝑇)(v \otimes w) = 𝑆(v) \otimes 𝑇(w) \\).
+
 -----------
 
 
-- Simulation
+######   Simulation
 
 
 ```python
@@ -390,7 +388,7 @@ plot_histogram(counts, title='Bell-State counts')
 
 
 
--  Generate Unitary Matrix for the circuit
+######  Unitary representation
 
 
 ```python
@@ -423,7 +421,7 @@ print( unitary)
 ### Hadamard Gate (3 qubits)
 
 
-- Desigh the quantum circuit and perform measurement 
+Desigh the quantum circuit and perform measurement 
 
 ```python
 n = 3
@@ -445,9 +443,8 @@ circ.draw(output='mpl', style = style)
 
 -----------------------
 
-- Manual Approach
+######  Manual Approach
 
----------
 - Initial state: |000>
 - After Hadamard gate on first qubit: \\( \frac{1}{\sqrt{2}}|000> + \frac{1}{\sqrt{2}}|100> \\)
 - After Hadamard gate on second qubit: \\(\frac{1}{{2}}|000> + \frac{1}{{2}}|010>  +  \frac{1}{{2}}|100> + \frac{1}{{2}}|110>\\)
@@ -459,7 +456,7 @@ which is equivalent to
 
 ------------
 
-Tensor Algebra: [source](https://quantumcomputing.stackexchange.com/questions/2270/how-to-input-2-qubits-in-2-hadamard-gates)
+######  Tensor Algebra: [source](https://quantumcomputing.stackexchange.com/questions/2270/how-to-input-2-qubits-in-2-hadamard-gates)
 
 
 - H operator in product space: \\( H_3 = H_1 \otimes H_1 \otimes H_1  = H_2 \otimes H_1\\):
@@ -625,7 +622,7 @@ $$ = \frac{1}{2\sqrt{2}}(|000>  + |001> + |010> + |011>  +  |100> +  |101> + |11
 
 ------------
 
-- Simulation 
+######  Simulation 
 
 
 ```python
@@ -640,7 +637,7 @@ plot_histogram(counts, title='Bell-State counts')
 
 ----------------
 
--  Unitary representation for the quantum circuit
+######   Unitary representation 
 
 
 ```python
@@ -684,7 +681,7 @@ print( unitary)
 
 ### Hadamard (10 Qubit)
 
-- Design the quantum circuit and performance measurement
+Design the quantum circuit and performance measurement
 
 ```python
 n = 8
@@ -706,7 +703,7 @@ circ.draw(output='mpl', style = style)
 
 --------------
 
-- Simulation
+######  Simulation
 
 ```python
 simulator = Aer.get_backend('qasm_simulator')
@@ -720,7 +717,7 @@ plot_histogram(counts, title='Bell-State counts')
 
 ------------
 
--  Unitary representation of the quantum circuit
+######   Unitary representation 
 
 
 ```python
@@ -739,7 +736,9 @@ result = execute(circ, simulator).result()
 unitary = result.get_unitary(circ)
 print( unitary)
 ```
+
 ----------
+
 
     [[ 0.0625+0.j  0.0625+0.j  0.0625+0.j ...  0.0625+0.j  0.0625+0.j
        0.0625+0.j]
