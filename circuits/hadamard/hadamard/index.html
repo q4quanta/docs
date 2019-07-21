@@ -254,8 +254,8 @@
           
 
   <li class="toctree-l4">
-    <a href="#type-ii-hadamart-on-second-qubit">
-      Type -II : Hadamart on second qubit
+    <a href="#type-ii-hadamard-on-second-qubit">
+      Type -II : Hadamard on second qubit
       <span class="toctree-expand"></span>
     </a>
   </li>
@@ -329,8 +329,8 @@
           
 
   <li class="toctree-l3">
-    <a href="#hadamard-gate-3-qubits">
-      Hadamard Gate (3 qubits)
+    <a href="#multiple-hadamard-gates-3-qubits">
+      Multiple Hadamard gates (3 qubits)
       <span class="toctree-expand"></span>
     </a>
   </li>
@@ -369,8 +369,8 @@
           
 
   <li class="toctree-l3">
-    <a href="#hadamard-8-qubits">
-      Hadamard (8 Qubits)
+    <a href="#multiple-hadamard-gates-8-qubits">
+      Multiple Hadamard gates (8 Qubits)
       <span class="toctree-expand"></span>
     </a>
   </li>
@@ -551,7 +551,7 @@
 
 <hr />
 <h3 id="hadamard-gate-1-qubit">Hadamard Gate (1 qubit)</h3>
-<p>Design the single Hadamard gate quantum circuit</p>
+<p>Design the single Hadamard gate quantum circuit.</p>
 <div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>n <span style="color: #555555">=</span><span style="color: #FF6600">1</span>
 q <span style="color: #555555">=</span> QuantumRegister(n)
 c <span style="color: #555555">=</span> ClassicalRegister(n)
@@ -618,7 +618,7 @@ unitary <span style="color: #555555">=</span> result<span style="color: #555555"
 
 <hr />
 <h3 id="hadamard-gate-2-qubits">Hadamard Gate (2 qubits)</h3>
-<p>Lets perform three different configuration of quantum circuit with two qubits and Hadamard gates.</p>
+<p>Lets perform three different configurations of quantum circuit with two qubits and Hadamard gates.</p>
 <h4 id="type-i-hadamard-gate-on-first-qubit">Type -I : Hadamard gate on first qubit</h4>
 <p>$$I \otimes H  =  \begin{bmatrix}
     1  &amp;   0 \\
@@ -673,7 +673,7 @@ unitary <span style="color: #555555">=</span> result<span style="color: #555555"
 
 
 <hr />
-<h4 id="type-ii-hadamart-on-second-qubit">Type -II : Hadamart on second qubit</h4>
+<h4 id="type-ii-hadamard-on-second-qubit">Type -II : Hadamard on second qubit</h4>
 <p>$$ H \otimes I  = \frac{1}{\sqrt{2}} \begin{bmatrix}
     1  &amp;   1 \\
     1  &amp;  -1
@@ -879,7 +879,7 @@ unitary <span style="color: #555555">=</span> result<span style="color: #555555"
 
 
 <hr />
-<h3 id="hadamard-gate-3-qubits">Hadamard Gate (3 qubits)</h3>
+<h3 id="multiple-hadamard-gates-3-qubits">Multiple Hadamard gates (3 qubits)</h3>
 <p>Desigh the quantum circuit and perform measurement </p>
 <div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>n <span style="color: #555555">=</span> <span style="color: #FF6600">3</span>
 q <span style="color: #555555">=</span> QuantumRegister(n)
@@ -1111,7 +1111,7 @@ unitary <span style="color: #555555">=</span> result<span style="color: #555555"
 
 
 <hr />
-<h3 id="hadamard-8-qubits">Hadamard (8 Qubits)</h3>
+<h3 id="multiple-hadamard-gates-8-qubits">Multiple Hadamard gates (8 Qubits)</h3>
 <h6 id="quantum-circuit">Quantum Circuit</h6>
 <div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>n <span style="color: #555555">=</span> <span style="color: #FF6600">8</span>
 q <span style="color: #555555">=</span> QuantumRegister(n)
