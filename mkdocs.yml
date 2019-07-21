@@ -32,6 +32,7 @@ markdown_extensions:
       pygments_style: manni
 
 
+
 nav:
 - Home: index.md
 
@@ -43,10 +44,10 @@ nav:
   - How to Git: GettingStarted/git.md
   
 - Fundamentals:
-  - D-wave: Fundamentals/dwave/dwave.md
-  - IMB-Q: Fundamentals/ibmq/ibmq.md
-  - Q#: Fundamentals/Q/q.md
-  - Cirq: Fundamentals/cirq/cirq.md
+  - D-wave QBM model: Fundamentals/dwave/dwave.md
+  - Quantum Circuit: Fundamentals/ibmq/intro/QuantumCircuits.md
+  - Hadamart Gate: Fundamentals/ibmq/Hadamard/Hadamard.md
+  - Quantum Fourier Transform: Fundamentals/ibmq/QFT/qft.md
   
          
 
