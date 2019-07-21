@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>Random Variables - Quanta.Guru</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Random Variables";
+    var mkdocs_page_input_path = "circuits/random/random.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> Quanta.Guru</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="tocbase current">
+    
+    
+      
+
+
+  <li class="navtree toctree-l1 inactive">
+    <a class="" href="../../..">Home</a>
+  </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Getting started</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../GettingStarted/anaconda/">Guide to starting Python</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../GettingStarted/lib/">Guide to Python Libraries</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../GettingStarted/env/">Setting up Python Environment</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../GettingStarted/jupyter/">Installing Jupyter Notebook</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../GettingStarted/git/">How to Git</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Quantum Gates</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../intro/qiskit/">Getting Started</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../gates/sgates/sgates/">Single Qubit Gates</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../gates/mgates/mgates/">Multiple Qubits Gates</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Quantum Circuits</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../hadamard/hadamard/">Superposition</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../bell/bell/">Bell state</a>
+  </li>
+        
+          
+
+
+  
+    
+    <li class="navtree toctree-l2 page current">
+      <a class="current" href="./">
+        Random Variables
+          <span class="toctree-expand"></span>
+      </a>
+    </li>
+    
+      
+
+  <li class="toctree-l2 current with-children">
+    <a href="#qiskit-aqua-generating-random-variates">
+      Qiskit Aqua: Generating Random Variates
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l2 current">
+    <ul class="subnav-l2 current">
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#contributors">Contributors</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#affliation">Affliation</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#introduction">Introduction</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#random-bits-and-the-bernoulli-distribution">Random Bits and the Bernoulli distribution</a>
+        </li>
+    
+      
+          
+
+  <li class="toctree-l3">
+    <a href="#uniformly-distributed-scalars-and-vectors">
+      Uniformly-distributed scalars and vectors
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l3">
+    <ul class="subnav-l3 toc-hidden">
+    
+      
+        <li class="toctree-l4">
+          <a class="toctree-l5" href="#uniform-distribution-over-floating-point-numbers">Uniform distribution over floating point numbers.</a>
+        </li>
+    
+      
+        <li class="toctree-l4">
+          <a class="toctree-l5" href="#uniform-distribution-over-integers">Uniform distribution over integers.</a>
+        </li>
+    
+    </ul>
+  </li>
+
+      
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#normal-distribution">Normal distribution</a>
+        </li>
+    
+    </ul>
+  </li>
+
+
+  
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Algorithms</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../algorithms/qft/qft/">Quantum Fourier Transform</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../algorithms/hhl/hhl/">Linear Equation (HHL)</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../algorithms/shor/shor/">Shor's Algorithm</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../algorithms/grover/grover/">Grover's Algorithm</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Optimization</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../optimization/dwave/dwave/">Binary Quadratic Model (BQM)</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../optimization/routing/routing/">Vahicle Routing</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../optimization/salesman/salesman/">Travelling Salsesman</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Quantum Machine Learning</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../qml/qsvm/qsvm/">Quantum SVM</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">References</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../References/ref/">Reference</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+  </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">Quanta.Guru</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Quantum Circuits &raquo;</li>
+        
+      
+    
+    <li>Random Variables</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="qiskit-aqua-generating-random-variates"><em><em>Qiskit Aqua: Generating Random Variates</em></em></h1>
+<p>The latest version of this notebook is available <a href="https://github.com/Qiskit/qiskit-tutorials">here</a>.</p>
+<hr />
+<h3 id="contributors">Contributors</h3>
+<p>Albert Akhriev<sup>[1]</sup>, Jakub Marecek<sup>[1]</sup></p>
+<h3 id="affliation">Affliation</h3>
+<ul>
+<li><sup>[1]</sup>IBMQ</li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>While classical computers use only pseudo-random routines, quantum computers
+can generate true random variates.
+For example, the measurement of a quantum superposition is intrinsically random,
+as suggested by Born's rule.
+Consequently, some of the
+best random-number generators are based on such quantum-mechanical effects. (See the 
+Further, with a logarithmic amount of random bits, quantum computers can produce
+linearly many more bits, which is known as 
+randomness expansion protocols. </p>
+<p>In practical applications, one wishes to use random variates of well-known
+distributions, rather than random bits.
+In this notebook, we illustrate ways of generating random variates of several popular
+distributions on IBM Q.</p>
+<h2 id="random-bits-and-the-bernoulli-distribution">Random Bits and the Bernoulli distribution</h2>
+<p>It is clear that there are many options for generating random bits (i.e., Bernoulli-distributed scalars, taking values either 0 or 1). Starting from a simple circuit such as a Hadamard gate followed by measurement, one can progress to vectors of Bernoulli-distributed elements. By addition of such random variates, we could get binomial distributions. By multiplication we could get geometric distributions, although perhaps leading to a circuit depth that may be impratical at the moment, though.</p>
+<p>Let us start by importing the basic modules and creating a quantum circuit for generating random bits:</p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">matplotlib.pyplot</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">plt</span>
+<span style="color: #555555">%</span>matplotlib inline
+<span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">numpy</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">np</span>
+<span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">sys</span><span style="color: #555555">,</span> <span style="color: #00CCFF; font-weight: bold">math</span><span style="color: #555555">,</span> <span style="color: #00CCFF; font-weight: bold">time</span>
+<span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">warnings</span>
+warnings<span style="color: #555555">.</span>filterwarnings(<span style="color: #CC3300">&quot;ignore&quot;</span>, category<span style="color: #555555">=</span><span style="color: #CC0000; font-weight: bold">DeprecationWarning</span>)
+
+<span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">qiskit</span> <span style="color: #006699; font-weight: bold">import</span> BasicAer
+<span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">qiskit</span> <span style="color: #006699; font-weight: bold">import</span> QuantumCircuit, QuantumRegister
+<span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">qiskit</span> <span style="color: #006699; font-weight: bold">import</span> ClassicalRegister, execute
+
+<span style="color: #0099FF; font-style: italic"># In this example we use &#39;qasm_simulator&#39; backend.</span>
+glo_backend <span style="color: #555555">=</span> BasicAer<span style="color: #555555">.</span>get_backend(<span style="color: #CC3300">&quot;qasm_simulator&quot;</span>)
+</pre></div>
+
+
+<p>In the next step we create a quantum circuit, which will be used for generation:</p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #0099FF; font-style: italic"># Number of qubits utilised simultaneously.</span>
+glo_num_qubits <span style="color: #555555">=</span> <span style="color: #FF6600">5</span>
+
+<span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">create_circuit</span>(num_target_qubits: <span style="color: #336666">int</span>) <span style="color: #555555">-&gt;</span> QuantumCircuit:
+    <span style="color: #CC3300; font-style: italic">&quot;&quot;&quot;</span>
+<span style="color: #CC3300; font-style: italic">    Creates and returns quantum circuit for random variate generation.</span>
+<span style="color: #CC3300; font-style: italic">    :param num_target_qubits: number of qubits to be used.</span>
+<span style="color: #CC3300; font-style: italic">    :return: quantum curcuit.</span>
+<span style="color: #CC3300; font-style: italic">    &quot;&quot;&quot;</span>
+    <span style="color: #006699; font-weight: bold">assert</span> <span style="color: #336666">isinstance</span>(num_target_qubits, <span style="color: #336666">int</span>) <span style="color: #000000; font-weight: bold">and</span> num_target_qubits <span style="color: #555555">&gt;</span> <span style="color: #FF6600">0</span>
+    q <span style="color: #555555">=</span> QuantumRegister(num_target_qubits)
+    c <span style="color: #555555">=</span> ClassicalRegister(num_target_qubits)
+    circuit <span style="color: #555555">=</span> QuantumCircuit(q, c)
+    circuit<span style="color: #555555">.</span>h(q)
+    circuit<span style="color: #555555">.</span>barrier()
+    circuit<span style="color: #555555">.</span>measure(q, c)
+    <span style="color: #006699; font-weight: bold">return</span> circuit
+
+<span style="color: #0099FF; font-style: italic"># Create and plot generating quantum circuit.</span>
+circuit <span style="color: #555555">=</span> create_circuit(glo_num_qubits)
+<span style="color: #0099FF; font-style: italic">#print(circuit)</span>
+circuit<span style="color: #555555">.</span>draw(output<span style="color: #555555">=</span><span style="color: #CC3300">&#39;mpl&#39;</span>)
+</pre></div>
+
+
+<p><img alt="png" src="../output_5_0.png" /></p>
+<h2 id="uniformly-distributed-scalars-and-vectors">Uniformly-distributed scalars and vectors</h2>
+<p>It is clear that there are many options for approximating uniformly-distributed scalars by the choice of an integer from a finite range uniformly at random, e.g., by a binary-code construction from the Bernoulli-distributed vectors. In the following snippet, we generate random bits, which we then convert using the binary-code construction, up to the machine precision of a classical computer.</p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">uniform_rand_float64</span>(circuit: QuantumCircuit, num_target_qubits: <span style="color: #336666">int</span>,
+                         size: <span style="color: #336666">int</span>, vmin: <span style="color: #336666">float</span>, vmax: <span style="color: #336666">float</span>) <span style="color: #555555">-&gt;</span> np<span style="color: #555555">.</span>ndarray:
+    <span style="color: #CC3300; font-style: italic">&quot;&quot;&quot;</span>
+<span style="color: #CC3300; font-style: italic">    Generates a vector of random float64 values in the range [vmin, vmax].</span>
+<span style="color: #CC3300; font-style: italic">    :param circuit: quantum circuit for random variate generation.</span>
+<span style="color: #CC3300; font-style: italic">    :param num_target_qubits: number of qubits to be used.</span>
+<span style="color: #CC3300; font-style: italic">    :param size: length of the vector.</span>
+<span style="color: #CC3300; font-style: italic">    :param vmin: lower bound.</span>
+<span style="color: #CC3300; font-style: italic">    :param vmax: upper bound.</span>
+<span style="color: #CC3300; font-style: italic">    :return: vector of random values.</span>
+<span style="color: #CC3300; font-style: italic">    &quot;&quot;&quot;</span>
+    <span style="color: #006699; font-weight: bold">assert</span> sys<span style="color: #555555">.</span>maxsize <span style="color: #555555">==</span> np<span style="color: #555555">.</span>iinfo(np<span style="color: #555555">.</span>int64)<span style="color: #555555">.</span>max    <span style="color: #0099FF; font-style: italic"># sizeof(int) == 64 bits</span>
+    <span style="color: #006699; font-weight: bold">assert</span> <span style="color: #336666">isinstance</span>(size, <span style="color: #336666">int</span>) <span style="color: #000000; font-weight: bold">and</span> size <span style="color: #555555">&gt;</span> <span style="color: #FF6600">0</span>
+    <span style="color: #006699; font-weight: bold">assert</span> <span style="color: #336666">isinstance</span>(vmin, <span style="color: #336666">float</span>) <span style="color: #000000; font-weight: bold">and</span> <span style="color: #336666">isinstance</span>(vmax, <span style="color: #336666">float</span>) <span style="color: #000000; font-weight: bold">and</span> vmin <span style="color: #555555">&lt;=</span> vmax
+    nbits <span style="color: #555555">=</span> <span style="color: #FF6600">7</span> <span style="color: #555555">*</span> <span style="color: #FF6600">8</span>                                   <span style="color: #0099FF; font-style: italic"># nbits &gt; mantissa of float64</span>
+    bit_str_len <span style="color: #555555">=</span> (nbits <span style="color: #555555">*</span> size <span style="color: #555555">+</span> num_target_qubits <span style="color: #555555">-</span> <span style="color: #FF6600">1</span>) <span style="color: #555555">//</span> num_target_qubits
+    job <span style="color: #555555">=</span> execute(circuit, glo_backend, shots<span style="color: #555555">=</span>bit_str_len, memory<span style="color: #555555">=</span><span style="color: #336666">True</span>)
+    bit_str <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;&#39;</span><span style="color: #555555">.</span>join(job<span style="color: #555555">.</span>result()<span style="color: #555555">.</span>get_memory())
+    scale <span style="color: #555555">=</span> <span style="color: #336666">float</span>(vmax <span style="color: #555555">-</span> vmin) <span style="color: #555555">/</span> <span style="color: #336666">float</span>(<span style="color: #FF6600">2</span><span style="color: #555555">**</span>nbits <span style="color: #555555">-</span> <span style="color: #FF6600">1</span>)
+    <span style="color: #006699; font-weight: bold">return</span> np<span style="color: #555555">.</span>array([vmin <span style="color: #555555">+</span> scale <span style="color: #555555">*</span> <span style="color: #336666">float</span>(<span style="color: #336666">int</span>(bit_str[i:i<span style="color: #555555">+</span>nbits], <span style="color: #FF6600">2</span>))
+                     <span style="color: #006699; font-weight: bold">for</span> i <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">range</span>(<span style="color: #FF6600">0</span>, nbits <span style="color: #555555">*</span> size, nbits)], dtype<span style="color: #555555">=</span>np<span style="color: #555555">.</span>float64)
+
+<span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">uniform_rand_int64</span>(circuit: QuantumCircuit, num_target_qubits: <span style="color: #336666">int</span>,
+                       size: <span style="color: #336666">int</span>, vmin: <span style="color: #336666">int</span>, vmax: <span style="color: #336666">int</span>) <span style="color: #555555">-&gt;</span> np<span style="color: #555555">.</span>ndarray:
+    <span style="color: #CC3300; font-style: italic">&quot;&quot;&quot;</span>
+<span style="color: #CC3300; font-style: italic">    Generates a vector of random int64 values in the range [vmin, vmax].</span>
+<span style="color: #CC3300; font-style: italic">    :param circuit: quantum circuit for random variate generation.</span>
+<span style="color: #CC3300; font-style: italic">    :param num_target_qubits: number of qubits to be used.</span>
+<span style="color: #CC3300; font-style: italic">    :param size: length of the vector.</span>
+<span style="color: #CC3300; font-style: italic">    :param vmin: lower bound.</span>
+<span style="color: #CC3300; font-style: italic">    :param vmax: upper bound.</span>
+<span style="color: #CC3300; font-style: italic">    :return: vector of random values.</span>
+<span style="color: #CC3300; font-style: italic">    &quot;&quot;&quot;</span>
+    <span style="color: #006699; font-weight: bold">assert</span> sys<span style="color: #555555">.</span>maxsize <span style="color: #555555">==</span> np<span style="color: #555555">.</span>iinfo(np<span style="color: #555555">.</span>int64)<span style="color: #555555">.</span>max        <span style="color: #0099FF; font-style: italic"># sizeof(int) == 64 bits</span>
+    <span style="color: #006699; font-weight: bold">assert</span> <span style="color: #336666">isinstance</span>(size, <span style="color: #336666">int</span>) <span style="color: #000000; font-weight: bold">and</span> size <span style="color: #555555">&gt;</span> <span style="color: #FF6600">0</span>
+    <span style="color: #006699; font-weight: bold">assert</span> <span style="color: #336666">isinstance</span>(vmin, <span style="color: #336666">int</span>) <span style="color: #000000; font-weight: bold">and</span> <span style="color: #336666">isinstance</span>(vmax, <span style="color: #336666">int</span>) <span style="color: #000000; font-weight: bold">and</span> vmin <span style="color: #555555">&lt;=</span> vmax
+    <span style="color: #006699; font-weight: bold">assert</span> <span style="color: #336666">abs</span>(vmin) <span style="color: #555555">&lt;=</span> <span style="color: #FF6600">2</span><span style="color: #555555">**</span><span style="color: #FF6600">52</span> <span style="color: #000000; font-weight: bold">and</span> <span style="color: #336666">abs</span>(vmax) <span style="color: #555555">&lt;=</span> <span style="color: #FF6600">2</span><span style="color: #555555">**</span><span style="color: #FF6600">52</span>    <span style="color: #0099FF; font-style: italic"># 52 == mantissa of float64</span>
+    <span style="color: #006699; font-weight: bold">return</span> np<span style="color: #555555">.</span>rint(uniform_rand_float64(circuit, num_target_qubits,
+                            size, <span style="color: #336666">float</span>(vmin), <span style="color: #336666">float</span>(vmax)))<span style="color: #555555">.</span>astype(np<span style="color: #555555">.</span>int64)
+</pre></div>
+
+
+<hr />
+<h3 id="uniform-distribution-over-floating-point-numbers">Uniform distribution over floating point numbers.</h3>
+<p>In this example we draw a random vector of floating-point values uniformly distributed within some arbitrary selected interval:</p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #0099FF; font-style: italic"># Draw a sample from uniform distribution.</span>
+start_time <span style="color: #555555">=</span> time<span style="color: #555555">.</span>time()
+sample <span style="color: #555555">=</span> uniform_rand_float64(circuit, glo_num_qubits,\
+                     size<span style="color: #555555">=</span><span style="color: #FF6600">54321</span>, vmin<span style="color: #555555">=-</span><span style="color: #FF6600">7.67</span>, vmax<span style="color: #555555">=</span><span style="color: #FF6600">19.52</span>)
+
+sampling_time <span style="color: #555555">=</span> time<span style="color: #555555">.</span>time() <span style="color: #555555">-</span> start_time
+
+<span style="color: #0099FF; font-style: italic"># Print out some details.</span>
+<span style="color: #006699; font-weight: bold">print</span>(<span style="color: #CC3300">&quot;Uniform distribution over floating point numbers:&quot;</span>)
+<span style="color: #006699; font-weight: bold">print</span>(<span style="color: #CC3300">&quot;  sample type:&quot;</span>, <span style="color: #336666">type</span>(sample), <span style="color: #CC3300">&quot;, </span><span style="color: #CC3300; font-weight: bold">\</span>
+<span style="color: #CC3300">         element type:&quot;</span>, sample<span style="color: #555555">.</span>dtype,\
+          <span style="color: #CC3300">&quot;, shape:&quot;</span>, sample<span style="color: #555555">.</span>shape)
+
+<span style="color: #006699; font-weight: bold">print</span>(<span style="color: #CC3300">&quot;  sample min: {:.4f}, max: {:.4f}&quot;</span>\
+            <span style="color: #555555">.</span>format(np<span style="color: #555555">.</span>amin(sample), np<span style="color: #555555">.</span>amax(sample)))
+<span style="color: #006699; font-weight: bold">print</span>(<span style="color: #CC3300">&quot;  sampling time: {:.2f} secs&quot;</span><span style="color: #555555">.</span>format(sampling_time))
+
+<span style="color: #0099FF; font-style: italic"># Plotting the distribution.</span>
+plt<span style="color: #555555">.</span>hist(sample<span style="color: #555555">.</span>ravel(),
+         bins<span style="color: #555555">=</span><span style="color: #336666">min</span>(<span style="color: #336666">int</span>(np<span style="color: #555555">.</span>ceil(np<span style="color: #555555">.</span>sqrt(sample<span style="color: #555555">.</span>size))), <span style="color: #FF6600">100</span>),
+         density<span style="color: #555555">=</span><span style="color: #336666">True</span>, facecolor<span style="color: #555555">=</span><span style="color: #CC3300">&#39;b&#39;</span>, alpha<span style="color: #555555">=</span><span style="color: #FF6600">0.75</span>)
+plt<span style="color: #555555">.</span>xlabel(<span style="color: #CC3300">&quot;value&quot;</span>, size<span style="color: #555555">=</span><span style="color: #FF6600">12</span>)
+plt<span style="color: #555555">.</span>ylabel(<span style="color: #CC3300">&quot;probability&quot;</span>, size<span style="color: #555555">=</span><span style="color: #FF6600">12</span>)
+plt<span style="color: #555555">.</span>title(<span style="color: #CC3300">&quot;Uniform distribution over float64 numbers in</span><span style="color: #CC3300; font-weight: bold">\</span>
+<span style="color: #CC3300">                             [{:.2f} ... {:.2f}]&quot;</span><span style="color: #555555">.</span>format(
+            np<span style="color: #555555">.</span>amin(sample), np<span style="color: #555555">.</span>amax(sample)), size<span style="color: #555555">=</span><span style="color: #FF6600">12</span>)
+plt<span style="color: #555555">.</span>grid(<span style="color: #336666">True</span>)
+<span style="color: #0099FF; font-style: italic"># plt.savefig(&quot;uniform_distrib_float.png&quot;, bbox_inches=&quot;tight&quot;)</span>
+plt<span style="color: #555555">.</span>show()
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>Uniform distribution over floating point numbers:
+  sample type: &amp;lt;class &#39;numpy.ndarray&#39;&amp;gt; , 
+  element type: float64 , shape: (54321,)
+  sample min: -7.6687, max: 19.5191
+  sampling time: 6.41 secs
+</pre></div>
+
+
+<p><img alt="png" src="../output_9_1.png" /></p>
+<hr />
+<h3 id="uniform-distribution-over-integers">Uniform distribution over integers.</h3>
+<p>Our next example is similar to the previous one, but here we generate a random vector of integers:</p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #0099FF; font-style: italic"># Draw a sample from uniform distribution.</span>
+start_time <span style="color: #555555">=</span> time<span style="color: #555555">.</span>time()
+sample <span style="color: #555555">=</span> uniform_rand_int64(circuit, glo_num_qubits,\
+                     size<span style="color: #555555">=</span><span style="color: #FF6600">54321</span>, vmin<span style="color: #555555">=</span><span style="color: #FF6600">37</span>, vmax<span style="color: #555555">=</span><span style="color: #FF6600">841</span>)
+sampling_time <span style="color: #555555">=</span> time<span style="color: #555555">.</span>time() <span style="color: #555555">-</span> start_time
+
+<span style="color: #0099FF; font-style: italic"># Print out some details.</span>
+<span style="color: #006699; font-weight: bold">print</span>(<span style="color: #CC3300">&quot;Uniform distribution over bounded integer numbers:&quot;</span>)
+<span style="color: #006699; font-weight: bold">print</span>(<span style="color: #CC3300">&quot;  sample type:&quot;</span>, <span style="color: #336666">type</span>(sample), <span style="color: #CC3300">&quot;,</span><span style="color: #CC3300; font-weight: bold">\</span>
+<span style="color: #CC3300">         element type:&quot;</span>, sample<span style="color: #555555">.</span>dtype,\
+         <span style="color: #CC3300">&quot;, shape:&quot;</span>, sample<span style="color: #555555">.</span>shape)
+<span style="color: #006699; font-weight: bold">print</span>(<span style="color: #CC3300">&quot;  sample min: {:d}, max: {:d}&quot;</span>\
+            <span style="color: #555555">.</span>format(np<span style="color: #555555">.</span>amin(sample), np<span style="color: #555555">.</span>amax(sample)))
+<span style="color: #006699; font-weight: bold">print</span>(<span style="color: #CC3300">&quot;  sampling time: {:.2f} secs&quot;</span>\
+                <span style="color: #555555">.</span>format(sampling_time))
+
+<span style="color: #0099FF; font-style: italic"># Plotting the distribution.</span>
+plt<span style="color: #555555">.</span>hist(sample<span style="color: #555555">.</span>ravel(),
+         bins<span style="color: #555555">=</span><span style="color: #336666">min</span>(<span style="color: #336666">int</span>(np<span style="color: #555555">.</span>ceil(np<span style="color: #555555">.</span>sqrt(sample<span style="color: #555555">.</span>size))), <span style="color: #FF6600">100</span>),
+         density<span style="color: #555555">=</span><span style="color: #336666">True</span>, facecolor<span style="color: #555555">=</span><span style="color: #CC3300">&#39;g&#39;</span>, alpha<span style="color: #555555">=</span><span style="color: #FF6600">0.75</span>)
+
+plt<span style="color: #555555">.</span>xlabel(<span style="color: #CC3300">&quot;value&quot;</span>, size<span style="color: #555555">=</span><span style="color: #FF6600">12</span>)
+plt<span style="color: #555555">.</span>ylabel(<span style="color: #CC3300">&quot;probability&quot;</span>, size<span style="color: #555555">=</span><span style="color: #FF6600">12</span>)
+plt<span style="color: #555555">.</span>title(<span style="color: #CC3300">&quot;Uniform distribution over int64 numbers in </span><span style="color: #CC3300; font-weight: bold">\</span>
+<span style="color: #CC3300">                        [{:d} ... {:d}]&quot;</span><span style="color: #555555">.</span>format(
+            np<span style="color: #555555">.</span>amin(sample), np<span style="color: #555555">.</span>amax(sample)), size<span style="color: #555555">=</span><span style="color: #FF6600">12</span>)
+plt<span style="color: #555555">.</span>grid(<span style="color: #336666">True</span>)
+<span style="color: #0099FF; font-style: italic"># plt.savefig(&quot;uniform_distrib_int.png&quot;, bbox_inches=&quot;tight&quot;)</span>
+plt<span style="color: #555555">.</span>show()
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>Uniform distribution over bounded integer numbers:
+  sample type: &amp;lt;class &#39;numpy.ndarray&#39;&amp;gt; , 
+  element type: int64 , shape: (54321,)
+  sample min: 37, max: 841
+  sampling time: 7.15 secs
+</pre></div>
+
+
+<p><img alt="png" src="../output_11_1.png" /></p>
+<h2 id="normal-distribution">Normal distribution</h2>
+<p>To generate random variates with a standard normal distribution using two independent 
+samples \(u_1, u_2\) of the uniform distribution on the unit interval [0, 1], one can
+consider the Box-Muller transform to obtain a 2-vector:</p>
+<p>\begin{align}
+\begin{bmatrix}
+%R\cos(\Theta )=
+{\sqrt {-2\ln u_{1}}}\cos(2\pi u_{2}) \
+% R\sin(\Theta )=
+{\sqrt {-2\ln u_{1}}}\sin(2\pi u_{2})
+\end{bmatrix},
+\end{align}</p>
+<p>wherein we have two independent samples of the standard normal distribution.
+In IBM Q, this is implemented as follows: </p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">normal_rand_float64</span>(circuit: QuantumCircuit, num_target_qubits: <span style="color: #336666">int</span>,
+                        size: <span style="color: #336666">int</span>, mu: <span style="color: #336666">float</span>, sigma: <span style="color: #336666">float</span>) <span style="color: #555555">-&gt;</span> np<span style="color: #555555">.</span>ndarray:
+    <span style="color: #CC3300; font-style: italic">&quot;&quot;&quot;</span>
+<span style="color: #CC3300; font-style: italic">    Draws a sample vector from the normal distribution</span>
+<span style="color: #CC3300; font-style: italic">    given the mean and standard deviation, using the </span>
+<span style="color: #CC3300; font-style: italic">    Box-Muller method. </span>
+<span style="color: #CC3300; font-style: italic">    &quot;&quot;&quot;</span>
+    TINY <span style="color: #555555">=</span> np<span style="color: #555555">.</span>sqrt(np<span style="color: #555555">.</span>finfo(np<span style="color: #555555">.</span>float64)<span style="color: #555555">.</span>tiny)
+    <span style="color: #006699; font-weight: bold">assert</span> <span style="color: #336666">isinstance</span>(size, <span style="color: #336666">int</span>) <span style="color: #000000; font-weight: bold">and</span> size <span style="color: #555555">&gt;</span> <span style="color: #FF6600">0</span>
+    rand_vec <span style="color: #555555">=</span> np<span style="color: #555555">.</span>zeros((size,), dtype<span style="color: #555555">=</span>np<span style="color: #555555">.</span>float64)
+
+    <span style="color: #0099FF; font-style: italic"># Generate array of uniformly distributed samples, factor 1.5 longer that</span>
+    <span style="color: #0099FF; font-style: italic"># actually needed.</span>
+    n <span style="color: #555555">=</span> (<span style="color: #FF6600">3</span> <span style="color: #555555">*</span> size) <span style="color: #555555">//</span> <span style="color: #FF6600">2</span>
+    x <span style="color: #555555">=</span> np<span style="color: #555555">.</span>reshape(uniform_rand_float64(circuit, num_target_qubits,
+                                        <span style="color: #FF6600">2</span><span style="color: #555555">*</span>n, <span style="color: #FF6600">0.0</span>, <span style="color: #FF6600">1.0</span>), (<span style="color: #555555">-</span><span style="color: #FF6600">1</span>, <span style="color: #FF6600">2</span>))
+
+    x1 <span style="color: #555555">=</span> <span style="color: #FF6600">0.0</span>                <span style="color: #0099FF; font-style: italic"># first sample in a pair</span>
+    c <span style="color: #555555">=</span> <span style="color: #FF6600">0</span>                   <span style="color: #0099FF; font-style: italic"># counter</span>
+    <span style="color: #006699; font-weight: bold">for</span> d <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">range</span>(size):
+        r2 <span style="color: #555555">=</span> <span style="color: #FF6600">2.0</span>
+        <span style="color: #006699; font-weight: bold">while</span> r2 <span style="color: #555555">&gt;=</span> <span style="color: #FF6600">1.0</span> <span style="color: #000000; font-weight: bold">or</span> r2 <span style="color: #555555">&lt;</span> TINY:
+            <span style="color: #0099FF; font-style: italic"># Regenerate array of uniformly distributed samples upon shortage.</span>
+            <span style="color: #006699; font-weight: bold">if</span> c <span style="color: #555555">&gt;=</span> n:
+                c <span style="color: #555555">=</span> <span style="color: #FF6600">0</span>
+                n <span style="color: #555555">=</span> <span style="color: #336666">max</span>(size <span style="color: #555555">//</span> <span style="color: #FF6600">10</span>, <span style="color: #FF6600">1</span>)
+                x <span style="color: #555555">=</span> np<span style="color: #555555">.</span>reshape(uniform_rand_float64(circuit, num_target_qubits,
+                                                    <span style="color: #FF6600">2</span><span style="color: #555555">*</span>n, <span style="color: #FF6600">0.0</span>, <span style="color: #FF6600">1.0</span>), (<span style="color: #555555">-</span><span style="color: #FF6600">1</span>, <span style="color: #FF6600">2</span>))
+
+            x1 <span style="color: #555555">=</span> <span style="color: #FF6600">2.0</span> <span style="color: #555555">*</span> x[c, <span style="color: #FF6600">0</span>] <span style="color: #555555">-</span> <span style="color: #FF6600">1.0</span>        <span style="color: #0099FF; font-style: italic"># first sample in a pair</span>
+            x2 <span style="color: #555555">=</span> <span style="color: #FF6600">2.0</span> <span style="color: #555555">*</span> x[c, <span style="color: #FF6600">1</span>] <span style="color: #555555">-</span> <span style="color: #FF6600">1.0</span>        <span style="color: #0099FF; font-style: italic"># second sample in a pair</span>
+            r2 <span style="color: #555555">=</span> x1 <span style="color: #555555">*</span> x1 <span style="color: #555555">+</span> x2 <span style="color: #555555">*</span> x2
+            c <span style="color: #555555">+=</span> <span style="color: #FF6600">1</span>
+
+        f <span style="color: #555555">=</span> np<span style="color: #555555">.</span>sqrt(np<span style="color: #555555">.</span>abs(<span style="color: #555555">-</span><span style="color: #FF6600">2.0</span> <span style="color: #555555">*</span> np<span style="color: #555555">.</span>log(r2) <span style="color: #555555">/</span> r2))
+        rand_vec[d] <span style="color: #555555">=</span> f <span style="color: #555555">*</span> x1
+
+    <span style="color: #006699; font-weight: bold">return</span> (rand_vec <span style="color: #555555">*</span> sigma <span style="color: #555555">+</span> mu)
+</pre></div>
+
+
+<p>The following example demonstrates how to draw a random vector of normally distributed variates:</p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #0099FF; font-style: italic"># Mean and standard deviation.</span>
+mu <span style="color: #555555">=</span> <span style="color: #FF6600">2.4</span>
+sigma <span style="color: #555555">=</span> <span style="color: #FF6600">5.1</span>
+
+<span style="color: #0099FF; font-style: italic"># Draw a sample from the normal distribution.</span>
+start_time <span style="color: #555555">=</span> time<span style="color: #555555">.</span>time()
+sample <span style="color: #555555">=</span> normal_rand_float64(circuit, glo_num_qubits,\
+                     size<span style="color: #555555">=</span><span style="color: #FF6600">4321</span>, mu<span style="color: #555555">=</span>mu, sigma<span style="color: #555555">=</span>sigma)
+sampling_time <span style="color: #555555">=</span> time<span style="color: #555555">.</span>time() <span style="color: #555555">-</span> start_time
+
+<span style="color: #0099FF; font-style: italic"># Print out some details.</span>
+<span style="color: #006699; font-weight: bold">print</span>(<span style="color: #CC3300">&quot;Normal distribution (mu={:.3f}, sigma={:.3f}):&quot;</span>\
+                                    <span style="color: #555555">.</span>format(mu, sigma))
+<span style="color: #006699; font-weight: bold">print</span>(<span style="color: #CC3300">&quot;  sample type:&quot;</span>, <span style="color: #336666">type</span>(sample), <span style="color: #CC3300">&quot;, element type:&quot;</span>,\
+                 sample<span style="color: #555555">.</span>dtype, <span style="color: #CC3300">&quot;, shape:&quot;</span>, sample<span style="color: #555555">.</span>shape)
+<span style="color: #006699; font-weight: bold">print</span>(<span style="color: #CC3300">&quot;  sample min: {:.4f}, max: {:.4f}&quot;</span>\
+                <span style="color: #555555">.</span>format(np<span style="color: #555555">.</span>amin(sample), np<span style="color: #555555">.</span>amax(sample)))
+<span style="color: #006699; font-weight: bold">print</span>(<span style="color: #CC3300">&quot;  sampling time: {:.2f} secs&quot;</span><span style="color: #555555">.</span>format(sampling_time))
+
+<span style="color: #0099FF; font-style: italic"># Plotting the distribution.</span>
+x <span style="color: #555555">=</span> np<span style="color: #555555">.</span>linspace(mu <span style="color: #555555">-</span> <span style="color: #FF6600">4.0</span> <span style="color: #555555">*</span> sigma, mu <span style="color: #555555">+</span> <span style="color: #FF6600">4.0</span> <span style="color: #555555">*</span> sigma, <span style="color: #FF6600">1000</span>)
+analyt <span style="color: #555555">=</span> np<span style="color: #555555">.</span>exp(<span style="color: #555555">-</span><span style="color: #FF6600">0.5</span> <span style="color: #555555">*</span> ((x <span style="color: #555555">-</span> mu) <span style="color: #555555">/</span> sigma)<span style="color: #555555">**</span><span style="color: #FF6600">2</span>)\
+             <span style="color: #555555">/</span> (sigma <span style="color: #555555">*</span> math<span style="color: #555555">.</span>sqrt(<span style="color: #FF6600">2.0</span> <span style="color: #555555">*</span> math<span style="color: #555555">.</span>pi))
+
+plt<span style="color: #555555">.</span>hist(sample<span style="color: #555555">.</span>ravel(),
+         bins<span style="color: #555555">=</span><span style="color: #336666">min</span>(<span style="color: #336666">int</span>(np<span style="color: #555555">.</span>ceil(np<span style="color: #555555">.</span>sqrt(sample<span style="color: #555555">.</span>size))), <span style="color: #FF6600">100</span>),
+         density<span style="color: #555555">=</span><span style="color: #336666">True</span>, facecolor<span style="color: #555555">=</span><span style="color: #CC3300">&#39;r&#39;</span>, alpha<span style="color: #555555">=</span><span style="color: #FF6600">0.75</span>)
+plt<span style="color: #555555">.</span>plot(x, analyt, <span style="color: #CC3300">&#39;-b&#39;</span>, lw<span style="color: #555555">=</span><span style="color: #FF6600">1</span>)
+plt<span style="color: #555555">.</span>xlabel(<span style="color: #CC3300">&quot;value&quot;</span>, size<span style="color: #555555">=</span><span style="color: #FF6600">12</span>)
+plt<span style="color: #555555">.</span>ylabel(<span style="color: #CC3300">&quot;probability&quot;</span>, size<span style="color: #555555">=</span><span style="color: #FF6600">12</span>)
+plt<span style="color: #555555">.</span>title(<span style="color: #CC3300">&quot;Normal distribution: empirical vs analytic&quot;</span>, size<span style="color: #555555">=</span><span style="color: #FF6600">12</span>)
+plt<span style="color: #555555">.</span>grid(<span style="color: #336666">True</span>)
+<span style="color: #0099FF; font-style: italic"># plt.savefig(&quot;normal_distrib.png&quot;, bbox_inches=&quot;tight&quot;)</span>
+plt<span style="color: #555555">.</span>show()
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>Normal distribution (mu=2.400, sigma=5.100):
+  sample type: &amp;lt;class &#39;numpy.ndarray&#39;&amp;gt; ,
+  element type: float64 , shape: (4321,)
+  sample min: -18.0259, max: 21.2915
+  sampling time: 1.85 secs
+</pre></div>
+
+
+<p><img alt="png" src="../output_15_1.png" /></p>
+<hr />
+<p>There is a substantial amount of further work needed to either certify the quality of the source of random numbers (cf. NIST SP 800-90B, Recommendation for the Entropy Sources Used for Random Bit Generation) or to use random variates within quantum algorithms (cf. <a href="https://github.com/Qiskit/qiskit-aqua/tree/master/qiskit/aqua/components/uncertainty_models">uncertainty_models</a> within Qiskit Aqua).</p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>
+</pre></div>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../../algorithms/qft/qft/" class="btn btn-neutral float-right" title="Quantum Fourier Transform">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../bell/bell/" class="btn btn-neutral" title="Bell state"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../../bell/bell/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../../algorithms/qft/qft/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>
+      <script src="../../../search/main.js" defer></script>
+
+</body>
+</html>

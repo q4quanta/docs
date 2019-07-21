@@ -42,13 +42,36 @@ nav:
   - Setting up Python Environment: GettingStarted/env.md
   - Installing Jupyter Notebook : GettingStarted/jupyter.md
   - How to Git: GettingStarted/git.md
+
   
-- Fundamentals:
-  - D-wave QBM model: Fundamentals/dwave/dwave.md
-  - Hadamart Gate: Fundamentals/ibmq/Hadamard/Hadamard.md
-  - Bell state: Fundamentals/ibmq/Bell/QuantumCircuits.md
-  - Quantum Fourier Transform: Fundamentals/ibmq/QFT/qft.md
-  
+- Quantum Gates:
+  - Getting Started: intro/qiskit.md
+  - Single Qubit Gates: gates/sgates/sgates.md
+  - Multiple Qubits Gates: gates/mgates/mgates.md
+
+
+- Quantum Circuits:
+  - Superposition: circuits/hadamard/hadamard.md
+  - Bell state: circuits/bell/bell.md
+  - Random Variables : circuits/random/random.md
+ 
+
+
+- Algorithms:
+  - Quantum Fourier Transform: algorithms/qft/qft.md
+  - Linear Equation (HHL): algorithms/hhl/hhl.md
+  - Shor's Algorithm: algorithms/shor/shor.md
+  - Grover's Algorithm: algorithms/grover/grover.md
+
+
+- Optimization:
+  - Binary Quadratic Model (BQM): optimization/dwave/dwave.md
+  - Vahicle Routing : optimization/routing/routing.md
+  - Travelling Salsesman : optimization/salesman/salesman.md
+
+
+- Quantum Machine Learning:
+  - Quantum SVM: qml/qsvm/qsvm.md
          
   
 - References:

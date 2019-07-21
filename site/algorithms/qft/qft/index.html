@@ -1,0 +1,1273 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>Quantum Fourier Transform - Quanta.Guru</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Quantum Fourier Transform";
+    var mkdocs_page_input_path = "algorithms/qft/qft.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> Quanta.Guru</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="tocbase current">
+    
+    
+      
+
+
+  <li class="navtree toctree-l1 inactive">
+    <a class="" href="../../..">Home</a>
+  </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Getting started</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../GettingStarted/anaconda/">Guide to starting Python</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../GettingStarted/lib/">Guide to Python Libraries</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../GettingStarted/env/">Setting up Python Environment</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../GettingStarted/jupyter/">Installing Jupyter Notebook</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../GettingStarted/git/">How to Git</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Quantum Gates</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../intro/qiskit/">Getting Started</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../gates/sgates/sgates/">Single Qubit Gates</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../gates/mgates/mgates/">Multiple Qubits Gates</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Quantum Circuits</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../circuits/hadamard/hadamard/">Superposition</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../circuits/bell/bell/">Bell state</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../circuits/random/random/">Random Variables</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Algorithms</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  
+    
+    <li class="navtree toctree-l2 page current">
+      <a class="current" href="./">
+        Quantum Fourier Transform
+          <span class="toctree-expand"></span>
+      </a>
+    </li>
+    
+      
+
+
+
+  <li class="toctree-l2 current">
+    <ul class="subnav-l2 current">
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#theory">Theory</a>
+        </li>
+    
+      
+          
+
+  <li class="toctree-l3">
+    <a href="#single-qubit-qft">
+      Single qubit QFT
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l3">
+    <ul class="subnav-l3 toc-hidden">
+    
+      
+        <li class="toctree-l4">
+          <a class="toctree-l5" href="#theory_1">Theory</a>
+        </li>
+    
+    </ul>
+  </li>
+
+      
+    
+      
+          
+
+  <li class="toctree-l3">
+    <a href="#quantum-circuit-single-qubit-qft">
+      Quantum Circuit - single qubit QFT
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l3">
+    <ul class="subnav-l3 toc-hidden">
+    
+      
+        <li class="toctree-l4">
+          <a class="toctree-l5" href="#quantum-circuit">Quantum Circuit</a>
+        </li>
+    
+      
+        <li class="toctree-l4">
+          <a class="toctree-l5" href="#measurement">Measurement</a>
+        </li>
+    
+      
+        <li class="toctree-l4">
+          <a class="toctree-l5" href="#simulation">Simulation</a>
+        </li>
+    
+      
+        <li class="toctree-l4">
+          <a class="toctree-l5" href="#unitary-representation">Unitary representation</a>
+        </li>
+    
+    </ul>
+  </li>
+
+      
+    
+      
+          
+
+  <li class="toctree-l3">
+    <a href="#two-qubit-qft">
+      Two qubit QFT
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l3">
+    <ul class="subnav-l3 toc-hidden">
+    
+      
+        <li class="toctree-l4">
+          <a class="toctree-l5" href="#theory_2">Theory:</a>
+        </li>
+    
+      
+          
+
+  <li class="toctree-l4">
+    <a href="#quantum-circuit-two-qubit-qft">
+      Quantum Circuit - two qubit QFT
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l4">
+    <ul class="subnav-l4 toc-hidden">
+    
+      
+        <li class="toctree-l5">
+          <a class="toctree-l6" href="#quantum-circuit_1">Quantum circuit</a>
+        </li>
+    
+      
+        <li class="toctree-l5">
+          <a class="toctree-l6" href="#measurement_1">Measurement</a>
+        </li>
+    
+      
+        <li class="toctree-l5">
+          <a class="toctree-l6" href="#manual-approach">Manual approach:</a>
+        </li>
+    
+      
+        <li class="toctree-l5">
+          <a class="toctree-l6" href="#simulation_1">Simulation</a>
+        </li>
+    
+      
+        <li class="toctree-l5">
+          <a class="toctree-l6" href="#unitary-representation_1">Unitary representation</a>
+        </li>
+    
+    </ul>
+  </li>
+
+      
+    
+    </ul>
+  </li>
+
+      
+    
+      
+          
+
+  <li class="toctree-l3">
+    <a href="#quantum-circuit-three-qubit-qft">
+      Quantum Circuit - three qubit QFT
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l3">
+    <ul class="subnav-l3 toc-hidden">
+    
+      
+        <li class="toctree-l4">
+          <a class="toctree-l5" href="#quantum-circuit_2">Quantum circuit</a>
+        </li>
+    
+      
+          
+
+  <li class="toctree-l4">
+    <a href="#measuremrnt">
+      Measuremrnt
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l4">
+    <ul class="subnav-l4 toc-hidden">
+    
+      
+        <li class="toctree-l5">
+          <a class="toctree-l6" href="#manual-approach_1">Manual Approach:</a>
+        </li>
+    
+      
+        <li class="toctree-l5">
+          <a class="toctree-l6" href="#simulation_2">Simulation</a>
+        </li>
+    
+      
+        <li class="toctree-l5">
+          <a class="toctree-l6" href="#unitary-representation_2">Unitary representation</a>
+        </li>
+    
+    </ul>
+  </li>
+
+      
+    
+    </ul>
+  </li>
+
+      
+    
+      
+          
+
+  <li class="toctree-l3">
+    <a href="#quantum-circuit-four-qubit-qft">
+      Quantum Circuit - four qubit QFT
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l3">
+    <ul class="subnav-l3 toc-hidden">
+    
+      
+        <li class="toctree-l4">
+          <a class="toctree-l5" href="#quantum-circuit_3">Quantum circuit</a>
+        </li>
+    
+      
+        <li class="toctree-l4">
+          <a class="toctree-l5" href="#measurement_2">Measurement</a>
+        </li>
+    
+      
+        <li class="toctree-l4">
+          <a class="toctree-l5" href="#simulation_3">Simulation</a>
+        </li>
+    
+      
+        <li class="toctree-l4">
+          <a class="toctree-l5" href="#unitary-representation_3">Unitary representation</a>
+        </li>
+    
+    </ul>
+  </li>
+
+      
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#references">References</a>
+        </li>
+    
+    </ul>
+  </li>
+
+
+  
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../hhl/hhl/">Linear Equation (HHL)</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../shor/shor/">Shor's Algorithm</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../grover/grover/">Grover's Algorithm</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Optimization</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../optimization/dwave/dwave/">Binary Quadratic Model (BQM)</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../optimization/routing/routing/">Vahicle Routing</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../optimization/salesman/salesman/">Travelling Salsesman</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Quantum Machine Learning</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../qml/qsvm/qsvm/">Quantum SVM</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">References</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../References/ref/">Reference</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+  </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">Quanta.Guru</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Algorithms &raquo;</li>
+        
+      
+    
+    <li>Quantum Fourier Transform</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="quantum-fourier-transform">Quantum Fourier Transform</h1>
+<p>In quantum computing, the quantum Fourier transform (for short: QFT) is a linear transformation on quantum bits, and is the quantum analogue of the inverse discrete Fourier transform. The quantum Fourier transform is a part of many quantum algorithms, notably Shor's algorithm for factoring and computing the discrete logarithm, the quantum phase estimation algorithm for estimating the eigenvalues of a unitary operator, and algorithms for the hidden subgroup problem <a href="https://en.wikipedia.org/wiki/Quantum_Fourier_transform">Wikipedia</a>.</p>
+<p><a href="https://youtu.be/bntew-yoMzk"><img alt="Audi R8" src="http://img.youtube.com/vi/bntew-yoMzk/0.jpg" /></a></p>
+<hr />
+<p>Import 'Quiskit' libraries.</p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #555555">%</span>matplotlib inline
+<span style="color: #0099FF; font-style: italic"># Importing standard Qiskit libraries and configuring account</span>
+<span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">qiskit</span> <span style="color: #006699; font-weight: bold">import</span> QuantumCircuit,QuantumRegister,ClassicalRegister
+<span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">qiskit</span> <span style="color: #006699; font-weight: bold">import</span> execute, Aer, IBMQ
+<span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">qiskit.compiler</span> <span style="color: #006699; font-weight: bold">import</span> transpile, assemble
+<span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">qiskit.tools.jupyter</span> <span style="color: #006699; font-weight: bold">import</span> <span style="color: #555555">*</span>
+<span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">qiskit.visualization</span> <span style="color: #006699; font-weight: bold">import</span> <span style="color: #555555">*</span>
+</pre></div>
+
+
+<hr />
+<h3 id="theory">Theory</h3>
+<p>QFT is defined as</p>
+<p>$$ \large{QFT:|x&gt; = \frac{1}{\sqrt{N}}\sum_{k=0}^{N-1} \omega_{x}^{k}|k&gt;}$$</p>
+<p>where  \( \omega_{x}^{k}\) is \( N^{th} (N = 2^{n})\) root of unity: \( e^{\frac{2\pi i}{2^{n}}}\).</p>
+<p>$$ QFT_{N} =  \frac{1}{\sqrt{N}} \left( \begin{array}{cccccc} 
+1  &amp;         1   &amp;        1       &amp;     1          &amp;   \cdots   &amp;1   \\
+1  &amp;  \omega_{n} &amp; \omega_{n}^{2} &amp; \omega_{n}^{3} &amp;   \cdots   &amp; \omega_{n} ^{N-1} \\ 
+1  &amp;  \omega_{n}^{2} &amp; \omega_{n}^{4} &amp; \omega_{n}^{6} &amp;   \cdots   &amp; \omega_{n} ^{2(N-1)} \\
+1  &amp;  \omega_{n}^{3} &amp;\omega_{n}^{6} &amp; \omega_{n}^{9} &amp;   \cdots   &amp; \omega_{n} ^{3(N-1)} \\ 
+\vdots  &amp; \vdots  &amp; \vdots         &amp; \vdots         &amp;    \dots   &amp; \vdots \\ 
+1  &amp;  \omega_{n}^{(N-1)} &amp; \omega_{n}^{2(N-1)} &amp; \omega_{n}^{3(N-1)} &amp;\cdots   &amp; \omega_{n} ^{(N-1((N-1)} \\ \end{array} \right) $$</p>
+<hr />
+<h3 id="single-qubit-qft">Single qubit QFT</h3>
+<h4 id="theory_1">Theory</h4>
+<p>For single qubit circuit \( (n = 1, N = 2^{1} = 2)\) and \( \omega_n = e^{\frac{2\pi i}{2^{n}}} = -1 \).</p>
+<p>$$ QFT_{1} = \frac{1}{\sqrt{2}} \left( \begin{array}{cc}
+    1  &amp;   1 \\
+    1  &amp;  -1
+ \end{array} \right)$$</p>
+<hr />
+<ul>
+<li>How is state |0&gt; transformed ?</li>
+</ul>
+<p>$$QFT_1|0&gt; = \frac{1}{\sqrt{2}} \left( \begin{array}{cc}
+    1  &amp;   1 \\
+    1  &amp;  -1
+ \end{array} \right)  \left( \begin{array}{c}
+    1   \\
+    0 
+ \end{array} \right) = \frac{1}{\sqrt{2}} \left( \begin{array}{c}
+    1   \\
+    1<br />
+ \end{array} \right) = \frac{1}{\sqrt{2}} (|0&gt; + |1&gt;)$$</p>
+<hr />
+<ul>
+<li>How is state |1&gt; transformed ?</li>
+</ul>
+<p>$$QFT_1|1&gt; = \frac{1}{\sqrt{2}} \left( \begin{array}{cc}
+    1  &amp;   1 \\
+    1  &amp;  -1
+ \end{array} \right)  \left( \begin{array}{c}
+    0   \\
+    1 
+ \end{array} \right) = \frac{1}{\sqrt{2}} \left( \begin{array}{c}
+    1   \\
+    -1<br />
+ \end{array} \right) = \frac{1}{\sqrt{2}} (|0&gt; - |1&gt;)$$</p>
+<hr />
+<ul>
+<li>How is state \( c_1|0&gt; + c_2|1&gt; \) transformed?</li>
+</ul>
+<p>$$QFT_1(c_1|0&gt; + c_2|1&gt;) = \frac{1}{\sqrt{2}} \left( \begin{array}{cc} 
+    1  &amp;   1 \\
+    1  &amp;  -1
+\end{array} \right) \left( \begin{array}{cc} 
+    c_1   \\
+    c_2
+\end{array} \right)$$
+$$ = \frac{1}{\sqrt{2}} \left( \begin{array}{cc} 
+    c_1 + c_2   \\
+    c_2 - c1
+\end{array} \right) = \frac{1}{\sqrt{2}} ((c_1 + c_2)|0&gt; - (c_2 - c1)|1&gt;)$$</p>
+<hr />
+<ul>
+<li>How to realize the quantum circuit?</li>
+</ul>
+<p>It is Hadamard gate !</p>
+<hr />
+<h3 id="quantum-circuit-single-qubit-qft">Quantum Circuit - single qubit QFT</h3>
+<h6 id="quantum-circuit">Quantum Circuit</h6>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">qft_1</span>():
+    n<span style="color: #555555">=</span><span style="color: #FF6600">1</span>
+    qc <span style="color: #555555">=</span> QuantumCircuit()
+    q <span style="color: #555555">=</span> QuantumRegister(n, <span style="color: #CC3300">&#39;q&#39;</span>)
+    c <span style="color: #555555">=</span> ClassicalRegister(n, <span style="color: #CC3300">&#39;c&#39;</span>)
+
+    qc<span style="color: #555555">.</span>add_register(q)
+    qc<span style="color: #555555">.</span>add_register(c)
+
+    qc<span style="color: #555555">.</span>h(q[<span style="color: #FF6600">0</span>])
+    <span style="color: #006699; font-weight: bold">return</span> qc,q,c
+</pre></div>
+
+
+<hr />
+<h6 id="measurement">Measurement</h6>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>qc,q,c <span style="color: #555555">=</span> qft_1()
+qc<span style="color: #555555">.</span>measure(q[<span style="color: #FF6600">0</span>], c[<span style="color: #FF6600">0</span>])
+
+<span style="color: #0099FF; font-style: italic"># Change the background color in mpl</span>
+style <span style="color: #555555">=</span> {<span style="color: #CC3300">&#39;backgroundcolor&#39;</span>: <span style="color: #CC3300">&#39;lightgreen&#39;</span>}
+qc<span style="color: #555555">.</span>draw(output<span style="color: #555555">=</span><span style="color: #CC3300">&#39;mpl&#39;</span>, style <span style="color: #555555">=</span> style)
+</pre></div>
+
+
+<p><img alt="png" src="../output_10_0.png" /></p>
+<hr />
+<h6 id="simulation">Simulation</h6>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>simulator <span style="color: #555555">=</span> Aer<span style="color: #555555">.</span>get_backend(<span style="color: #CC3300">&#39;qasm_simulator&#39;</span>)
+result <span style="color: #555555">=</span> execute(qc, simulator)<span style="color: #555555">.</span>result()
+counts <span style="color: #555555">=</span> result<span style="color: #555555">.</span>get_counts(qc)
+plot_histogram(counts, title<span style="color: #555555">=</span><span style="color: #CC3300">&#39;QFT counts&#39;</span>)
+</pre></div>
+
+
+<p><img alt="png" src="../output_11_0.png" /></p>
+<hr />
+<h6 id="unitary-representation">Unitary representation</h6>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">qiskit.providers.aer</span> <span style="color: #006699; font-weight: bold">import</span> UnitarySimulator
+qc,q,c <span style="color: #555555">=</span> qft_1()
+<span style="color: #0099FF; font-style: italic"># Select the UnitarySimulator from the Aer provider</span>
+simulator <span style="color: #555555">=</span> Aer<span style="color: #555555">.</span>get_backend(<span style="color: #CC3300">&#39;unitary_simulator&#39;</span>)
+<span style="color: #0099FF; font-style: italic"># Execute and get counts</span>
+result <span style="color: #555555">=</span> execute(qc, simulator)<span style="color: #555555">.</span>result()
+unitary <span style="color: #555555">=</span> result<span style="color: #555555">.</span>get_unitary(qc)
+<span style="color: #006699; font-weight: bold">print</span>( unitary)
+</pre></div>
+
+
+<hr />
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>[[ 0.70710678+0.j  0.70710678+0.j]
+ [ 0.70710678+0.j -0.70710678+0.j]]
+</pre></div>
+
+
+<hr />
+<h3 id="two-qubit-qft">Two qubit QFT</h3>
+<h4 id="theory_2">Theory:</h4>
+<p>For two qubit circuit, \( (n =2, N = 2^{2} = 4) \) where \( \omega_{n} = e^{\frac{2\pi i}{2^{n}}} = i\).</p>
+<p>$$QFT_2 = \frac{1}{{2}} \left( \begin{array}{cc} 
+    1  &amp;   1  &amp;  1  &amp;   1\\
+    1  &amp;   i  &amp;  -1  &amp;  -i\\
+    1  &amp;   -1  &amp;  1  &amp;   -1\\
+    1  &amp;  -i  &amp;  -1  &amp;  i
+\end{array} \right)$$</p>
+<hr />
+<ul>
+<li>How is state |00&gt; transformed ?</li>
+</ul>
+<p>$$QFT_2|00&gt; = \frac{1}{{2}} \left( \begin{array}{cccc} 
+    1  &amp;   1  &amp;  1  &amp;   1\\
+    1  &amp;   i  &amp;  -1  &amp;  -i\\
+    1  &amp;   -1  &amp;  1  &amp;   -1\\
+    1  &amp;  -i  &amp;  -1  &amp;  i
+\end{array} \right) \left( \begin{array}{c} 
+    1   \\
+    0  \\
+    0  \\
+    0  \\
+\end{array} \right) = \frac{1}{\sqrt{2}} \left( \begin{array}{c} 
+    1   \\
+    1   \\
+    1  \\
+    1
+\end{array} \right) = \frac{1}{{2}} (|00&gt; + |10&gt; + |01&gt; + |11&gt;)$$</p>
+<hr />
+<ul>
+<li>How is state \( c_1|00&gt; + c_2|10&gt; + c_3 |01&gt; + c_4 |11&gt; \) transformed?</li>
+</ul>
+<p>$$QFT_2|(c_1|00&gt; + c_2|10&gt; + c_3 |01&gt; + c_4 |11&gt;) = \frac{1}{{2}} \left( \begin{array}{cccc} 
+    1  &amp;   1  &amp;  1  &amp;   1\\
+    1  &amp;   i  &amp;  -1  &amp;  -i\\
+    1  &amp;   -1  &amp;  1  &amp;   -1\\
+    1  &amp;  -i  &amp;  -1  &amp;  i
+\end{array} \right) \left( \begin{array}{c} 
+    c_1   \\
+    c_2  \\
+    c_3  \\
+    c_4  \\
+\end{array} \right) $$</p>
+<p>$$= \frac{1}{{2}} \left( \begin{array}{c} 
+    c_1 +c_2 +c_3 +c_4   \\
+    c_1 +ic_2 -c_3 -ic_4   \\
+    c_1 -c_2 +c_3 -c_4  \\
+    c_1 -ic_2 -c_3 +ic_4
+\end{array} \right) = \frac{1}{{2}} (d_1|00&gt; + d_2|10&gt; + d_3|01&gt; + d_4|11&gt;)$$</p>
+<hr />
+<ul>
+<li>How to realize the quantum circuit?</li>
+</ul>
+<p>$$H \otimes I = \frac{1}{\sqrt{2}} \left( \begin{array}{cc} 
+    1  &amp;   1 \\
+    1  &amp;  -1
+\end{array} \right) \otimes \left( \begin{array}{cc} 
+    1  &amp;   0 \\
+    0  &amp;   1
+\end{array} \right)  = \frac{1}{\sqrt{2}}\left( \begin{array}{cccc} 
+1 &amp; 0 &amp; 1 &amp; 0\\
+0 &amp; 1 &amp; 0 &amp; 1\\
+1 &amp; 0 &amp; -1 &amp; 0 \\
+0 &amp; 1 &amp; 0 &amp; -1
+\end{array} \right) $$</p>
+<hr />
+<p>$$C_{u1} = \left( \begin{array}{cccc}
+1 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; 1 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 1 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; i
+\end{array} \right)$$</p>
+<hr />
+<p>$$I \otimes H = \frac{1}{\sqrt{2}} \left( \begin{array}{cc} 
+    1  &amp;   0 \\
+    0  &amp;   1
+\end{array} \right) \otimes \left( \begin{array}{cc} 
+    1  &amp;   1 \\
+    1  &amp;  -1
+\end{array} \right)  = \frac{1}{\sqrt{2}}\left( \begin{array}{cccc} 
+1 &amp; 1 &amp; 0 &amp; 0\\
+1 &amp; -1 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 1 &amp; 1 \\
+0 &amp; 0 &amp; 1 &amp; -1
+\end{array} \right) $$</p>
+<hr />
+<p>$$ SWAP = \left( \begin{array}{cccc}
+1 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 1 &amp; 0\\
+0 &amp; 1 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{array} \right)$$</p>
+<hr />
+<p>$$QFT_2 = (H \otimes I) \times C_{u1} \times (I \otimes H) \times SWAP $$</p>
+<p>$$ = \frac{1}{\sqrt{2}}\left( \begin{array}{cccc}
+1 &amp; 0 &amp; 1 &amp; 0\\
+0 &amp; 1 &amp; 0 &amp; 1\\
+1 &amp; 0 &amp; -1 &amp; 0 \\
+0 &amp; 1 &amp; 0 &amp; -1
+\end{array} \right)\left( \begin{array}{cccc}
+1 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; 1 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 1 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; i
+\end{array} \right)\frac{1}{\sqrt{2}}\left( \begin{array}{cccc}
+1 &amp; 1 &amp; 0 &amp; 0\\
+1 &amp; -1 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 1 &amp; 1 \\
+0 &amp; 0 &amp; 1 &amp; -1
+\end{array} \right) \left( \begin{array}{cccc}
+1 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 1 &amp; 0\\
+0 &amp; 1 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{array} \right)$$</p>
+<p>$$ = \frac{1}{{2}} \left( \begin{array}{cccc}
+    1  &amp;   1  &amp;  1  &amp;   1\\
+    1  &amp;   i  &amp;  -1  &amp;  -i\\
+    1  &amp;   -1  &amp;  1  &amp;   -1\\
+    1  &amp;  -i  &amp;  -1  &amp;  i
+\end{array} \right)$$</p>
+<hr />
+<ul>
+<li>Numpy check:</li>
+</ul>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>HI <span style="color: #555555">=</span> np<span style="color: #555555">.</span>array([[<span style="color: #FF6600">1</span>,<span style="color: #FF6600">0</span>,<span style="color: #FF6600">1</span>,<span style="color: #FF6600">0</span>],[<span style="color: #FF6600">0</span>,<span style="color: #FF6600">1</span>,<span style="color: #FF6600">0</span>,<span style="color: #FF6600">1</span>],[<span style="color: #FF6600">1</span>,<span style="color: #FF6600">0</span>,<span style="color: #555555">-</span><span style="color: #FF6600">1</span>,<span style="color: #FF6600">0</span>],[<span style="color: #FF6600">0</span>,<span style="color: #FF6600">1</span>,<span style="color: #FF6600">0</span>,<span style="color: #555555">-</span><span style="color: #FF6600">1</span>]])
+CU1 <span style="color: #555555">=</span> np<span style="color: #555555">.</span>array([[<span style="color: #FF6600">1</span>,<span style="color: #FF6600">0</span>,<span style="color: #FF6600">0</span>,<span style="color: #FF6600">0</span>],[<span style="color: #FF6600">0</span>,<span style="color: #FF6600">1</span>,<span style="color: #FF6600">0</span>,<span style="color: #FF6600">0</span>],[<span style="color: #FF6600">0</span>,<span style="color: #FF6600">0</span>,<span style="color: #FF6600">1</span>,<span style="color: #FF6600">0</span>],[<span style="color: #FF6600">0</span>,<span style="color: #FF6600">0</span>,<span style="color: #FF6600">0</span>,<span style="color: #FF6600">0.</span><span style="color: #555555">+</span><span style="color: #FF6600">1.j</span>]])
+IH <span style="color: #555555">=</span> np<span style="color: #555555">.</span>array([[<span style="color: #FF6600">1</span>,<span style="color: #FF6600">1</span>,<span style="color: #FF6600">0</span>,<span style="color: #FF6600">0</span>],[<span style="color: #FF6600">1</span>,<span style="color: #555555">-</span><span style="color: #FF6600">1</span>,<span style="color: #FF6600">0</span>,<span style="color: #FF6600">0</span>],[<span style="color: #FF6600">0</span>,<span style="color: #FF6600">0</span>,<span style="color: #FF6600">1</span>,<span style="color: #FF6600">1</span>],[<span style="color: #FF6600">0</span>,<span style="color: #FF6600">0</span>,<span style="color: #FF6600">1</span>,<span style="color: #555555">-</span><span style="color: #FF6600">1</span>]])
+SWAP <span style="color: #555555">=</span> np<span style="color: #555555">.</span>array([[<span style="color: #FF6600">1</span>,<span style="color: #FF6600">0</span>,<span style="color: #FF6600">0</span>,<span style="color: #FF6600">0</span>],[<span style="color: #FF6600">0</span>,<span style="color: #FF6600">0</span>,<span style="color: #FF6600">1</span>,<span style="color: #FF6600">0</span>],[<span style="color: #FF6600">0</span>,<span style="color: #FF6600">1</span>,<span style="color: #FF6600">0</span>,<span style="color: #FF6600">0</span>],[<span style="color: #FF6600">0</span>,<span style="color: #FF6600">0</span>,<span style="color: #FF6600">0</span>,<span style="color: #FF6600">1</span>]])
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>np<span style="color: #555555">.</span>dot(HI,np<span style="color: #555555">.</span>dot(CU1,np<span style="color: #555555">.</span>dot(IH,SWAP)))
+</pre></div>
+
+
+<hr />
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>array([[ 1.+0.j,  1.+0.j,  1.+0.j,  1.+0.j],
+       [ 1.+0.j,  0.+1.j, -1.+0.j,  0.-1.j],
+       [ 1.+0.j, -1.+0.j,  1.+0.j, -1.+0.j],
+       [ 1.+0.j,  0.-1.j, -1.+0.j,  0.+1.j]])
+</pre></div>
+
+
+<h4 id="quantum-circuit-two-qubit-qft">Quantum Circuit - two qubit QFT</h4>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">numpy</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">np</span>
+</pre></div>
+
+
+<h6 id="quantum-circuit_1">Quantum circuit</h6>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">qft_2</span>():
+    n<span style="color: #555555">=</span><span style="color: #FF6600">2</span>
+    qc <span style="color: #555555">=</span> QuantumCircuit()
+    q <span style="color: #555555">=</span> QuantumRegister(n, <span style="color: #CC3300">&#39;q&#39;</span>)
+    c <span style="color: #555555">=</span> ClassicalRegister(n, <span style="color: #CC3300">&#39;c&#39;</span>)
+
+    qc<span style="color: #555555">.</span>add_register(q)
+    qc<span style="color: #555555">.</span>add_register(c)
+
+    qc<span style="color: #555555">.</span>h(q[<span style="color: #FF6600">1</span>])
+    qc<span style="color: #555555">.</span>cu1(np<span style="color: #555555">.</span>pi <span style="color: #555555">/</span> <span style="color: #FF6600">2</span>, q[<span style="color: #FF6600">0</span>], q[<span style="color: #FF6600">1</span>])
+    qc<span style="color: #555555">.</span>h(q[<span style="color: #FF6600">0</span>])
+    qc<span style="color: #555555">.</span>swap(q[<span style="color: #FF6600">0</span>], q[<span style="color: #FF6600">1</span>])
+    <span style="color: #006699; font-weight: bold">return</span> qc,q,c
+</pre></div>
+
+
+<hr />
+<h6 id="measurement_1">Measurement</h6>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>qc,q,c <span style="color: #555555">=</span> qft_2()
+
+qc<span style="color: #555555">.</span>measure(q, c)
+<span style="color: #0099FF; font-style: italic"># Change the background color in mpl</span>
+style <span style="color: #555555">=</span> {<span style="color: #CC3300">&#39;backgroundcolor&#39;</span>: <span style="color: #CC3300">&#39;lightgreen&#39;</span>}
+qc<span style="color: #555555">.</span>draw(output<span style="color: #555555">=</span><span style="color: #CC3300">&#39;mpl&#39;</span>, style <span style="color: #555555">=</span> style)
+</pre></div>
+
+
+<p><img alt="png" src="../output_22_0.png" /></p>
+<hr />
+<h6 id="manual-approach">Manual approach:</h6>
+<ul>
+<li>Initial state: |00&gt;</li>
+<li>After Hadamard Gate on qubit 2 : \(\frac{1}{\sqrt{2}}|00&gt; + \frac{1}{\sqrt{2}}|01&gt; \)</li>
+<li>After phase shift Gate : \(\frac{1}{\sqrt{2}}|00&gt; + \frac{1}{\sqrt{2}}|01&gt; \)</li>
+<li>After Hadamard Gate on qubit 1 : \(\frac{1}{{2}}|00&gt; + \frac{1}{{2}}|10&gt;  +  \frac{1}{{2}}|01&gt; - \frac{1}{{2}}|11&gt;\)</li>
+<li>After SWAP:  \( \frac{1}{{2}}|00&gt; + \frac{1}{{2}}|01&gt;  +  \frac{1}{{2}}|10&gt; - \frac{1}{{2}}|11&gt;\)</li>
+</ul>
+<hr />
+<h6 id="simulation_1">Simulation</h6>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>simulator <span style="color: #555555">=</span> Aer<span style="color: #555555">.</span>get_backend(<span style="color: #CC3300">&#39;qasm_simulator&#39;</span>)
+result <span style="color: #555555">=</span> execute(qc, simulator)<span style="color: #555555">.</span>result()
+counts <span style="color: #555555">=</span> result<span style="color: #555555">.</span>get_counts(qc)
+plot_histogram(counts, title<span style="color: #555555">=</span><span style="color: #CC3300">&#39;QFT counts&#39;</span>)
+</pre></div>
+
+
+<p><img alt="png" src="../output_25_0.png" /></p>
+<hr />
+<h6 id="unitary-representation_1">Unitary representation</h6>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">qiskit.providers.aer</span> <span style="color: #006699; font-weight: bold">import</span> UnitarySimulator
+qc,q,c <span style="color: #555555">=</span> qft_2()
+<span style="color: #0099FF; font-style: italic"># Select the UnitarySimulator from the Aer provider</span>
+simulator <span style="color: #555555">=</span> Aer<span style="color: #555555">.</span>get_backend(<span style="color: #CC3300">&#39;unitary_simulator&#39;</span>)
+<span style="color: #0099FF; font-style: italic"># Execute and get counts</span>
+result <span style="color: #555555">=</span> execute(qc, simulator)<span style="color: #555555">.</span>result()
+unitary <span style="color: #555555">=</span> result<span style="color: #555555">.</span>get_unitary(qc)
+<span style="color: #006699; font-weight: bold">print</span>( unitary)
+</pre></div>
+
+
+<hr />
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>[[ 0.5+0.j   0.5+0.j   0.5+0.j   0.5+0.j ]
+ [ 0.5+0.j   0. +0.5j -0.5+0.j   0. -0.5j]
+ [ 0.5+0.j  -0.5+0.j   0.5+0.j  -0.5+0.j ]
+ [ 0.5+0.j   0. -0.5j -0.5+0.j   0. +0.5j]]
+</pre></div>
+
+
+<hr />
+<h3 id="quantum-circuit-three-qubit-qft">Quantum Circuit - three qubit QFT</h3>
+<h6 id="quantum-circuit_2">Quantum circuit</h6>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">qft_3</span>():
+    n <span style="color: #555555">=</span> <span style="color: #FF6600">3</span>
+    qc <span style="color: #555555">=</span> QuantumCircuit()
+    q <span style="color: #555555">=</span> QuantumRegister(n, <span style="color: #CC3300">&#39;q&#39;</span>)
+    c <span style="color: #555555">=</span> ClassicalRegister(n, <span style="color: #CC3300">&#39;c&#39;</span>)
+
+    qc<span style="color: #555555">.</span>add_register(q)
+    qc<span style="color: #555555">.</span>add_register(c)
+
+    qc<span style="color: #555555">.</span>h(q[<span style="color: #FF6600">2</span>])
+    qc<span style="color: #555555">.</span>cu1(np<span style="color: #555555">.</span>pi <span style="color: #555555">/</span> <span style="color: #FF6600">2</span>, q[<span style="color: #FF6600">1</span>], q[<span style="color: #FF6600">2</span>])
+    qc<span style="color: #555555">.</span>h(q[<span style="color: #FF6600">1</span>])
+    qc<span style="color: #555555">.</span>cu1(np<span style="color: #555555">.</span>pi <span style="color: #555555">/</span> <span style="color: #FF6600">4</span>, q[<span style="color: #FF6600">0</span>], q[<span style="color: #FF6600">2</span>])
+    qc<span style="color: #555555">.</span>cu1(np<span style="color: #555555">.</span>pi <span style="color: #555555">/</span> <span style="color: #FF6600">2</span>, q[<span style="color: #FF6600">0</span>], q[<span style="color: #FF6600">1</span>])
+    qc<span style="color: #555555">.</span>h(q[<span style="color: #FF6600">0</span>])
+
+    qc<span style="color: #555555">.</span>swap(q[<span style="color: #FF6600">0</span>], q[<span style="color: #FF6600">2</span>])
+
+    <span style="color: #006699; font-weight: bold">return</span> qc,q,c
+</pre></div>
+
+
+<hr />
+<h5 id="measuremrnt">Measuremrnt</h5>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>qc,q,c <span style="color: #555555">=</span> qft_3()
+qc<span style="color: #555555">.</span>measure(q,c)
+<span style="color: #0099FF; font-style: italic"># Change the background color in mpl</span>
+style <span style="color: #555555">=</span> {<span style="color: #CC3300">&#39;backgroundcolor&#39;</span>: <span style="color: #CC3300">&#39;lightgreen&#39;</span>}
+qc<span style="color: #555555">.</span>draw(output<span style="color: #555555">=</span><span style="color: #CC3300">&#39;mpl&#39;</span>, style <span style="color: #555555">=</span> style)
+</pre></div>
+
+
+<p><img alt="png" src="../output_31_0.png" /></p>
+<hr />
+<h6 id="manual-approach_1">Manual Approach:</h6>
+<ul>
+<li>Initial state: |000&gt;</li>
+<li>After Hadamard Gate on 3rd qubit : \(\frac{1}{\sqrt{2}}(|000&gt; + |001&gt;) \)</li>
+<li>After CU1 gate on qubit (2,3) : \(\frac{1}{\sqrt{2}}(|000&gt; + |001&gt;) \)</li>
+<li>After CU1 gate on qubit (1,3) : \(\frac{1}{\sqrt{2}}(|000&gt; + |001&gt;) \)</li>
+<li>After Hadamard Gate on qubit 2 : \(\frac{1}{{2}}(|000&gt; + |010&gt; +  |001&gt; -|011&gt; )\)</li>
+<li>After CU1 gate on qubit (0,1): \(\frac{1}{{2}}(|000&gt; + |010&gt; +  |001&gt; -|011&gt; )\)</li>
+<li>After Hadamard Gate on qubit 3 : \(\frac{1}{2\sqrt{2}}(|000&gt; + |001&gt; +  |010&gt; + |011&gt; +  |000&gt; - |001&gt; - |010&gt; + |011)\)</li>
+</ul>
+<hr />
+<h6 id="simulation_2">Simulation</h6>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>simulator <span style="color: #555555">=</span> Aer<span style="color: #555555">.</span>get_backend(<span style="color: #CC3300">&#39;qasm_simulator&#39;</span>)
+result <span style="color: #555555">=</span> execute(qc, simulator)<span style="color: #555555">.</span>result()
+counts <span style="color: #555555">=</span> result<span style="color: #555555">.</span>get_counts(qc)
+plot_histogram(counts, title<span style="color: #555555">=</span><span style="color: #CC3300">&#39;QFT counts&#39;</span>)
+</pre></div>
+
+
+<p><img alt="png" src="../output_33_0.png" /></p>
+<hr />
+<h6 id="unitary-representation_2">Unitary representation</h6>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">qiskit.providers.aer</span> <span style="color: #006699; font-weight: bold">import</span> UnitarySimulator
+qc,q,c <span style="color: #555555">=</span> qft_3()
+<span style="color: #0099FF; font-style: italic"># Select the UnitarySimulator from the Aer provider</span>
+simulator <span style="color: #555555">=</span> Aer<span style="color: #555555">.</span>get_backend(<span style="color: #CC3300">&#39;unitary_simulator&#39;</span>)
+<span style="color: #0099FF; font-style: italic"># Execute and get counts</span>
+result <span style="color: #555555">=</span> execute(qc, simulator)<span style="color: #555555">.</span>result()
+unitary <span style="color: #555555">=</span> result<span style="color: #555555">.</span>get_unitary(qc)
+<span style="color: #006699; font-weight: bold">print</span>( unitary)
+</pre></div>
+
+
+<hr />
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>[[ 0.35355339+0.j          0.35355339+0.j          0.35355339+0.j
+   0.35355339+0.j          0.35355339+0.j          0.35355339+0.j
+   0.35355339+0.j          0.35355339+0.j        ]
+ [ 0.35355339+0.j          0.25      +0.25j        0.        +0.35355339j
+  -0.25      +0.25j       -0.35355339+0.j         -0.25      -0.25j
+   0.        -0.35355339j  0.25      -0.25j      ]
+ [ 0.35355339+0.j          0.        +0.35355339j -0.35355339+0.j
+   0.        -0.35355339j  0.35355339+0.j          0.        +0.35355339j
+  -0.35355339+0.j          0.        -0.35355339j]
+ [ 0.35355339+0.j         -0.25      +0.25j        0.        -0.35355339j
+   0.25      +0.25j       -0.35355339+0.j          0.25      -0.25j
+   0.        +0.35355339j -0.25      -0.25j      ]
+ [ 0.35355339+0.j         -0.35355339+0.j          0.35355339+0.j
+  -0.35355339+0.j          0.35355339+0.j         -0.35355339+0.j
+   0.35355339+0.j         -0.35355339+0.j        ]
+ [ 0.35355339+0.j         -0.25      -0.25j        0.        +0.35355339j
+   0.25      -0.25j       -0.35355339+0.j          0.25      +0.25j
+   0.        -0.35355339j -0.25      +0.25j      ]
+ [ 0.35355339+0.j          0.        -0.35355339j -0.35355339+0.j
+   0.        +0.35355339j  0.35355339+0.j          0.        -0.35355339j
+  -0.35355339+0.j          0.        +0.35355339j]
+ [ 0.35355339+0.j          0.25      -0.25j        0.        -0.35355339j
+  -0.25      -0.25j       -0.35355339+0.j         -0.25      +0.25j
+   0.        +0.35355339j  0.25      +0.25j      ]]
+</pre></div>
+
+
+<hr />
+<h3 id="quantum-circuit-four-qubit-qft">Quantum Circuit - four qubit QFT</h3>
+<h6 id="quantum-circuit_3">Quantum circuit</h6>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">qft_4</span>():
+    n <span style="color: #555555">=</span> <span style="color: #FF6600">4</span>
+    qc <span style="color: #555555">=</span> QuantumCircuit()
+    q <span style="color: #555555">=</span> QuantumRegister(n, <span style="color: #CC3300">&#39;q&#39;</span>)
+    c <span style="color: #555555">=</span> ClassicalRegister(n, <span style="color: #CC3300">&#39;c&#39;</span>)
+
+    qc<span style="color: #555555">.</span>add_register(q)
+    qc<span style="color: #555555">.</span>add_register(c)
+
+    qc<span style="color: #555555">.</span>h(q[<span style="color: #FF6600">3</span>])
+    qc<span style="color: #555555">.</span>cu1(np<span style="color: #555555">.</span>pi <span style="color: #555555">/</span> <span style="color: #FF6600">2</span>, q[<span style="color: #FF6600">2</span>], q[<span style="color: #FF6600">3</span>])
+    qc<span style="color: #555555">.</span>h(q[<span style="color: #FF6600">2</span>])
+    qc<span style="color: #555555">.</span>cu1(np<span style="color: #555555">.</span>pi <span style="color: #555555">/</span> <span style="color: #FF6600">4</span>, q[<span style="color: #FF6600">1</span>], q[<span style="color: #FF6600">3</span>])
+    qc<span style="color: #555555">.</span>cu1(np<span style="color: #555555">.</span>pi <span style="color: #555555">/</span> <span style="color: #FF6600">2</span>, q[<span style="color: #FF6600">1</span>], q[<span style="color: #FF6600">2</span>])
+    qc<span style="color: #555555">.</span>h(q[<span style="color: #FF6600">1</span>])
+    qc<span style="color: #555555">.</span>cu1(np<span style="color: #555555">.</span>pi <span style="color: #555555">/</span> <span style="color: #FF6600">8</span>, q[<span style="color: #FF6600">0</span>], q[<span style="color: #FF6600">3</span>])
+    qc<span style="color: #555555">.</span>cu1(np<span style="color: #555555">.</span>pi <span style="color: #555555">/</span> <span style="color: #FF6600">4</span>, q[<span style="color: #FF6600">0</span>], q[<span style="color: #FF6600">2</span>])
+    qc<span style="color: #555555">.</span>cu1(np<span style="color: #555555">.</span>pi <span style="color: #555555">/</span> <span style="color: #FF6600">2</span>, q[<span style="color: #FF6600">0</span>], q[<span style="color: #FF6600">1</span>])
+    qc<span style="color: #555555">.</span>h(q[<span style="color: #FF6600">0</span>])
+    qc<span style="color: #555555">.</span>swap(q[<span style="color: #FF6600">0</span>], q[<span style="color: #FF6600">3</span>])
+    qc<span style="color: #555555">.</span>swap(q[<span style="color: #FF6600">1</span>], q[<span style="color: #FF6600">2</span>])
+
+
+    <span style="color: #006699; font-weight: bold">return</span> qc,q,c
+</pre></div>
+
+
+<hr />
+<h6 id="measurement_2">Measurement</h6>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>qc,q,c <span style="color: #555555">=</span> qft_4()
+qc<span style="color: #555555">.</span>measure(q,c)
+<span style="color: #0099FF; font-style: italic"># Change the background color in mpl</span>
+style <span style="color: #555555">=</span> {<span style="color: #CC3300">&#39;backgroundcolor&#39;</span>: <span style="color: #CC3300">&#39;lightgreen&#39;</span>}
+qc<span style="color: #555555">.</span>draw(output<span style="color: #555555">=</span><span style="color: #CC3300">&#39;mpl&#39;</span>, style <span style="color: #555555">=</span> style)
+</pre></div>
+
+
+<p><img alt="png" src="../output_37_0.png" /></p>
+<hr />
+<h6 id="simulation_3">Simulation</h6>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>simulator <span style="color: #555555">=</span> Aer<span style="color: #555555">.</span>get_backend(<span style="color: #CC3300">&#39;qasm_simulator&#39;</span>)
+result <span style="color: #555555">=</span> execute(qc, simulator)<span style="color: #555555">.</span>result()
+counts <span style="color: #555555">=</span> result<span style="color: #555555">.</span>get_counts(qc)
+plot_histogram(counts, title<span style="color: #555555">=</span><span style="color: #CC3300">&#39;QFT counts&#39;</span>)
+</pre></div>
+
+
+<p><img alt="png" src="../output_39_0.png" /></p>
+<hr />
+<h6 id="unitary-representation_3">Unitary representation</h6>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>qc <span style="color: #555555">=</span> qft_circuit(<span style="color: #FF6600">4</span>)    
+<span style="color: #0099FF; font-style: italic"># Select the UnitarySimulator from the Aer provider</span>
+simulator <span style="color: #555555">=</span> Aer<span style="color: #555555">.</span>get_backend(<span style="color: #CC3300">&#39;unitary_simulator&#39;</span>)
+<span style="color: #0099FF; font-style: italic"># Execute and get counts</span>
+result <span style="color: #555555">=</span> execute(qc, simulator)<span style="color: #555555">.</span>result()
+unitary <span style="color: #555555">=</span> result<span style="color: #555555">.</span>get_unitary(qc)
+<span style="color: #006699; font-weight: bold">print</span>( unitary)
+</pre></div>
+
+
+<hr />
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>[[ 0.25      +0.j          0.25      +0.j          0.25      +0.j
+   0.25      +0.j          0.25      +0.j          0.25      +0.j
+   0.25      +0.j          0.25      +0.j          0.25      +0.j
+   0.25      +0.j          0.25      +0.j          0.25      +0.j
+   0.25      +0.j          0.25      +0.j          0.25      +0.j
+   0.25      +0.j        ]
+ [ 0.25      +0.j          0.23096988+0.09567086j  0.1767767 +0.1767767j
+   0.09567086+0.23096988j  0.        +0.25j       -0.09567086+0.23096988j
+  -0.1767767 +0.1767767j  -0.23096988+0.09567086j -0.25      +0.j
+  -0.23096988-0.09567086j -0.1767767 -0.1767767j  -0.09567086-0.23096988j
+   0.        -0.25j        0.09567086-0.23096988j  0.1767767 -0.1767767j
+   0.23096988-0.09567086j]
+ [ 0.25      +0.j          0.1767767 +0.1767767j   0.        +0.25j
+  -0.1767767 +0.1767767j  -0.25      +0.j         -0.1767767 -0.1767767j
+   0.        -0.25j        0.1767767 -0.1767767j   0.25      +0.j
+   0.1767767 +0.1767767j   0.        +0.25j       -0.1767767 +0.1767767j
+  -0.25      +0.j         -0.1767767 -0.1767767j   0.        -0.25j
+   0.1767767 -0.1767767j ]
+ [ 0.25      +0.j          0.09567086+0.23096988j -0.1767767 +0.1767767j
+  -0.23096988-0.09567086j  0.        -0.25j        0.23096988-0.09567086j
+   0.1767767 +0.1767767j  -0.09567086+0.23096988j -0.25      +0.j
+  -0.09567086-0.23096988j  0.1767767 -0.1767767j   0.23096988+0.09567086j
+   0.        +0.25j       -0.23096988+0.09567086j -0.1767767 -0.1767767j
+   0.09567086-0.23096988j]
+ [ 0.25      +0.j          0.        +0.25j       -0.25      +0.j
+   0.        -0.25j        0.25      +0.j          0.        +0.25j
+  -0.25      +0.j          0.        -0.25j        0.25      +0.j
+   0.        +0.25j       -0.25      +0.j          0.        -0.25j
+   0.25      +0.j          0.        +0.25j       -0.25      +0.j
+   0.        -0.25j      ]
+ [ 0.25      +0.j         -0.09567086+0.23096988j -0.1767767 -0.1767767j
+   0.23096988-0.09567086j  0.        +0.25j       -0.23096988-0.09567086j
+   0.1767767 -0.1767767j   0.09567086+0.23096988j -0.25      +0.j
+   0.09567086-0.23096988j  0.1767767 +0.1767767j  -0.23096988+0.09567086j
+   0.        -0.25j        0.23096988+0.09567086j -0.1767767 +0.1767767j
+  -0.09567086-0.23096988j]
+ [ 0.25      +0.j         -0.1767767 +0.1767767j   0.        -0.25j
+   0.1767767 +0.1767767j  -0.25      +0.j          0.1767767 -0.1767767j
+   0.        +0.25j       -0.1767767 -0.1767767j   0.25      +0.j
+  -0.1767767 +0.1767767j   0.        -0.25j        0.1767767 +0.1767767j
+  -0.25      +0.j          0.1767767 -0.1767767j   0.        +0.25j
+  -0.1767767 -0.1767767j ]
+ [ 0.25      +0.j         -0.23096988+0.09567086j  0.1767767 -0.1767767j
+  -0.09567086+0.23096988j  0.        -0.25j        0.09567086+0.23096988j
+  -0.1767767 -0.1767767j   0.23096988+0.09567086j -0.25      +0.j
+   0.23096988-0.09567086j -0.1767767 +0.1767767j   0.09567086-0.23096988j
+   0.        +0.25j       -0.09567086-0.23096988j  0.1767767 +0.1767767j
+  -0.23096988-0.09567086j]
+ [ 0.25      +0.j         -0.25      +0.j          0.25      +0.j
+  -0.25      +0.j          0.25      +0.j         -0.25      +0.j
+   0.25      +0.j         -0.25      +0.j          0.25      +0.j
+  -0.25      +0.j          0.25      +0.j         -0.25      +0.j
+   0.25      +0.j         -0.25      +0.j          0.25      +0.j
+  -0.25      +0.j        ]
+ [ 0.25      +0.j         -0.23096988-0.09567086j  0.1767767 +0.1767767j
+  -0.09567086-0.23096988j  0.        +0.25j        0.09567086-0.23096988j
+  -0.1767767 +0.1767767j   0.23096988-0.09567086j -0.25      +0.j
+   0.23096988+0.09567086j -0.1767767 -0.1767767j   0.09567086+0.23096988j
+   0.        -0.25j       -0.09567086+0.23096988j  0.1767767 -0.1767767j
+  -0.23096988+0.09567086j]
+ [ 0.25      +0.j         -0.1767767 -0.1767767j   0.        +0.25j
+   0.1767767 -0.1767767j  -0.25      +0.j          0.1767767 +0.1767767j
+   0.        -0.25j       -0.1767767 +0.1767767j   0.25      +0.j
+  -0.1767767 -0.1767767j   0.        +0.25j        0.1767767 -0.1767767j
+  -0.25      +0.j          0.1767767 +0.1767767j   0.        -0.25j
+  -0.1767767 +0.1767767j ]
+ [ 0.25      +0.j         -0.09567086-0.23096988j -0.1767767 +0.1767767j
+   0.23096988+0.09567086j  0.        -0.25j       -0.23096988+0.09567086j
+   0.1767767 +0.1767767j   0.09567086-0.23096988j -0.25      +0.j
+   0.09567086+0.23096988j  0.1767767 -0.1767767j  -0.23096988-0.09567086j
+   0.        +0.25j        0.23096988-0.09567086j -0.1767767 -0.1767767j
+  -0.09567086+0.23096988j]
+ [ 0.25      +0.j          0.        -0.25j       -0.25      +0.j
+   0.        +0.25j        0.25      +0.j          0.        -0.25j
+  -0.25      +0.j          0.        +0.25j        0.25      +0.j
+   0.        -0.25j       -0.25      +0.j          0.        +0.25j
+   0.25      +0.j          0.        -0.25j       -0.25      +0.j
+   0.        +0.25j      ]
+ [ 0.25      +0.j          0.09567086-0.23096988j -0.1767767 -0.1767767j
+  -0.23096988+0.09567086j  0.        +0.25j        0.23096988+0.09567086j
+   0.1767767 -0.1767767j  -0.09567086-0.23096988j -0.25      +0.j
+  -0.09567086+0.23096988j  0.1767767 +0.1767767j   0.23096988-0.09567086j
+   0.        -0.25j       -0.23096988-0.09567086j -0.1767767 +0.1767767j
+   0.09567086+0.23096988j]
+ [ 0.25      +0.j          0.1767767 -0.1767767j   0.        -0.25j
+  -0.1767767 -0.1767767j  -0.25      +0.j         -0.1767767 +0.1767767j
+   0.        +0.25j        0.1767767 +0.1767767j   0.25      +0.j
+   0.1767767 -0.1767767j   0.        -0.25j       -0.1767767 -0.1767767j
+  -0.25      +0.j         -0.1767767 +0.1767767j   0.        +0.25j
+   0.1767767 +0.1767767j ]
+ [ 0.25      +0.j          0.23096988-0.09567086j  0.1767767 -0.1767767j
+   0.09567086-0.23096988j  0.        -0.25j       -0.09567086-0.23096988j
+  -0.1767767 -0.1767767j  -0.23096988-0.09567086j -0.25      +0.j
+  -0.23096988+0.09567086j -0.1767767 +0.1767767j  -0.09567086+0.23096988j
+   0.        +0.25j        0.09567086+0.23096988j  0.1767767 +0.1767767j
+   0.23096988+0.09567086j]]
+</pre></div>
+
+
+<h3 id="references">References</h3>
+<hr />
+<ol>
+<li>https://www.youtube.com/watch?v=bntew-yoMzk </li>
+</ol>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../hhl/hhl/" class="btn btn-neutral float-right" title="Linear Equation (HHL)">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../../circuits/random/random/" class="btn btn-neutral" title="Random Variables"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../../../circuits/random/random/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../hhl/hhl/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>
+      <script src="../../../search/main.js" defer></script>
+
+</body>
+</html>
