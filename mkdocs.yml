@@ -51,8 +51,8 @@ nav:
 
 
 - Quantum Circuits:
-  - Superposition: circuits/hadamard/hadamard.md
-  - Bell state: circuits/bell/bell.md
+  - Hadamard Gate: circuits/hadamard/hadamard.md
+  - Bell State: circuits/bell/bell.md
   - Random Variables : circuits/random/random.md
  
 

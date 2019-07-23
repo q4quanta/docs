@@ -2,6 +2,8 @@
 
 # Bell State
 
+###### Latest python notebook is available [here](https://github.com/q4quanta/quantum-circuits)
+
 The Bell states, a concept in quantum information science, are specific quantum states of two qubits that represent the simplest (and maximal) examples of quantum entanglement. The Bell states are a form of entangled and normalized basis vectors. This normalization implies that the overall probability of the particle being in one of the mentioned states is 1.[Wikipedia]
 
 Import 'Qiskit' libraries

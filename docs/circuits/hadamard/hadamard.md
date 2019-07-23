@@ -1,6 +1,9 @@
 
 # Hadamard Gate and Circuits
 
+###### Latest python notebook is available [here](https://github.com/q4quanta/quantum-circuits)
+
+
 Hadamard gate is single qubit operator. This transforms |0> state to a superposed state \\(\frac{1}{\sqrt{2}}|0> + \frac{1}{\sqrt{2}}|1>\\) and stae|1> to a superposed state \\(\frac{1}{\sqrt{2}}|0> - \frac{1}{\sqrt{2}}|1>\\). This gate is very important gate to construct Bell state, Quantum Fourier Transform (QFT) and many more.
 
 ------------

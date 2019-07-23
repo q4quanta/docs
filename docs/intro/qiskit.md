@@ -80,15 +80,7 @@ circ.draw()
 
 In this circuit, the qubits are put in order, with qubit zero at the top and qubit two at the bottom. The circuit is read left to right (meaning that gates that are applied earlier in the circuit show up further to the left).
 
-<div class="alert alert-block alert-info">
-<b>Note:</b> If you don't have matplotlib set up as your default in '~/.qiskit/settings.conf' it will use a text-based drawer over matplotlib. To set the default to matplotlib, use the following in the settings.conf
-    
-    [default]
-    circuit_drawer = mpl
-    
-For those that want the full LaTeX experience, you can also set the circuit_drawer = latex.
 
-</div>
 
 -------------
 
@@ -102,18 +94,17 @@ The most common backend in Qiskit Aer is the `statevector_simulator`. This simul
 state, which is a complex vector of dimensions\\(2^n\\), where \\(n\\) is the number of qubits 
 (so be careful using this as it will quickly get too large to run on your machine).
 
-<div class="alert alert-block alert-info">
 
 
 When representing the state of a multi-qubit system, the tensor order used in Qiskit is different than that used in most physics textbooks. Suppose there are \\( n \\) qubits, and qubit \\(j\\) is labeled as \\(Q_{j}\\) Qiskit uses an ordering in which the \\(n^{\mathrm{th}} \\) qubit is on the <em><strong>left</strong></em> side of the tensor product, so that the basis vectors are labeled as \\(Q_n\otimes \cdots  \otimes  Q_1\otimes Q_0\\).
 
-For example, if qubit zero is in state 0, qubit 1 is in state 0, and qubit 2 is in state 1, Qiskit would represent this state as\\(|100\rangle$, whereas many physics textbooks would represent it as\\(|001\rangle\\).
+For example, if qubit zero is in state 0, qubit 1 is in state 0, and qubit 2 is in state 1, Qiskit would represent this state as\\(|100\rangle\\), whereas many physics textbooks would represent it as\\(|001\rangle\\).
 
 This difference in labeling affects the way multi-qubit operations are represented as matrices. For example, Qiskit represents a controlled-X (\\( C_{X}\\) operation with qubit 0 being the control and qubit 1 being the target as
 
 $$C_X = \begin{pmatrix} 1 & 0 & 0 & 0 \\\  0 & 0 & 0 & 1 \\\ 0 & 0 & 1 & 0 \\\ 0 & 1 & 0 & 0 \\\ \end{pmatrix}.$$
 
-</div>
+
 
 To run the above circuit using the statevector simulator, first you need to import Aer and then set the backend to `statevector_simulator`.
 
@@ -222,12 +213,12 @@ For example, suppose we make independent measurements on each qubit of the three
 $$|\psi\rangle = |000\rangle +|111\rangle)/\sqrt{2},$$
 and let\\(xyz\\)denote the bitstring that results. Recall that, under the qubit labeling used by Qiskit,\\(x\\)would correspond to the outcome on qubit 2,\\(y\\)to the outcome on qubit 1, and\\(z\\)to the outcome on qubit 0. 
 
-<div class="alert alert-block alert-info">
-<b>Note:</b> This representation of the bitstring puts the most significant bit (MSB) on the left, and the least significant bit (LSB) on the right. This is the standard ordering of binary bitstrings. We order the qubits in the same way, which is why Qiskit uses a non-standard tensor product order.
-</div>
+
+Note: This representation of the bitstring puts the most significant bit (MSB) on the left, and the least significant bit (LSB) on the right. This is the standard ordering of binary bitstrings. We order the qubits in the same way, which is why Qiskit uses a non-standard tensor product order.
+
 
 Recall the probability of obtaining outcome\\(xyz\\)is given by
-$$\mathrm{Pr}(xyz) = |\langle xyz | \psi \rangle |^{2}$\\)and as such for the GHZ state probability of obtaining 000 or 111 are both 1/2.
+\\(\mathrm{Pr}(xyz) = |\langle xyz | \psi \rangle |^{2}\\)and as such for the GHZ state probability of obtaining 000 or 111 are both 1/2.
 
 To simulate a circuit that includes measurement, we need to add measurements to the original circuit above, and use a different Aer backend.
 
