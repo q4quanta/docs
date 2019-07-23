@@ -137,14 +137,135 @@
     
       
 
-  <li class="toctree-l2 current with-children">
-    <a href="#coming-soon">
-      Coming Soon
+
+
+  <li class="toctree-l2 current">
+    <ul class="subnav-l2 current">
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#latest-python-notebook-is-available-here">Latest python notebook is available here</a>
+        </li>
+    
+    </ul>
+  </li>
+
+      
+
+  <li class="toctree-l2">
+    <a href="#u-gates">
+      U - gates
       <span class="toctree-expand"></span>
     </a>
   </li>
 
 
+
+  <li class="toctree-l2">
+    <ul class="subnav-l2 toc-hidden">
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#1-single-qubit-circuit">1. Single qubit circuit:</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#11-gates-in-series">1.1. Gates in series</a>
+        </li>
+    
+      
+          
+
+  <li class="toctree-l3">
+    <a href="#2-double-qubit-circuit">
+      2.  Double qubit circuit
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l3">
+    <ul class="subnav-l3 toc-hidden">
+    
+      
+        <li class="toctree-l4">
+          <a class="toctree-l5" href="#21-i-otimes-u">2.1. $$I \otimes U$$</a>
+        </li>
+    
+      
+        <li class="toctree-l4">
+          <a class="toctree-l5" href="#22-u-otimes-i">2.2. $$U \otimes I$$</a>
+        </li>
+    
+      
+        <li class="toctree-l4">
+          <a class="toctree-l5" href="#23-u-otimes-u">2.3 $$U \otimes U$$</a>
+        </li>
+    
+    </ul>
+  </li>
+
+      
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#24-u-times-u-otimes-utimes-u">2.4.  $$(U \times U) \otimes (U\times U)$$</a>
+        </li>
+    
+      
+          
+
+  <li class="toctree-l3">
+    <a href="#3-three-qubit-circuit">
+      3. Three qubit circuit
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l3">
+    <ul class="subnav-l3 toc-hidden">
+    
+      
+        <li class="toctree-l4">
+          <a class="toctree-l5" href="#31-i-otimes-i-otimes-u">3.1.  $$I \otimes I \otimes U$$</a>
+        </li>
+    
+      
+        <li class="toctree-l4">
+          <a class="toctree-l5" href="#32-i-otimes-u-otimes-i">3.2.   $$I \otimes U \otimes I$$</a>
+        </li>
+    
+      
+        <li class="toctree-l4">
+          <a class="toctree-l5" href="#33-u-otimes-i-otimes-i">3.3. $$U \otimes I \otimes I$$</a>
+        </li>
+    
+      
+        <li class="toctree-l4">
+          <a class="toctree-l5" href="#34-i-otimes-u-otimes-u">3.4. $$I \otimes U \otimes U$$</a>
+        </li>
+    
+      
+        <li class="toctree-l4">
+          <a class="toctree-l5" href="#34-u-otimes-u-otimes-u">3.4. $$U \otimes U \otimes U$$</a>
+        </li>
+    
+      
+        <li class="toctree-l4">
+          <a class="toctree-l5" href="#35-u-times-u-otimes-u-times-u-otimes-u-times-u">3.5. $$(U \times U) \otimes (U \times U) \otimes (U \times U)$$</a>
+        </li>
+    
+    </ul>
+  </li>
+
+      
+    
+    </ul>
+  </li>
 
 
   
@@ -174,14 +295,14 @@
 
 
   <li class="navtree toctree-l2 inactive">
-    <a class="" href="../../../circuits/hadamard/hadamard/">Superposition</a>
+    <a class="" href="../../../circuits/hadamard/hadamard/">Hadamard Gate</a>
   </li>
         
           
 
 
   <li class="navtree toctree-l2 inactive">
-    <a class="" href="../../../circuits/bell/bell/">Bell state</a>
+    <a class="" href="../../../circuits/bell/bell/">Bell State</a>
   </li>
         
           
@@ -349,8 +470,372 @@
           <div role="main">
             <div class="section">
               
-                <h3 id="coming-soon">Coming Soon</h3>
-<p>Under construction</p>
+                <h3 id="single-qubit-gates">Single Qubit Gates</h3>
+<h6 id="latest-python-notebook-is-available-here">Latest python notebook is available <a href="https://github.com/q4quanta/quantum-circuits">here</a></h6>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #0099FF; font-style: italic"># Useful additional packages</span>
+<span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">matplotlib.pyplot</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">plt</span>
+<span style="color: #555555">%</span>matplotlib inline
+<span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">numpy</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">np</span>
+<span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">math</span> <span style="color: #006699; font-weight: bold">import</span> pi
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">qiskit</span> <span style="color: #006699; font-weight: bold">import</span> QuantumCircuit, ClassicalRegister, QuantumRegister, execute
+<span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">qiskit.tools.visualization</span> <span style="color: #006699; font-weight: bold">import</span> circuit_drawer
+<span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">qiskit.quantum_info</span> <span style="color: #006699; font-weight: bold">import</span> state_fidelity
+<span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">qiskit</span> <span style="color: #006699; font-weight: bold">import</span> BasicAer
+
+backend <span style="color: #555555">=</span> BasicAer<span style="color: #555555">.</span>get_backend(<span style="color: #CC3300">&#39;unitary_simulator&#39;</span>)
+</pre></div>
+
+
+<h3 id="u-gates">U - gates</h3>
+<h4 id="1-single-qubit-circuit">1. Single qubit circuit:</h4>
+<p>Base states : |0&gt;, |1&gt;</p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>q <span style="color: #555555">=</span> QuantumRegister(<span style="color: #FF6600">1</span>)
+qc <span style="color: #555555">=</span> QuantumCircuit(q)
+qc<span style="color: #555555">.</span>u3(pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,q)
+qc<span style="color: #555555">.</span>draw(output<span style="color: #555555">=</span><span style="color: #CC3300">&#39;mpl&#39;</span>)
+</pre></div>
+
+
+<p><img alt="png" src="../output_7_0.png" /></p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>job <span style="color: #555555">=</span> execute(qc, backend)
+job<span style="color: #555555">.</span>result()<span style="color: #555555">.</span>get_unitary(qc, decimals<span style="color: #555555">=</span><span style="color: #FF6600">3</span>)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>array([[ 0.707+0.j   ,  0.   -0.707j],
+       [ 0.   +0.707j, -0.707+0.j   ]])
+</pre></div>
+
+
+<h4 id="11-gates-in-series">1.1. Gates in series</h4>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>q <span style="color: #555555">=</span> QuantumRegister(<span style="color: #FF6600">1</span>)
+qc <span style="color: #555555">=</span> QuantumCircuit(q)
+qc<span style="color: #555555">.</span>u3(pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,q)
+qc<span style="color: #555555">.</span>u3(pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,q)
+qc<span style="color: #555555">.</span>draw(output<span style="color: #555555">=</span><span style="color: #CC3300">&#39;mpl&#39;</span>)
+</pre></div>
+
+
+<p><img alt="png" src="../output_10_0.png" /></p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>job <span style="color: #555555">=</span> execute(qc, backend)
+job<span style="color: #555555">.</span>result()<span style="color: #555555">.</span>get_unitary(qc, decimals<span style="color: #555555">=</span><span style="color: #FF6600">3</span>)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>array([[1.+0.j, 0.+0.j],
+       [0.+0.j, 1.+0.j]])
+</pre></div>
+
+
+<hr />
+<h4 id="2-double-qubit-circuit">2.  Double qubit circuit</h4>
+<p>Base states: |00&gt;, |01&gt;, |10&gt;,|11&gt;</p>
+<h6 id="21-i-otimes-u">2.1. $$I \otimes U$$</h6>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>q <span style="color: #555555">=</span> QuantumRegister(<span style="color: #FF6600">2</span>)
+qc <span style="color: #555555">=</span> QuantumCircuit(q)
+qc<span style="color: #555555">.</span>u3(pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,q[<span style="color: #FF6600">0</span>])
+qc<span style="color: #555555">.</span>draw(output<span style="color: #555555">=</span><span style="color: #CC3300">&#39;mpl&#39;</span>)
+</pre></div>
+
+
+<p><img alt="png" src="../output_16_0.png" /></p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>job <span style="color: #555555">=</span> execute(qc, backend)
+job<span style="color: #555555">.</span>result()<span style="color: #555555">.</span>get_unitary(qc, decimals<span style="color: #555555">=</span><span style="color: #FF6600">3</span>)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>array([[ 0.707+0.j   ,  0.   -0.707j,  0.   +0.j   ,  0.   +0.j   ],
+       [ 0.   +0.707j, -0.707+0.j   ,  0.   +0.j   ,  0.   +0.j   ],
+       [ 0.   +0.j   ,  0.   +0.j   ,  0.707+0.j   ,  0.   -0.707j],
+       [ 0.   +0.j   ,  0.   +0.j   ,  0.   +0.707j, -0.707+0.j   ]])
+</pre></div>
+
+
+<h6 id="22-u-otimes-i">2.2. $$U \otimes I$$</h6>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>q <span style="color: #555555">=</span> QuantumRegister(<span style="color: #FF6600">2</span>)
+qc <span style="color: #555555">=</span> QuantumCircuit(q)
+qc<span style="color: #555555">.</span>u3(pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,q[<span style="color: #FF6600">1</span>])
+qc<span style="color: #555555">.</span>draw(output<span style="color: #555555">=</span><span style="color: #CC3300">&#39;mpl&#39;</span>)
+</pre></div>
+
+
+<p><img alt="png" src="../output_19_0.png" /></p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>job <span style="color: #555555">=</span> execute(qc, backend)
+job<span style="color: #555555">.</span>result()<span style="color: #555555">.</span>get_unitary(qc, decimals<span style="color: #555555">=</span><span style="color: #FF6600">3</span>)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>array([[ 0.707+0.j   ,  0.   +0.j   ,  0.   -0.707j,  0.   +0.j   ],
+       [ 0.   +0.j   ,  0.707+0.j   ,  0.   +0.j   ,  0.   -0.707j],
+       [ 0.   +0.707j,  0.   +0.j   , -0.707+0.j   ,  0.   +0.j   ],
+       [ 0.   +0.j   ,  0.   +0.707j,  0.   +0.j   , -0.707+0.j   ]])
+</pre></div>
+
+
+<h6 id="23-u-otimes-u">2.3 $$U \otimes U$$</h6>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>q <span style="color: #555555">=</span> QuantumRegister(<span style="color: #FF6600">2</span>)
+qc <span style="color: #555555">=</span> QuantumCircuit(q)
+qc<span style="color: #555555">.</span>u3(pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,q[<span style="color: #FF6600">0</span>])
+qc<span style="color: #555555">.</span>u3(pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,q[<span style="color: #FF6600">1</span>])
+qc<span style="color: #555555">.</span>draw(output<span style="color: #555555">=</span><span style="color: #CC3300">&#39;mpl&#39;</span>)
+</pre></div>
+
+
+<p><img alt="png" src="../output_22_0.png" /></p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>job <span style="color: #555555">=</span> execute(qc, backend)
+job<span style="color: #555555">.</span>result()<span style="color: #555555">.</span>get_unitary(qc, decimals<span style="color: #555555">=</span><span style="color: #FF6600">3</span>)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>array([[ 0.5+0.j ,  0. -0.5j,  0. -0.5j, -0.5+0.j ],
+       [ 0. +0.5j, -0.5+0.j ,  0.5+0.j ,  0. +0.5j],
+       [ 0. +0.5j,  0.5+0.j , -0.5+0.j ,  0. +0.5j],
+       [-0.5+0.j ,  0. -0.5j,  0. -0.5j,  0.5+0.j ]])
+</pre></div>
+
+
+<h4 id="24-u-times-u-otimes-utimes-u">2.4.  $$(U \times U) \otimes (U\times U)$$</h4>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>q <span style="color: #555555">=</span> QuantumRegister(<span style="color: #FF6600">2</span>)
+qc <span style="color: #555555">=</span> QuantumCircuit(q)
+qc<span style="color: #555555">.</span>u3(pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,q[<span style="color: #FF6600">0</span>])
+qc<span style="color: #555555">.</span>u3(pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,q[<span style="color: #FF6600">0</span>])
+qc<span style="color: #555555">.</span>u3(pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,q[<span style="color: #FF6600">1</span>])
+qc<span style="color: #555555">.</span>u3(pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,q[<span style="color: #FF6600">1</span>])
+qc<span style="color: #555555">.</span>draw(output<span style="color: #555555">=</span><span style="color: #CC3300">&#39;mpl&#39;</span>)
+</pre></div>
+
+
+<p><img alt="png" src="../output_25_0.png" /></p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>job <span style="color: #555555">=</span> execute(qc, backend)
+job<span style="color: #555555">.</span>result()<span style="color: #555555">.</span>get_unitary(qc, decimals<span style="color: #555555">=</span><span style="color: #FF6600">3</span>)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>array([[1.+0.j, 0.+0.j, 0.+0.j, 0.+0.j],
+       [0.+0.j, 1.+0.j, 0.+0.j, 0.+0.j],
+       [0.+0.j, 0.+0.j, 1.+0.j, 0.+0.j],
+       [0.+0.j, 0.+0.j, 0.+0.j, 1.+0.j]])
+</pre></div>
+
+
+<hr />
+<h4 id="3-three-qubit-circuit">3. Three qubit circuit</h4>
+<p>Base states: |000&gt;,|001&gt;,|010&gt;,|011&gt;,|100&gt;,|110&gt;,|101&gt;,|111&gt;</p>
+<h6 id="31-i-otimes-i-otimes-u">3.1.  $$I \otimes I \otimes U$$</h6>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>q <span style="color: #555555">=</span> QuantumRegister(<span style="color: #FF6600">3</span>)
+qc <span style="color: #555555">=</span> QuantumCircuit(q)
+qc<span style="color: #555555">.</span>u3(pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,q[<span style="color: #FF6600">0</span>])
+qc<span style="color: #555555">.</span>draw(output<span style="color: #555555">=</span><span style="color: #CC3300">&#39;mpl&#39;</span>)
+</pre></div>
+
+
+<p><img alt="png" src="../output_31_0.png" /></p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>job <span style="color: #555555">=</span> execute(qc, backend)
+job<span style="color: #555555">.</span>result()<span style="color: #555555">.</span>get_unitary(qc, decimals<span style="color: #555555">=</span><span style="color: #FF6600">3</span>)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>array([[ 0.707+0.j   ,  0.   -0.707j,  0.   +0.j   ,  0.   +0.j   ,
+         0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ],
+       [ 0.   +0.707j, -0.707+0.j   ,  0.   +0.j   ,  0.   +0.j   ,
+         0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ],
+       [ 0.   +0.j   ,  0.   +0.j   ,  0.707+0.j   ,  0.   -0.707j,
+         0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ],
+       [ 0.   +0.j   ,  0.   +0.j   ,  0.   +0.707j, -0.707+0.j   ,
+         0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ],
+       [ 0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,
+         0.707+0.j   ,  0.   -0.707j,  0.   +0.j   ,  0.   +0.j   ],
+       [ 0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,
+         0.   +0.707j, -0.707+0.j   ,  0.   +0.j   ,  0.   +0.j   ],
+       [ 0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,
+         0.   +0.j   ,  0.   +0.j   ,  0.707+0.j   ,  0.   -0.707j],
+       [ 0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,
+         0.   +0.j   ,  0.   +0.j   ,  0.   +0.707j, -0.707+0.j   ]])
+</pre></div>
+
+
+<h6 id="32-i-otimes-u-otimes-i">3.2.   $$I \otimes U \otimes I$$</h6>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>q <span style="color: #555555">=</span> QuantumRegister(<span style="color: #FF6600">3</span>)
+qc <span style="color: #555555">=</span> QuantumCircuit(q)
+qc<span style="color: #555555">.</span>u3(pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,q[<span style="color: #FF6600">1</span>])
+qc<span style="color: #555555">.</span>draw(output<span style="color: #555555">=</span><span style="color: #CC3300">&#39;mpl&#39;</span>)
+</pre></div>
+
+
+<p><img alt="png" src="../output_34_0.png" /></p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>job <span style="color: #555555">=</span> execute(qc, backend)
+job<span style="color: #555555">.</span>result()<span style="color: #555555">.</span>get_unitary(qc, decimals<span style="color: #555555">=</span><span style="color: #FF6600">3</span>)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>array([[ 0.707+0.j   ,  0.   +0.j   ,  0.   -0.707j,  0.   +0.j   ,
+         0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ],
+       [ 0.   +0.j   ,  0.707+0.j   ,  0.   +0.j   ,  0.   -0.707j,
+         0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ],
+       [ 0.   +0.707j,  0.   +0.j   , -0.707+0.j   ,  0.   +0.j   ,
+         0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ],
+       [ 0.   +0.j   ,  0.   +0.707j,  0.   +0.j   , -0.707+0.j   ,
+         0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ],
+       [ 0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,
+         0.707+0.j   ,  0.   +0.j   ,  0.   -0.707j,  0.   +0.j   ],
+       [ 0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,
+         0.   +0.j   ,  0.707+0.j   ,  0.   +0.j   ,  0.   -0.707j],
+       [ 0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,
+         0.   +0.707j,  0.   +0.j   , -0.707+0.j   ,  0.   +0.j   ],
+       [ 0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,
+         0.   +0.j   ,  0.   +0.707j,  0.   +0.j   , -0.707+0.j   ]])
+</pre></div>
+
+
+<h6 id="33-u-otimes-i-otimes-i">3.3. $$U \otimes I \otimes I$$</h6>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>q <span style="color: #555555">=</span> QuantumRegister(<span style="color: #FF6600">3</span>)
+qc <span style="color: #555555">=</span> QuantumCircuit(q)
+qc<span style="color: #555555">.</span>u3(pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,q[<span style="color: #FF6600">2</span>])
+qc<span style="color: #555555">.</span>draw(output<span style="color: #555555">=</span><span style="color: #CC3300">&#39;mpl&#39;</span>)
+</pre></div>
+
+
+<p><img alt="png" src="../output_37_0.png" /></p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>job <span style="color: #555555">=</span> execute(qc, backend)
+job<span style="color: #555555">.</span>result()<span style="color: #555555">.</span>get_unitary(qc, decimals<span style="color: #555555">=</span><span style="color: #FF6600">3</span>)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>array([[ 0.707+0.j   ,  0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,
+         0.   -0.707j,  0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ],
+       [ 0.   +0.j   ,  0.707+0.j   ,  0.   +0.j   ,  0.   +0.j   ,
+         0.   +0.j   ,  0.   -0.707j,  0.   +0.j   ,  0.   +0.j   ],
+       [ 0.   +0.j   ,  0.   +0.j   ,  0.707+0.j   ,  0.   +0.j   ,
+         0.   +0.j   ,  0.   +0.j   ,  0.   -0.707j,  0.   +0.j   ],
+       [ 0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,  0.707+0.j   ,
+         0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,  0.   -0.707j],
+       [ 0.   +0.707j,  0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,
+        -0.707+0.j   ,  0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ],
+       [ 0.   +0.j   ,  0.   +0.707j,  0.   +0.j   ,  0.   +0.j   ,
+         0.   +0.j   , -0.707+0.j   ,  0.   +0.j   ,  0.   +0.j   ],
+       [ 0.   +0.j   ,  0.   +0.j   ,  0.   +0.707j,  0.   +0.j   ,
+         0.   +0.j   ,  0.   +0.j   , -0.707+0.j   ,  0.   +0.j   ],
+       [ 0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,  0.   +0.707j,
+         0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   , -0.707+0.j   ]])
+</pre></div>
+
+
+<h6 id="34-i-otimes-u-otimes-u">3.4. $$I \otimes U \otimes U$$</h6>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>q <span style="color: #555555">=</span> QuantumRegister(<span style="color: #FF6600">3</span>)
+qc <span style="color: #555555">=</span> QuantumCircuit(q)
+qc<span style="color: #555555">.</span>u3(pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,q[<span style="color: #FF6600">0</span>])
+qc<span style="color: #555555">.</span>u3(pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,q[<span style="color: #FF6600">1</span>])
+qc<span style="color: #555555">.</span>draw(output<span style="color: #555555">=</span><span style="color: #CC3300">&#39;mpl&#39;</span>)
+</pre></div>
+
+
+<p><img alt="png" src="../output_40_0.png" /></p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>job <span style="color: #555555">=</span> execute(qc, backend)
+job<span style="color: #555555">.</span>result()<span style="color: #555555">.</span>get_unitary(qc, decimals<span style="color: #555555">=</span><span style="color: #FF6600">3</span>)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>array([[ 0.5+0.j ,  0. -0.5j,  0. -0.5j, -0.5+0.j ,  0. +0.j ,  0. +0.j ,
+         0. +0.j ,  0. +0.j ],
+       [ 0. +0.5j, -0.5+0.j ,  0.5+0.j ,  0. +0.5j,  0. +0.j ,  0. +0.j ,
+         0. +0.j ,  0. +0.j ],
+       [ 0. +0.5j,  0.5+0.j , -0.5+0.j ,  0. +0.5j,  0. +0.j ,  0. +0.j ,
+         0. +0.j ,  0. +0.j ],
+       [-0.5+0.j ,  0. -0.5j,  0. -0.5j,  0.5+0.j ,  0. +0.j ,  0. +0.j ,
+         0. +0.j ,  0. +0.j ],
+       [ 0. +0.j ,  0. +0.j ,  0. +0.j ,  0. +0.j ,  0.5+0.j ,  0. -0.5j,
+         0. -0.5j, -0.5+0.j ],
+       [ 0. +0.j ,  0. +0.j ,  0. +0.j ,  0. +0.j ,  0. +0.5j, -0.5+0.j ,
+         0.5+0.j ,  0. +0.5j],
+       [ 0. +0.j ,  0. +0.j ,  0. +0.j ,  0. +0.j ,  0. +0.5j,  0.5+0.j ,
+        -0.5+0.j ,  0. +0.5j],
+       [ 0. +0.j ,  0. +0.j ,  0. +0.j ,  0. +0.j , -0.5+0.j ,  0. -0.5j,
+         0. -0.5j,  0.5+0.j ]])
+</pre></div>
+
+
+<h6 id="34-u-otimes-u-otimes-u">3.4. $$U \otimes U \otimes U$$</h6>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>q <span style="color: #555555">=</span> QuantumRegister(<span style="color: #FF6600">3</span>)
+qc <span style="color: #555555">=</span> QuantumCircuit(q)
+qc<span style="color: #555555">.</span>u3(pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,q[<span style="color: #FF6600">0</span>])
+qc<span style="color: #555555">.</span>u3(pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,q[<span style="color: #FF6600">1</span>])
+qc<span style="color: #555555">.</span>u3(pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,q[<span style="color: #FF6600">2</span>])
+qc<span style="color: #555555">.</span>draw(output<span style="color: #555555">=</span><span style="color: #CC3300">&#39;mpl&#39;</span>)
+</pre></div>
+
+
+<p><img alt="png" src="../output_43_0.png" /></p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>job <span style="color: #555555">=</span> execute(qc, backend)
+job<span style="color: #555555">.</span>result()<span style="color: #555555">.</span>get_unitary(qc, decimals<span style="color: #555555">=</span><span style="color: #FF6600">3</span>)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>array([[ 0.354+0.j   ,  0.   -0.354j,  0.   -0.354j, -0.354+0.j   ,
+         0.   -0.354j, -0.354+0.j   , -0.354+0.j   ,  0.   +0.354j],
+       [ 0.   +0.354j, -0.354+0.j   ,  0.354+0.j   ,  0.   +0.354j,
+         0.354+0.j   ,  0.   +0.354j,  0.   -0.354j,  0.354+0.j   ],
+       [ 0.   +0.354j,  0.354+0.j   , -0.354+0.j   ,  0.   +0.354j,
+         0.354+0.j   ,  0.   -0.354j,  0.   +0.354j,  0.354+0.j   ],
+       [-0.354+0.j   ,  0.   -0.354j,  0.   -0.354j,  0.354+0.j   ,
+         0.   +0.354j, -0.354+0.j   , -0.354+0.j   ,  0.   -0.354j],
+       [ 0.   +0.354j,  0.354+0.j   ,  0.354+0.j   ,  0.   -0.354j,
+        -0.354+0.j   ,  0.   +0.354j,  0.   +0.354j,  0.354+0.j   ],
+       [-0.354+0.j   ,  0.   -0.354j,  0.   +0.354j, -0.354+0.j   ,
+         0.   -0.354j,  0.354+0.j   , -0.354+0.j   ,  0.   -0.354j],
+       [-0.354+0.j   ,  0.   +0.354j,  0.   -0.354j, -0.354+0.j   ,
+         0.   -0.354j, -0.354+0.j   ,  0.354+0.j   ,  0.   -0.354j],
+       [ 0.   -0.354j,  0.354+0.j   ,  0.354+0.j   ,  0.   +0.354j,
+         0.354+0.j   ,  0.   +0.354j,  0.   +0.354j, -0.354+0.j   ]])
+</pre></div>
+
+
+<h6 id="35-u-times-u-otimes-u-times-u-otimes-u-times-u">3.5. $$(U \times U) \otimes (U \times U) \otimes (U \times U)$$</h6>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>q <span style="color: #555555">=</span> QuantumRegister(<span style="color: #FF6600">3</span>)
+qc <span style="color: #555555">=</span> QuantumCircuit(q)
+qc<span style="color: #555555">.</span>u3(pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,q[<span style="color: #FF6600">0</span>])
+qc<span style="color: #555555">.</span>u3(pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,q[<span style="color: #FF6600">0</span>])
+qc<span style="color: #555555">.</span>u3(pi<span style="color: #555555">/</span><span style="color: #FF6600">4</span>,pi<span style="color: #555555">/</span><span style="color: #FF6600">4</span>,pi<span style="color: #555555">/</span><span style="color: #FF6600">4</span>,q[<span style="color: #FF6600">1</span>])
+qc<span style="color: #555555">.</span>u3(<span style="color: #FF6600">3</span><span style="color: #555555">*</span>pi<span style="color: #555555">/</span><span style="color: #FF6600">4</span>,<span style="color: #FF6600">3</span><span style="color: #555555">*</span>pi<span style="color: #555555">/</span><span style="color: #FF6600">4</span>,<span style="color: #FF6600">3</span><span style="color: #555555">*</span>pi<span style="color: #555555">/</span><span style="color: #FF6600">4</span>,q[<span style="color: #FF6600">1</span>])
+qc<span style="color: #555555">.</span>u3(pi<span style="color: #555555">/</span><span style="color: #FF6600">6</span>,pi<span style="color: #555555">/</span><span style="color: #FF6600">6</span>,pi<span style="color: #555555">/</span><span style="color: #FF6600">6</span>,q[<span style="color: #FF6600">2</span>])
+qc<span style="color: #555555">.</span>u3(<span style="color: #FF6600">5</span><span style="color: #555555">*</span>pi<span style="color: #555555">/</span><span style="color: #FF6600">6</span>,<span style="color: #FF6600">5</span><span style="color: #555555">*</span>pi<span style="color: #555555">/</span><span style="color: #FF6600">6</span>,<span style="color: #FF6600">5</span><span style="color: #555555">*</span>pi<span style="color: #555555">/</span><span style="color: #FF6600">6</span>,q[<span style="color: #FF6600">2</span>])
+qc<span style="color: #555555">.</span>draw(output<span style="color: #555555">=</span><span style="color: #CC3300">&#39;mpl&#39;</span>)
+</pre></div>
+
+
+<p><img alt="png" src="../output_46_0.png" /></p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>job <span style="color: #555555">=</span> execute(qc, backend)
+job<span style="color: #555555">.</span>result()<span style="color: #555555">.</span>get_unitary(qc, decimals<span style="color: #555555">=</span><span style="color: #FF6600">3</span>)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>array([[ 0.354+0.j   ,  0.   +0.j   ,  0.25 +0.25j ,  0.   +0.j   ,
+         0.53 +0.306j,  0.   +0.j   ,  0.158+0.592j,  0.   +0.j   ],
+       [ 0.   +0.j   ,  0.354+0.j   ,  0.   +0.j   ,  0.25 +0.25j ,
+         0.   +0.j   ,  0.53 +0.306j,  0.   +0.j   ,  0.158+0.592j],
+       [-0.25 +0.25j ,  0.   +0.j   ,  0.354+0.j   ,  0.   +0.j   ,
+        -0.592+0.158j,  0.   +0.j   ,  0.53 +0.306j,  0.   +0.j   ],
+       [ 0.   +0.j   , -0.25 +0.25j ,  0.   +0.j   ,  0.354+0.j   ,
+         0.   +0.j   , -0.592+0.158j,  0.   +0.j   ,  0.53 +0.306j],
+       [-0.53 +0.306j,  0.   +0.j   , -0.592-0.158j,  0.   +0.j   ,
+         0.354+0.j   ,  0.   +0.j   ,  0.25 +0.25j ,  0.   +0.j   ],
+       [ 0.   +0.j   , -0.53 +0.306j,  0.   +0.j   , -0.592-0.158j,
+         0.   +0.j   ,  0.354+0.j   ,  0.   +0.j   ,  0.25 +0.25j ],
+       [ 0.158-0.592j,  0.   +0.j   , -0.53 +0.306j,  0.   +0.j   ,
+        -0.25 +0.25j ,  0.   +0.j   ,  0.354+0.j   ,  0.   +0.j   ],
+       [ 0.   +0.j   ,  0.158-0.592j,  0.   +0.j   , -0.53 +0.306j,
+         0.   +0.j   , -0.25 +0.25j ,  0.   +0.j   ,  0.354+0.j   ]])
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>
+</pre></div>
               
             </div>
           </div>

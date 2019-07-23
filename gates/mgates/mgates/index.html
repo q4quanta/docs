@@ -145,13 +145,39 @@
       
 
   <li class="toctree-l2 current with-children">
-    <a href="#coming-soon">
-      Coming Soon
+    <a href="#double-qubits-gates">
+      Double Qubits Gates
       <span class="toctree-expand"></span>
     </a>
   </li>
 
 
+
+  <li class="toctree-l2 current">
+    <ul class="subnav-l2 current">
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#latest-python-notebook-is-available-here">Latest python notebook is available here</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#controlled-phase-rotation">Controlled Phase Rotation</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#u-operator-and-control-phase-gate">U operator and control phase gate</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#all-gates-together-in-4-qubit-circut">All Gates together in 4-qubit circut</a>
+        </li>
+    
+    </ul>
+  </li>
 
 
   
@@ -174,14 +200,14 @@
 
 
   <li class="navtree toctree-l2 inactive">
-    <a class="" href="../../../circuits/hadamard/hadamard/">Superposition</a>
+    <a class="" href="../../../circuits/hadamard/hadamard/">Hadamard Gate</a>
   </li>
         
           
 
 
   <li class="navtree toctree-l2 inactive">
-    <a class="" href="../../../circuits/bell/bell/">Bell state</a>
+    <a class="" href="../../../circuits/bell/bell/">Bell State</a>
   </li>
         
           
@@ -349,8 +375,188 @@
           <div role="main">
             <div class="section">
               
-                <h3 id="coming-soon">Coming Soon</h3>
-<p>Under construction</p>
+                <h3 id="double-qubits-gates">Double Qubits Gates</h3>
+<h6 id="latest-python-notebook-is-available-here">Latest python notebook is available <a href="https://github.com/q4quanta/quantum-circuits">here</a></h6>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #0099FF; font-style: italic"># Useful additional packages</span>
+<span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">matplotlib.pyplot</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">plt</span>
+<span style="color: #555555">%</span>matplotlib inline
+<span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">numpy</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">np</span>
+<span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">math</span> <span style="color: #006699; font-weight: bold">import</span> pi
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">qiskit</span> <span style="color: #006699; font-weight: bold">import</span> QuantumCircuit, ClassicalRegister, QuantumRegister, execute
+<span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">qiskit.tools.visualization</span> <span style="color: #006699; font-weight: bold">import</span> circuit_drawer
+<span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">qiskit.quantum_info</span> <span style="color: #006699; font-weight: bold">import</span> state_fidelity
+<span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">qiskit</span> <span style="color: #006699; font-weight: bold">import</span> BasicAer
+
+backend <span style="color: #555555">=</span> BasicAer<span style="color: #555555">.</span>get_backend(<span style="color: #CC3300">&#39;unitary_simulator&#39;</span>)
+</pre></div>
+
+
+<hr />
+<h5 id="controlled-phase-rotation">Controlled Phase Rotation</h5>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>q <span style="color: #555555">=</span> QuantumRegister(<span style="color: #FF6600">2</span>)
+qc <span style="color: #555555">=</span> QuantumCircuit(q)
+qc<span style="color: #555555">.</span>cu1(pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,q[<span style="color: #FF6600">0</span>], q[<span style="color: #FF6600">1</span>])
+qc<span style="color: #555555">.</span>draw(output<span style="color: #555555">=</span><span style="color: #CC3300">&#39;mpl&#39;</span>)
+</pre></div>
+
+
+<p><img alt="png" src="../output_6_0.png" /></p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>job <span style="color: #555555">=</span> execute(qc, backend)
+job<span style="color: #555555">.</span>result()<span style="color: #555555">.</span>get_unitary(qc, decimals<span style="color: #555555">=</span><span style="color: #FF6600">3</span>)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>array([[1.+0.j, 0.+0.j, 0.+0.j, 0.+0.j],
+       [0.+0.j, 1.+0.j, 0.+0.j, 0.+0.j],
+       [0.+0.j, 0.+0.j, 1.+0.j, 0.+0.j],
+       [0.+0.j, 0.+0.j, 0.+0.j, 0.+1.j]])
+</pre></div>
+
+
+<hr />
+<h5 id="u-operator-and-control-phase-gate">U operator and control phase gate</h5>
+<p>$$ (I \otimes I \otimes U_3)  \times (I \otimes CU_1 ) \times (I \otimes U_3 \otimes I)  \times (CU_1 \otimes I) \times (U_3 \otimes I \otimes I)$$</p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>q <span style="color: #555555">=</span> QuantumRegister(<span style="color: #FF6600">3</span>)
+qc <span style="color: #555555">=</span> QuantumCircuit(q)
+
+qc<span style="color: #555555">.</span>u3(pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,q[<span style="color: #FF6600">0</span>])
+qc<span style="color: #555555">.</span>cu1(pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,q[<span style="color: #FF6600">0</span>], q[<span style="color: #FF6600">1</span>])
+qc<span style="color: #555555">.</span>u3(pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,q[<span style="color: #FF6600">1</span>])
+qc<span style="color: #555555">.</span>cu1(pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,q[<span style="color: #FF6600">1</span>], q[<span style="color: #FF6600">2</span>])
+qc<span style="color: #555555">.</span>u3(pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,q[<span style="color: #FF6600">2</span>])
+
+qc<span style="color: #555555">.</span>draw(output<span style="color: #555555">=</span><span style="color: #CC3300">&#39;mpl&#39;</span>)
+</pre></div>
+
+
+<p><img alt="png" src="../output_11_0.png" /></p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>job <span style="color: #555555">=</span> execute(qc, backend)
+job<span style="color: #555555">.</span>result()<span style="color: #555555">.</span>get_unitary(qc, decimals<span style="color: #555555">=</span><span style="color: #FF6600">3</span>)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>array([[ 0.354+0.j   ,  0.   -0.354j,  0.   -0.354j, -0.354+0.j   ,
+         0.   -0.354j, -0.354+0.j   , -0.354+0.j   ,  0.   +0.354j],
+       [ 0.   +0.354j, -0.354+0.j   ,  0.   +0.354j, -0.354+0.j   ,
+         0.354+0.j   ,  0.   +0.354j,  0.354+0.j   ,  0.   +0.354j],
+       [ 0.   +0.354j,  0.354+0.j   , -0.354+0.j   ,  0.   +0.354j,
+         0.   +0.354j,  0.354+0.j   , -0.354+0.j   ,  0.   +0.354j],
+       [-0.354+0.j   ,  0.   -0.354j,  0.354+0.j   ,  0.   +0.354j,
+        -0.354+0.j   ,  0.   -0.354j,  0.354+0.j   ,  0.   +0.354j],
+       [ 0.   +0.354j,  0.354+0.j   ,  0.354+0.j   ,  0.   -0.354j,
+        -0.354+0.j   ,  0.   +0.354j,  0.   +0.354j,  0.354+0.j   ],
+       [-0.354+0.j   ,  0.   -0.354j, -0.354+0.j   ,  0.   -0.354j,
+         0.   -0.354j,  0.354+0.j   ,  0.   -0.354j,  0.354+0.j   ],
+       [-0.354+0.j   ,  0.   +0.354j,  0.   -0.354j, -0.354+0.j   ,
+         0.354+0.j   ,  0.   -0.354j,  0.   +0.354j,  0.354+0.j   ],
+       [ 0.   -0.354j,  0.354+0.j   ,  0.   +0.354j, -0.354+0.j   ,
+         0.   +0.354j, -0.354+0.j   ,  0.   -0.354j,  0.354+0.j   ]])
+</pre></div>
+
+
+<hr />
+<h4 id="all-gates-together-in-4-qubit-circut">All Gates together in 4-qubit circut</h4>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>q <span style="color: #555555">=</span> QuantumRegister(<span style="color: #FF6600">4</span>)
+qc <span style="color: #555555">=</span> QuantumCircuit(q)
+
+qc<span style="color: #555555">.</span>u3(pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,q[<span style="color: #FF6600">0</span>])
+qc<span style="color: #555555">.</span>cu1(pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,q[<span style="color: #FF6600">0</span>], q[<span style="color: #FF6600">1</span>])
+qc<span style="color: #555555">.</span>u2(pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,q[<span style="color: #FF6600">1</span>])
+qc<span style="color: #555555">.</span>u1(pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,q[<span style="color: #FF6600">2</span>])
+qc<span style="color: #555555">.</span>x(q[<span style="color: #FF6600">0</span>])
+qc<span style="color: #555555">.</span>ccx(q[<span style="color: #FF6600">1</span>],q[<span style="color: #FF6600">2</span>],q[<span style="color: #FF6600">3</span>])
+qc<span style="color: #555555">.</span>y(q[<span style="color: #FF6600">1</span>])
+qc<span style="color: #555555">.</span>z(q[<span style="color: #FF6600">2</span>])
+qc<span style="color: #555555">.</span>cx(q[<span style="color: #FF6600">2</span>],q[<span style="color: #FF6600">3</span>])
+qc<span style="color: #555555">.</span>z(q[<span style="color: #FF6600">3</span>])
+qc<span style="color: #555555">.</span>h(q[<span style="color: #FF6600">3</span>])
+qc<span style="color: #555555">.</span>s(q[<span style="color: #FF6600">0</span>])
+qc<span style="color: #555555">.</span>cu1(pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,q[<span style="color: #FF6600">1</span>], q[<span style="color: #FF6600">2</span>])
+qc<span style="color: #555555">.</span>swap(q[<span style="color: #FF6600">0</span>],q[<span style="color: #FF6600">2</span>])
+qc<span style="color: #555555">.</span>cswap(q[<span style="color: #FF6600">0</span>],q[<span style="color: #FF6600">1</span>],q[<span style="color: #FF6600">3</span>])
+
+qc<span style="color: #555555">.</span>draw(output<span style="color: #555555">=</span><span style="color: #CC3300">&#39;mpl&#39;</span>)
+</pre></div>
+
+
+<p><img alt="png" src="../output_15_0.png" /></p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>job <span style="color: #555555">=</span> execute(qc, backend)
+job<span style="color: #555555">.</span>result()<span style="color: #555555">.</span>get_unitary(qc, decimals<span style="color: #555555">=</span><span style="color: #FF6600">3</span>)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>array([[ 0.   +0.354j, -0.354+0.j   ,  0.   -0.354j,  0.354+0.j   ,
+         0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,
+         0.   -0.354j,  0.354+0.j   ,  0.   +0.354j, -0.354+0.j   ,
+         0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ],
+       [ 0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,
+         0.354+0.j   ,  0.   +0.354j, -0.354+0.j   ,  0.   -0.354j,
+         0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,
+        -0.354+0.j   ,  0.   -0.354j,  0.354+0.j   ,  0.   +0.354j],
+       [-0.354+0.j   ,  0.   -0.354j, -0.354+0.j   ,  0.   -0.354j,
+         0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,
+         0.354+0.j   ,  0.   +0.354j,  0.354+0.j   ,  0.   +0.354j,
+         0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ],
+       [ 0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,
+         0.354+0.j   ,  0.   +0.354j, -0.354+0.j   ,  0.   -0.354j,
+         0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,
+         0.354+0.j   ,  0.   +0.354j, -0.354+0.j   ,  0.   -0.354j],
+       [ 0.   +0.354j,  0.354+0.j   , -0.354+0.j   ,  0.   +0.354j,
+         0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,
+         0.   -0.354j, -0.354+0.j   ,  0.354+0.j   ,  0.   -0.354j,
+         0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ],
+       [ 0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,
+         0.354+0.j   ,  0.   -0.354j,  0.   +0.354j,  0.354+0.j   ,
+         0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,
+        -0.354+0.j   ,  0.   +0.354j,  0.   -0.354j, -0.354+0.j   ],
+       [-0.354+0.j   ,  0.   +0.354j,  0.   +0.354j,  0.354+0.j   ,
+         0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,
+         0.354+0.j   ,  0.   -0.354j,  0.   -0.354j, -0.354+0.j   ,
+         0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ],
+       [ 0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,
+         0.354+0.j   ,  0.   -0.354j,  0.   +0.354j,  0.354+0.j   ,
+         0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,
+         0.354+0.j   ,  0.   -0.354j,  0.   +0.354j,  0.354+0.j   ],
+       [ 0.   +0.354j, -0.354+0.j   ,  0.   -0.354j,  0.354+0.j   ,
+         0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,
+         0.   +0.354j, -0.354+0.j   ,  0.   -0.354j,  0.354+0.j   ,
+         0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ],
+       [ 0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,
+         0.354+0.j   ,  0.   +0.354j,  0.354+0.j   ,  0.   +0.354j,
+         0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,
+        -0.354+0.j   ,  0.   -0.354j, -0.354+0.j   ,  0.   -0.354j],
+       [-0.354+0.j   ,  0.   -0.354j, -0.354+0.j   ,  0.   -0.354j,
+         0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,
+        -0.354+0.j   ,  0.   -0.354j, -0.354+0.j   ,  0.   -0.354j,
+         0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ],
+       [ 0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,
+        -0.354+0.j   ,  0.   -0.354j, -0.354+0.j   ,  0.   -0.354j,
+         0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,
+        -0.354+0.j   ,  0.   -0.354j, -0.354+0.j   ,  0.   -0.354j],
+       [ 0.   +0.354j,  0.354+0.j   , -0.354+0.j   ,  0.   +0.354j,
+         0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,
+         0.   +0.354j,  0.354+0.j   , -0.354+0.j   ,  0.   +0.354j,
+         0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ],
+       [ 0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,
+         0.354+0.j   ,  0.   -0.354j,  0.   -0.354j, -0.354+0.j   ,
+         0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,
+        -0.354+0.j   ,  0.   +0.354j,  0.   +0.354j,  0.354+0.j   ],
+       [-0.354+0.j   ,  0.   +0.354j,  0.   +0.354j,  0.354+0.j   ,
+         0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,
+        -0.354+0.j   ,  0.   +0.354j,  0.   +0.354j,  0.354+0.j   ,
+         0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ],
+       [ 0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,
+        -0.354+0.j   ,  0.   +0.354j,  0.   +0.354j,  0.354+0.j   ,
+         0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,
+        -0.354+0.j   ,  0.   +0.354j,  0.   +0.354j,  0.354+0.j   ]])
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>
+</pre></div>
               
             </div>
           </div>
@@ -358,7 +564,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../../circuits/hadamard/hadamard/" class="btn btn-neutral float-right" title="Superposition">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../../../circuits/hadamard/hadamard/" class="btn btn-neutral float-right" title="Hadamard Gate">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../../sgates/sgates/" class="btn btn-neutral" title="Single Qubit Gates"><span class="icon icon-circle-arrow-left"></span> Previous</a>
