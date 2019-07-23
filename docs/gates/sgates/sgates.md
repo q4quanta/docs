@@ -3,6 +3,7 @@
 
 ###### Latest python notebook is available [here](https://github.com/q4quanta/quantum-circuits)
 
+![img](https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Bloch_sphere.svg/256px-Bloch_sphere.svg.png)
 
 ```python
 # Useful additional packages
