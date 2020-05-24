@@ -1,7 +1,6 @@
 ### Quanta.Guru
 
 
-
 This online document helps the absolute beginners to persue in the future direction in coding and Quantum Computing. The lesson starts with fundamental of qubits, quantum gates and quantum circuits and quantum algorithms.
 
 ![img](img/bloch3.gif)
@@ -9,7 +8,7 @@ This online document helps the absolute beginners to persue in the future direct
 ![img](gates/pauli/phase3.gif)
 
 
-##### Qubit
+##### QUBIT
 
 - [Qubit](https://www.quanta.guru/docs/qubit/qubit/)
 
@@ -32,7 +31,7 @@ This online document helps the absolute beginners to persue in the future direct
 - [Universality](https://www.quanta.guru/docs/circuits/circuitDecomposition/circuitDecomposition/)
 - [Quantum Fourier Transform](https://www.quanta.guru/docs/algorithms/qft/qft/)
 
-#### Quantum Cryptography
+#### QUANTUM CRYPTOGRAPHY
 - [Quantum Cryptography](https://www.quanta.guru/docs/cryptography/cryptography/)
 
       
