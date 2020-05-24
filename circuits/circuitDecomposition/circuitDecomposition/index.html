@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>Circuit Decomposition - Quanta.Guru</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Circuit Decomposition";
+    var mkdocs_page_input_path = "circuits/circuitDecomposition/circuitDecomposition.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> Quanta.Guru</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="tocbase current">
+    
+    
+      
+
+
+  <li class="navtree toctree-l1 inactive">
+    <a class="" href="../../..">Home</a>
+  </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Getting started</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../GettingStarted/anaconda/">Guide to starting Python</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../GettingStarted/env/">Setting up Python Environment</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../GettingStarted/jupyter/">Installing Jupyter Notebook</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../GettingStarted/git/">How to Git</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Qubit and Gates</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../qubit/qubit/">Qubit</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../gates/hgate/hgate/">Hadamard Gate</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../gates/ugate/ugate/">Rotation Gate</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../gates/pauli/pauli/">Pauli Gate</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../gates/rphi/rphi/">R-Phi Gate</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../gates/cnot/cnot/">CNOT Gate</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Quantum Circuits</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../One-qubit-circuit/One-qubit-circuit/">One qubit Circuit</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../Two-qubit-circuit/Two-qubit-circuit/">Two qubit Circuit</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../Three-qubit-circuit/Three-qubit-circuit/">Three qubit Circuit</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../Multi-qubit-circuits/Multi-qubit-circuits/">Multi qubit Circuit</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Algorithms</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../bell/bell/">Bell State</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../universality/universality/">Universality</a>
+  </li>
+        
+          
+
+
+  
+    
+    <li class="navtree toctree-l2 page current">
+      <a class="current" href="./">
+        Circuit Decomposition
+          <span class="toctree-expand"></span>
+      </a>
+    </li>
+    
+      
+
+  <li class="toctree-l2 current with-children">
+    <a href="#universality-circuit-decomposition">
+      Universality: Circuit Decomposition
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l2 current">
+    <ul class="subnav-l2 current">
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#provided-unitary-matrix">Provided Unitary Matrix</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#trial-zero">Trial Zero</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#matrix-analysis">Matrix Analysis</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#diagonalization-of-u">Diagonalization of U</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#what-circuit-would-make-such-a-complicated-unitary">What circuit would make such a complicated unitary?</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#visualize-the-circuit">Visualize the Circuit</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#more-exact-solution">More Exact Solution</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#references">References</a>
+        </li>
+    
+    </ul>
+  </li>
+
+
+  
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../algorithms/qft/qft/">Quantum Fourier Transform</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../cryptography/cryptography/">Quantum Cryptography</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+  </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">Quanta.Guru</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Algorithms &raquo;</li>
+        
+      
+    
+    <li>Circuit Decomposition</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h3 id="universality-circuit-decomposition">Universality: Circuit Decomposition</h3>
+<p>This notebook is from IBM Challange 2020 <a href="https://github.com/qiskit-community/may4_challenge_exercises">GitHub</a></p>
+<p>Wow! If you managed to solve the first three exercises, congratulations! The fourth problem is supposed to puzzle even the quantum experts among you, so don’t worry if you cannot solve it. If you can, hats off to you!</p>
+<p>You may recall from your quantum mechanics course that quantum theory is unitary. Therefore, the evolution of any (closed) system can be described by a unitary. But given an arbitrary unitary, can you actually implement it on your quantum computer?</p>
+<p><a href="https://qiskit.org/textbook/ch-algorithms/defining-quantum-circuits.html"><strong>"A set of quantum gates is said to be universal if any unitary transformation of the quantum data can be efficiently approximated arbitrarily well as a sequence of gates in the set."</strong></a></p>
+<p>Every gate you run on the IBM Quantum Experience is transpiled into single qubit rotations and CNOT (CX) gates. We know that these constitute a universal gate set, which implies that any unitary can be implemented using only these gates. However, in general it is not easy to find a good decomposition for an arbitrary unitary. Your task is to find such a decomposition.</p>
+<p>You are given the following unitary:</p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">numpy</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">np</span>
+<span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">qiskit</span> <span style="color: #006699; font-weight: bold">import</span> Aer, QuantumCircuit, execute
+<span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">qiskit.visualization</span> <span style="color: #006699; font-weight: bold">import</span> plot_histogram
+<span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">IPython.display</span> <span style="color: #006699; font-weight: bold">import</span> display, Math, Latex
+<span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">may4_challenge.ex1</span> <span style="color: #006699; font-weight: bold">import</span> return_state, vec_in_braket, statevec
+<span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">may4_challenge.ex4</span> <span style="color: #006699; font-weight: bold">import</span> check_circuit, submit_circuit
+<span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">qiskit.compiler</span> <span style="color: #006699; font-weight: bold">import</span> transpile
+<span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">seaborn</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">sns</span>
+sns<span style="color: #555555">.</span>set()
+<span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">matplotlib.pyplot</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">plt</span>
+</pre></div>
+
+
+<h4 id="provided-unitary-matrix">Provided Unitary Matrix</h4>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">may4_challenge.ex4</span> <span style="color: #006699; font-weight: bold">import</span> get_unitary
+U <span style="color: #555555">=</span> get_unitary()
+<span style="color: #0099FF; font-style: italic"># print(U)</span>
+<span style="color: #336666">print</span>(<span style="color: #CC3300">&quot;U has shape&quot;</span>, U<span style="color: #555555">.</span>shape)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>U has shape (16, 16)
+</pre></div>
+
+
+<h4 id="trial-zero">Trial Zero</h4>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>iqc <span style="color: #555555">=</span> QuantumCircuit(<span style="color: #FF6600">4</span>)
+iqc<span style="color: #555555">.</span>iso(U, [<span style="color: #FF6600">0</span>,<span style="color: #FF6600">1</span>,<span style="color: #FF6600">2</span>,<span style="color: #FF6600">3</span>], [])
+tiqc <span style="color: #555555">=</span> transpile(iqc, basis_gates<span style="color: #555555">=</span>[<span style="color: #CC3300">&#39;u3&#39;</span>, <span style="color: #CC3300">&#39;cx&#39;</span>],optimization_level <span style="color: #555555">=</span> <span style="color: #FF6600">2</span>)
+check_circuit(tiqc)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>Circuit stats:
+||U-V||_2 = 4.2634217757239e-14
+(U is the reference unitary, V is yours, and the global phase has been removed from both of them).
+Cost is 1663
+
+Something is not right with your circuit: the cost of the circuit is too high (above 1600)
+</pre></div>
+
+
+<h4 id="matrix-analysis">Matrix Analysis</h4>
+<p>Lets visualize the Matrix
+We can look at absolute values of matrix element.</p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">getAbs</span>(U):
+    M <span style="color: #555555">=</span> np<span style="color: #555555">.</span>eye(<span style="color: #FF6600">16</span>,<span style="color: #FF6600">16</span>)
+    <span style="color: #006699; font-weight: bold">for</span> i <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">range</span>(<span style="color: #FF6600">16</span>):
+        <span style="color: #006699; font-weight: bold">for</span> j <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">range</span>(<span style="color: #FF6600">16</span>):
+            M[i,j] <span style="color: #555555">=</span> <span style="color: #336666">abs</span>(U[i,j])
+    <span style="color: #006699; font-weight: bold">return</span> M
+M <span style="color: #555555">=</span> getAbs(U)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>plt<span style="color: #555555">.</span>figure(figsize <span style="color: #555555">=</span> [<span style="color: #FF6600">15</span>,<span style="color: #FF6600">10</span>])
+sns<span style="color: #555555">.</span>heatmap(M, annot <span style="color: #555555">=</span><span style="color: #006699; font-weight: bold">True</span>, fmt <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;0.2f&#39;</span>)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fa416aef450&gt;
+</pre></div>
+
+
+<p><img alt="png" src="../output_8_1.png" /></p>
+<h4 id="diagonalization-of-u">Diagonalization of U</h4>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">qiskit</span> <span style="color: #006699; font-weight: bold">import</span> BasicAer
+backend <span style="color: #555555">=</span> BasicAer<span style="color: #555555">.</span>get_backend(<span style="color: #CC3300">&#39;unitary_simulator&#39;</span>)
+Hqc <span style="color: #555555">=</span> QuantumCircuit(<span style="color: #FF6600">4</span>)
+Hqc<span style="color: #555555">.</span>h(<span style="color: #FF6600">0</span>)
+Hqc<span style="color: #555555">.</span>h(<span style="color: #FF6600">1</span>)
+Hqc<span style="color: #555555">.</span>h(<span style="color: #FF6600">2</span>)
+Hqc<span style="color: #555555">.</span>h(<span style="color: #FF6600">3</span>)
+job <span style="color: #555555">=</span> execute(Hqc, backend)
+H <span style="color: #555555">=</span> job<span style="color: #555555">.</span>result()<span style="color: #555555">.</span>get_unitary(Hqc, decimals<span style="color: #555555">=</span><span style="color: #FF6600">3</span>)
+H <span style="color: #555555">=</span> np<span style="color: #555555">.</span>matrix(H)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>DU <span style="color: #555555">=</span> np<span style="color: #555555">.</span>dot(np<span style="color: #555555">.</span>dot(H,U),H)
+ADU <span style="color: #555555">=</span> getAbs(DU)
+plt<span style="color: #555555">.</span>figure(figsize <span style="color: #555555">=</span> [<span style="color: #FF6600">10</span>,<span style="color: #FF6600">8</span>])
+sns<span style="color: #555555">.</span>heatmap(ADU, annot <span style="color: #555555">=</span><span style="color: #006699; font-weight: bold">True</span>, fmt <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;0.1f&#39;</span>)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fa416bab450&gt;
+</pre></div>
+
+
+<p><img alt="png" src="../output_11_1.png" /></p>
+<h4 id="what-circuit-would-make-such-a-complicated-unitary">What circuit would make such a complicated unitary?</h4>
+<p>Is there some symmetry, or is it random? We just updated Qiskit with the introduction of a <a href="https://github.com/Qiskit/qiskit-terra/tree/master/qiskit/circuit/library">quantum circuit library</a>. This library gives users access to a rich set of well-studied circuit families, instances of which can be used as benchmarks (quantum volume), as building blocks in building more complex circuits (adders), or as tools to explore quantum computational advantage over classical computation (instantaneous quantum polynomial complexity circuits).</p>
+<p><strong>Using only single qubit rotations and CNOT gates, find a quantum circuit that approximates that unitary \(U \) by a unitary \(V \) up to an error \( \varepsilon = 0.01\), such that \(\lVert U - V\rVert_2 \leq \varepsilon\) !</strong> </p>
+<p>Note that the norm we are using here is the spectral norm, \( \qquad \lVert A \rVert_2 = \max_{\lVert \psi \rVert_2= 1} \lVert A \psi \rVert \).</p>
+<p>This can be seen as the largest scaling factor that the matrix $A$ has on any initial (normalized) state $\psi$. One can show that this norm corresponds to the largest singular value of $A$, i.e., the square root of the largest eigenvalue of the matrix $A^\dagger A$, where $A^{\dagger}$ denotes the conjugate transpose of $A$.</p>
+<p><strong>When you submit a circuit, we remove the global phase of the corresponding unitary $V$ before comparing it with $U$ using the spectral norm. For example, if you submit a circuit that generates $V = \text{e}^{i\theta}U$, we remove the global phase $\text{e}^{i\theta}$ from $V$ before computing the norm, and you will have a successful submission. As a result, you do not have to worry about matching the desired unitary, $U$, up to a global phase.</strong></p>
+<p>As the single-qubit gates have a much higher fidelity than the two-qubit gates, we will look at the number of CNOT-gates, \( n_{cx} \), and the number of u3-gates, \( n_{u3}\), to determine the cost of your decomposition as </p>
+<p>$$
+\qquad \text{cost} = 10 \cdot n_{cx} + n_{u3}
+$$</p>
+<p>Try to optimize the cost of your decomposition. </p>
+<p><strong>Note that you will need to ensure that your circuit is composed only of \(u3\) and \(cx\) gates. The exercise is considered correctly solved if your cost is smaller than 1600.</strong></p>
+<hr />
+<p>For useful tips to complete this exercise as well as pointers for communicating with other participants and asking questions, please take a look at the following <a href="https://github.com/qiskit-community/may4_challenge_exercises">repository</a>. You will also find a copy of these exercises, so feel free to edit and experiment with these notebooks.</p>
+<hr />
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">qiskit</span> <span style="color: #006699; font-weight: bold">import</span> BasicAer
+backend <span style="color: #555555">=</span> BasicAer<span style="color: #555555">.</span>get_backend(<span style="color: #CC3300">&#39;unitary_simulator&#39;</span>)
+Hqc <span style="color: #555555">=</span> QuantumCircuit(<span style="color: #FF6600">4</span>)
+Hqc<span style="color: #555555">.</span>h(<span style="color: #FF6600">0</span>)
+Hqc<span style="color: #555555">.</span>h(<span style="color: #FF6600">1</span>)
+Hqc<span style="color: #555555">.</span>h(<span style="color: #FF6600">2</span>)
+Hqc<span style="color: #555555">.</span>h(<span style="color: #FF6600">3</span>)
+job <span style="color: #555555">=</span> execute(Hqc, backend)
+H <span style="color: #555555">=</span> job<span style="color: #555555">.</span>result()<span style="color: #555555">.</span>get_unitary(Hqc, decimals<span style="color: #555555">=</span><span style="color: #FF6600">3</span>)
+H <span style="color: #555555">=</span> np<span style="color: #555555">.</span>matrix(H)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>NU <span style="color: #555555">=</span> np<span style="color: #555555">.</span>dot(U,H)
+<span style="color: #0099FF; font-style: italic">#NU = np.dot(H,U)</span>
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #0099FF; font-style: italic">##### build your quantum circuit here</span>
+qc <span style="color: #555555">=</span> QuantumCircuit(<span style="color: #FF6600">4</span>)
+qc<span style="color: #555555">.</span>h(<span style="color: #FF6600">0</span>)
+qc<span style="color: #555555">.</span>h(<span style="color: #FF6600">1</span>)
+qc<span style="color: #555555">.</span>h(<span style="color: #FF6600">2</span>)
+qc<span style="color: #555555">.</span>h(<span style="color: #FF6600">3</span>)
+qc<span style="color: #555555">.</span>iso(NU, [<span style="color: #FF6600">0</span>,<span style="color: #FF6600">1</span>,<span style="color: #FF6600">2</span>,<span style="color: #FF6600">3</span>], [])
+<span style="color: #0099FF; font-style: italic">#qc.h(0)</span>
+<span style="color: #0099FF; font-style: italic">#qc.h(1)</span>
+<span style="color: #0099FF; font-style: italic">#qc.h(2)</span>
+<span style="color: #0099FF; font-style: italic">#qc.h(3)</span>
+<span style="color: #0099FF; font-style: italic">#qc.draw(output=&#39;mpl&#39;) # we draw the circuit</span>
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>&lt;qiskit.circuit.instructionset.InstructionSet at 0x7fa484630250&gt;
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #0099FF; font-style: italic">#qc = transpile(qc, basis_gates=[&#39;u3&#39;, &#39;cx&#39;],optimization_level = 1)</span>
+tqc <span style="color: #555555">=</span> transpile(qc, basis_gates<span style="color: #555555">=</span>[<span style="color: #CC3300">&#39;u3&#39;</span>, <span style="color: #CC3300">&#39;cx&#39;</span>],optimization_level <span style="color: #555555">=</span> <span style="color: #FF6600">2</span>)
+<span style="color: #0099FF; font-style: italic">#qc.draw(output=&#39;mpl&#39;) # we draw the circuit</span>
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #0099FF; font-style: italic">##### check your quantum circuit by running the next line</span>
+check_circuit(tqc)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>Circuit stats:
+||U-V||_2 = 7.431794894034265e-15
+(U is the reference unitary, V is yours, and the global phase has been removed from both of them).
+Cost is 331
+
+Great! Your circuit meets all the constrains.
+Your score is 331. The lower, the better!
+Feel free to submit your answer and remember you can re-submit a new circuit at any time!
+</pre></div>
+
+
+<p>You can check whether your circuit is valid before submitting it with <code>check_circuit(qc)</code>. Once you have a valid solution, please submit it by running the following cell (delete the <code>#</code> before <code>submit_circuit</code>). You can re-submit at any time.</p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #0099FF; font-style: italic">#Send the circuit as the final answer, can re-submit at any time</span>
+<span style="color: #0099FF; font-style: italic">#submit_circuit(tqc) </span>
+</pre></div>
+
+
+<div style="border: 2px solid black; padding: 2rem;">
+    <p>
+        Success 🎉! Your circuit has been submitted. Return to the
+        <a href="https://quantum-computing.ibm.com/challenges/4anniversary/?exercise=4" target="_blank">
+            IBM Quantum Challenge page
+        </a>
+        and check your score and ranking.
+    </p>
+    <p>
+        Remember that you can submit a circuit as many times as you
+        want.
+    </p>
+</div>
+
+<h4 id="visualize-the-circuit">Visualize the Circuit</h4>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>tqc<span style="color: #555555">.</span>draw(output<span style="color: #555555">=</span><span style="color: #CC3300">&#39;mpl&#39;</span>) <span style="color: #0099FF; font-style: italic"># we draw the circuit</span>
+</pre></div>
+
+
+<p><img alt="png" src="../output_22_0.png" /></p>
+<h4 id="more-exact-solution">More Exact Solution</h4>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>qc <span style="color: #555555">=</span> QuantumCircuit(<span style="color: #FF6600">4</span>)
+
+qc<span style="color: #555555">.</span>h(<span style="color: #336666">range</span>(<span style="color: #FF6600">4</span>))
+qc<span style="color: #555555">.</span>unitary(Uprime, qc<span style="color: #555555">.</span>qubits)
+qc<span style="color: #555555">.</span>h(<span style="color: #336666">range</span>(<span style="color: #FF6600">4</span>))
+qc <span style="color: #555555">=</span> transpile(qc, basis_gates <span style="color: #555555">=</span> [<span style="color: #CC3300">&#39;u3&#39;</span>, <span style="color: #CC3300">&#39;cx&#39;</span>], optimization_level<span style="color: #555555">=</span><span style="color: #FF6600">3</span>)
+check_circuit(qc)
+qc<span style="color: #555555">.</span>draw()
+<span style="color: #0099FF; font-style: italic"># apply operations to your quantum circuit here</span>
+</pre></div>
+
+
+<p>Circuit stats:
+||U-V||_2 = 5.470975623515672e-15
+(U is the reference unitary, V is yours, and the global phase has been removed from both of them).
+Cost is 149</p>
+<p>Great! Your circuit meets all the constrains.
+Your score is 149. The lower, the better!
+Feel free to submit your answer and remember you can re-submit a new circuit at any time!</p>
+<p><img alt="final" src="../final.png" /></p>
+<h4 id="references">References</h4>
+<ol>
+<li>https://qiskit.org/documentation/stubs/qiskit.compiler.transpile.html</li>
+<li>https://qiskit.org/documentation/stubs/qiskit.circuit.QuantumCircuit.iso.html</li>
+<li>https://github.com/Qiskit/qiskit-tutorials/blob/master/legacy_tutorials/terra/5_using_the_transpiler.ipynb</li>
+<li>https://github.com/Qiskit/qiskit-tutorials/blob/master/tutorials/terra/advanced/4_transpiler_passes_and_passmanager.ipynb</li>
+<li>https://arxiv.org/pdf/1501.06911.pdf</li>
+</ol>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>
+</pre></div>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../../algorithms/qft/qft/" class="btn btn-neutral float-right" title="Quantum Fourier Transform">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../universality/universality/" class="btn btn-neutral" title="Universality"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../../universality/universality/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../../algorithms/qft/qft/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>
+      <script src="../../../search/main.js" defer></script>
+
+</body>
+</html>
