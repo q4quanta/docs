@@ -6,7 +6,7 @@
 import numpy as np
 import IPython
 import matplotlib.pyplot as plt
-from qiskit import QuantumCircuit,ClassicalRegister,QuantumRegister
+from qiskit import QuantumCircuit
 from qiskit import BasicAer
 from qiskit.tools.jupyter import *
 from qiskit.visualization import *
