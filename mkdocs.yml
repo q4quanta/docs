@@ -38,44 +38,40 @@ nav:
 
 - Getting started:
   - Guide to starting Python: GettingStarted/anaconda.md
-  - Guide to Python Libraries: GettingStarted/lib.md
   - Setting up Python Environment: GettingStarted/env.md
   - Installing Jupyter Notebook : GettingStarted/jupyter.md
   - How to Git: GettingStarted/git.md
 
   
-- Quantum Gates:
-  - Getting Started: intro/qiskit.md
-  - Single Qubit Gates: gates/sgates/sgates.md
-  - Multiple Qubits Gates: gates/mgates/mgates.md
+- Qubit and Gates:
+  - Qubit: qubit/qubit.md
+  - Hadamard Gate: gates/hgate/hgate.md
+  - Rotation Gate: gates/ugate/ugate.md
+  - Pauli Gate: gates/pauli/pauli.md
+  - R-Phi Gate: gates/rphi/rphi.md
+  - CNOT Gate: gates/cnot/cnot.md
+  
 
 
 - Quantum Circuits:
-  - Hadamard Gate: circuits/hadamard/hadamard.md
-  - Bell State: circuits/bell/bell.md
-  - Random Variables : circuits/random/random.md
- 
+  - One qubit Circuit: circuits/One-qubit-circuit/One-qubit-circuit.md
+  - Two qubit Circuit: circuits/Two-qubit-circuit/Two-qubit-circuit.md
+  - Three qubit Circuit: circuits/Three-qubit-circuit/Three-qubit-circuit.md
+  - Multi qubit Circuit: circuits/Multi-qubit-circuits/Multi-qubit-circuits.md
+  
 
 
 - Algorithms:
+  - Bell State: circuits/bell/bell.md
+  - Universality: circuits/universality/universality.md
+  - Circuit Decomposition : circuits/circuitDecomposition/circuitDecomposition.md
   - Quantum Fourier Transform: algorithms/qft/qft.md
-  - Linear Equation (HHL): algorithms/hhl/hhl.md
-  - Shor's Algorithm: algorithms/shor/shor.md
-  - Grover's Algorithm: algorithms/grover/grover.md
-
-
-- Optimization:
-  - Binary Quadratic Model (BQM): optimization/dwave/dwave.md
-  - Vahicle Routing : optimization/routing/routing.md
-  - Travelling Salsesman : optimization/salesman/salesman.md
-
-
-- Quantum Machine Learning:
-  - Quantum SVM: qml/qsvm/qsvm.md
-         
+  - Quantum Cryptography: cryptography/cryptography.md
   
-- References:
-  - Reference: References/ref.md
+  
+  
+
+
  
  
  

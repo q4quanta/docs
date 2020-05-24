@@ -1,165 +1,219 @@
+### Bell States
 
 
-# Bell State
+Bell state is constructed with application of \\(\textbf{Hadamard} \\) and \\(\textbf{CNOT}\\) gates in two qubit system.
 
-###### Latest python notebook is available [here](https://github.com/q4quanta/quantum-circuits)
 
-The Bell states, a concept in quantum information science, are specific quantum states of two qubits that represent the simplest (and maximal) examples of quantum entanglement. The Bell states are a form of entangled and normalized basis vectors. This normalization implies that the overall probability of the particle being in one of the mentioned states is 1.[Wikipedia]
-
-Import 'Qiskit' libraries
 
 ```python
 %matplotlib inline
-# Importing standard Qiskit libraries and configuring account
-from qiskit import QuantumCircuit,QuantumRegister,ClassicalRegister, execute, Aer, IBMQ
-from qiskit.compiler import transpile, assemble
+import numpy as np
+import IPython
+import matplotlib.pyplot as plt
+from qiskit import QuantumCircuit
 from qiskit.tools.jupyter import *
 from qiskit.visualization import *
+import seaborn as sns
+sns.set()
 ```
 
---------
-
-### Bell circuit
-
-Design a Bell state circuit.
-
---------
 
 ```python
-num_qubits = 2;
-num_bits   = 2;
-bell = QuantumCircuit(2,2)
-bell.h(0)
-bell.cx(0, 1)
-bell.measure([0,1], [0,1])
-bell.draw(output='mpl')
+from helper import *
 ```
 
-![png](output_2_0.png)
+#### Bell State Circuit 
 
-------------
+ \\( \beta_{00} \\)
 
-###### Manual approach
-
-- initial state = |00>
-- After application of Hadamard Gate: \\( \frac{1}{\sqrt{2}}|00> + \frac{1}{\sqrt{2}}|10> \\)
-- After application of CNOT Gate: \\( \frac{1}{\sqrt{2}}|00> + \frac{1}{\sqrt{2}}|11> \\)
-
-------------
-
-###### Simulation 
 
 ```python
-simulator = Aer.get_backend('qasm_simulator')
-result = execute(bell, simulator).result()
-counts = result.get_counts(bell)
-plot_histogram(counts, title='Bell-State counts')
+def circuit_00():
+    qc = QuantumCircuit(2,2)
+    qc.h(0)
+    qc.barrier()
+    qc.cx(0, 1)
+    return qc
 ```
 
-![png](output_5_0.png)
+- Circuit Diagram
 
--------------
-
-### Extended Bell circuit -1
-
-
-Extend the bell state circuit by adding one more Hadamard gate on second qubit and CNOT gate.
 
 ```python
-num_qubits = 2;
-num_bits   = 2;
-bell = QuantumCircuit(2,2)
-bell.h(0)
-bell.cx(0, 1)
-bell.h(1)
-bell.cx(0, 1)
-bell.measure([0,1], [0,1])
-bell.draw(output='mpl')
+bell_00 = circuit_00()
+drawCircuit(bell_00)
 ```
 
 
-![png](output_7_0.png)
 
-------------
 
-######  Manual approach:
+![png](output_6_0.png)
 
- - Initial state = |00>
- - After application of Hadamard Gate: \\( \frac{1}{\sqrt{2}}|00> + \frac{1}{\sqrt{2}}|10> \\)
- - After application of CNOT Gate: \\( \frac{1}{\sqrt{2}}|00> + \frac{1}{\sqrt{2}}|11> \\)
- - After application of Hadamard Gate: 
-\\( \frac{1}{2}|00> + \frac{1}{2}|01> + \frac{1}{2}|10> - \frac{1}{2}|11> \\)
- - After application of CNOT Gate: 
-\\( \frac{1}{2}|00> + \frac{1}{2}|01> + \frac{1}{2}|11> - \frac{1}{2}|10> \\)
 
---------------
 
-###### Simulation 
+- Two qubit system (state vector)
 
+
+    <ul>
+        <li> Initial state = |00> </li>
+        <li> After application of Hadamard Gate:  \\( \frac{1}{\sqrt{2}}|00\rangle + \frac{1}{\sqrt{2}}|01\rangle \\) </li>
+        <li> After application of CNOT Gate: \\( \frac{1}{\sqrt{2}}|00 \rangle + \frac{1}{\sqrt{2}}|11 \rangle \\) </li>
+    </ul>
+
+
+
+
+```python
+def getPhaseSeq():
+    phaseDic = []
+    qc0 = QuantumCircuit(2,2)
+    qc1 = QuantumCircuit(2,2)
+    qc1.h(0)
+    qc2 = QuantumCircuit(2,2)
+    qc2.h(0)
+    qc2.cx(0, 1)
+    for iqc in [qc0,qc1,qc2]:
+        phaseDic.append(getPhase(iqc))
+    return phaseDic    
 ```
-simulator = Aer.get_backend('qasm_simulator')
-result = execute(bell, simulator).result()
-counts = result.get_counts(bell)
-plot_histogram(counts, title='Bell-State counts')
+
+
+```python
+drawPhase(getPhaseSeq())
 ```
 
 
 ![png](output_10_0.png)
 
-----------
 
-### Extended Bell circuit - 2 
-
-Extend the bell state circuit by adding two more Hadamard gates and two CNOT gates with three qubits.
-
------------
 
 ```python
-n =3
-q = QuantumRegister(n)
-c = ClassicalRegister(n)
-circ = QuantumCircuit(q,c)
-circ.h(q[0])
-circ.cx(q[0], q[1])
-circ.h(q[1])
-circ.cx(q[1], q[2])
-circ.h(q[2])
-circ.measure(q,c)
-# Change the background color in mpl
-style = {'backgroundcolor': 'lightgreen'}
-circ.draw(output='mpl', style = style)
+bell_00 = circuit_00()
+simCircuit(bell_00)
 ```
 
 
-![png](output_12_0.png)
-
-----------------
-
-###### Manual approach
 
 
-- Initial state: |000>
-- After Hadamard Gate : \\( \frac{1}{\sqrt{2}}|000> + \frac{1}{\sqrt{2}}|100> \\)
-- After CNOT Gate : \\( \frac{1}{\sqrt{2}}|000> + \frac{1}{\sqrt{2}}|110> \\)
-- After Hadamard Gate :\\( \frac{1}{{2}}|000> + \frac{1}{{2}}|010>  +  \frac{1}{{2}}|100> - \frac{1}{{2}}|110>\\) 
-- After CNOT Gate :\\( \frac{1}{{2}}|000> + \frac{1}{{2}}|011>  +  \frac{1}{{2}}|100> - \frac{1}{{2}}|111>\\) 
-- After Hadamard Gate :\\( \frac{1}{2\sqrt{2}}( |000> + |001> + |010>  - |011> +  |100> + |101>  - |110> + |111>) \\)
+![png](output_11_0.png)
 
-------------
 
-###### Simulation 
+
+- Single qubit states (tensor product)
+
+<div class="alert alert-block alert-danger">
+$\textbf{Question:}$ Can you write Bell state as a tensor product of single qubit state?
+</div>
+
+\\( \textbf{Answer} \\): No, it is not possible. It is hard to realise.
+    
+  $$\begin{bmatrix}
+    p   \\
+    q 
+\end{bmatrix} \otimes \begin{bmatrix}
+    r   \\
+    s 
+\end{bmatrix} = c \begin{bmatrix}
+    m   \\
+    0 \\
+    0 \\
+    n
+\end{bmatrix}$$
+
+- Matrix element (tensor product)
+
+<div class="alert alert-block alert-danger">
+$\textbf{Question:}$ Can we write matrix represented by the Bell circuit as a  tensor product of fundamental gate matrices?
+</div>
+
 
 ```python
-simulator = Aer.get_backend('qasm_simulator')
-result = execute(circ, simulator).result()
-counts = result.get_counts(circ)
-plot_histogram(counts, title='Bell-State counts')
+bell_00 = circuit_00()
+drawCircuit(bell_00)
 ```
 
 
-![png](output_15_0.png)
 
--------------------
 
-### Reference
-1. https://www.quantum-inspire.com/kbase/hadamard/
+![png](output_16_0.png)
+
+
+
+
+Based on above Bell circuit, lets construct the matrix representation of the circuit using fundamental gates matrices involved in the circuit.
+
+$$H = \frac{1}{\sqrt{2}} \begin{bmatrix}
+    1  & 1 \\
+    1 & -1
+\end{bmatrix}; I = \frac{1}{\sqrt{2}} \begin{bmatrix}
+    1  & 0 \\
+    0 &  1
+\end{bmatrix}; \text{CNOT} = \begin{bmatrix} 1 & 0 & 0 & 0 \\
+                              0 & 0 & 0 & 1 \\
+                              0 & 0 & 1 & 0 \\
+                              0 & 1 & 0 & 0 \\
+\end{bmatrix}$$
+
+- Before first barrier
+
+$$ I \otimes H =  \begin{bmatrix}
+    H  & 0 \\
+    0 & H
+\end{bmatrix} $$
+
+- After first barrier
+
+\\( \text{CNOT} \\)
+
+- Net operation before measurement
+
+\\( U = \text{CNOT} \times (I \otimes H)   \\)
+    
+
+
+Lets express ``U`` matrix using ``numpy`` library.
+
+
+```python
+I = np.eye(2,2)
+H = 1/np.sqrt(2)*np.array([[1,1],[1,-1]])
+CNOT = np.array([[1,0,0,0],[0,0,0,1],[0,0,1,0],[0,1,0,0]])
+I_kron_H = np.kron(I,H)
+U = np.dot(CNOT,I_kron_H)
+print(U)
+```
+
+    [[ 0.70710678  0.70710678  0.          0.        ]
+     [ 0.          0.          0.70710678 -0.70710678]
+     [ 0.          0.          0.70710678  0.70710678]
+     [ 0.70710678 -0.70710678  0.          0.        ]]
+
+
+We can also observe final ket vector by multiplying it with ```U``` matrix.
+
+
+```python
+ket_00 = np.array([1,0,0,0])
+np.dot(U,ket_00)
+```
+
+
+
+
+    array([0.70710678, 0.        , 0.        , 0.70710678])
+
+
+
+Infact we can check our matrix from our circuit shown below by implementing Q is kit's "unitary_simulator".
+
+
+```python
+bell_00 = circuit_00()
+plotMatrix(bell_00)
+```
+
+
+![png](output_23_0.png)
+
+
+-------

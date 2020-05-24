@@ -4,7 +4,7 @@ To install Anaconda Python follow the instruction  at [Anaconda Distribution Web
 
 After you successfully install the proper version, you will get anaconda application in you PC which will look like the figure below:
 
-![img](https://docs.anaconda.com/_images/navigator-home-1-6.png)
+![img](https://windows-1.com/wp-content/uploads/2019/09/Anaconda-Navigator-Screenshot-1.png)
 
 Best way to start with is the "Jupyter notebook". Lunch the jupyter notebook to start with Python.
 

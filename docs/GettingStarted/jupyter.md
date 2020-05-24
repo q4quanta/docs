@@ -6,26 +6,22 @@ To install Jupyter notebooks in a conda environment, use
 ```
 conda install jupyter notebook
 ```
-
 Jupyter notebooks are also available through pip with 
 ```
 pip install jupyter notebook
 ```
-
-Markdown Cheatsheet : https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
-
+[Markdown Cheatsheet :]( https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
 
 Convert a notebook to an HTML file, in your terminal use
 ```
 jupyter nbconvert --to html notebook.ipynb
 
 ```
-Convert: https://nbconvert.readthedocs.io/en/latest/usage.html
+[Convert:]( https://nbconvert.readthedocs.io/en/latest/usage.html)
 
 To create the slideshow from the notebook file, you'll need to use nbconvert:
 ```
-    jupyter nbconvert notebook.ipynb --to slides
-    
+jupyter nbconvert notebook.ipynb --to slides   
 ```
 This just converts the notebook to the necessary files for the slideshow, but you need to serve it with an HTTP server to actually see the presentation.
 ```

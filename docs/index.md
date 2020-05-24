@@ -2,43 +2,42 @@
 
 
 
-This online document helps the absolute beginners to persue the future direction in coding and Quantum Computing. The lesson starts with fundamental of qubits, quantum gates and quantum circuits, quantum algorithms and quantum machine learning.
+This online document helps the absolute beginners to persue in the future direction in coding and Quantum Computing. The lesson starts with fundamental of qubits, quantum gates and quantum circuits and quantum algorithms.
 
-![img](https://i.ytimg.com/vi/LAA0-vjTaNY/hqdefault.jpg)
+![img](img/bloch3.gif)
+![img](gates/pauli/output_35_0.png)
+![img](gates/pauli/phase3.gif)
 
-### Learning Track:
 
-##### QUANTUM GATES
+##### Qubit
 
-- Getting Started
+- Qubit
 - Single Qubit Gates
 - Multiple Qubits Gates
 
-
-##### QUANTUM CIRCUITS
+##### QUANTUM GATES
 
 - Hadamard Gate
-- Bell State
-- Random Variables
+- U-gates
+- Pauli Gates
+- R-phi Gates
+- CNOT gate
 
+##### QUANTUM CIRCUITS
+- Single Qubit Circuit
+- Two Qubit Circuit
+- Three Qubit Circuit
+- Multi Qubit Circuit
 
 ##### ALGORITHMS
-
+- Bell State
+- Teleportation
+- Quantum Parallelism
 - Quantum Fourier Transform
-- Linear Equation (HHL)
-- Shor's Algorithm
-- Grover's Algorithm
+- Grover's Algorithms
+-Shor's Algorithm
 
+#### Quantum Cryptography
+- Quantum Cryptography
 
-##### OPTIMIZATION
-
-- Binary Quadratic Model (BQM)
-- Vahicle Routing
-- Travelling Salsesman
-
-
-##### QUANTUM MACHINE LEARNING
-
-- Quantum SVM
-
-        
+      
