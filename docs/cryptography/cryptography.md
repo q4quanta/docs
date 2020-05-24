@@ -9,7 +9,7 @@
 
 Let's walk through the steps of the BB84 protocol:
 
-1. In the first step, Alice chooses two random bit strings, $k$ and $b$, that each consist of \\( n \\) bits. Her bit string $k$ contains the actual bits she wants to encode (out of which the key will later be formed), while $b$ determines the bases in which she will encode her bits. For \\( b_i=0 \\) (i.e., if the \\( i^{th} \\) bit is zero), she encodes the \\( i^{th} \\) qubit in the standard \\( \{|0\rangle, |1\rangle \} \\) basis, while for \\(b_i=1\\), she encodes it in the \\( \{|+\rangle, |-\rangle \} \\) basis, where \\( |+\rangle:=\frac{1}{\sqrt{2}}(|0\rangle +|1\rangle) \\), \\( |-\rangle:=\frac{1}{\sqrt{2}}(|0\rangle -|1\rangle) \\). 
+1. In the first step, Alice chooses two random bit strings, \\( k \\) and \\( b \\), that each consist of \\( n \\) bits. Her bit string $k$ contains the actual bits she wants to encode (out of which the key will later be formed), while $b$ determines the bases in which she will encode her bits. For \\( b_i=0 \\) (i.e., if the \\( i^{th} \\) bit is zero), she encodes the \\( i^{th} \\) qubit in the standard \\( \{|0\rangle, |1\rangle \} \\) basis, while for \\(b_i=1\\), she encodes it in the \\( \{|+\rangle, |-\rangle \} \\) basis, where \\( |+\rangle:=\frac{1}{\sqrt{2}}(|0\rangle +|1\rangle) \\), \\( |-\rangle:=\frac{1}{\sqrt{2}}(|0\rangle -|1\rangle) \\). 
 This becomes more illustrative when representing each basis by two perpendicular arrows, where the two different bases are rotated by \\( 45^\circ \\).
 The encoding of each qubit \\( q_i \\) would therefore look like the following:
 

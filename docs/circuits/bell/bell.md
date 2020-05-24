@@ -101,30 +101,30 @@ simCircuit(bell_00)
 
 - Single qubit states (tensor product)
 
-<div class="alert alert-block alert-danger">
-$\textbf{Question:}$ Can you write Bell state as a tensor product of single qubit state?
-</div>
+
+\\(\textbf{Question:}\\) Can you write Bell state as a tensor product of single qubit state?
+
 
 \\( \textbf{Answer} \\): No, it is not possible. It is hard to realise.
     
-  $$\begin{bmatrix}
-    p   \\
+  $$\left( \begin{array}{cc}
+    p   \\\
     q 
-\end{bmatrix} \otimes \begin{bmatrix}
-    r   \\
+\end{array} \right) \otimes \left( \begin{array}{cc}
+    r   \\\
     s 
-\end{bmatrix} = c \begin{bmatrix}
-    m   \\
-    0 \\
-    0 \\
+\end{array} \right)= c \left( \begin{array}{cc}
+    m   \\\
+    0 \\\
+    0 \\\
     n
-\end{bmatrix}$$
+\end{array} \right) $$
 
 - Matrix element (tensor product)
 
-<div class="alert alert-block alert-danger">
-$\textbf{Question:}$ Can we write matrix represented by the Bell circuit as a  tensor product of fundamental gate matrices?
-</div>
+
+\\( \textbf{Question:}\\) Can we write matrix represented by the Bell circuit as a  tensor product of fundamental gate matrices?
+
 
 
 ```python
@@ -142,24 +142,25 @@ drawCircuit(bell_00)
 
 Based on above Bell circuit, lets construct the matrix representation of the circuit using fundamental gates matrices involved in the circuit.
 
-$$H = \frac{1}{\sqrt{2}} \begin{bmatrix}
-    1  & 1 \\
+$$H = \frac{1}{\sqrt{2}} \left( \begin{array}{cc}
+    1  & 1 \\\
     1 & -1
-\end{bmatrix}; I = \frac{1}{\sqrt{2}} \begin{bmatrix}
-    1  & 0 \\
+\end{array} \right); I = \frac{1}{\sqrt{2}} \left( \begin{array}{cc}
+    1  & 0 \\\
     0 &  1
-\end{bmatrix}; \text{CNOT} = \begin{bmatrix} 1 & 0 & 0 & 0 \\
-                              0 & 0 & 0 & 1 \\
-                              0 & 0 & 1 & 0 \\
-                              0 & 1 & 0 & 0 \\
-\end{bmatrix}$$
+\end{array} \right); \text{CNOT} = \left( \begin{array}{cccc} 
+                              1 & 0 & 0 & 0 \\\
+                              0 & 0 & 0 & 1 \\\
+                              0 & 0 & 1 & 0 \\\
+                              0 & 1 & 0 & 0 \\\
+\end{array} \right)$$
 
 - Before first barrier
 
-$$ I \otimes H =  \begin{bmatrix}
-    H  & 0 \\
+$$ I \otimes H =  \left( \begin{array}{cc}
+    H  & 0 \\\
     0 & H
-\end{bmatrix} $$
+\end{array} \right) $$
 
 - After first barrier
 

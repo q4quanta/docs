@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Quantum Cryptography - Quanta.Guru</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Quantum Cryptography";
+    var mkdocs_page_input_path = "cryptography/cryptography.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Quanta.Guru</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="tocbase current">
+    
+    
+      
+
+
+  <li class="navtree toctree-l1 inactive">
+    <a class="" href="../..">Home</a>
+  </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Getting started</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../GettingStarted/anaconda/">Guide to starting Python</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../GettingStarted/env/">Setting up Python Environment</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../GettingStarted/jupyter/">Installing Jupyter Notebook</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../GettingStarted/git/">How to Git</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Qubit and Gates</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../qubit/qubit/">Qubit</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../gates/hgate/hgate/">Hadamard Gate</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../gates/ugate/ugate/">Rotation Gate</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../gates/pauli/pauli/">Pauli Gate</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../gates/rphi/rphi/">R-Phi Gate</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../gates/cnot/cnot/">CNOT Gate</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Quantum Circuits</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../circuits/One-qubit-circuit/One-qubit-circuit/">One qubit Circuit</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../circuits/Two-qubit-circuit/Two-qubit-circuit/">Two qubit Circuit</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../circuits/Three-qubit-circuit/Three-qubit-circuit/">Three qubit Circuit</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../circuits/Multi-qubit-circuits/Multi-qubit-circuits/">Multi qubit Circuit</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Algorithms</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../circuits/bell/bell/">Bell State</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../circuits/universality/universality/">Universality</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../circuits/circuitDecomposition/circuitDecomposition/">Circuit Decomposition</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../algorithms/qft/qft/">Quantum Fourier Transform</a>
+  </li>
+        
+          
+
+
+  
+    
+    <li class="navtree toctree-l2 page current">
+      <a class="current" href="./">
+        Quantum Cryptography
+          <span class="toctree-expand"></span>
+      </a>
+    </li>
+    
+      
+
+
+
+  <li class="toctree-l2 current">
+    <ul class="subnav-l2 current">
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#bb84-protocol">BB84 protocol</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#an-illustrated-example">An illustrated example</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#message-encrpytion">Message encrpytion</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#the-challenge">The challenge</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#how-we-simulate-this-protocol-in-qiskit">How we simulate this protocol in Qiskit</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#i-execute-step-2-of-the-bb84-protocol-to-get-your-bitstring">i) Execute step 2 of the BB84 protocol to get your bitstring</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#ii-execute-step-3-of-the-bb84-protocol-to-extract-the-key">ii) Execute step 3 of the BB84 protocol to extract the key</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#iii-decrypt-the-message-using-the-extracted-key">iii) Decrypt the message using the extracted key</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#iv-try-to-decode-alices-message">iv) Try to decode Alice's message!</a>
+        </li>
+    
+    </ul>
+  </li>
+
+
+  
+        
+      </ul>
+    </li>
+    
+  </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Quanta.Guru</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Algorithms &raquo;</li>
+        
+      
+    
+    <li>Quantum Cryptography</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h3 id="quantum-cryptography">Quantum Cryptography</h3>
+<p><strong>This Notebook is taken from IBM Challenge 2020, <a href="https://github.com/qiskit-community/may4_challenge_exercises">GitHub</a></strong></p>
+<p><strong><a href="https://en.wikipedia.org/wiki/BB84">BB84</a></strong>, is a cryptography protocol developed in 1984 by one of our most famous IBMers, Charles Bennett, together with his colleague Gilles Brassard. The goal of the BB84 protocol is to create a secret key between two parties, Alice and Bob, that can then be used by both parties to encrypt and decrypt a hidden message. In this exercise we will guide you through the different steps of the protocol to create such a secret key to decrypt our encrypted message.</p>
+<h4 id="bb84-protocol">BB84 protocol</h4>
+<p>Let's walk through the steps of the BB84 protocol:</p>
+<ol>
+<li>In the first step, Alice chooses two random bit strings, \( k \) and \( b \), that each consist of \( n \) bits. Her bit string $k$ contains the actual bits she wants to encode (out of which the key will later be formed), while $b$ determines the bases in which she will encode her bits. For \( b_i=0 \) (i.e., if the \( i^{th} \) bit is zero), she encodes the \( i^{th} \) qubit in the standard \( {|0\rangle, |1\rangle } \) basis, while for \(b_i=1\), she encodes it in the \( {|+\rangle, |-\rangle } \) basis, where \( |+\rangle:=\frac{1}{\sqrt{2}}(|0\rangle +|1\rangle) \), \( |-\rangle:=\frac{1}{\sqrt{2}}(|0\rangle -|1\rangle) \). 
+This becomes more illustrative when representing each basis by two perpendicular arrows, where the two different bases are rotated by \( 45^\circ \).
+The encoding of each qubit \( q_i \) would therefore look like the following:</li>
+</ol>
+<p><img alt="img" src="../encoding_Alice.jpg" /></p>
+<ol>
+<li>
+<p>After encoding her \( n \) qubits, Alice sends these qubits to Bob. Bob also chooses a random bit string \( \tilde{b} \) consisting of \( n \) bits that determines in which bases he is going to perform measurements. He stores the outcomes of his measurements \( \tilde{k_i} \) together with the corresponding basis bits \( \tilde{b_i} \) in a table.</p>
+</li>
+<li>
+<p>Next, Alice and Bob compare their basis bits \( b_i \) and \( \tilde{b}_i \). Whenever \( b_i \neq \tilde{b}_i \), Bob measured in a different basis than Alice's qubit was encoded in, so he gets each outcome with probability \( \frac{1}{2} \). Alice and Bob therefore discard all key bits corresponding to these basis bits. If  \( b_i = \tilde{b}_i \), however, they prepared and measured the qubit in the same basis, so (unless someone eavesdropped) Bob will get the key bit that Alice encoded, \( \tilde{k}_i = k_i \). These outcomes then compose the key.</p>
+</li>
+</ol>
+<h4 id="an-illustrated-example">An illustrated example</h4>
+<p>Suppose Alice's random bit strings are ( k=<code>0111001</code>) and ( b=<code>1101000</code>) and Bob's random bit string is (\( \tilde{b} \)=<code>1001101</code>). Try to understand the other entries in the table below. Note that in the case where the basis bits are different, Bob has a 50% chance to get each outcome, so here one of them was chosen randomly.</p>
+<p><img alt="img" src="../example_bb84.jpg" /></p>
+<p>The key produced in this example would be '0110'. To make sure that the key is secret and correct, Alice and Bob would "sacrifice" some of their key bits to check that no one eavesdropped. If someone had measured a qubit on the way, this could have changed the state of that qubit and with probability \(\frac{1}{4} \), Bob's and Alice's key bits will be different. By checking $m$ bits, the probability to not notice an eavesdropper decreases as \( \left(\frac{3}{4}\right)^m \). Thus, if they check enough bits and they are all the same, they can assume that no one eavesdropped and their key is secret. However, to keep things simple, we will not perfom these tests in this excercise. Instead, all bits of the key will be used.</p>
+<h4 id="message-encrpytion">Message encrpytion</h4>
+<p>Once a secret key is distributed, Alice can encrypt her message by using the so-called <a href="https://en.wikipedia.org/wiki/One-time_pad">one-time pad</a> technique: she simply adds the key bits on top of her secret message bits that she wants to send. Using the example above, her key is \( \text{key}\)=<code>0110</code>. If her secret message bit string is ( m=<code>1100</code> ), the encrypted message will be \( c=m\oplus \text{key} \mod 2 \)= <code>1010</code>. Bob can then decrypt the message by adding his key on that encrypted message, \( m=c\oplus \text{key} \mod 2 \).</p>
+<h4 id="the-challenge">The challenge</h4>
+<p>In the following four tasks, you play the role of Bob. You will create such a secret key with Alice and use it to decrypt the encrypted message from her.</p>
+<hr />
+<p>For useful tips to complete this exercise as well as pointers for communicating with other participants and asking questions, please take a look at the following <a href="https://github.com/qiskit-community/may4_challenge_exercises">repository</a>. You will also find a copy of these exercises, so feel free to edit and experiment with these notebooks.</p>
+<hr />
+<h4 id="how-we-simulate-this-protocol-in-qiskit">How we simulate this protocol in Qiskit</h4>
+<p>In this exercise, there are three steps. Each of these three steps is completed $n=100$ times. Before the protocol begins, Alice will choose two random bit strings, $k$ and $b$.</p>
+<ol>
+<li>
+<p>Alice will prepare each qubit using the function <code>Alice_prepare_qubit</code>, which is already written for you.</p>
+</li>
+<li>
+<p>Bob measures his qubit using a specific set of bases, which we have given you in a variable called <code>bases</code>. <strong>You will supply the procedure that Bob takes in the function <code>Bob_measure_qubit</code>.</strong></p>
+</li>
+<li>
+<p>A quantum circuit for this sequence of operations is created. It will be called <code>this_qubit_circuit</code> for each qubit, and all such circuits are collected together in an array called <code>all_qubit_circuits</code>. We have supplied the code to do this.</p>
+</li>
+</ol>
+<p>Finally, we run <code>all_qubit_circuits</code> on the IBM high-performance cloud simulator called <code>ibmq_qasm_simulator</code> and collect the results of the measurements into a bitstring called <code>bits</code>. We have supplied the code to do this.</p>
+<p>You will then follow the protocol to decrypt a message using the extracted key from the BB84 protocol.</p>
+<h4 id="i-execute-step-2-of-the-bb84-protocol-to-get-your-bitstring">i) Execute step 2 of the BB84 protocol to get your bitstring</h4>
+<p>To do so, you need a random bit string \(\tilde{b}\) that determines the bases in which you should perform the measurements. In order to reproduce the key that we used to encrypt our secret message, we provide you with this "random" <code>bases</code> bit string of 100 bits that uses seed "84".
+<strong>Perform measurements in the bases corresponding to the given bit string and return the outcome as a bit string in the form</strong> 
+\( \tilde{b}<em>0 \tilde{b}_1...\tilde{b}</em>{n-1} \). Note that Qiskit returns outcomes always in reverse order, so if \( |\tilde{q}_0\rangle = |0 \rangle \) and \(|\tilde{q}_1\rangle = |\tilde{q}_2\rangle = |1 \rangle \) , it will return the outcome '110'. You can check whether your bit string is correct by <code>check_bits(bitstring)</code>.</p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #555555">%</span>matplotlib inline
+
+<span style="color: #0099FF; font-style: italic"># Importing standard Qiskit libraries</span>
+<span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">random</span>
+<span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">qiskit</span> <span style="color: #006699; font-weight: bold">import</span> execute, Aer, IBMQ
+<span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">qiskit.tools.jupyter</span> <span style="color: #006699; font-weight: bold">import</span> <span style="color: #555555">*</span>
+<span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">qiskit.visualization</span> <span style="color: #006699; font-weight: bold">import</span> <span style="color: #555555">*</span>
+<span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">may4_challenge.ex3</span> <span style="color: #006699; font-weight: bold">import</span> alice_prepare_qubit, check_bits, check_key, check_decrypted, show_message
+
+<span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">IPython.display</span> <span style="color: #006699; font-weight: bold">import</span> display, Math, Latex
+<span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">may4_challenge.ex1</span> <span style="color: #006699; font-weight: bold">import</span> return_state, vec_in_braket, statevec
+
+
+
+<span style="color: #0099FF; font-style: italic"># Configuring account</span>
+provider <span style="color: #555555">=</span> IBMQ<span style="color: #555555">.</span>load_account()
+backend <span style="color: #555555">=</span> provider<span style="color: #555555">.</span>get_backend(<span style="color: #CC3300">&#39;ibmq_qasm_simulator&#39;</span>)  <span style="color: #0099FF; font-style: italic"># with this simulator it wouldn&#39;t work \</span>
+
+<span style="color: #0099FF; font-style: italic"># Initial setup</span>
+random<span style="color: #555555">.</span>seed(<span style="color: #FF6600">84</span>) <span style="color: #0099FF; font-style: italic"># do not change this seed, otherwise you will get a different key</span>
+
+<span style="color: #0099FF; font-style: italic"># This is your &#39;random&#39; bit string that determines your bases</span>
+numqubits <span style="color: #555555">=</span> <span style="color: #FF6600">100</span>
+bob_bases <span style="color: #555555">=</span> <span style="color: #336666">str</span>(<span style="color: #CC3300">&#39;</span><span style="color: #AA0000">{0:0100b}</span><span style="color: #CC3300">&#39;</span><span style="color: #555555">.</span>format(random<span style="color: #555555">.</span>getrandbits(numqubits)))
+
+<span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">bb84</span>():
+    <span style="color: #336666">print</span>(<span style="color: #CC3300">&#39;Bob</span><span style="color: #CC3300; font-weight: bold">\&#39;</span><span style="color: #CC3300">s bases:&#39;</span>, bob_bases)
+
+    <span style="color: #0099FF; font-style: italic"># Now Alice will send her bits one by one...</span>
+    all_qubit_circuits <span style="color: #555555">=</span> []
+    <span style="color: #006699; font-weight: bold">for</span> qubit_index <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">range</span>(numqubits):
+
+        <span style="color: #0099FF; font-style: italic"># This is Alice creating the qubit</span>
+        thisqubit_circuit <span style="color: #555555">=</span> alice_prepare_qubit(qubit_index)
+
+        <span style="color: #0099FF; font-style: italic"># This is Bob finishing the protocol below</span>
+        bob_measure_qubit(bob_bases, qubit_index, thisqubit_circuit)
+
+        <span style="color: #0099FF; font-style: italic"># We collect all these circuits and put them in an array</span>
+        all_qubit_circuits<span style="color: #555555">.</span>append(thisqubit_circuit)
+
+    <span style="color: #0099FF; font-style: italic"># Now execute all the circuits for each qubit</span>
+    results <span style="color: #555555">=</span> execute(all_qubit_circuits, backend<span style="color: #555555">=</span>backend, shots<span style="color: #555555">=</span><span style="color: #FF6600">1</span>)<span style="color: #555555">.</span>result()
+
+    <span style="color: #0099FF; font-style: italic"># And combine the results</span>
+    bits <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;&#39;</span>
+    <span style="color: #006699; font-weight: bold">for</span> qubit_index <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">range</span>(numqubits):
+        bits <span style="color: #555555">+=</span> [measurement <span style="color: #006699; font-weight: bold">for</span> measurement <span style="color: #000000; font-weight: bold">in</span> results<span style="color: #555555">.</span>get_counts(qubit_index)][<span style="color: #FF6600">0</span>]
+
+    <span style="color: #006699; font-weight: bold">return</span> bits
+
+<span style="color: #0099FF; font-style: italic"># Here is your task</span>
+<span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">bob_measure_qubit</span>(bob_bases, qubit_index, qubit_circuit):
+    <span style="color: #0099FF; font-style: italic"># insert your code here to measure Alice&#39;s bits</span>
+    current_base_element <span style="color: #555555">=</span> bob_bases[qubit_index]
+
+    <span style="color: #0099FF; font-style: italic">#print(current_base_element)</span>
+    <span style="color: #0099FF; font-style: italic">#state = statevec(qubit_circuit) # determine final state after running the circuit</span>
+    <span style="color: #0099FF; font-style: italic">#display(Math(vec_in_braket(state.data)))</span>
+
+
+    <span style="color: #006699; font-weight: bold">if</span> current_base_element <span style="color: #555555">==</span> <span style="color: #CC3300">&#39;0&#39;</span>:
+        qubit_circuit<span style="color: #555555">.</span>measure(<span style="color: #FF6600">0</span>,<span style="color: #FF6600">0</span>)
+    <span style="color: #006699; font-weight: bold">elif</span> current_base_element <span style="color: #555555">==</span> <span style="color: #CC3300">&#39;1&#39;</span>:
+        qubit_circuit<span style="color: #555555">.</span>h(<span style="color: #FF6600">0</span>)
+        qubit_circuit<span style="color: #555555">.</span>measure(<span style="color: #FF6600">0</span>,<span style="color: #FF6600">0</span>)
+
+
+
+bits <span style="color: #555555">=</span> bb84()        
+<span style="color: #336666">print</span>(<span style="color: #CC3300">&#39;Bob</span><span style="color: #CC3300; font-weight: bold">\&#39;</span><span style="color: #CC3300">s bits: &#39;</span>, bits)
+check_bits(bits)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>ibmqfactory.load_account:WARNING:2020-05-05 00:37:47,366: Credentials are already in use. The existing account in the session will be replaced.
+
+
+Bob&#39;s bases: 1100111010011111111111110100000111010100100010011001001110100001010010111011010001011001111111011111
+Bob&#39;s bits:  1000001000011100001110000010000111100101000111000101010010000110000000111100000101100001101101001001
+So far, so good 🎉! You got the right bits!
+</pre></div>
+
+
+<p>After you performed your measurements, Alice announces her bases bits:
+$$
+b = 1000000000010001111111001101100101000111110100110111111000110000011000001001100011100111010010000110
+$$ </p>
+<h4 id="ii-execute-step-3-of-the-bb84-protocol-to-extract-the-key">ii) Execute step 3 of the BB84 protocol to extract the key</h4>
+<p>To do so, compare Alice's bases bits $b$ to your bases bits \( \tilde{b} \) (given in the previous step) and extract the key by keeping only the outcomes when your bases were the same.
+You can check whether your key is correct by <code>check_key(key)</code>.</p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>alice_bases <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;10000000000100011111110011011001010001111101001101111110001100000110000010011000111&#39;</span>\
+              <span style="color: #CC3300">&#39;00111010010000110&#39;</span> <span style="color: #0099FF; font-style: italic"># Alice&#39;s bases bits</span>
+key <span style="color: #555555">=</span><span style="color: #CC3300">&#39;&#39;</span>
+<span style="color: #006699; font-weight: bold">for</span> i <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">range</span>(<span style="color: #336666">len</span>(bits)):
+    <span style="color: #006699; font-weight: bold">if</span> alice_bases[i] <span style="color: #555555">==</span> bob_bases[i]:
+        key <span style="color: #555555">=</span> key <span style="color: #555555">+</span> bits[i]
+<span style="color: #336666">print</span>(key)
+check_key(key)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>10000010001110010011101001010000110000110011100000
+So far, so good 🎉! You got the right key!
+</pre></div>
+
+
+<p>Using this key, Alice can now send you her private encrypted message. While for full security a key would only be used once, she will now use her 50-bit-long key four times in a row to encrypt her 200-bit-long message. Her encrypted message is</p>
+<p>$$
+m = 0011011010100011101000001100010000001000011000101110110111100111111110001111100011100101011010111010\
+\qquad 1110100011101010010111111100101000011010011011011011101111010111000101111111001010101001100101111011
+$$</p>
+<h4 id="iii-decrypt-the-message-using-the-extracted-key">iii) Decrypt the message using the extracted key</h4>
+<p>The <a href="#Message-encrpytion">message encryption</a> section in the introduction describes how to do so. You can check whether your decrypted message bit string is correct by <code>check_decrypted(decrypted)</code>.</p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>m <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;0011011010100011101000001100010000001000011000101110110111100111111110001111100011100101011010111010111010001&#39;</span>\
+    <span style="color: #CC3300">&#39;1101010010111111100101000011010011011011011101111010111000101111111001010101001100101111011&#39;</span> <span style="color: #0099FF; font-style: italic"># encrypted message</span>
+decrypted <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;&#39;</span>
+<span style="color: #006699; font-weight: bold">for</span> i,t <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">enumerate</span>(m):
+    <span style="color: #0099FF; font-style: italic">#print(i,t)</span>
+    im <span style="color: #555555">=</span> (<span style="color: #336666">int</span>(t) <span style="color: #555555">+</span> <span style="color: #336666">int</span>(key[i<span style="color: #555555">%</span><span style="color: #FF6600">50</span>]))<span style="color: #555555">%</span><span style="color: #FF6600">2</span>
+    decrypted <span style="color: #555555">=</span> decrypted<span style="color: #555555">+</span><span style="color: #336666">str</span>(im)
+
+check_decrypted(decrypted)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>So far, so good 🎉! You decrypted the message!
+</pre></div>
+
+
+<p>Of course there is an actual message encoded in this bit string. To encode letters, Alice used Morse code (see here for more details: https://en.wikipedia.org/wiki/Morse_code). However, as she could only send zeros and ones and wanted to keep her message as short as possible, she encoded </p>
+<ul>
+<li>a dot ("dit") as '1'</li>
+<li>a dash ("dah") as '11'</li>
+<li>an intra-character gap (between each dot and dash within a character) as '0'</li>
+<li>a short gap (that separates letters) as '00'</li>
+<li>a medium gap (that separates words) as '000'.</li>
+</ul>
+<p>Here is an example:
+<img src="qiskit_morse.jpg" alt="drawing" width="500"/></p>
+<h4 id="iv-try-to-decode-alices-message">iv) Try to decode Alice's message!</h4>
+<p>In a first step, convert the decrypted message from above into morse code. In a second step, use the provided dictionary to decode the morse code. Copy and paste the solution string on the IBM Quantum Challenge page to complete the exercise and track your progress.</p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>decrypted
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>&#39;10110100100110101001101010010100110010110101101011001101011010011011011001101100110101011010010110100110101011010011011001011001101011011001010101011001101101011001010110010110011010011001010110011011&#39;
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>MORSE_CODE_DICT <span style="color: #555555">=</span> { <span style="color: #CC3300">&#39;a&#39;</span>:<span style="color: #CC3300">&#39;.-&#39;</span>, <span style="color: #CC3300">&#39;b&#39;</span>:<span style="color: #CC3300">&#39;-...&#39;</span>, 
+                    <span style="color: #CC3300">&#39;c&#39;</span>:<span style="color: #CC3300">&#39;-.-.&#39;</span>, <span style="color: #CC3300">&#39;d&#39;</span>:<span style="color: #CC3300">&#39;-..&#39;</span>, <span style="color: #CC3300">&#39;e&#39;</span>:<span style="color: #CC3300">&#39;.&#39;</span>, 
+                    <span style="color: #CC3300">&#39;f&#39;</span>:<span style="color: #CC3300">&#39;..-.&#39;</span>, <span style="color: #CC3300">&#39;g&#39;</span>:<span style="color: #CC3300">&#39;--.&#39;</span>, <span style="color: #CC3300">&#39;h&#39;</span>:<span style="color: #CC3300">&#39;....&#39;</span>, 
+                    <span style="color: #CC3300">&#39;i&#39;</span>:<span style="color: #CC3300">&#39;..&#39;</span>, <span style="color: #CC3300">&#39;j&#39;</span>:<span style="color: #CC3300">&#39;.---&#39;</span>, <span style="color: #CC3300">&#39;k&#39;</span>:<span style="color: #CC3300">&#39;-.-&#39;</span>, 
+                    <span style="color: #CC3300">&#39;l&#39;</span>:<span style="color: #CC3300">&#39;.-..&#39;</span>, <span style="color: #CC3300">&#39;m&#39;</span>:<span style="color: #CC3300">&#39;--&#39;</span>, <span style="color: #CC3300">&#39;n&#39;</span>:<span style="color: #CC3300">&#39;-.&#39;</span>, 
+                    <span style="color: #CC3300">&#39;o&#39;</span>:<span style="color: #CC3300">&#39;---&#39;</span>, <span style="color: #CC3300">&#39;p&#39;</span>:<span style="color: #CC3300">&#39;.--.&#39;</span>, <span style="color: #CC3300">&#39;q&#39;</span>:<span style="color: #CC3300">&#39;--.-&#39;</span>, 
+                    <span style="color: #CC3300">&#39;r&#39;</span>:<span style="color: #CC3300">&#39;.-.&#39;</span>, <span style="color: #CC3300">&#39;s&#39;</span>:<span style="color: #CC3300">&#39;...&#39;</span>, <span style="color: #CC3300">&#39;t&#39;</span>:<span style="color: #CC3300">&#39;-&#39;</span>, 
+                    <span style="color: #CC3300">&#39;u&#39;</span>:<span style="color: #CC3300">&#39;..-&#39;</span>, <span style="color: #CC3300">&#39;v&#39;</span>:<span style="color: #CC3300">&#39;...-&#39;</span>, <span style="color: #CC3300">&#39;w&#39;</span>:<span style="color: #CC3300">&#39;.--&#39;</span>, 
+                    <span style="color: #CC3300">&#39;x&#39;</span>:<span style="color: #CC3300">&#39;-..-&#39;</span>, <span style="color: #CC3300">&#39;y&#39;</span>:<span style="color: #CC3300">&#39;-.--&#39;</span>, <span style="color: #CC3300">&#39;z&#39;</span>:<span style="color: #CC3300">&#39;--..&#39;</span>, 
+                    <span style="color: #CC3300">&#39;1&#39;</span>:<span style="color: #CC3300">&#39;.----&#39;</span>, <span style="color: #CC3300">&#39;2&#39;</span>:<span style="color: #CC3300">&#39;..---&#39;</span>, <span style="color: #CC3300">&#39;3&#39;</span>:<span style="color: #CC3300">&#39;...--&#39;</span>, 
+                    <span style="color: #CC3300">&#39;4&#39;</span>:<span style="color: #CC3300">&#39;....-&#39;</span>, <span style="color: #CC3300">&#39;5&#39;</span>:<span style="color: #CC3300">&#39;.....&#39;</span>, <span style="color: #CC3300">&#39;6&#39;</span>:<span style="color: #CC3300">&#39;-....&#39;</span>, 
+                    <span style="color: #CC3300">&#39;7&#39;</span>:<span style="color: #CC3300">&#39;--...&#39;</span>, <span style="color: #CC3300">&#39;8&#39;</span>:<span style="color: #CC3300">&#39;---..&#39;</span>, <span style="color: #CC3300">&#39;9&#39;</span>:<span style="color: #CC3300">&#39;----.&#39;</span>, 
+                    <span style="color: #CC3300">&#39;0&#39;</span>:<span style="color: #CC3300">&#39;-----&#39;</span>, <span style="color: #CC3300">&#39;, &#39;</span>:<span style="color: #CC3300">&#39;--..--&#39;</span>, <span style="color: #CC3300">&#39;.&#39;</span>:<span style="color: #CC3300">&#39;.-.-.-&#39;</span>, 
+                    <span style="color: #CC3300">&#39;?&#39;</span>:<span style="color: #CC3300">&#39;..--..&#39;</span>, <span style="color: #CC3300">&#39;/&#39;</span>:<span style="color: #CC3300">&#39;-..-.&#39;</span>, <span style="color: #CC3300">&#39;-&#39;</span>:<span style="color: #CC3300">&#39;-....-&#39;</span>, 
+                    <span style="color: #CC3300">&#39;(&#39;</span>:<span style="color: #CC3300">&#39;-.--.&#39;</span>, <span style="color: #CC3300">&#39;)&#39;</span>:<span style="color: #CC3300">&#39;-.--.-&#39;</span>} 
+MCODE <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;&#39;</span>
+dec <span style="color: #555555">=</span> decrypted
+<span style="color: #006699; font-weight: bold">while</span> <span style="color: #336666">len</span>(dec)<span style="color: #555555">&gt;</span><span style="color: #FF6600">3</span>:
+    <span style="color: #006699; font-weight: bold">if</span> dec[<span style="color: #FF6600">0</span>] <span style="color: #555555">==</span> <span style="color: #CC3300">&#39;1&#39;</span> <span style="color: #000000; font-weight: bold">and</span> dec[<span style="color: #FF6600">0</span>:<span style="color: #FF6600">2</span>] <span style="color: #555555">!=</span> <span style="color: #CC3300">&#39;11&#39;</span>:
+        MCODE <span style="color: #555555">=</span>MCODE <span style="color: #555555">+</span> <span style="color: #CC3300">&#39;.&#39;</span>
+        dec <span style="color: #555555">=</span> dec[<span style="color: #FF6600">1</span>:]
+    <span style="color: #006699; font-weight: bold">if</span> dec[<span style="color: #FF6600">0</span>:<span style="color: #FF6600">2</span>] <span style="color: #555555">==</span> <span style="color: #CC3300">&#39;11&#39;</span> <span style="color: #000000; font-weight: bold">and</span> <span style="color: #336666">len</span>(dec)<span style="color: #555555">&gt;</span><span style="color: #FF6600">1</span>:
+        MCODE <span style="color: #555555">=</span>MCODE <span style="color: #555555">+</span> <span style="color: #CC3300">&#39;-&#39;</span>
+        dec <span style="color: #555555">=</span> dec[<span style="color: #FF6600">2</span>:]
+    <span style="color: #006699; font-weight: bold">if</span> dec[<span style="color: #FF6600">0</span>] <span style="color: #555555">==</span> <span style="color: #CC3300">&#39;0&#39;</span> <span style="color: #000000; font-weight: bold">and</span> dec[<span style="color: #FF6600">0</span>:<span style="color: #FF6600">2</span>] <span style="color: #555555">!=</span> <span style="color: #CC3300">&#39;00&#39;</span><span style="color: #000000; font-weight: bold">and</span> dec[<span style="color: #FF6600">0</span>:<span style="color: #FF6600">3</span>] <span style="color: #555555">!=</span> <span style="color: #CC3300">&#39;000&#39;</span> <span style="color: #000000; font-weight: bold">and</span> <span style="color: #336666">len</span>(dec)<span style="color: #555555">&gt;</span><span style="color: #FF6600">3</span>:
+        MCODE <span style="color: #555555">=</span>MCODE <span style="color: #555555">+</span> <span style="color: #CC3300">&#39;&#39;</span>
+        dec <span style="color: #555555">=</span> dec[<span style="color: #FF6600">1</span>:]
+    <span style="color: #006699; font-weight: bold">if</span> dec[<span style="color: #FF6600">0</span>:<span style="color: #FF6600">2</span>] <span style="color: #555555">==</span> <span style="color: #CC3300">&#39;00&#39;</span><span style="color: #000000; font-weight: bold">and</span> dec[<span style="color: #FF6600">0</span>:<span style="color: #FF6600">3</span>] <span style="color: #555555">!=</span> <span style="color: #CC3300">&#39;000&#39;</span> <span style="color: #000000; font-weight: bold">and</span> <span style="color: #336666">len</span>(dec)<span style="color: #555555">&gt;</span><span style="color: #FF6600">3</span>:
+        MCODE <span style="color: #555555">=</span>MCODE <span style="color: #555555">+</span> <span style="color: #CC3300">&#39;+&#39;</span> <span style="color: #0099FF; font-style: italic"># seperates letters</span>
+        dec <span style="color: #555555">=</span> dec[<span style="color: #FF6600">2</span>:]
+    <span style="color: #006699; font-weight: bold">if</span> dec[<span style="color: #FF6600">0</span>:<span style="color: #FF6600">3</span>] <span style="color: #555555">==</span> <span style="color: #CC3300">&#39;000&#39;</span> <span style="color: #000000; font-weight: bold">and</span> i <span style="color: #555555">&lt;</span> <span style="color: #336666">len</span>(dec)<span style="color: #555555">-</span><span style="color: #FF6600">3</span> <span style="color: #000000; font-weight: bold">and</span> <span style="color: #336666">len</span>(dec)<span style="color: #555555">&gt;</span><span style="color: #FF6600">3</span>:
+        MCODE <span style="color: #555555">=</span>MCODE <span style="color: #555555">+</span> <span style="color: #CC3300">&#39;x&#39;</span> <span style="color: #0099FF; font-style: italic"># seperates words</span>
+        dec <span style="color: #555555">=</span> dec[<span style="color: #FF6600">3</span>:]
+
+MCODE <span style="color: #555555">=</span> MCODE <span style="color: #555555">+</span><span style="color: #CC3300">&#39;--&#39;</span>
+
+RDICT <span style="color: #555555">=</span> {}        
+<span style="color: #006699; font-weight: bold">for</span> k,v <span style="color: #000000; font-weight: bold">in</span> MORSE_CODE_DICT<span style="color: #555555">.</span>items():
+    RDICT<span style="color: #555555">.</span>update({v:k})
+
+MID <span style="color: #555555">=</span> MCODE<span style="color: #555555">.</span>split(<span style="color: #CC3300">&quot;+&quot;</span>)
+solution <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;&#39;</span>
+<span style="color: #006699; font-weight: bold">for</span> item <span style="color: #000000; font-weight: bold">in</span> MID:
+    <span style="color: #0099FF; font-style: italic">#print(RDICT[item])</span>
+    solution <span style="color: #555555">=</span> solution<span style="color: #555555">+</span>RDICT[item]
+solution <span style="color: #555555">=</span> solution[<span style="color: #FF6600">0</span>:<span style="color: #555555">-</span><span style="color: #FF6600">1</span>]<span style="color: #555555">+</span><span style="color: #CC3300">&#39;m&#39;</span>
+
+show_message(solution)
+</pre></div>
+
+
+<p style="border: 2px solid black; padding: 2rem;">
+    Congratulations 🎉! Submit the following text
+    <samp
+        style="font-family: monospace; background-color: #eee;"
+    >reddit.com/r/may4quantum</samp>
+    on the
+    <a href="https://quantum-computing.ibm.com/challenges/4anniversary/?exercise=3&amp;answer=reddit.com%2Fr%2Fmay4quantum" target="_blank">
+        IBM Quantum Challenge page
+    </a>
+    to see if you are correct.
+</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../../algorithms/qft/qft/" class="btn btn-neutral" title="Quantum Fourier Transform"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../../algorithms/qft/qft/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>
