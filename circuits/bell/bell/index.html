@@ -387,30 +387,24 @@ simCircuit(bell_00)
 <ul>
 <li>Single qubit states (tensor product)</li>
 </ul>
-<div class="alert alert-block alert-danger">
-$\textbf{Question:}$ Can you write Bell state as a tensor product of single qubit state?
-</div>
-
+<p>\(\textbf{Question:}\) Can you write Bell state as a tensor product of single qubit state?</p>
 <p>\( \textbf{Answer} \): No, it is not possible. It is hard to realise.</p>
-<p>$$\begin{bmatrix}
-    p   \
+<p>$$\left( \begin{array}{cc}
+    p   \\
     q 
-\end{bmatrix} \otimes \begin{bmatrix}
-    r   \
+\end{array} \right) \otimes \left( \begin{array}{cc}
+    r   \\
     s 
-\end{bmatrix} = c \begin{bmatrix}
-    m   \
-    0 \
-    0 \
+\end{array} \right)= c \left( \begin{array}{cc}
+    m   \\
+    0 \\
+    0 \\
     n
-\end{bmatrix}$$</p>
+\end{array} \right) $$</p>
 <ul>
 <li>Matrix element (tensor product)</li>
 </ul>
-<div class="alert alert-block alert-danger">
-$\textbf{Question:}$ Can we write matrix represented by the Bell circuit as a  tensor product of fundamental gate matrices?
-</div>
-
+<p>\( \textbf{Question:}\) Can we write matrix represented by the Bell circuit as a  tensor product of fundamental gate matrices?</p>
 <div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>bell_00 <span style="color: #555555">=</span> circuit_00()
 drawCircuit(bell_00)
 </pre></div>
@@ -418,24 +412,25 @@ drawCircuit(bell_00)
 
 <p><img alt="png" src="../output_16_0.png" /></p>
 <p>Based on above Bell circuit, lets construct the matrix representation of the circuit using fundamental gates matrices involved in the circuit.</p>
-<p>$$H = \frac{1}{\sqrt{2}} \begin{bmatrix}
-    1  &amp; 1 \
+<p>$$H = \frac{1}{\sqrt{2}} \left( \begin{array}{cc}
+    1  &amp; 1 \\
     1 &amp; -1
-\end{bmatrix}; I = \frac{1}{\sqrt{2}} \begin{bmatrix}
-    1  &amp; 0 \
+\end{array} \right); I = \frac{1}{\sqrt{2}} \left( \begin{array}{cc}
+    1  &amp; 0 \\
     0 &amp;  1
-\end{bmatrix}; \text{CNOT} = \begin{bmatrix} 1 &amp; 0 &amp; 0 &amp; 0 \
-                              0 &amp; 0 &amp; 0 &amp; 1 \
-                              0 &amp; 0 &amp; 1 &amp; 0 \
-                              0 &amp; 1 &amp; 0 &amp; 0 \
-\end{bmatrix}$$</p>
+\end{array} \right); \text{CNOT} = \left( \begin{array}{cccc} 
+                              1 &amp; 0 &amp; 0 &amp; 0 \\
+                              0 &amp; 0 &amp; 0 &amp; 1 \\
+                              0 &amp; 0 &amp; 1 &amp; 0 \\
+                              0 &amp; 1 &amp; 0 &amp; 0 \\
+\end{array} \right)$$</p>
 <ul>
 <li>Before first barrier</li>
 </ul>
-<p>$$ I \otimes H =  \begin{bmatrix}
-    H  &amp; 0 \
+<p>$$ I \otimes H =  \left( \begin{array}{cc}
+    H  &amp; 0 \\
     0 &amp; H
-\end{bmatrix} $$</p>
+\end{array} \right) $$</p>
 <ul>
 <li>After first barrier</li>
 </ul>
