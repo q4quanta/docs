@@ -393,7 +393,7 @@ The encoding of each qubit \( q_i \) would therefore look like the following:</l
 <p>To do so, you need a random bit string \(\tilde{b}\) that determines the bases in which you should perform the measurements. In order to reproduce the key that we used to encrypt our secret message, we provide you with this "random" <code>bases</code> bit string of 100 bits that uses seed "84".
 <strong>Perform measurements in the bases corresponding to the given bit string and return the outcome as a bit string in the form</strong> 
 \( \tilde{b}<em>0 \tilde{b}_1...\tilde{b}</em>{n-1} \). Note that Qiskit returns outcomes always in reverse order, so if \( |\tilde{q}_0\rangle = |0 \rangle \) and \(|\tilde{q}_1\rangle = |\tilde{q}_2\rangle = |1 \rangle \) , it will return the outcome '110'. You can check whether your bit string is correct by <code>check_bits(bitstring)</code>.</p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #555555">%</span>matplotlib inline
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code><span style="color: #555555">%</span>matplotlib inline
 
 <span style="color: #0099FF; font-style: italic"># Importing standard Qiskit libraries</span>
 <span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">random</span>
@@ -465,16 +465,16 @@ bob_bases <span style="color: #555555">=</span> <span style="color: #336666">str
 bits <span style="color: #555555">=</span> bb84()        
 <span style="color: #336666">print</span>(<span style="color: #CC3300">&#39;Bob</span><span style="color: #CC3300; font-weight: bold">\&#39;</span><span style="color: #CC3300">s bits: &#39;</span>, bits)
 check_bits(bits)
-</pre></div>
+</code></pre></div>
 
 
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>ibmqfactory.load_account:WARNING:2020-05-05 00:37:47,366: Credentials are already in use. The existing account in the session will be replaced.
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>ibmqfactory.load_account:WARNING:2020-05-05 00:37:47,366: Credentials are already in use. The existing account in the session will be replaced.
 
 
 Bob&#39;s bases: 1100111010011111111111110100000111010100100010011001001110100001010010111011010001011001111111011111
 Bob&#39;s bits:  1000001000011100001110000010000111100101000111000101010010000110000000111100000101100001101101001001
 So far, so good 🎉! You got the right bits!
-</pre></div>
+</code></pre></div>
 
 
 <p>After you performed your measurements, Alice announces her bases bits:
@@ -484,7 +484,7 @@ $$ </p>
 <h4 id="ii-execute-step-3-of-the-bb84-protocol-to-extract-the-key">ii) Execute step 3 of the BB84 protocol to extract the key</h4>
 <p>To do so, compare Alice's bases bits $b$ to your bases bits \( \tilde{b} \) (given in the previous step) and extract the key by keeping only the outcomes when your bases were the same.
 You can check whether your key is correct by <code>check_key(key)</code>.</p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>alice_bases <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;10000000000100011111110011011001010001111101001101111110001100000110000010011000111&#39;</span>\
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>alice_bases <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;10000000000100011111110011011001010001111101001101111110001100000110000010011000111&#39;</span>\
               <span style="color: #CC3300">&#39;00111010010000110&#39;</span> <span style="color: #0099FF; font-style: italic"># Alice&#39;s bases bits</span>
 key <span style="color: #555555">=</span><span style="color: #CC3300">&#39;&#39;</span>
 <span style="color: #006699; font-weight: bold">for</span> i <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">range</span>(<span style="color: #336666">len</span>(bits)):
@@ -492,12 +492,12 @@ key <span style="color: #555555">=</span><span style="color: #CC3300">&#39;&#39;
         key <span style="color: #555555">=</span> key <span style="color: #555555">+</span> bits[i]
 <span style="color: #336666">print</span>(key)
 check_key(key)
-</pre></div>
+</code></pre></div>
 
 
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>10000010001110010011101001010000110000110011100000
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>10000010001110010011101001010000110000110011100000
 So far, so good 🎉! You got the right key!
-</pre></div>
+</code></pre></div>
 
 
 <p>Using this key, Alice can now send you her private encrypted message. While for full security a key would only be used once, she will now use her 50-bit-long key four times in a row to encrypt her 200-bit-long message. Her encrypted message is</p>
@@ -507,7 +507,7 @@ m = 0011011010100011101000001100010000001000011000101110110111100111111110001111
 $$</p>
 <h4 id="iii-decrypt-the-message-using-the-extracted-key">iii) Decrypt the message using the extracted key</h4>
 <p>The <a href="#Message-encrpytion">message encryption</a> section in the introduction describes how to do so. You can check whether your decrypted message bit string is correct by <code>check_decrypted(decrypted)</code>.</p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>m <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;0011011010100011101000001100010000001000011000101110110111100111111110001111100011100101011010111010111010001&#39;</span>\
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>m <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;0011011010100011101000001100010000001000011000101110110111100111111110001111100011100101011010111010111010001&#39;</span>\
     <span style="color: #CC3300">&#39;1101010010111111100101000011010011011011011101111010111000101111111001010101001100101111011&#39;</span> <span style="color: #0099FF; font-style: italic"># encrypted message</span>
 decrypted <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;&#39;</span>
 <span style="color: #006699; font-weight: bold">for</span> i,t <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">enumerate</span>(m):
@@ -516,11 +516,11 @@ decrypted <span style="color: #555555">=</span> <span style="color: #CC3300">&#3
     decrypted <span style="color: #555555">=</span> decrypted<span style="color: #555555">+</span><span style="color: #336666">str</span>(im)
 
 check_decrypted(decrypted)
-</pre></div>
+</code></pre></div>
 
 
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>So far, so good 🎉! You decrypted the message!
-</pre></div>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>So far, so good 🎉! You decrypted the message!
+</code></pre></div>
 
 
 <p>Of course there is an actual message encoded in this bit string. To encode letters, Alice used Morse code (see here for more details: https://en.wikipedia.org/wiki/Morse_code). However, as she could only send zeros and ones and wanted to keep her message as short as possible, she encoded </p>
@@ -535,15 +535,15 @@ check_decrypted(decrypted)
 <img src="qiskit_morse.jpg" alt="drawing" width="500"/></p>
 <h4 id="iv-try-to-decode-alices-message">iv) Try to decode Alice's message!</h4>
 <p>In a first step, convert the decrypted message from above into morse code. In a second step, use the provided dictionary to decode the morse code. Copy and paste the solution string on the IBM Quantum Challenge page to complete the exercise and track your progress.</p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>decrypted
-</pre></div>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>decrypted
+</code></pre></div>
 
 
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>&#39;10110100100110101001101010010100110010110101101011001101011010011011011001101100110101011010010110100110101011010011011001011001101011011001010101011001101101011001010110010110011010011001010110011011&#39;
-</pre></div>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>&#39;10110100100110101001101010010100110010110101101011001101011010011011011001101100110101011010010110100110101011010011011001011001101011011001010101011001101101011001010110010110011010011001010110011011&#39;
+</code></pre></div>
 
 
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>MORSE_CODE_DICT <span style="color: #555555">=</span> { <span style="color: #CC3300">&#39;a&#39;</span>:<span style="color: #CC3300">&#39;.-&#39;</span>, <span style="color: #CC3300">&#39;b&#39;</span>:<span style="color: #CC3300">&#39;-...&#39;</span>, 
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>MORSE_CODE_DICT <span style="color: #555555">=</span> { <span style="color: #CC3300">&#39;a&#39;</span>:<span style="color: #CC3300">&#39;.-&#39;</span>, <span style="color: #CC3300">&#39;b&#39;</span>:<span style="color: #CC3300">&#39;-...&#39;</span>, 
                     <span style="color: #CC3300">&#39;c&#39;</span>:<span style="color: #CC3300">&#39;-.-.&#39;</span>, <span style="color: #CC3300">&#39;d&#39;</span>:<span style="color: #CC3300">&#39;-..&#39;</span>, <span style="color: #CC3300">&#39;e&#39;</span>:<span style="color: #CC3300">&#39;.&#39;</span>, 
                     <span style="color: #CC3300">&#39;f&#39;</span>:<span style="color: #CC3300">&#39;..-.&#39;</span>, <span style="color: #CC3300">&#39;g&#39;</span>:<span style="color: #CC3300">&#39;--.&#39;</span>, <span style="color: #CC3300">&#39;h&#39;</span>:<span style="color: #CC3300">&#39;....&#39;</span>, 
                     <span style="color: #CC3300">&#39;i&#39;</span>:<span style="color: #CC3300">&#39;..&#39;</span>, <span style="color: #CC3300">&#39;j&#39;</span>:<span style="color: #CC3300">&#39;.---&#39;</span>, <span style="color: #CC3300">&#39;k&#39;</span>:<span style="color: #CC3300">&#39;-.-&#39;</span>, 
@@ -591,7 +591,7 @@ solution <span style="color: #555555">=</span> <span style="color: #CC3300">&#39
 solution <span style="color: #555555">=</span> solution[<span style="color: #FF6600">0</span>:<span style="color: #555555">-</span><span style="color: #FF6600">1</span>]<span style="color: #555555">+</span><span style="color: #CC3300">&#39;m&#39;</span>
 
 show_message(solution)
-</pre></div>
+</code></pre></div>
 
 
 <p style="border: 2px solid black; padding: 2rem;">

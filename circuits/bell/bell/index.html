@@ -313,7 +313,7 @@
               
                 <h3 id="bell-states">Bell States</h3>
 <p>Bell state is constructed with application of \(\textbf{Hadamard} \) and \(\textbf{CNOT}\) gates in two qubit system.</p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #555555">%</span>matplotlib inline
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code><span style="color: #555555">%</span>matplotlib inline
 <span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">numpy</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">np</span>
 <span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">IPython</span>
 <span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">matplotlib.pyplot</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">plt</span>
@@ -322,30 +322,30 @@
 <span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">qiskit.visualization</span> <span style="color: #006699; font-weight: bold">import</span> <span style="color: #555555">*</span>
 <span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">seaborn</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">sns</span>
 sns<span style="color: #555555">.</span>set()
-</pre></div>
+</code></pre></div>
 
 
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">helper</span> <span style="color: #006699; font-weight: bold">import</span> <span style="color: #555555">*</span>
-</pre></div>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code><span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">helper</span> <span style="color: #006699; font-weight: bold">import</span> <span style="color: #555555">*</span>
+</code></pre></div>
 
 
 <h4 id="bell-state-circuit">Bell State Circuit</h4>
 <p>\( \beta_{00} \)</p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">circuit_00</span>():
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code><span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">circuit_00</span>():
     qc <span style="color: #555555">=</span> QuantumCircuit(<span style="color: #FF6600">2</span>,<span style="color: #FF6600">2</span>)
     qc<span style="color: #555555">.</span>h(<span style="color: #FF6600">0</span>)
     qc<span style="color: #555555">.</span>barrier()
     qc<span style="color: #555555">.</span>cx(<span style="color: #FF6600">0</span>, <span style="color: #FF6600">1</span>)
     <span style="color: #006699; font-weight: bold">return</span> qc
-</pre></div>
+</code></pre></div>
 
 
 <ul>
 <li>Circuit Diagram</li>
 </ul>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>bell_00 <span style="color: #555555">=</span> circuit_00()
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>bell_00 <span style="color: #555555">=</span> circuit_00()
 drawCircuit(bell_00)
-</pre></div>
+</code></pre></div>
 
 
 <p><img alt="png" src="../output_6_0.png" /></p>
@@ -359,7 +359,7 @@ drawCircuit(bell_00)
 </ul></p>
 </li>
 </ul>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">getPhaseSeq</span>():
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code><span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">getPhaseSeq</span>():
     phaseDic <span style="color: #555555">=</span> []
     qc0 <span style="color: #555555">=</span> QuantumCircuit(<span style="color: #FF6600">2</span>,<span style="color: #FF6600">2</span>)
     qc1 <span style="color: #555555">=</span> QuantumCircuit(<span style="color: #FF6600">2</span>,<span style="color: #FF6600">2</span>)
@@ -370,17 +370,17 @@ drawCircuit(bell_00)
     <span style="color: #006699; font-weight: bold">for</span> iqc <span style="color: #000000; font-weight: bold">in</span> [qc0,qc1,qc2]:
         phaseDic<span style="color: #555555">.</span>append(getPhase(iqc))
     <span style="color: #006699; font-weight: bold">return</span> phaseDic    
-</pre></div>
+</code></pre></div>
 
 
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>drawPhase(getPhaseSeq())
-</pre></div>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>drawPhase(getPhaseSeq())
+</code></pre></div>
 
 
 <p><img alt="png" src="../output_10_0.png" /></p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>bell_00 <span style="color: #555555">=</span> circuit_00()
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>bell_00 <span style="color: #555555">=</span> circuit_00()
 simCircuit(bell_00)
-</pre></div>
+</code></pre></div>
 
 
 <p><img alt="png" src="../output_11_0.png" /></p>
@@ -405,9 +405,9 @@ simCircuit(bell_00)
 <li>Matrix element (tensor product)</li>
 </ul>
 <p>\( \textbf{Question:}\) Can we write matrix represented by the Bell circuit as a  tensor product of fundamental gate matrices?</p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>bell_00 <span style="color: #555555">=</span> circuit_00()
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>bell_00 <span style="color: #555555">=</span> circuit_00()
 drawCircuit(bell_00)
-</pre></div>
+</code></pre></div>
 
 
 <p><img alt="png" src="../output_16_0.png" /></p>
@@ -440,36 +440,36 @@ drawCircuit(bell_00)
 </ul>
 <p>\( U = \text{CNOT} \times (I \otimes H)   \)</p>
 <p>Lets express <code>U</code> matrix using <code>numpy</code> library.</p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>I <span style="color: #555555">=</span> np<span style="color: #555555">.</span>eye(<span style="color: #FF6600">2</span>,<span style="color: #FF6600">2</span>)
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>I <span style="color: #555555">=</span> np<span style="color: #555555">.</span>eye(<span style="color: #FF6600">2</span>,<span style="color: #FF6600">2</span>)
 H <span style="color: #555555">=</span> <span style="color: #FF6600">1</span><span style="color: #555555">/</span>np<span style="color: #555555">.</span>sqrt(<span style="color: #FF6600">2</span>)<span style="color: #555555">*</span>np<span style="color: #555555">.</span>array([[<span style="color: #FF6600">1</span>,<span style="color: #FF6600">1</span>],[<span style="color: #FF6600">1</span>,<span style="color: #555555">-</span><span style="color: #FF6600">1</span>]])
 CNOT <span style="color: #555555">=</span> np<span style="color: #555555">.</span>array([[<span style="color: #FF6600">1</span>,<span style="color: #FF6600">0</span>,<span style="color: #FF6600">0</span>,<span style="color: #FF6600">0</span>],[<span style="color: #FF6600">0</span>,<span style="color: #FF6600">0</span>,<span style="color: #FF6600">0</span>,<span style="color: #FF6600">1</span>],[<span style="color: #FF6600">0</span>,<span style="color: #FF6600">0</span>,<span style="color: #FF6600">1</span>,<span style="color: #FF6600">0</span>],[<span style="color: #FF6600">0</span>,<span style="color: #FF6600">1</span>,<span style="color: #FF6600">0</span>,<span style="color: #FF6600">0</span>]])
 I_kron_H <span style="color: #555555">=</span> np<span style="color: #555555">.</span>kron(I,H)
 U <span style="color: #555555">=</span> np<span style="color: #555555">.</span>dot(CNOT,I_kron_H)
 <span style="color: #336666">print</span>(U)
-</pre></div>
+</code></pre></div>
 
 
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>[[ 0.70710678  0.70710678  0.          0.        ]
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>[[ 0.70710678  0.70710678  0.          0.        ]
  [ 0.          0.          0.70710678 -0.70710678]
  [ 0.          0.          0.70710678  0.70710678]
  [ 0.70710678 -0.70710678  0.          0.        ]]
-</pre></div>
+</code></pre></div>
 
 
 <p>We can also observe final ket vector by multiplying it with <code>U</code> matrix.</p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>ket_00 <span style="color: #555555">=</span> np<span style="color: #555555">.</span>array([<span style="color: #FF6600">1</span>,<span style="color: #FF6600">0</span>,<span style="color: #FF6600">0</span>,<span style="color: #FF6600">0</span>])
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>ket_00 <span style="color: #555555">=</span> np<span style="color: #555555">.</span>array([<span style="color: #FF6600">1</span>,<span style="color: #FF6600">0</span>,<span style="color: #FF6600">0</span>,<span style="color: #FF6600">0</span>])
 np<span style="color: #555555">.</span>dot(U,ket_00)
-</pre></div>
+</code></pre></div>
 
 
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>array([0.70710678, 0.        , 0.        , 0.70710678])
-</pre></div>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>array([0.70710678, 0.        , 0.        , 0.70710678])
+</code></pre></div>
 
 
 <p>Infact we can check our matrix from our circuit shown below by implementing Q is kit's "unitary_simulator".</p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>bell_00 <span style="color: #555555">=</span> circuit_00()
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>bell_00 <span style="color: #555555">=</span> circuit_00()
 plotMatrix(bell_00)
-</pre></div>
+</code></pre></div>
 
 
 <p><img alt="png" src="../output_23_0.png" /></p>

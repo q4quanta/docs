@@ -319,7 +319,7 @@
 Hadamard gate superpose the quantum state uniformly.
 </div>
 
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #555555">%</span>matplotlib inline
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code><span style="color: #555555">%</span>matplotlib inline
 <span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">numpy</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">np</span>
 <span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">IPython</span>
 <span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">matplotlib.pyplot</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">plt</span>
@@ -329,85 +329,85 @@ Hadamard gate superpose the quantum state uniformly.
 <span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">qiskit.visualization</span> <span style="color: #006699; font-weight: bold">import</span> <span style="color: #555555">*</span>
 <span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">seaborn</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">sns</span>
 sns<span style="color: #555555">.</span>set()
-</pre></div>
+</code></pre></div>
 
 
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">helper</span> <span style="color: #006699; font-weight: bold">import</span> <span style="color: #555555">*</span>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code><span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">helper</span> <span style="color: #006699; font-weight: bold">import</span> <span style="color: #555555">*</span>
 <span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">glob</span>
 <span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">moviepy.editor</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">mpy</span>
-</pre></div>
+</code></pre></div>
 
 
 <h4 id="hadamard-gate-1-qubit">Hadamard Gate (1 qubit)</h4>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>qc <span style="color: #555555">=</span> QuantumCircuit(<span style="color: #FF6600">1</span>)
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>qc <span style="color: #555555">=</span> QuantumCircuit(<span style="color: #FF6600">1</span>)
 qc<span style="color: #555555">.</span>h(<span style="color: #FF6600">0</span>)
 style <span style="color: #555555">=</span> {<span style="color: #CC3300">&#39;backgroundcolor&#39;</span>: <span style="color: #CC3300">&#39;lavender&#39;</span>}
 qc<span style="color: #555555">.</span>draw(output<span style="color: #555555">=</span><span style="color: #CC3300">&#39;mpl&#39;</span>, style <span style="color: #555555">=</span> style)
-</pre></div>
+</code></pre></div>
 
 
 <p><img alt="png" src="../output_4_0.png" /></p>
 <ul>
 <li>Single qubit state vector</li>
 </ul>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>backend <span style="color: #555555">=</span> BasicAer<span style="color: #555555">.</span>get_backend(<span style="color: #CC3300">&#39;statevector_simulator&#39;</span>)
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>backend <span style="color: #555555">=</span> BasicAer<span style="color: #555555">.</span>get_backend(<span style="color: #CC3300">&#39;statevector_simulator&#39;</span>)
 job <span style="color: #555555">=</span> execute(qc,backend)<span style="color: #555555">.</span>result()
 vec1 <span style="color: #555555">=</span> job<span style="color: #555555">.</span>get_statevector(qc)
 vec1
-</pre></div>
+</code></pre></div>
 
 
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>array([0.70710678+0.j, 0.70710678+0.j])
-</pre></div>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>array([0.70710678+0.j, 0.70710678+0.j])
+</code></pre></div>
 
 
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>getBlochSphere(qc)
-</pre></div>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>getBlochSphere(qc)
+</code></pre></div>
 
 
 <p><img alt="png" src="../output_8_0.png" /></p>
 <ul>
 <li>Single qubit Matrix representation</li>
 </ul>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>backend <span style="color: #555555">=</span> BasicAer<span style="color: #555555">.</span>get_backend(<span style="color: #CC3300">&#39;unitary_simulator&#39;</span>)
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>backend <span style="color: #555555">=</span> BasicAer<span style="color: #555555">.</span>get_backend(<span style="color: #CC3300">&#39;unitary_simulator&#39;</span>)
 job <span style="color: #555555">=</span> execute(qc, backend)
 ndArray <span style="color: #555555">=</span> job<span style="color: #555555">.</span>result()<span style="color: #555555">.</span>get_unitary(qc, decimals<span style="color: #555555">=</span><span style="color: #FF6600">3</span>)
 HM1 <span style="color: #555555">=</span> np<span style="color: #555555">.</span>matrix(ndArray)
 HM1
-</pre></div>
+</code></pre></div>
 
 
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>matrix([[ 0.707+0.j,  0.707-0.j],
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>matrix([[ 0.707+0.j,  0.707-0.j],
         [ 0.707+0.j, -0.707+0.j]])
-</pre></div>
+</code></pre></div>
 
 
 <h4 id="hadamard-gate-2-qubits">Hadamard Gate (2 qubits)</h4>
 <ul>
 <li>Define circuit</li>
 </ul>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>qc <span style="color: #555555">=</span> QuantumCircuit(<span style="color: #FF6600">2</span>)
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>qc <span style="color: #555555">=</span> QuantumCircuit(<span style="color: #FF6600">2</span>)
 qc<span style="color: #555555">.</span>h(<span style="color: #FF6600">0</span>)
 qc<span style="color: #555555">.</span>h(<span style="color: #FF6600">1</span>)
 
 style <span style="color: #555555">=</span> {<span style="color: #CC3300">&#39;backgroundcolor&#39;</span>: <span style="color: #CC3300">&#39;lavender&#39;</span>}
 qc<span style="color: #555555">.</span>draw(output<span style="color: #555555">=</span><span style="color: #CC3300">&#39;mpl&#39;</span>, style <span style="color: #555555">=</span> style)
-</pre></div>
+</code></pre></div>
 
 
 <p><img alt="png" src="../output_13_0.png" /></p>
 <ul>
 <li>State vector (ket, phase and measurement)</li>
 </ul>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>backend <span style="color: #555555">=</span> BasicAer<span style="color: #555555">.</span>get_backend(<span style="color: #CC3300">&#39;statevector_simulator&#39;</span>)
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>backend <span style="color: #555555">=</span> BasicAer<span style="color: #555555">.</span>get_backend(<span style="color: #CC3300">&#39;statevector_simulator&#39;</span>)
 job <span style="color: #555555">=</span> execute(qc,backend)<span style="color: #555555">.</span>result()
 vec2 <span style="color: #555555">=</span> job<span style="color: #555555">.</span>get_statevector(qc)
 vec2
-</pre></div>
+</code></pre></div>
 
 
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>array([0.5+0.j, 0.5+0.j, 0.5+0.j, 0.5+0.j])
-</pre></div>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>array([0.5+0.j, 0.5+0.j, 0.5+0.j, 0.5+0.j])
+</code></pre></div>
 
 
 <ul>
@@ -428,13 +428,13 @@ vec2
     1
 \end{array}\right)$$</p>
 <p>Where \(|00 \rangle , |01 \rangle , |10 \rangle \) and \( |11 \rangle \) are basis states for two qubit system.</p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>vec2 <span style="color: #555555">=</span> np<span style="color: #555555">.</span>kron(vec1,vec1)
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>vec2 <span style="color: #555555">=</span> np<span style="color: #555555">.</span>kron(vec1,vec1)
 vec2
-</pre></div>
+</code></pre></div>
 
 
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>array([0.5+0.j, 0.5+0.j, 0.5+0.j, 0.5+0.j])
-</pre></div>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>array([0.5+0.j, 0.5+0.j, 0.5+0.j, 0.5+0.j])
+</code></pre></div>
 
 
 <ul>
@@ -452,44 +452,44 @@ vec2
     H  &amp;  H \\
     H &amp;  -H
 \end{array} \right)$$</p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>backend <span style="color: #555555">=</span> BasicAer<span style="color: #555555">.</span>get_backend(<span style="color: #CC3300">&#39;unitary_simulator&#39;</span>)
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>backend <span style="color: #555555">=</span> BasicAer<span style="color: #555555">.</span>get_backend(<span style="color: #CC3300">&#39;unitary_simulator&#39;</span>)
 job <span style="color: #555555">=</span> execute(qc, backend)
 ndArray <span style="color: #555555">=</span> job<span style="color: #555555">.</span>result()<span style="color: #555555">.</span>get_unitary(qc, decimals<span style="color: #555555">=</span><span style="color: #FF6600">3</span>)
 UM2 <span style="color: #555555">=</span> np<span style="color: #555555">.</span>matrix(ndArray)
 UM2
-</pre></div>
+</code></pre></div>
 
 
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>matrix([[ 0.5+0.j,  0.5-0.j,  0.5-0.j,  0.5-0.j],
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>matrix([[ 0.5+0.j,  0.5-0.j,  0.5-0.j,  0.5-0.j],
         [ 0.5+0.j, -0.5+0.j,  0.5-0.j, -0.5+0.j],
         [ 0.5+0.j,  0.5-0.j, -0.5+0.j, -0.5+0.j],
         [ 0.5+0.j, -0.5+0.j, -0.5+0.j,  0.5-0.j]])
-</pre></div>
+</code></pre></div>
 
 
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>H <span style="color: #555555">=</span> <span style="color: #FF6600">1</span><span style="color: #555555">/</span>np<span style="color: #555555">.</span>sqrt(<span style="color: #FF6600">2</span>)<span style="color: #555555">*</span>np<span style="color: #555555">.</span>array([[<span style="color: #FF6600">1</span>,<span style="color: #FF6600">1</span>],[<span style="color: #FF6600">1</span>,<span style="color: #555555">-</span><span style="color: #FF6600">1</span>]])
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>H <span style="color: #555555">=</span> <span style="color: #FF6600">1</span><span style="color: #555555">/</span>np<span style="color: #555555">.</span>sqrt(<span style="color: #FF6600">2</span>)<span style="color: #555555">*</span>np<span style="color: #555555">.</span>array([[<span style="color: #FF6600">1</span>,<span style="color: #FF6600">1</span>],[<span style="color: #FF6600">1</span>,<span style="color: #555555">-</span><span style="color: #FF6600">1</span>]])
 U <span style="color: #555555">=</span> np<span style="color: #555555">.</span>kron(H,H)
 <span style="color: #336666">print</span>(U)
-</pre></div>
+</code></pre></div>
 
 
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>[[ 0.5  0.5  0.5  0.5]
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>[[ 0.5  0.5  0.5  0.5]
  [ 0.5 -0.5  0.5 -0.5]
  [ 0.5  0.5 -0.5 -0.5]
  [ 0.5 -0.5 -0.5  0.5]]
-</pre></div>
+</code></pre></div>
 
 
 <ul>
 <li>Exercise: Hadamard Gate (3 qubits)</li>
 </ul>
 <p>Consider a 3 qubits quantum circuit with H gate applied to each qubit.</p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>qc <span style="color: #555555">=</span> QuantumCircuit(<span style="color: #FF6600">3</span>)
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>qc <span style="color: #555555">=</span> QuantumCircuit(<span style="color: #FF6600">3</span>)
 <span style="color: #006699; font-weight: bold">for</span> k <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">range</span>(<span style="color: #FF6600">3</span>):
     qc<span style="color: #555555">.</span>h(k)
 style <span style="color: #555555">=</span> {<span style="color: #CC3300">&#39;backgroundcolor&#39;</span>: <span style="color: #CC3300">&#39;lavender&#39;</span>}
 qc<span style="color: #555555">.</span>draw(output<span style="color: #555555">=</span><span style="color: #CC3300">&#39;mpl&#39;</span>, style <span style="color: #555555">=</span> style)
-</pre></div>
+</code></pre></div>
 
 
 <p><img alt="png" src="../output_25_0.png" /></p>
@@ -503,18 +503,18 @@ qc<span style="color: #555555">.</span>draw(output<span style="color: #555555">=
 <p>\( \textbf{Hint} :  U = H \otimes H \otimes H  \) </p>
 <hr />
 <h4 id="a-fun-experiment">A fun Experiment</h4>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>qc <span style="color: #555555">=</span> QuantumCircuit(<span style="color: #FF6600">2</span>)
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>qc <span style="color: #555555">=</span> QuantumCircuit(<span style="color: #FF6600">2</span>)
 <span style="color: #006699; font-weight: bold">for</span> i <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">range</span>(<span style="color: #FF6600">10</span>):
     <span style="color: #006699; font-weight: bold">if</span> i <span style="color: #555555">&gt;</span> <span style="color: #FF6600">1</span> <span style="color: #000000; font-weight: bold">and</span> i<span style="color: #555555">%</span><span style="color: #FF6600">2</span><span style="color: #555555">==</span><span style="color: #FF6600">0</span>:
         qc<span style="color: #555555">.</span>barrier()
     qc<span style="color: #555555">.</span>h(<span style="color: #FF6600">0</span>) 
     qc<span style="color: #555555">.</span>h(<span style="color: #FF6600">1</span>)
-</pre></div>
+</code></pre></div>
 
 
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>style <span style="color: #555555">=</span> {<span style="color: #CC3300">&#39;backgroundcolor&#39;</span>: <span style="color: #CC3300">&#39;lavender&#39;</span>}
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>style <span style="color: #555555">=</span> {<span style="color: #CC3300">&#39;backgroundcolor&#39;</span>: <span style="color: #CC3300">&#39;lavender&#39;</span>}
 qc<span style="color: #555555">.</span>draw(output<span style="color: #555555">=</span><span style="color: #CC3300">&#39;mpl&#39;</span>, style <span style="color: #555555">=</span> style)
-</pre></div>
+</code></pre></div>
 
 
 <p><img alt="png" src="../output_36_0.png" /></p>
@@ -526,8 +526,8 @@ qc<span style="color: #555555">.</span>draw(output<span style="color: #555555">=
 <li>Get Phase</li>
 </ul>
 <p><img alt="phase" src="../phase.gif" /></p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>
-</pre></div>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>
+</code></pre></div>
               
             </div>
           </div>

@@ -319,7 +319,7 @@
 Bell state is constructed with application of $\textbf{Hadamard}$ and $\textbf{CNOT}$ gates in two qubit system.
 </div>
 
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #555555">%</span>matplotlib inline
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code><span style="color: #555555">%</span>matplotlib inline
 <span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">numpy</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">np</span>
 <span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">IPython</span>
 <span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">matplotlib.pyplot</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">plt</span>
@@ -329,11 +329,11 @@ Bell state is constructed with application of $\textbf{Hadamard}$ and $\textbf{C
 <span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">qiskit.visualization</span> <span style="color: #006699; font-weight: bold">import</span> <span style="color: #555555">*</span>
 <span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">seaborn</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">sns</span>
 sns<span style="color: #555555">.</span>set()
-</pre></div>
+</code></pre></div>
 
 
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">helper</span> <span style="color: #006699; font-weight: bold">import</span> <span style="color: #555555">*</span>
-</pre></div>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code><span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">helper</span> <span style="color: #006699; font-weight: bold">import</span> <span style="color: #555555">*</span>
+</code></pre></div>
 
 
 <p>QFT is defined as</p>
@@ -368,7 +368,7 @@ sns<span style="color: #555555">.</span>set()
 <ul>
 <li>Circuit</li>
 </ul>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">qft2</span>():
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code><span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">qft2</span>():
     qc <span style="color: #555555">=</span> QuantumCircuit(<span style="color: #FF6600">2</span>,<span style="color: #FF6600">2</span>)
     qc<span style="color: #555555">.</span>h(<span style="color: #FF6600">1</span>)
     qc<span style="color: #555555">.</span>barrier()
@@ -378,19 +378,19 @@ sns<span style="color: #555555">.</span>set()
     qc<span style="color: #555555">.</span>barrier()
     qc<span style="color: #555555">.</span>swap(<span style="color: #FF6600">0</span>,<span style="color: #FF6600">1</span>)
     <span style="color: #006699; font-weight: bold">return</span> qc
-</pre></div>
+</code></pre></div>
 
 
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>qc <span style="color: #555555">=</span> qft2()
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>qc <span style="color: #555555">=</span> qft2()
 drawCircuit_2q(qc)
-</pre></div>
+</code></pre></div>
 
 
 <p><img alt="png" src="../output_9_0.png" /></p>
 <ul>
 <li>Phase</li>
 </ul>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">getPhaseSeq</span>():
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code><span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">getPhaseSeq</span>():
     phaseDic <span style="color: #555555">=</span> []
     qc <span style="color: #555555">=</span> QuantumCircuit(<span style="color: #FF6600">2</span>,<span style="color: #FF6600">2</span>)
     qc0 <span style="color: #555555">=</span> qc<span style="color: #555555">.</span>copy()
@@ -405,11 +405,11 @@ drawCircuit_2q(qc)
     <span style="color: #006699; font-weight: bold">for</span> iqc <span style="color: #000000; font-weight: bold">in</span> [qc0,qc1,qc2,qc3,qc4]:
         phaseDic<span style="color: #555555">.</span>append(getPhase(iqc))
     <span style="color: #006699; font-weight: bold">return</span> phaseDic    
-</pre></div>
+</code></pre></div>
 
 
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>drawPhase(getPhaseSeq())
-</pre></div>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>drawPhase(getPhaseSeq())
+</code></pre></div>
 
 
 <p><img alt="png" src="../output_14_0.png" /></p>
@@ -462,39 +462,39 @@ drawCircuit_2q(qc)
 <p>At third barrier: \( U_3 = (H \otimes I) \times C _{u1} \times (I \otimes H) \)    </p>
 <p>At fourth barrier: \( U_4 =  SWAP \times (H \otimes I) \times C _{u1} \times (I \otimes H) \)     </p>
 <p>Implementing Numpy</p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>I <span style="color: #555555">=</span> np<span style="color: #555555">.</span>eye(<span style="color: #FF6600">2</span>,<span style="color: #FF6600">2</span>)
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>I <span style="color: #555555">=</span> np<span style="color: #555555">.</span>eye(<span style="color: #FF6600">2</span>,<span style="color: #FF6600">2</span>)
 H <span style="color: #555555">=</span> <span style="color: #FF6600">1</span><span style="color: #555555">/</span>np<span style="color: #555555">.</span>sqrt(<span style="color: #FF6600">2</span>)<span style="color: #555555">*</span>np<span style="color: #555555">.</span>array([[<span style="color: #FF6600">1</span>,<span style="color: #FF6600">1</span>],[<span style="color: #FF6600">1</span>,<span style="color: #555555">-</span><span style="color: #FF6600">1</span>]])
 H_kron_I <span style="color: #555555">=</span> np<span style="color: #555555">.</span>kron(H,I)
 CU1 <span style="color: #555555">=</span> np<span style="color: #555555">.</span>array([[<span style="color: #FF6600">1</span>,<span style="color: #FF6600">0</span>,<span style="color: #FF6600">0</span>,<span style="color: #FF6600">0</span>],[<span style="color: #FF6600">0</span>,<span style="color: #FF6600">1</span>,<span style="color: #FF6600">0</span>,<span style="color: #FF6600">0</span>],[<span style="color: #FF6600">0</span>,<span style="color: #FF6600">0</span>,<span style="color: #FF6600">1</span>,<span style="color: #FF6600">0</span>],[<span style="color: #FF6600">0</span>,<span style="color: #FF6600">0</span>,<span style="color: #FF6600">0</span>,<span style="color: #FF6600">0.</span><span style="color: #555555">+</span><span style="color: #FF6600">1.</span>j]])
 I_kron_H <span style="color: #555555">=</span> np<span style="color: #555555">.</span>kron(I,H)
 SWAP <span style="color: #555555">=</span> np<span style="color: #555555">.</span>array([[<span style="color: #FF6600">1</span>,<span style="color: #FF6600">0</span>,<span style="color: #FF6600">0</span>,<span style="color: #FF6600">0</span>],[<span style="color: #FF6600">0</span>,<span style="color: #FF6600">0</span>,<span style="color: #FF6600">1</span>,<span style="color: #FF6600">0</span>],[<span style="color: #FF6600">0</span>,<span style="color: #FF6600">1</span>,<span style="color: #FF6600">0</span>,<span style="color: #FF6600">0</span>],[<span style="color: #FF6600">0</span>,<span style="color: #FF6600">0</span>,<span style="color: #FF6600">0</span>,<span style="color: #FF6600">1</span>]])
-</pre></div>
+</code></pre></div>
 
 
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>U <span style="color: #555555">=</span> np<span style="color: #555555">.</span>dot(H_kron_I,np<span style="color: #555555">.</span>dot(CU1,np<span style="color: #555555">.</span>dot(I_kron_H,SWAP)))
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>U <span style="color: #555555">=</span> np<span style="color: #555555">.</span>dot(H_kron_I,np<span style="color: #555555">.</span>dot(CU1,np<span style="color: #555555">.</span>dot(I_kron_H,SWAP)))
 U
-</pre></div>
+</code></pre></div>
 
 
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>array([[ 0.5+0.j ,  0.5+0.j ,  0.5+0.j ,  0.5+0.j ],
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>array([[ 0.5+0.j ,  0.5+0.j ,  0.5+0.j ,  0.5+0.j ],
        [ 0.5+0.j ,  0. +0.5j, -0.5+0.j ,  0. -0.5j],
        [ 0.5+0.j , -0.5+0.j ,  0.5+0.j , -0.5+0.j ],
        [ 0.5+0.j ,  0. -0.5j, -0.5+0.j ,  0. +0.5j]])
-</pre></div>
+</code></pre></div>
 
 
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>ket <span style="color: #555555">=</span> np<span style="color: #555555">.</span>array([<span style="color: #FF6600">1</span>,<span style="color: #FF6600">0</span>,<span style="color: #FF6600">0</span>,<span style="color: #FF6600">0</span>])
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>ket <span style="color: #555555">=</span> np<span style="color: #555555">.</span>array([<span style="color: #FF6600">1</span>,<span style="color: #FF6600">0</span>,<span style="color: #FF6600">0</span>,<span style="color: #FF6600">0</span>])
 np<span style="color: #555555">.</span>dot(U,ket)
-</pre></div>
+</code></pre></div>
 
 
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>array([0.5+0.j, 0.5+0.j, 0.5+0.j, 0.5+0.j])
-</pre></div>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>array([0.5+0.j, 0.5+0.j, 0.5+0.j, 0.5+0.j])
+</code></pre></div>
 
 
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>qc <span style="color: #555555">=</span> qft2()
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>qc <span style="color: #555555">=</span> qft2()
 plotMatrix(qc)
-</pre></div>
+</code></pre></div>
 
 
 <p><img alt="png" src="../output_23_0.png" /></p>
@@ -502,7 +502,7 @@ plotMatrix(qc)
 <ul>
 <li>Circuit Diagram</li>
 </ul>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">qft3</span>():
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code><span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">qft3</span>():
     n <span style="color: #555555">=</span> <span style="color: #FF6600">3</span>
     q <span style="color: #555555">=</span> QuantumRegister(n)
     c <span style="color: #555555">=</span> ClassicalRegister(n)
@@ -521,15 +521,15 @@ plotMatrix(qc)
     qc<span style="color: #555555">.</span>barrier()
     qc<span style="color: #555555">.</span>swap(q[<span style="color: #FF6600">0</span>], q[<span style="color: #FF6600">2</span>])
     <span style="color: #006699; font-weight: bold">return</span> q,c,qc
-</pre></div>
+</code></pre></div>
 
 
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>q,c,qc <span style="color: #555555">=</span> qft3()
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>q,c,qc <span style="color: #555555">=</span> qft3()
 qc<span style="color: #555555">.</span>barrier()
 qc<span style="color: #555555">.</span>measure(q,c)
 style <span style="color: #555555">=</span> {<span style="color: #CC3300">&#39;backgroundcolor&#39;</span>: <span style="color: #CC3300">&#39;lavender&#39;</span>}
 qc<span style="color: #555555">.</span>draw(output<span style="color: #555555">=</span><span style="color: #CC3300">&#39;mpl&#39;</span>, style <span style="color: #555555">=</span> style)
-</pre></div>
+</code></pre></div>
 
 
 <p><img alt="png" src="../output_26_0.png" /></p>
@@ -541,7 +541,7 @@ qc<span style="color: #555555">.</span>draw(output<span style="color: #555555">=
 <p>Intermediate Ket and Phases</p>
 </li>
 </ul>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">getPhaseSeq</span>():
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code><span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">getPhaseSeq</span>():
     phaseDic <span style="color: #555555">=</span> []
     QC <span style="color: #555555">=</span> []
     n <span style="color: #555555">=</span> <span style="color: #FF6600">3</span>
@@ -567,20 +567,20 @@ qc<span style="color: #555555">.</span>draw(output<span style="color: #555555">=
     <span style="color: #006699; font-weight: bold">for</span> iqc <span style="color: #000000; font-weight: bold">in</span> QC:
         phaseDic<span style="color: #555555">.</span>append(getPhase(iqc))
     <span style="color: #006699; font-weight: bold">return</span> QC, phaseDic    
-</pre></div>
+</code></pre></div>
 
 
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>drawPhase(phaseDic)
-</pre></div>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>drawPhase(phaseDic)
+</code></pre></div>
 
 
 <p><img alt="png" src="../output_35_0.png" /></p>
 <ul>
 <li>Matrix Element</li>
 </ul>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>q,c,qc <span style="color: #555555">=</span> qft3()
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>q,c,qc <span style="color: #555555">=</span> qft3()
 plotMatrix(qc)
-</pre></div>
+</code></pre></div>
 
 
 <p><img alt="png" src="../output_37_0.png" /></p>

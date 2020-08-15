@@ -342,7 +342,7 @@
             <div class="section">
               
                 <h3 id="three-qubit-circuits">Three Qubit Circuits</h3>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #555555">%</span>matplotlib inline
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code><span style="color: #555555">%</span>matplotlib inline
 <span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">numpy</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">np</span>
 <span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">IPython</span>
 <span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">matplotlib.pyplot</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">plt</span>
@@ -352,36 +352,36 @@
 <span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">qiskit.visualization</span> <span style="color: #006699; font-weight: bold">import</span> <span style="color: #555555">*</span>
 <span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">seaborn</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">sns</span>
 sns<span style="color: #555555">.</span>set()
-</pre></div>
+</code></pre></div>
 
 
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">helper</span> <span style="color: #006699; font-weight: bold">import</span> <span style="color: #555555">*</span>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code><span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">helper</span> <span style="color: #006699; font-weight: bold">import</span> <span style="color: #555555">*</span>
 <span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">os</span>
 <span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">glob</span>
 <span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">moviepy.editor</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">mpy</span>
 <span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">numpy</span> <span style="color: #006699; font-weight: bold">import</span> pi
-</pre></div>
+</code></pre></div>
 
 
 <h4 id="three-qubit-circuit">Three qubit circuit</h4>
 <p>Base states: |000&gt;,|001&gt;,|010&gt;,|011&gt;,|100&gt;,|110&gt;,|101&gt;,|111&gt;</p>
 <h4 id="gate-on-first-qubit">Gate on First Qubit</h4>
 <p>\( I \otimes I \otimes U \)</p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>q <span style="color: #555555">=</span> QuantumRegister(<span style="color: #FF6600">3</span>)
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>q <span style="color: #555555">=</span> QuantumRegister(<span style="color: #FF6600">3</span>)
 qc <span style="color: #555555">=</span> QuantumCircuit(q)
 qc<span style="color: #555555">.</span>u3(pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,q[<span style="color: #FF6600">0</span>])
 
 style <span style="color: #555555">=</span> {<span style="color: #CC3300">&#39;backgroundcolor&#39;</span>: <span style="color: #CC3300">&#39;lavender&#39;</span>}
 qc<span style="color: #555555">.</span>draw(output<span style="color: #555555">=</span><span style="color: #CC3300">&#39;mpl&#39;</span>, style <span style="color: #555555">=</span> style)
-</pre></div>
+</code></pre></div>
 
 
 <p><img alt="png" src="../output_8_0.png" /></p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>getMatrix(qc)
-</pre></div>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>getMatrix(qc)
+</code></pre></div>
 
 
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>matrix([[ 0.707+0.j   , -0.   -0.707j,  0.   +0.j   ,  0.   +0.j   ,
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>matrix([[ 0.707+0.j   , -0.   -0.707j,  0.   +0.j   ,  0.   +0.j   ,
           0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ],
         [ 0.   +0.707j, -0.707+0.j   ,  0.   +0.j   ,  0.   +0.j   ,
           0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ],
@@ -397,26 +397,26 @@ qc<span style="color: #555555">.</span>draw(output<span style="color: #555555">=
           0.   +0.j   ,  0.   +0.j   ,  0.707+0.j   , -0.   -0.707j],
         [ 0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,
           0.   +0.j   ,  0.   +0.j   ,  0.   +0.707j, -0.707+0.j   ]])
-</pre></div>
+</code></pre></div>
 
 
 <h4 id="gate-on-second-qubit">Gate on Second Qubit</h4>
 <p>\( I \otimes U \otimes I \)</p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>q <span style="color: #555555">=</span> QuantumRegister(<span style="color: #FF6600">3</span>)
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>q <span style="color: #555555">=</span> QuantumRegister(<span style="color: #FF6600">3</span>)
 qc <span style="color: #555555">=</span> QuantumCircuit(q)
 qc<span style="color: #555555">.</span>u3(pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,q[<span style="color: #FF6600">1</span>])
 
 style <span style="color: #555555">=</span> {<span style="color: #CC3300">&#39;backgroundcolor&#39;</span>: <span style="color: #CC3300">&#39;lavender&#39;</span>}
 qc<span style="color: #555555">.</span>draw(output<span style="color: #555555">=</span><span style="color: #CC3300">&#39;mpl&#39;</span>, style <span style="color: #555555">=</span> style)
-</pre></div>
+</code></pre></div>
 
 
 <p><img alt="png" src="../output_11_0.png" /></p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>getMatrix(qc)
-</pre></div>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>getMatrix(qc)
+</code></pre></div>
 
 
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>matrix([[ 0.707+0.j   ,  0.   +0.j   , -0.   -0.707j,  0.   +0.j   ,
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>matrix([[ 0.707+0.j   ,  0.   +0.j   , -0.   -0.707j,  0.   +0.j   ,
           0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ],
         [ 0.   +0.j   ,  0.707+0.j   ,  0.   +0.j   , -0.   -0.707j,
           0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ],
@@ -432,26 +432,26 @@ qc<span style="color: #555555">.</span>draw(output<span style="color: #555555">=
           0.   +0.707j,  0.   +0.j   , -0.707+0.j   ,  0.   +0.j   ],
         [ 0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,
           0.   +0.j   ,  0.   +0.707j,  0.   +0.j   , -0.707+0.j   ]])
-</pre></div>
+</code></pre></div>
 
 
 <h4 id="gate-on-third-qubit">Gate on Third Qubit</h4>
 <p>$$U \otimes I \otimes I$$</p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>q <span style="color: #555555">=</span> QuantumRegister(<span style="color: #FF6600">3</span>)
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>q <span style="color: #555555">=</span> QuantumRegister(<span style="color: #FF6600">3</span>)
 qc <span style="color: #555555">=</span> QuantumCircuit(q)
 qc<span style="color: #555555">.</span>u3(pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,q[<span style="color: #FF6600">2</span>])
 
 style <span style="color: #555555">=</span> {<span style="color: #CC3300">&#39;backgroundcolor&#39;</span>: <span style="color: #CC3300">&#39;lavender&#39;</span>}
 qc<span style="color: #555555">.</span>draw(output<span style="color: #555555">=</span><span style="color: #CC3300">&#39;mpl&#39;</span>, style <span style="color: #555555">=</span> style)
-</pre></div>
+</code></pre></div>
 
 
 <p><img alt="png" src="../output_14_0.png" /></p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>getMatrix(qc)
-</pre></div>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>getMatrix(qc)
+</code></pre></div>
 
 
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>matrix([[ 0.707+0.j   ,  0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>matrix([[ 0.707+0.j   ,  0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,
          -0.   -0.707j,  0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ],
         [ 0.   +0.j   ,  0.707+0.j   ,  0.   +0.j   ,  0.   +0.j   ,
           0.   +0.j   , -0.   -0.707j,  0.   +0.j   ,  0.   +0.j   ],
@@ -467,27 +467,27 @@ qc<span style="color: #555555">.</span>draw(output<span style="color: #555555">=
           0.   +0.j   ,  0.   +0.j   , -0.707+0.j   ,  0.   +0.j   ],
         [ 0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,  0.   +0.707j,
           0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   , -0.707+0.j   ]])
-</pre></div>
+</code></pre></div>
 
 
 <h4 id="gates-on-first-two-qubits">Gates on first two qubits</h4>
 <p>$$I \otimes U \otimes U$$</p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>q <span style="color: #555555">=</span> QuantumRegister(<span style="color: #FF6600">3</span>)
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>q <span style="color: #555555">=</span> QuantumRegister(<span style="color: #FF6600">3</span>)
 qc <span style="color: #555555">=</span> QuantumCircuit(q)
 qc<span style="color: #555555">.</span>u3(pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,q[<span style="color: #FF6600">0</span>])
 qc<span style="color: #555555">.</span>u3(pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,q[<span style="color: #FF6600">1</span>])
 
 style <span style="color: #555555">=</span> {<span style="color: #CC3300">&#39;backgroundcolor&#39;</span>: <span style="color: #CC3300">&#39;lavender&#39;</span>}
 qc<span style="color: #555555">.</span>draw(output<span style="color: #555555">=</span><span style="color: #CC3300">&#39;mpl&#39;</span>, style <span style="color: #555555">=</span> style)
-</pre></div>
+</code></pre></div>
 
 
 <p><img alt="png" src="../output_17_0.png" /></p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>getMatrix(qc)
-</pre></div>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>getMatrix(qc)
+</code></pre></div>
 
 
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>matrix([[ 0.5+0.j , -0. -0.5j, -0. -0.5j, -0.5+0.j ,  0. +0.j ,
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>matrix([[ 0.5+0.j , -0. -0.5j, -0. -0.5j, -0.5+0.j ,  0. +0.j ,
           0. +0.j ,  0. +0.j ,  0. +0.j ],
         [ 0. +0.5j, -0.5+0.j ,  0.5-0.j ,  0. +0.5j,  0. +0.j ,
           0. +0.j ,  0. +0.j ,  0. +0.j ],
@@ -503,12 +503,12 @@ qc<span style="color: #555555">.</span>draw(output<span style="color: #555555">=
           0.5-0.j , -0.5+0.j ,  0. +0.5j],
         [ 0. +0.j ,  0. +0.j ,  0. +0.j ,  0. +0.j , -0.5+0.j ,
          -0. -0.5j, -0. -0.5j,  0.5-0.j ]])
-</pre></div>
+</code></pre></div>
 
 
 <h4 id="gate-on-all-3-qubits">Gate on all 3 qubits</h4>
 <p>$$U \otimes U \otimes U$$</p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>q <span style="color: #555555">=</span> QuantumRegister(<span style="color: #FF6600">3</span>)
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>q <span style="color: #555555">=</span> QuantumRegister(<span style="color: #FF6600">3</span>)
 qc <span style="color: #555555">=</span> QuantumCircuit(q)
 qc<span style="color: #555555">.</span>u3(pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,q[<span style="color: #FF6600">0</span>])
 qc<span style="color: #555555">.</span>u3(pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,q[<span style="color: #FF6600">1</span>])
@@ -516,15 +516,15 @@ qc<span style="color: #555555">.</span>u3(pi<span style="color: #555555">/</span
 
 style <span style="color: #555555">=</span> {<span style="color: #CC3300">&#39;backgroundcolor&#39;</span>: <span style="color: #CC3300">&#39;lavender&#39;</span>}
 qc<span style="color: #555555">.</span>draw(output<span style="color: #555555">=</span><span style="color: #CC3300">&#39;mpl&#39;</span>, style <span style="color: #555555">=</span> style)
-</pre></div>
+</code></pre></div>
 
 
 <p><img alt="png" src="../output_20_0.png" /></p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>getMatrix(qc)
-</pre></div>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>getMatrix(qc)
+</code></pre></div>
 
 
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>matrix([[ 0.354+0.j   , -0.   -0.354j, -0.   -0.354j, -0.354+0.j   ,
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>matrix([[ 0.354+0.j   , -0.   -0.354j, -0.   -0.354j, -0.354+0.j   ,
          -0.   -0.354j, -0.354+0.j   , -0.354+0.j   ,  0.   +0.354j],
         [ 0.   +0.354j, -0.354+0.j   ,  0.354-0.j   ,  0.   +0.354j,
           0.354-0.j   ,  0.   +0.354j, -0.   -0.354j,  0.354-0.j   ],
@@ -540,12 +540,12 @@ qc<span style="color: #555555">.</span>draw(output<span style="color: #555555">=
          -0.   -0.354j, -0.354+0.j   ,  0.354-0.j   , -0.   -0.354j],
         [-0.   -0.354j,  0.354-0.j   ,  0.354-0.j   ,  0.   +0.354j,
           0.354-0.j   ,  0.   +0.354j,  0.   +0.354j, -0.354+0.j   ]])
-</pre></div>
+</code></pre></div>
 
 
 <h4 id="gate-on-all-qubits">Gate on all qubits</h4>
 <p>$$(U \times U) \otimes (U \times U) \otimes (U \times U)$$</p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>q <span style="color: #555555">=</span> QuantumRegister(<span style="color: #FF6600">3</span>)
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>q <span style="color: #555555">=</span> QuantumRegister(<span style="color: #FF6600">3</span>)
 qc <span style="color: #555555">=</span> QuantumCircuit(q)
 qc<span style="color: #555555">.</span>u3(pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,q[<span style="color: #FF6600">0</span>])
 qc<span style="color: #555555">.</span>u3(pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,q[<span style="color: #FF6600">0</span>])
@@ -556,15 +556,15 @@ qc<span style="color: #555555">.</span>u3(<span style="color: #FF6600">5</span><
 
 style <span style="color: #555555">=</span> {<span style="color: #CC3300">&#39;backgroundcolor&#39;</span>: <span style="color: #CC3300">&#39;lavender&#39;</span>}
 qc<span style="color: #555555">.</span>draw(output<span style="color: #555555">=</span><span style="color: #CC3300">&#39;mpl&#39;</span>, style <span style="color: #555555">=</span> style)
-</pre></div>
+</code></pre></div>
 
 
 <p><img alt="png" src="../output_23_0.png" /></p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>getMatrix(qc)
-</pre></div>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>getMatrix(qc)
+</code></pre></div>
 
 
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>matrix([[ 0.354+0.j   ,  0.   +0.j   ,  0.25 +0.25j ,  0.   +0.j   ,
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>matrix([[ 0.354+0.j   ,  0.   +0.j   ,  0.25 +0.25j ,  0.   +0.j   ,
           0.53 +0.306j,  0.   +0.j   ,  0.158+0.592j,  0.   +0.j   ],
         [ 0.   +0.j   ,  0.354+0.j   ,  0.   +0.j   ,  0.25 +0.25j ,
           0.   +0.j   ,  0.53 +0.306j,  0.   +0.j   ,  0.158+0.592j],
@@ -580,7 +580,7 @@ qc<span style="color: #555555">.</span>draw(output<span style="color: #555555">=
          -0.25 +0.25j ,  0.   +0.j   ,  0.354-0.j   ,  0.   +0.j   ],
         [ 0.   +0.j   ,  0.158-0.592j,  0.   +0.j   , -0.53 +0.306j,
           0.   +0.j   , -0.25 +0.25j ,  0.   +0.j   ,  0.354-0.j   ]])
-</pre></div>
+</code></pre></div>
               
             </div>
           </div>

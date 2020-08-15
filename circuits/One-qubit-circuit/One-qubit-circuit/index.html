@@ -317,7 +317,7 @@
             <div class="section">
               
                 <h3 id="single-qubit-circuits">Single Qubit Circuits</h3>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #555555">%</span>matplotlib inline
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code><span style="color: #555555">%</span>matplotlib inline
 <span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">numpy</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">np</span>
 <span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">IPython</span>
 <span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">matplotlib.pyplot</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">plt</span>
@@ -327,53 +327,53 @@
 <span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">qiskit.visualization</span> <span style="color: #006699; font-weight: bold">import</span> <span style="color: #555555">*</span>
 <span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">seaborn</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">sns</span>
 sns<span style="color: #555555">.</span>set()
-</pre></div>
+</code></pre></div>
 
 
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">helper</span> <span style="color: #006699; font-weight: bold">import</span> <span style="color: #555555">*</span>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code><span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">helper</span> <span style="color: #006699; font-weight: bold">import</span> <span style="color: #555555">*</span>
 <span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">os</span>
 <span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">glob</span>
 <span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">moviepy.editor</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">mpy</span>
-</pre></div>
+</code></pre></div>
 
 
 <h4 id="single-qubit-circuit">Single qubit circuit:</h4>
 <p>Base states : |0&gt;, |1&gt;</p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>qc <span style="color: #555555">=</span> QuantumCircuit(<span style="color: #FF6600">1</span>)
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>qc <span style="color: #555555">=</span> QuantumCircuit(<span style="color: #FF6600">1</span>)
 qc<span style="color: #555555">.</span>u3(np<span style="color: #555555">.</span>pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,np<span style="color: #555555">.</span>pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,np<span style="color: #555555">.</span>pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,<span style="color: #FF6600">0</span>)
 
 style <span style="color: #555555">=</span> {<span style="color: #CC3300">&#39;backgroundcolor&#39;</span>: <span style="color: #CC3300">&#39;lavender&#39;</span>}
 qc<span style="color: #555555">.</span>draw(output<span style="color: #555555">=</span><span style="color: #CC3300">&#39;mpl&#39;</span>, style <span style="color: #555555">=</span> style)
-</pre></div>
+</code></pre></div>
 
 
 <p><img alt="png" src="../output_6_0.png" /></p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>getMatrix(qc)
-</pre></div>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>getMatrix(qc)
+</code></pre></div>
 
 
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>matrix([[ 0.707+0.j   , -0.   -0.707j],
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>matrix([[ 0.707+0.j   , -0.   -0.707j],
         [ 0.   +0.707j, -0.707+0.j   ]])
-</pre></div>
+</code></pre></div>
 
 
 <h4 id="gates-in-series">Gates in series</h4>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>qc <span style="color: #555555">=</span> QuantumCircuit(<span style="color: #FF6600">1</span>)
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>qc <span style="color: #555555">=</span> QuantumCircuit(<span style="color: #FF6600">1</span>)
 qc<span style="color: #555555">.</span>u3(np<span style="color: #555555">.</span>pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,np<span style="color: #555555">.</span>pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,np<span style="color: #555555">.</span>pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,<span style="color: #FF6600">0</span>)
 qc<span style="color: #555555">.</span>u3(np<span style="color: #555555">.</span>pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,np<span style="color: #555555">.</span>pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,np<span style="color: #555555">.</span>pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,<span style="color: #FF6600">0</span>)
 style <span style="color: #555555">=</span> {<span style="color: #CC3300">&#39;backgroundcolor&#39;</span>: <span style="color: #CC3300">&#39;lavender&#39;</span>}
 qc<span style="color: #555555">.</span>draw(output<span style="color: #555555">=</span><span style="color: #CC3300">&#39;mpl&#39;</span>, style <span style="color: #555555">=</span> style)
-</pre></div>
+</code></pre></div>
 
 
 <p><img alt="png" src="../output_9_0.png" /></p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>getMatrix(qc)
-</pre></div>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>getMatrix(qc)
+</code></pre></div>
 
 
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>matrix([[1.+0.j, 0.+0.j],
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>matrix([[1.+0.j, 0.+0.j],
         [0.+0.j, 1.+0.j]])
-</pre></div>
+</code></pre></div>
 
 
 <hr />

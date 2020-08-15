@@ -331,7 +331,7 @@ The Rϕ-gate performs a rotation of  𝜙  around the Z-axis. It has the matrix:
 $$ R_\phi = \begin{bmatrix} 1 & 0 \\ 0 & e^{i\phi} \end{bmatrix}$$
 </div>
 
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #555555">%</span>matplotlib inline
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code><span style="color: #555555">%</span>matplotlib inline
 <span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">numpy</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">np</span>
 <span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">IPython</span>
 <span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">matplotlib.pyplot</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">plt</span>
@@ -340,51 +340,51 @@ $$ R_\phi = \begin{bmatrix} 1 & 0 \\ 0 & e^{i\phi} \end{bmatrix}$$
 <span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">qiskit.visualization</span> <span style="color: #006699; font-weight: bold">import</span> <span style="color: #555555">*</span>
 <span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">seaborn</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">sns</span>
 sns<span style="color: #555555">.</span>set()
-</pre></div>
+</code></pre></div>
 
 
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">helper</span> <span style="color: #006699; font-weight: bold">import</span> <span style="color: #555555">*</span>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code><span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">helper</span> <span style="color: #006699; font-weight: bold">import</span> <span style="color: #555555">*</span>
 <span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">os</span>
 <span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">glob</span>
 <span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">moviepy.editor</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">mpy</span>
-</pre></div>
+</code></pre></div>
 
 
 <h4 id="r-phi-1-qubit">R-Phi (1 qubit)</h4>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>qc1 <span style="color: #555555">=</span> QuantumCircuit(<span style="color: #FF6600">1</span>)
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>qc1 <span style="color: #555555">=</span> QuantumCircuit(<span style="color: #FF6600">1</span>)
 qc1<span style="color: #555555">.</span>rz(np<span style="color: #555555">.</span>pi<span style="color: #555555">/</span><span style="color: #FF6600">4</span>, <span style="color: #FF6600">0</span>)
 
 style <span style="color: #555555">=</span> {<span style="color: #CC3300">&#39;backgroundcolor&#39;</span>: <span style="color: #CC3300">&#39;lavender&#39;</span>}
 qc1<span style="color: #555555">.</span>draw(output<span style="color: #555555">=</span><span style="color: #CC3300">&#39;mpl&#39;</span>, style <span style="color: #555555">=</span> style)
-</pre></div>
+</code></pre></div>
 
 
 <p><img alt="png" src="../output_4_0.png" /></p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>getStateVector(qc1)
-</pre></div>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>getStateVector(qc1)
+</code></pre></div>
 
 
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>array([1.+0.j, 0.+0.j])
-</pre></div>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>array([1.+0.j, 0.+0.j])
+</code></pre></div>
 
 
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>getBlochSphere(qc1)
-</pre></div>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>getBlochSphere(qc1)
+</code></pre></div>
 
 
 <p><img alt="png" src="../output_6_0.png" /></p>
 <h4 id="r-phi-2-qubits">R-phi (2 qubits)</h4>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>qc2 <span style="color: #555555">=</span> QuantumCircuit(<span style="color: #FF6600">2</span>)
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>qc2 <span style="color: #555555">=</span> QuantumCircuit(<span style="color: #FF6600">2</span>)
 qc2<span style="color: #555555">.</span>rz(np<span style="color: #555555">.</span>pi<span style="color: #555555">/</span><span style="color: #FF6600">4</span>, <span style="color: #FF6600">0</span>)
 qc2<span style="color: #555555">.</span>rz(np<span style="color: #555555">.</span>pi<span style="color: #555555">/</span><span style="color: #FF6600">4</span>, <span style="color: #FF6600">1</span>)
 style <span style="color: #555555">=</span> {<span style="color: #CC3300">&#39;backgroundcolor&#39;</span>: <span style="color: #CC3300">&#39;lavender&#39;</span>}
 qc2<span style="color: #555555">.</span>draw(output<span style="color: #555555">=</span><span style="color: #CC3300">&#39;mpl&#39;</span>, style <span style="color: #555555">=</span> style)
-</pre></div>
+</code></pre></div>
 
 
 <p><img alt="png" src="../output_8_0.png" /></p>
 <h4 id="fun-experiment-1-qubit">Fun Experiment (1 qubit)</h4>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>qc_e1 <span style="color: #555555">=</span> QuantumCircuit(<span style="color: #FF6600">1</span>)
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>qc_e1 <span style="color: #555555">=</span> QuantumCircuit(<span style="color: #FF6600">1</span>)
 qc_e1<span style="color: #555555">.</span>h(<span style="color: #FF6600">0</span>)
 qc_e1<span style="color: #555555">.</span>barrier()
 <span style="color: #006699; font-weight: bold">for</span> i <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">range</span>(<span style="color: #FF6600">10</span>):
@@ -393,7 +393,7 @@ qc_e1<span style="color: #555555">.</span>barrier()
 qc_e1<span style="color: #555555">.</span>h(<span style="color: #FF6600">0</span>)
 style <span style="color: #555555">=</span> {<span style="color: #CC3300">&#39;backgroundcolor&#39;</span>: <span style="color: #CC3300">&#39;lavender&#39;</span>}
 qc_e1<span style="color: #555555">.</span>draw(output<span style="color: #555555">=</span><span style="color: #CC3300">&#39;mpl&#39;</span>, style <span style="color: #555555">=</span> style)
-</pre></div>
+</code></pre></div>
 
 
 <p><img alt="png" src="../output_10_0.png" /></p>
@@ -406,7 +406,7 @@ qc_e1<span style="color: #555555">.</span>draw(output<span style="color: #555555
 </ul>
 <p><img alt="img" src="../phase1.gif" /></p>
 <h4 id="fun-experiment-2-qubits">Fun Experiment (2 qubits)</h4>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>qc <span style="color: #555555">=</span> QuantumCircuit(<span style="color: #FF6600">2</span>)
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>qc <span style="color: #555555">=</span> QuantumCircuit(<span style="color: #FF6600">2</span>)
 qc<span style="color: #555555">.</span>h(<span style="color: #FF6600">0</span>)
 qc<span style="color: #555555">.</span>u3(np<span style="color: #555555">.</span>pi<span style="color: #555555">/</span><span style="color: #FF6600">4</span>,np<span style="color: #555555">.</span>pi<span style="color: #555555">/</span><span style="color: #FF6600">4</span>,<span style="color: #FF6600">0</span>,<span style="color: #FF6600">1</span>)
 qc<span style="color: #555555">.</span>barrier()
@@ -419,7 +419,7 @@ qc<span style="color: #555555">.</span>h(<span style="color: #FF6600">0</span>)
 qc<span style="color: #555555">.</span>u3(<span style="color: #555555">-</span>np<span style="color: #555555">.</span>pi<span style="color: #555555">/</span><span style="color: #FF6600">4</span>,<span style="color: #555555">-</span>np<span style="color: #555555">.</span>pi<span style="color: #555555">/</span><span style="color: #FF6600">4</span>,<span style="color: #FF6600">0</span>,<span style="color: #FF6600">1</span>)
 style <span style="color: #555555">=</span> {<span style="color: #CC3300">&#39;backgroundcolor&#39;</span>: <span style="color: #CC3300">&#39;lavender&#39;</span>}
 qc<span style="color: #555555">.</span>draw(output<span style="color: #555555">=</span><span style="color: #CC3300">&#39;mpl&#39;</span>, style <span style="color: #555555">=</span> style)
-</pre></div>
+</code></pre></div>
 
 
 <p><img alt="png" src="../output_16_0.png" /></p>

@@ -296,30 +296,30 @@
                 <h1 id="installing-jupyter-notebook">Installing Jupyter Notebook</h1>
 <p>By far the easiest way to install Jupyter is with Anaconda. Jupyter notebooks automatically come with the distribution. You'll be able to use notebooks from the default environment.</p>
 <p>To install Jupyter notebooks in a conda environment, use </p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>conda install jupyter notebook
-</pre></div>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>conda install jupyter notebook
+</code></pre></div>
 
 
 <p>Jupyter notebooks are also available through pip with </p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>pip install jupyter notebook
-</pre></div>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>pip install jupyter notebook
+</code></pre></div>
 
 
 <p><a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">Markdown Cheatsheet :</a></p>
 <p>Convert a notebook to an HTML file, in your terminal use</p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>jupyter nbconvert --to html notebook.ipynb
-</pre></div>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>jupyter nbconvert --to html notebook.ipynb
+</code></pre></div>
 
 
 <p><a href="https://nbconvert.readthedocs.io/en/latest/usage.html">Convert:</a></p>
 <p>To create the slideshow from the notebook file, you'll need to use nbconvert:</p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>jupyter nbconvert notebook.ipynb --to slides   
-</pre></div>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>jupyter nbconvert notebook.ipynb --to slides   
+</code></pre></div>
 
 
 <p>This just converts the notebook to the necessary files for the slideshow, but you need to serve it with an HTTP server to actually see the presentation.</p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>To convert it and immediately see it, use
-</pre></div>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>To convert it and immediately see it, use
+</code></pre></div>
 
 
 <p>jupyter nbconvert notebook.ipynb --to slides --post serve

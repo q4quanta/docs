@@ -353,7 +353,7 @@
 <p><a href="https://qiskit.org/textbook/ch-algorithms/defining-quantum-circuits.html"><strong>"A set of quantum gates is said to be universal if any unitary transformation of the quantum data can be efficiently approximated arbitrarily well as a sequence of gates in the set."</strong></a></p>
 <p>Every gate you run on the IBM Quantum Experience is transpiled into single qubit rotations and CNOT (CX) gates. We know that these constitute a universal gate set, which implies that any unitary can be implemented using only these gates. However, in general it is not easy to find a good decomposition for an arbitrary unitary. Your task is to find such a decomposition.</p>
 <p>You are given the following unitary:</p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">numpy</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">np</span>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code><span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">numpy</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">np</span>
 <span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">qiskit</span> <span style="color: #006699; font-weight: bold">import</span> Aer, QuantumCircuit, execute
 <span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">qiskit.visualization</span> <span style="color: #006699; font-weight: bold">import</span> plot_histogram
 <span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">IPython.display</span> <span style="color: #006699; font-weight: bold">import</span> display, Math, Latex
@@ -363,63 +363,63 @@
 <span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">seaborn</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">sns</span>
 sns<span style="color: #555555">.</span>set()
 <span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">matplotlib.pyplot</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">plt</span>
-</pre></div>
+</code></pre></div>
 
 
 <h4 id="provided-unitary-matrix">Provided Unitary Matrix</h4>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">may4_challenge.ex4</span> <span style="color: #006699; font-weight: bold">import</span> get_unitary
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code><span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">may4_challenge.ex4</span> <span style="color: #006699; font-weight: bold">import</span> get_unitary
 U <span style="color: #555555">=</span> get_unitary()
 <span style="color: #0099FF; font-style: italic"># print(U)</span>
 <span style="color: #336666">print</span>(<span style="color: #CC3300">&quot;U has shape&quot;</span>, U<span style="color: #555555">.</span>shape)
-</pre></div>
+</code></pre></div>
 
 
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>U has shape (16, 16)
-</pre></div>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>U has shape (16, 16)
+</code></pre></div>
 
 
 <h4 id="trial-zero">Trial Zero</h4>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>iqc <span style="color: #555555">=</span> QuantumCircuit(<span style="color: #FF6600">4</span>)
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>iqc <span style="color: #555555">=</span> QuantumCircuit(<span style="color: #FF6600">4</span>)
 iqc<span style="color: #555555">.</span>iso(U, [<span style="color: #FF6600">0</span>,<span style="color: #FF6600">1</span>,<span style="color: #FF6600">2</span>,<span style="color: #FF6600">3</span>], [])
 tiqc <span style="color: #555555">=</span> transpile(iqc, basis_gates<span style="color: #555555">=</span>[<span style="color: #CC3300">&#39;u3&#39;</span>, <span style="color: #CC3300">&#39;cx&#39;</span>],optimization_level <span style="color: #555555">=</span> <span style="color: #FF6600">2</span>)
 check_circuit(tiqc)
-</pre></div>
+</code></pre></div>
 
 
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>Circuit stats:
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>Circuit stats:
 ||U-V||_2 = 4.2634217757239e-14
 (U is the reference unitary, V is yours, and the global phase has been removed from both of them).
 Cost is 1663
 
 Something is not right with your circuit: the cost of the circuit is too high (above 1600)
-</pre></div>
+</code></pre></div>
 
 
 <h4 id="matrix-analysis">Matrix Analysis</h4>
 <p>Lets visualize the Matrix
 We can look at absolute values of matrix element.</p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">getAbs</span>(U):
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code><span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">getAbs</span>(U):
     M <span style="color: #555555">=</span> np<span style="color: #555555">.</span>eye(<span style="color: #FF6600">16</span>,<span style="color: #FF6600">16</span>)
     <span style="color: #006699; font-weight: bold">for</span> i <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">range</span>(<span style="color: #FF6600">16</span>):
         <span style="color: #006699; font-weight: bold">for</span> j <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">range</span>(<span style="color: #FF6600">16</span>):
             M[i,j] <span style="color: #555555">=</span> <span style="color: #336666">abs</span>(U[i,j])
     <span style="color: #006699; font-weight: bold">return</span> M
 M <span style="color: #555555">=</span> getAbs(U)
-</pre></div>
+</code></pre></div>
 
 
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>plt<span style="color: #555555">.</span>figure(figsize <span style="color: #555555">=</span> [<span style="color: #FF6600">15</span>,<span style="color: #FF6600">10</span>])
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>plt<span style="color: #555555">.</span>figure(figsize <span style="color: #555555">=</span> [<span style="color: #FF6600">15</span>,<span style="color: #FF6600">10</span>])
 sns<span style="color: #555555">.</span>heatmap(M, annot <span style="color: #555555">=</span><span style="color: #006699; font-weight: bold">True</span>, fmt <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;0.2f&#39;</span>)
-</pre></div>
+</code></pre></div>
 
 
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fa416aef450&gt;
-</pre></div>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fa416aef450&gt;
+</code></pre></div>
 
 
 <p><img alt="png" src="../output_8_1.png" /></p>
 <h4 id="diagonalization-of-u">Diagonalization of U</h4>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">qiskit</span> <span style="color: #006699; font-weight: bold">import</span> BasicAer
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code><span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">qiskit</span> <span style="color: #006699; font-weight: bold">import</span> BasicAer
 backend <span style="color: #555555">=</span> BasicAer<span style="color: #555555">.</span>get_backend(<span style="color: #CC3300">&#39;unitary_simulator&#39;</span>)
 Hqc <span style="color: #555555">=</span> QuantumCircuit(<span style="color: #FF6600">4</span>)
 Hqc<span style="color: #555555">.</span>h(<span style="color: #FF6600">0</span>)
@@ -429,18 +429,18 @@ Hqc<span style="color: #555555">.</span>h(<span style="color: #FF6600">3</span>)
 job <span style="color: #555555">=</span> execute(Hqc, backend)
 H <span style="color: #555555">=</span> job<span style="color: #555555">.</span>result()<span style="color: #555555">.</span>get_unitary(Hqc, decimals<span style="color: #555555">=</span><span style="color: #FF6600">3</span>)
 H <span style="color: #555555">=</span> np<span style="color: #555555">.</span>matrix(H)
-</pre></div>
+</code></pre></div>
 
 
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>DU <span style="color: #555555">=</span> np<span style="color: #555555">.</span>dot(np<span style="color: #555555">.</span>dot(H,U),H)
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>DU <span style="color: #555555">=</span> np<span style="color: #555555">.</span>dot(np<span style="color: #555555">.</span>dot(H,U),H)
 ADU <span style="color: #555555">=</span> getAbs(DU)
 plt<span style="color: #555555">.</span>figure(figsize <span style="color: #555555">=</span> [<span style="color: #FF6600">10</span>,<span style="color: #FF6600">8</span>])
 sns<span style="color: #555555">.</span>heatmap(ADU, annot <span style="color: #555555">=</span><span style="color: #006699; font-weight: bold">True</span>, fmt <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;0.1f&#39;</span>)
-</pre></div>
+</code></pre></div>
 
 
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fa416bab450&gt;
-</pre></div>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fa416bab450&gt;
+</code></pre></div>
 
 
 <p><img alt="png" src="../output_11_1.png" /></p>
@@ -459,7 +459,7 @@ $$</p>
 <hr />
 <p>For useful tips to complete this exercise as well as pointers for communicating with other participants and asking questions, please take a look at the following <a href="https://github.com/qiskit-community/may4_challenge_exercises">repository</a>. You will also find a copy of these exercises, so feel free to edit and experiment with these notebooks.</p>
 <hr />
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">qiskit</span> <span style="color: #006699; font-weight: bold">import</span> BasicAer
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code><span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">qiskit</span> <span style="color: #006699; font-weight: bold">import</span> BasicAer
 backend <span style="color: #555555">=</span> BasicAer<span style="color: #555555">.</span>get_backend(<span style="color: #CC3300">&#39;unitary_simulator&#39;</span>)
 Hqc <span style="color: #555555">=</span> QuantumCircuit(<span style="color: #FF6600">4</span>)
 Hqc<span style="color: #555555">.</span>h(<span style="color: #FF6600">0</span>)
@@ -469,15 +469,15 @@ Hqc<span style="color: #555555">.</span>h(<span style="color: #FF6600">3</span>)
 job <span style="color: #555555">=</span> execute(Hqc, backend)
 H <span style="color: #555555">=</span> job<span style="color: #555555">.</span>result()<span style="color: #555555">.</span>get_unitary(Hqc, decimals<span style="color: #555555">=</span><span style="color: #FF6600">3</span>)
 H <span style="color: #555555">=</span> np<span style="color: #555555">.</span>matrix(H)
-</pre></div>
+</code></pre></div>
 
 
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>NU <span style="color: #555555">=</span> np<span style="color: #555555">.</span>dot(U,H)
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>NU <span style="color: #555555">=</span> np<span style="color: #555555">.</span>dot(U,H)
 <span style="color: #0099FF; font-style: italic">#NU = np.dot(H,U)</span>
-</pre></div>
+</code></pre></div>
 
 
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #0099FF; font-style: italic">##### build your quantum circuit here</span>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code><span style="color: #0099FF; font-style: italic">##### build your quantum circuit here</span>
 qc <span style="color: #555555">=</span> QuantumCircuit(<span style="color: #FF6600">4</span>)
 qc<span style="color: #555555">.</span>h(<span style="color: #FF6600">0</span>)
 qc<span style="color: #555555">.</span>h(<span style="color: #FF6600">1</span>)
@@ -489,25 +489,25 @@ qc<span style="color: #555555">.</span>iso(NU, [<span style="color: #FF6600">0</
 <span style="color: #0099FF; font-style: italic">#qc.h(2)</span>
 <span style="color: #0099FF; font-style: italic">#qc.h(3)</span>
 <span style="color: #0099FF; font-style: italic">#qc.draw(output=&#39;mpl&#39;) # we draw the circuit</span>
-</pre></div>
+</code></pre></div>
 
 
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>&lt;qiskit.circuit.instructionset.InstructionSet at 0x7fa484630250&gt;
-</pre></div>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>&lt;qiskit.circuit.instructionset.InstructionSet at 0x7fa484630250&gt;
+</code></pre></div>
 
 
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #0099FF; font-style: italic">#qc = transpile(qc, basis_gates=[&#39;u3&#39;, &#39;cx&#39;],optimization_level = 1)</span>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code><span style="color: #0099FF; font-style: italic">#qc = transpile(qc, basis_gates=[&#39;u3&#39;, &#39;cx&#39;],optimization_level = 1)</span>
 tqc <span style="color: #555555">=</span> transpile(qc, basis_gates<span style="color: #555555">=</span>[<span style="color: #CC3300">&#39;u3&#39;</span>, <span style="color: #CC3300">&#39;cx&#39;</span>],optimization_level <span style="color: #555555">=</span> <span style="color: #FF6600">2</span>)
 <span style="color: #0099FF; font-style: italic">#qc.draw(output=&#39;mpl&#39;) # we draw the circuit</span>
-</pre></div>
+</code></pre></div>
 
 
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #0099FF; font-style: italic">##### check your quantum circuit by running the next line</span>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code><span style="color: #0099FF; font-style: italic">##### check your quantum circuit by running the next line</span>
 check_circuit(tqc)
-</pre></div>
+</code></pre></div>
 
 
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>Circuit stats:
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>Circuit stats:
 ||U-V||_2 = 7.431794894034265e-15
 (U is the reference unitary, V is yours, and the global phase has been removed from both of them).
 Cost is 331
@@ -515,13 +515,13 @@ Cost is 331
 Great! Your circuit meets all the constrains.
 Your score is 331. The lower, the better!
 Feel free to submit your answer and remember you can re-submit a new circuit at any time!
-</pre></div>
+</code></pre></div>
 
 
 <p>You can check whether your circuit is valid before submitting it with <code>check_circuit(qc)</code>. Once you have a valid solution, please submit it by running the following cell (delete the <code>#</code> before <code>submit_circuit</code>). You can re-submit at any time.</p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #0099FF; font-style: italic">#Send the circuit as the final answer, can re-submit at any time</span>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code><span style="color: #0099FF; font-style: italic">#Send the circuit as the final answer, can re-submit at any time</span>
 <span style="color: #0099FF; font-style: italic">#submit_circuit(tqc) </span>
-</pre></div>
+</code></pre></div>
 
 
 <div style="border: 2px solid black; padding: 2rem;">
@@ -539,13 +539,13 @@ Feel free to submit your answer and remember you can re-submit a new circuit at 
 </div>
 
 <h4 id="visualize-the-circuit">Visualize the Circuit</h4>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>tqc<span style="color: #555555">.</span>draw(output<span style="color: #555555">=</span><span style="color: #CC3300">&#39;mpl&#39;</span>) <span style="color: #0099FF; font-style: italic"># we draw the circuit</span>
-</pre></div>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>tqc<span style="color: #555555">.</span>draw(output<span style="color: #555555">=</span><span style="color: #CC3300">&#39;mpl&#39;</span>) <span style="color: #0099FF; font-style: italic"># we draw the circuit</span>
+</code></pre></div>
 
 
 <p><img alt="png" src="../output_22_0.png" /></p>
 <h4 id="more-exact-solution">More Exact Solution</h4>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>qc <span style="color: #555555">=</span> QuantumCircuit(<span style="color: #FF6600">4</span>)
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>qc <span style="color: #555555">=</span> QuantumCircuit(<span style="color: #FF6600">4</span>)
 
 qc<span style="color: #555555">.</span>h(<span style="color: #336666">range</span>(<span style="color: #FF6600">4</span>))
 qc<span style="color: #555555">.</span>unitary(Uprime, qc<span style="color: #555555">.</span>qubits)
@@ -554,7 +554,7 @@ qc <span style="color: #555555">=</span> transpile(qc, basis_gates <span style="
 check_circuit(qc)
 qc<span style="color: #555555">.</span>draw()
 <span style="color: #0099FF; font-style: italic"># apply operations to your quantum circuit here</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Circuit stats:
@@ -573,8 +573,8 @@ Feel free to submit your answer and remember you can re-submit a new circuit at 
 <li>https://github.com/Qiskit/qiskit-tutorials/blob/master/tutorials/terra/advanced/4_transpiler_passes_and_passmanager.ipynb</li>
 <li>https://arxiv.org/pdf/1501.06911.pdf</li>
 </ol>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>
-</pre></div>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>
+</code></pre></div>
               
             </div>
           </div>

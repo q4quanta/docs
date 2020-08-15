@@ -345,7 +345,7 @@ $$</p>
 <ul>
 <li>\(R_x,R_y, R_z\) gates are special case of $U_3$ gate.</li>
 </ul>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #555555">%</span>matplotlib inline
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code><span style="color: #555555">%</span>matplotlib inline
 <span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">numpy</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">np</span>
 <span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">IPython</span>
 <span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">matplotlib.pyplot</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">plt</span>
@@ -355,72 +355,72 @@ $$</p>
 <span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">qiskit.visualization</span> <span style="color: #006699; font-weight: bold">import</span> <span style="color: #555555">*</span>
 <span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">seaborn</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">sns</span>
 sns<span style="color: #555555">.</span>set()
-</pre></div>
+</code></pre></div>
 
 
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">helper</span> <span style="color: #006699; font-weight: bold">import</span> <span style="color: #555555">*</span>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code><span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">helper</span> <span style="color: #006699; font-weight: bold">import</span> <span style="color: #555555">*</span>
 <span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">os</span>
 <span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">glob</span>
 <span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">moviepy.editor</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">mpy</span>
-</pre></div>
+</code></pre></div>
 
 
 <h4 id="u-gate-1-qubit">U Gate (1 qubit)</h4>
 <p>Lets apply \( \theta = \pi/3, \phi = pi/3 , \lambda = pi/3 \) to a single qubit through \(U_3\) gate. We can se the rotation in bloch sphere.</p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>qc <span style="color: #555555">=</span> QuantumCircuit(<span style="color: #FF6600">1</span>)
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>qc <span style="color: #555555">=</span> QuantumCircuit(<span style="color: #FF6600">1</span>)
 qc<span style="color: #555555">.</span>u3(np<span style="color: #555555">.</span>pi<span style="color: #555555">/</span><span style="color: #FF6600">3</span>,np<span style="color: #555555">.</span>pi<span style="color: #555555">/</span><span style="color: #FF6600">3</span>,np<span style="color: #555555">.</span>pi<span style="color: #555555">/</span><span style="color: #FF6600">3</span>,<span style="color: #FF6600">0</span>)
 style <span style="color: #555555">=</span> {<span style="color: #CC3300">&#39;backgroundcolor&#39;</span>: <span style="color: #CC3300">&#39;lavender&#39;</span>}
 qc<span style="color: #555555">.</span>draw(output<span style="color: #555555">=</span><span style="color: #CC3300">&#39;mpl&#39;</span>, style <span style="color: #555555">=</span> style)
-</pre></div>
+</code></pre></div>
 
 
 <p><img alt="png" src="../output_6_0.png" /></p>
 <ul>
 <li>Single qubit state vector</li>
 </ul>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>backend <span style="color: #555555">=</span> BasicAer<span style="color: #555555">.</span>get_backend(<span style="color: #CC3300">&#39;statevector_simulator&#39;</span>)
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>backend <span style="color: #555555">=</span> BasicAer<span style="color: #555555">.</span>get_backend(<span style="color: #CC3300">&#39;statevector_simulator&#39;</span>)
 job <span style="color: #555555">=</span> execute(qc,backend)<span style="color: #555555">.</span>result()
 vec1 <span style="color: #555555">=</span> job<span style="color: #555555">.</span>get_statevector(qc)
 vec1
-</pre></div>
+</code></pre></div>
 
 
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>array([0.8660254+0.j       , 0.25     +0.4330127j])
-</pre></div>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>array([0.8660254+0.j       , 0.25     +0.4330127j])
+</code></pre></div>
 
 
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>getBlochSphere(qc)
-</pre></div>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>getBlochSphere(qc)
+</code></pre></div>
 
 
 <p><img alt="png" src="../output_10_0.png" /></p>
 <ul>
 <li>Matrix </li>
 </ul>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>backend <span style="color: #555555">=</span> BasicAer<span style="color: #555555">.</span>get_backend(<span style="color: #CC3300">&#39;unitary_simulator&#39;</span>)
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>backend <span style="color: #555555">=</span> BasicAer<span style="color: #555555">.</span>get_backend(<span style="color: #CC3300">&#39;unitary_simulator&#39;</span>)
 job <span style="color: #555555">=</span> execute(qc, backend)
 ndArray <span style="color: #555555">=</span> job<span style="color: #555555">.</span>result()<span style="color: #555555">.</span>get_unitary(qc, decimals<span style="color: #555555">=</span><span style="color: #FF6600">3</span>)
 UM1 <span style="color: #555555">=</span> np<span style="color: #555555">.</span>matrix(ndArray)
 UM1
-</pre></div>
+</code></pre></div>
 
 
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>matrix([[ 0.866+0.j   , -0.25 -0.433j],
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>matrix([[ 0.866+0.j   , -0.25 -0.433j],
         [ 0.25 +0.433j, -0.433+0.75j ]])
-</pre></div>
+</code></pre></div>
 
 
 <h4 id="u-gate-2-qubits">U Gate (2 qubits)</h4>
 <ul>
 <li>Define circuit</li>
 </ul>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>qc <span style="color: #555555">=</span> QuantumCircuit(<span style="color: #FF6600">2</span>)
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>qc <span style="color: #555555">=</span> QuantumCircuit(<span style="color: #FF6600">2</span>)
 qc<span style="color: #555555">.</span>u3(np<span style="color: #555555">.</span>pi<span style="color: #555555">/</span><span style="color: #FF6600">3</span>,np<span style="color: #555555">.</span>pi<span style="color: #555555">/</span><span style="color: #FF6600">3</span>,np<span style="color: #555555">.</span>pi<span style="color: #555555">/</span><span style="color: #FF6600">3</span>,<span style="color: #FF6600">0</span>)
 qc<span style="color: #555555">.</span>u3(np<span style="color: #555555">.</span>pi<span style="color: #555555">/</span><span style="color: #FF6600">3</span>,np<span style="color: #555555">.</span>pi<span style="color: #555555">/</span><span style="color: #FF6600">3</span>,np<span style="color: #555555">.</span>pi<span style="color: #555555">/</span><span style="color: #FF6600">3</span>,<span style="color: #FF6600">1</span>)
 
 style <span style="color: #555555">=</span> {<span style="color: #CC3300">&#39;backgroundcolor&#39;</span>: <span style="color: #CC3300">&#39;lavender&#39;</span>}
 qc<span style="color: #555555">.</span>draw(output<span style="color: #555555">=</span><span style="color: #CC3300">&#39;mpl&#39;</span>, style <span style="color: #555555">=</span> style)
-</pre></div>
+</code></pre></div>
 
 
 <p><img alt="png" src="../output_15_0.png" /></p>
@@ -428,20 +428,20 @@ qc<span style="color: #555555">.</span>draw(output<span style="color: #555555">=
 <li>State vector</li>
 </ul>
 <p>Lets perform some manual approach for final state in ket notation.</p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>backend <span style="color: #555555">=</span> BasicAer<span style="color: #555555">.</span>get_backend(<span style="color: #CC3300">&#39;statevector_simulator&#39;</span>)
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>backend <span style="color: #555555">=</span> BasicAer<span style="color: #555555">.</span>get_backend(<span style="color: #CC3300">&#39;statevector_simulator&#39;</span>)
 job <span style="color: #555555">=</span> execute(qc,backend)<span style="color: #555555">.</span>result()
 vec2 <span style="color: #555555">=</span> job<span style="color: #555555">.</span>get_statevector(qc)
 vec2
-</pre></div>
+</code></pre></div>
 
 
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>array([ 0.75      +0.j        ,  0.21650635+0.375j     ,
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>array([ 0.75      +0.j        ,  0.21650635+0.375j     ,
         0.21650635+0.375j     , -0.125     +0.21650635j])
-</pre></div>
+</code></pre></div>
 
 
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>getBlochSphere(qc)
-</pre></div>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>getBlochSphere(qc)
+</code></pre></div>
 
 
 <p><img alt="png" src="../output_19_0.png" /></p>
@@ -464,14 +464,14 @@ vec2
     bd
 \end{array} \right)$$</p>
 <p>Where \( |00 \rangle , |01 \rangle , |10 \rangle \) and \( |11 \rangle \) are basis states for two qubit system.</p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>vec2 <span style="color: #555555">=</span> np<span style="color: #555555">.</span>kron(vec1,vec1)
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>vec2 <span style="color: #555555">=</span> np<span style="color: #555555">.</span>kron(vec1,vec1)
 vec2
-</pre></div>
+</code></pre></div>
 
 
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>array([ 0.75      +0.j        ,  0.21650635+0.375j     ,
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>array([ 0.75      +0.j        ,  0.21650635+0.375j     ,
         0.21650635+0.375j     , -0.125     +0.21650635j])
-</pre></div>
+</code></pre></div>
 
 
 <ul>
@@ -483,27 +483,27 @@ vec2
      \end{array} \right)$$</p>
 <p>Final Matrix to represent the quantum circuit</p>
 <p>$$ U = U_3 \otimes U_3$$</p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>backend <span style="color: #555555">=</span> BasicAer<span style="color: #555555">.</span>get_backend(<span style="color: #CC3300">&#39;unitary_simulator&#39;</span>)
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>backend <span style="color: #555555">=</span> BasicAer<span style="color: #555555">.</span>get_backend(<span style="color: #CC3300">&#39;unitary_simulator&#39;</span>)
 job <span style="color: #555555">=</span> execute(qc, backend)
 ndArray <span style="color: #555555">=</span> job<span style="color: #555555">.</span>result()<span style="color: #555555">.</span>get_unitary(qc, decimals<span style="color: #555555">=</span><span style="color: #FF6600">3</span>)
 UM2 <span style="color: #555555">=</span> np<span style="color: #555555">.</span>matrix(ndArray)
 UM2
-</pre></div>
+</code></pre></div>
 
 
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>matrix([[ 0.75 +0.j   , -0.217-0.375j, -0.217-0.375j, -0.125+0.217j],
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>matrix([[ 0.75 +0.j   , -0.217-0.375j, -0.217-0.375j, -0.125+0.217j],
         [ 0.217+0.375j, -0.375+0.65j ,  0.125-0.217j,  0.433-0.j   ],
         [ 0.217+0.375j,  0.125-0.217j, -0.375+0.65j ,  0.433-0.j   ],
         [-0.125+0.217j, -0.433+0.j   , -0.433+0.j   , -0.375-0.65j ]])
-</pre></div>
+</code></pre></div>
 
 
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>UM2_from_UM1 <span style="color: #555555">=</span> np<span style="color: #555555">.</span>kron(UM1,UM1)
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>UM2_from_UM1 <span style="color: #555555">=</span> np<span style="color: #555555">.</span>kron(UM1,UM1)
 UM2_from_UM1
-</pre></div>
+</code></pre></div>
 
 
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>matrix([[ 0.749956+0.00000e+00j, -0.2165  -3.74978e-01j,
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>matrix([[ 0.749956+0.00000e+00j, -0.2165  -3.74978e-01j,
          -0.2165  -3.74978e-01j, -0.124989+2.16500e-01j],
         [ 0.2165  +3.74978e-01j, -0.374978+6.49500e-01j,
           0.124989-2.16500e-01j,  0.433   -1.10000e-05j],
@@ -511,14 +511,14 @@ UM2_from_UM1
          -0.374978+6.49500e-01j,  0.433   -1.10000e-05j],
         [-0.124989+2.16500e-01j, -0.433   +1.10000e-05j,
          -0.433   +1.10000e-05j, -0.375011-6.49500e-01j]])
-</pre></div>
+</code></pre></div>
 
 
 <ul>
 <li>Exercise: \( U_3 \) Gate (3 qubits)</li>
 </ul>
 <p>Consider a 3 qubits quantum circuit with H gate applied to each qubit.</p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>n <span style="color: #555555">=</span> <span style="color: #FF6600">3</span>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>n <span style="color: #555555">=</span> <span style="color: #FF6600">3</span>
 q <span style="color: #555555">=</span> QuantumRegister(n)
 c <span style="color: #555555">=</span> ClassicalRegister(n)
 qc <span style="color: #555555">=</span> QuantumCircuit(q,c)
@@ -528,7 +528,7 @@ qc<span style="color: #555555">.</span>barrier()
 qc<span style="color: #555555">.</span>measure(q,c)
 style <span style="color: #555555">=</span> {<span style="color: #CC3300">&#39;backgroundcolor&#39;</span>: <span style="color: #CC3300">&#39;lavender&#39;</span>}
 qc<span style="color: #555555">.</span>draw(output<span style="color: #555555">=</span><span style="color: #CC3300">&#39;mpl&#39;</span>, style <span style="color: #555555">=</span> style)
-</pre></div>
+</code></pre></div>
 
 
 <p><img alt="png" src="../output_28_0.png" /></p>
@@ -541,14 +541,14 @@ qc<span style="color: #555555">.</span>draw(output<span style="color: #555555">=
 <p>\( \textbf{Hint} :  U = U_3 \otimes U_3 \otimes U_3 \)</p>
 <hr />
 <h4 id="a-fun-experiment">A fun Experiment</h4>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>qc <span style="color: #555555">=</span> QuantumCircuit(<span style="color: #FF6600">2</span>)
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>qc <span style="color: #555555">=</span> QuantumCircuit(<span style="color: #FF6600">2</span>)
 <span style="color: #006699; font-weight: bold">for</span> i <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">range</span>(<span style="color: #FF6600">10</span>):
     qc<span style="color: #555555">.</span>u3(np<span style="color: #555555">.</span>pi<span style="color: #555555">/</span><span style="color: #FF6600">3</span>,np<span style="color: #555555">.</span>pi<span style="color: #555555">/</span><span style="color: #FF6600">6</span>,np<span style="color: #555555">.</span>pi<span style="color: #555555">/</span><span style="color: #FF6600">4</span>,<span style="color: #FF6600">0</span>)
     qc<span style="color: #555555">.</span>u3(np<span style="color: #555555">.</span>pi<span style="color: #555555">/</span><span style="color: #FF6600">6</span>,np<span style="color: #555555">.</span>pi<span style="color: #555555">/</span><span style="color: #FF6600">4</span>,np<span style="color: #555555">.</span>pi<span style="color: #555555">/</span><span style="color: #FF6600">3</span>,<span style="color: #FF6600">1</span>)
 
 style <span style="color: #555555">=</span> {<span style="color: #CC3300">&#39;backgroundcolor&#39;</span>: <span style="color: #CC3300">&#39;lavender&#39;</span>}
 qc<span style="color: #555555">.</span>draw(output<span style="color: #555555">=</span><span style="color: #CC3300">&#39;mpl&#39;</span>, style <span style="color: #555555">=</span> style)
-</pre></div>
+</code></pre></div>
 
 
 <p><img alt="png" src="../output_33_0.png" /></p>
@@ -560,8 +560,8 @@ qc<span style="color: #555555">.</span>draw(output<span style="color: #555555">=
 <li>Get Phase</li>
 </ul>
 <p><img alt="img" src="../phase_u3.gif" /></p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>
-</pre></div>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>
+</code></pre></div>
               
             </div>
           </div>

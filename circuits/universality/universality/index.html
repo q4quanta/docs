@@ -310,7 +310,7 @@
             <div class="section">
               
                 <h3 id="universality">Universality</h3>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #555555">%</span>matplotlib inline
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code><span style="color: #555555">%</span>matplotlib inline
 <span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">numpy</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">np</span>
 <span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">IPython</span>
 <span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">matplotlib.pyplot</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">plt</span>
@@ -321,44 +321,44 @@
 <span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">qiskit.visualization</span> <span style="color: #006699; font-weight: bold">import</span> <span style="color: #555555">*</span>
 <span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">seaborn</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">sns</span>
 sns<span style="color: #555555">.</span>set()
-</pre></div>
+</code></pre></div>
 
 
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">helper</span> <span style="color: #006699; font-weight: bold">import</span> <span style="color: #555555">*</span>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code><span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">helper</span> <span style="color: #006699; font-weight: bold">import</span> <span style="color: #555555">*</span>
 <span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">os</span>
 <span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">glob</span>
 <span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">moviepy.editor</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">mpy</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>$$ R_x(\theta) = e^{i \frac{\theta}{2} X} $$</p>
 <p>$$R_x(\theta) = e^{i \frac{\theta}{2} X} = I + i \frac{\theta}{2} X + \frac{(i \frac{\theta}{2} X)^{2}}{2!} + ...$$</p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>qc <span style="color: #555555">=</span> QuantumCircuit(<span style="color: #FF6600">1</span>,<span style="color: #FF6600">1</span>)
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>qc <span style="color: #555555">=</span> QuantumCircuit(<span style="color: #FF6600">1</span>,<span style="color: #FF6600">1</span>)
 qc<span style="color: #555555">.</span>rx(np<span style="color: #555555">.</span>pi<span style="color: #555555">/</span><span style="color: #FF6600">100</span>,<span style="color: #FF6600">0</span>)
 qcm1 <span style="color: #555555">=</span> qc<span style="color: #555555">.</span>copy()
-</pre></div>
+</code></pre></div>
 
 
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>I <span style="color: #555555">=</span> np<span style="color: #555555">.</span>eye(<span style="color: #FF6600">2</span>,<span style="color: #FF6600">2</span>)
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>I <span style="color: #555555">=</span> np<span style="color: #555555">.</span>eye(<span style="color: #FF6600">2</span>,<span style="color: #FF6600">2</span>)
 X <span style="color: #555555">=</span> np<span style="color: #555555">.</span>array([[<span style="color: #FF6600">0</span>,<span style="color: #FF6600">1</span>],[<span style="color: #FF6600">1</span>,<span style="color: #FF6600">0</span>]])
 U <span style="color: #555555">=</span> I <span style="color: #555555">+</span> (<span style="color: #FF6600">0</span><span style="color: #555555">+</span><span style="color: #FF6600">1</span>j)<span style="color: #555555">*</span>(np<span style="color: #555555">.</span>pi<span style="color: #555555">/</span>(<span style="color: #FF6600">2</span><span style="color: #555555">*</span><span style="color: #FF6600">100</span>))<span style="color: #555555">*</span>X
 plotMatrix(U)
-</pre></div>
+</code></pre></div>
 
 
 <p><img alt="png" src="../output_5_0.png" /></p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>backend <span style="color: #555555">=</span> BasicAer<span style="color: #555555">.</span>get_backend(<span style="color: #CC3300">&#39;unitary_simulator&#39;</span>)
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>backend <span style="color: #555555">=</span> BasicAer<span style="color: #555555">.</span>get_backend(<span style="color: #CC3300">&#39;unitary_simulator&#39;</span>)
 job <span style="color: #555555">=</span> execute(qcm1, backend)
 ndArray <span style="color: #555555">=</span> job<span style="color: #555555">.</span>result()<span style="color: #555555">.</span>get_unitary(qcm1, decimals<span style="color: #555555">=</span><span style="color: #FF6600">3</span>)
 Matrix <span style="color: #555555">=</span> np<span style="color: #555555">.</span>matrix(ndArray)
 plotMatrix(Matrix)
-</pre></div>
+</code></pre></div>
 
 
 <p><img alt="png" src="../output_6_0.png" /></p>
 <h4 id="example-1">Example 1</h4>
 <p>$$U = e^{i\frac{\theta}{2} X \otimes X \otimes X}$$</p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>QCs <span style="color: #555555">=</span>[]
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>QCs <span style="color: #555555">=</span>[]
 n <span style="color: #555555">=</span><span style="color: #FF6600">3</span>
 q <span style="color: #555555">=</span> QuantumRegister(n)
 c <span style="color: #555555">=</span> ClassicalRegister(n)
@@ -381,47 +381,47 @@ qc<span style="color: #555555">.</span>measure(q,c)
 
 style <span style="color: #555555">=</span> {<span style="color: #CC3300">&#39;backgroundcolor&#39;</span>: <span style="color: #CC3300">&#39;lavender&#39;</span>}
 qc<span style="color: #555555">.</span>draw(output<span style="color: #555555">=</span><span style="color: #CC3300">&#39;mpl&#39;</span>, style <span style="color: #555555">=</span> style)
-</pre></div>
+</code></pre></div>
 
 
 <p><img alt="png" src="../output_8_0.png" /></p>
 <ul>
 <li>Phase</li>
 </ul>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>phaseDict <span style="color: #555555">=</span> getPhaseDict(QCs)
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>phaseDict <span style="color: #555555">=</span> getPhaseDict(QCs)
 plotiPhaseCircle(phaseDict,depth <span style="color: #555555">=</span><span style="color: #336666">len</span>(phaseDict),path <span style="color: #555555">=</span> <span style="color: #CC3300">&quot;uplot&quot;</span>,show<span style="color: #555555">=</span><span style="color: #006699; font-weight: bold">True</span>,save<span style="color: #555555">=</span><span style="color: #006699; font-weight: bold">False</span>)
-</pre></div>
+</code></pre></div>
 
 
 <p><img alt="png" src="../output_10_0.png" /></p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>&lt;Figure size 432x288 with 0 Axes&gt;
-</pre></div>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>&lt;Figure size 432x288 with 0 Axes&gt;
+</code></pre></div>
 
 
 <ul>
 <li>Matrix</li>
 </ul>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>I3 <span style="color: #555555">=</span> np<span style="color: #555555">.</span>eye(<span style="color: #FF6600">8</span>,<span style="color: #FF6600">8</span>)
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>I3 <span style="color: #555555">=</span> np<span style="color: #555555">.</span>eye(<span style="color: #FF6600">8</span>,<span style="color: #FF6600">8</span>)
 X <span style="color: #555555">=</span> np<span style="color: #555555">.</span>array([[<span style="color: #FF6600">0</span>,<span style="color: #FF6600">1</span>],[<span style="color: #FF6600">1</span>,<span style="color: #FF6600">0</span>]])
 XXX <span style="color: #555555">=</span> np<span style="color: #555555">.</span>kron(np<span style="color: #555555">.</span>kron(X,X),X)
 U <span style="color: #555555">=</span> I3 <span style="color: #555555">+</span> (<span style="color: #FF6600">0</span><span style="color: #555555">+</span><span style="color: #FF6600">1</span>j)<span style="color: #555555">*</span>(np<span style="color: #555555">.</span>pi<span style="color: #555555">/</span>(<span style="color: #FF6600">2</span><span style="color: #555555">*</span><span style="color: #FF6600">10</span>))<span style="color: #555555">*</span>XXX
 plotMatrix(U)
-</pre></div>
+</code></pre></div>
 
 
 <p><img alt="png" src="../output_12_0.png" /></p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>backend <span style="color: #555555">=</span> BasicAer<span style="color: #555555">.</span>get_backend(<span style="color: #CC3300">&#39;unitary_simulator&#39;</span>)
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>backend <span style="color: #555555">=</span> BasicAer<span style="color: #555555">.</span>get_backend(<span style="color: #CC3300">&#39;unitary_simulator&#39;</span>)
 job <span style="color: #555555">=</span> execute(qcm2, backend)
 ndArray <span style="color: #555555">=</span> job<span style="color: #555555">.</span>result()<span style="color: #555555">.</span>get_unitary(qcm2, decimals<span style="color: #555555">=</span><span style="color: #FF6600">3</span>)
 Matrix <span style="color: #555555">=</span> np<span style="color: #555555">.</span>matrix(ndArray)
 plotMatrix(Matrix)
-</pre></div>
+</code></pre></div>
 
 
 <p><img alt="png" src="../output_13_0.png" /></p>
 <h4 id="example-2">Example 2</h4>
 <p>$$U = e^{i\frac{\theta}{2} Z \otimes Z \otimes Z}$$</p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>QCs<span style="color: #555555">=</span>[]
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>QCs<span style="color: #555555">=</span>[]
 n <span style="color: #555555">=</span><span style="color: #FF6600">3</span>
 q <span style="color: #555555">=</span> QuantumRegister(n)
 c <span style="color: #555555">=</span> ClassicalRegister(n)
@@ -453,41 +453,41 @@ qc<span style="color: #555555">.</span>measure(q,c)
 
 style <span style="color: #555555">=</span> {<span style="color: #CC3300">&#39;backgroundcolor&#39;</span>: <span style="color: #CC3300">&#39;lavender&#39;</span>}
 qc<span style="color: #555555">.</span>draw(output<span style="color: #555555">=</span><span style="color: #CC3300">&#39;mpl&#39;</span>, style <span style="color: #555555">=</span> style)
-</pre></div>
+</code></pre></div>
 
 
 <p><img alt="png" src="../output_15_0.png" /></p>
 <ul>
 <li>Phase</li>
 </ul>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>phaseDict <span style="color: #555555">=</span> getPhaseDict(QCs)
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>phaseDict <span style="color: #555555">=</span> getPhaseDict(QCs)
 plotiPhaseCircle(phaseDict,depth <span style="color: #555555">=</span><span style="color: #336666">len</span>(phaseDict),path <span style="color: #555555">=</span> <span style="color: #CC3300">&quot;uplot&quot;</span>,show<span style="color: #555555">=</span><span style="color: #006699; font-weight: bold">True</span>,save<span style="color: #555555">=</span><span style="color: #006699; font-weight: bold">False</span>)
-</pre></div>
+</code></pre></div>
 
 
 <p><img alt="png" src="../output_17_0.png" /></p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>&lt;Figure size 432x288 with 0 Axes&gt;
-</pre></div>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>&lt;Figure size 432x288 with 0 Axes&gt;
+</code></pre></div>
 
 
 <ul>
 <li>Matrix</li>
 </ul>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>I3 <span style="color: #555555">=</span> np<span style="color: #555555">.</span>eye(<span style="color: #FF6600">8</span>,<span style="color: #FF6600">8</span>)
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>I3 <span style="color: #555555">=</span> np<span style="color: #555555">.</span>eye(<span style="color: #FF6600">8</span>,<span style="color: #FF6600">8</span>)
 Z <span style="color: #555555">=</span> np<span style="color: #555555">.</span>array([[<span style="color: #FF6600">0</span>,<span style="color: #FF6600">1</span>],[<span style="color: #FF6600">0</span>,<span style="color: #555555">-</span><span style="color: #FF6600">1</span>]])
 ZZZ <span style="color: #555555">=</span> np<span style="color: #555555">.</span>kron(np<span style="color: #555555">.</span>kron(Z,Z),Z)
 U <span style="color: #555555">=</span> I3 <span style="color: #555555">+</span> (<span style="color: #FF6600">0</span><span style="color: #555555">+</span><span style="color: #FF6600">1</span>j)<span style="color: #555555">*</span>(np<span style="color: #555555">.</span>pi<span style="color: #555555">/</span>(<span style="color: #FF6600">2</span><span style="color: #555555">*</span><span style="color: #FF6600">10</span>))<span style="color: #555555">*</span>ZZZ
 plotMatrix(U)
-</pre></div>
+</code></pre></div>
 
 
 <p><img alt="png" src="../output_19_0.png" /></p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>backend <span style="color: #555555">=</span> BasicAer<span style="color: #555555">.</span>get_backend(<span style="color: #CC3300">&#39;unitary_simulator&#39;</span>)
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>backend <span style="color: #555555">=</span> BasicAer<span style="color: #555555">.</span>get_backend(<span style="color: #CC3300">&#39;unitary_simulator&#39;</span>)
 job <span style="color: #555555">=</span> execute(qcm3, backend)
 ndArray <span style="color: #555555">=</span> job<span style="color: #555555">.</span>result()<span style="color: #555555">.</span>get_unitary(qcm3, decimals<span style="color: #555555">=</span><span style="color: #FF6600">3</span>)
 Matrix <span style="color: #555555">=</span> np<span style="color: #555555">.</span>matrix(ndArray)
 plotMatrix(Matrix)
-</pre></div>
+</code></pre></div>
 
 
 <p><img alt="png" src="../output_20_0.png" /></p>

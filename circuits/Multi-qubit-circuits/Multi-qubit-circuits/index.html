@@ -322,7 +322,7 @@
             <div class="section">
               
                 <h3 id="muti-qubits-circuits">Muti Qubits Circuits</h3>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #555555">%</span>matplotlib inline
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code><span style="color: #555555">%</span>matplotlib inline
 <span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">numpy</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">np</span>
 <span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">IPython</span>
 <span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">matplotlib.pyplot</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">plt</span>
@@ -332,43 +332,43 @@
 <span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">qiskit.visualization</span> <span style="color: #006699; font-weight: bold">import</span> <span style="color: #555555">*</span>
 <span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">seaborn</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">sns</span>
 sns<span style="color: #555555">.</span>set()
-</pre></div>
+</code></pre></div>
 
 
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">helper</span> <span style="color: #006699; font-weight: bold">import</span> <span style="color: #555555">*</span>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code><span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">helper</span> <span style="color: #006699; font-weight: bold">import</span> <span style="color: #555555">*</span>
 <span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">os</span>
 <span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">glob</span>
 <span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">moviepy.editor</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">mpy</span>
 <span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">numpy</span> <span style="color: #006699; font-weight: bold">import</span> pi
-</pre></div>
+</code></pre></div>
 
 
 <hr />
 <h4 id="controlled-phase-rotation">Controlled Phase Rotation</h4>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>qc <span style="color: #555555">=</span> QuantumCircuit(<span style="color: #FF6600">2</span>)
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>qc <span style="color: #555555">=</span> QuantumCircuit(<span style="color: #FF6600">2</span>)
 qc<span style="color: #555555">.</span>cu1(np<span style="color: #555555">.</span>pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,<span style="color: #FF6600">0</span>, <span style="color: #FF6600">1</span>)
 qc<span style="color: #555555">.</span>draw(output<span style="color: #555555">=</span><span style="color: #CC3300">&#39;mpl&#39;</span>)
 style <span style="color: #555555">=</span> {<span style="color: #CC3300">&#39;backgroundcolor&#39;</span>: <span style="color: #CC3300">&#39;lavender&#39;</span>}
 qc<span style="color: #555555">.</span>draw(output<span style="color: #555555">=</span><span style="color: #CC3300">&#39;mpl&#39;</span>, style <span style="color: #555555">=</span> style)
-</pre></div>
+</code></pre></div>
 
 
 <p><img alt="png" src="../output_5_0.png" /></p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>getMatrix(qc)
-</pre></div>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>getMatrix(qc)
+</code></pre></div>
 
 
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>matrix([[1.+0.j, 0.+0.j, 0.+0.j, 0.+0.j],
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>matrix([[1.+0.j, 0.+0.j, 0.+0.j, 0.+0.j],
         [0.+0.j, 1.+0.j, 0.+0.j, 0.+0.j],
         [0.+0.j, 0.+0.j, 1.+0.j, 0.+0.j],
         [0.+0.j, 0.+0.j, 0.+0.j, 0.+1.j]])
-</pre></div>
+</code></pre></div>
 
 
 <hr />
 <h4 id="u-operator-and-control-phase-gate">U operator and control phase gate</h4>
 <p>$$ (I \otimes I \otimes U_3)  \times (I \otimes CU_1 ) \times (I \otimes U_3 \otimes I)  \times (CU_1 \otimes I) \times (U_3 \otimes I \otimes I)$$</p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>q <span style="color: #555555">=</span> QuantumRegister(<span style="color: #FF6600">3</span>)
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>q <span style="color: #555555">=</span> QuantumRegister(<span style="color: #FF6600">3</span>)
 qc <span style="color: #555555">=</span> QuantumCircuit(q)
 
 qc<span style="color: #555555">.</span>u3(pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,q[<span style="color: #FF6600">0</span>])
@@ -379,15 +379,15 @@ qc<span style="color: #555555">.</span>u3(pi<span style="color: #555555">/</span
 
 style <span style="color: #555555">=</span> {<span style="color: #CC3300">&#39;backgroundcolor&#39;</span>: <span style="color: #CC3300">&#39;lavender&#39;</span>}
 qc<span style="color: #555555">.</span>draw(output<span style="color: #555555">=</span><span style="color: #CC3300">&#39;mpl&#39;</span>, style <span style="color: #555555">=</span> style)
-</pre></div>
+</code></pre></div>
 
 
 <p><img alt="png" src="../output_10_0.png" /></p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>getMatrix(qc)
-</pre></div>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>getMatrix(qc)
+</code></pre></div>
 
 
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>matrix([[ 0.354+0.j   , -0.   -0.354j,  0.   -0.354j, -0.354+0.j   ,
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>matrix([[ 0.354+0.j   , -0.   -0.354j,  0.   -0.354j, -0.354+0.j   ,
           0.   -0.354j, -0.354+0.j   , -0.354+0.j   ,  0.   +0.354j],
         [ 0.   +0.354j, -0.354+0.j   ,  0.   +0.354j, -0.354+0.j   ,
           0.354+0.j   ,  0.   +0.354j,  0.354-0.j   ,  0.   +0.354j],
@@ -403,12 +403,12 @@ qc<span style="color: #555555">.</span>draw(output<span style="color: #555555">=
           0.354-0.j   , -0.   -0.354j,  0.   +0.354j,  0.354-0.j   ],
         [-0.   -0.354j,  0.354-0.j   ,  0.   +0.354j, -0.354+0.j   ,
           0.   +0.354j, -0.354+0.j   , -0.   -0.354j,  0.354-0.j   ]])
-</pre></div>
+</code></pre></div>
 
 
 <hr />
 <h4 id="all-gates-together-in-4-qubit-circut">All Gates together in 4-qubit circut</h4>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>q <span style="color: #555555">=</span> QuantumRegister(<span style="color: #FF6600">4</span>)
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>q <span style="color: #555555">=</span> QuantumRegister(<span style="color: #FF6600">4</span>)
 qc <span style="color: #555555">=</span> QuantumCircuit(q)
 
 qc<span style="color: #555555">.</span>u3(pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,pi<span style="color: #555555">/</span><span style="color: #FF6600">2</span>,q[<span style="color: #FF6600">0</span>])
@@ -429,15 +429,15 @@ qc<span style="color: #555555">.</span>cswap(q[<span style="color: #FF6600">0</s
 
 style <span style="color: #555555">=</span> {<span style="color: #CC3300">&#39;backgroundcolor&#39;</span>: <span style="color: #CC3300">&#39;lavender&#39;</span>}
 qc<span style="color: #555555">.</span>draw(output<span style="color: #555555">=</span><span style="color: #CC3300">&#39;mpl&#39;</span>, style <span style="color: #555555">=</span> style)
-</pre></div>
+</code></pre></div>
 
 
 <p><img alt="png" src="../output_14_0.png" /></p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>getMatrix(qc)
-</pre></div>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>getMatrix(qc)
+</code></pre></div>
 
 
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>matrix([[ 0.   +0.354j, -0.354+0.j   , -0.   -0.354j,  0.354-0.j   ,
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>matrix([[ 0.   +0.354j, -0.354+0.j   , -0.   -0.354j,  0.354-0.j   ,
           0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,
          -0.   -0.354j,  0.354-0.j   ,  0.   +0.354j, -0.354+0.j   ,
           0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ],
@@ -501,11 +501,11 @@ qc<span style="color: #555555">.</span>draw(output<span style="color: #555555">=
          -0.354+0.j   ,  0.   +0.354j,  0.   +0.354j,  0.354-0.j   ,
           0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,  0.   +0.j   ,
          -0.354+0.j   ,  0.   +0.354j,  0.   +0.354j,  0.354-0.j   ]])
-</pre></div>
+</code></pre></div>
 
 
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>
-</pre></div>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>
+</code></pre></div>
               
             </div>
           </div>

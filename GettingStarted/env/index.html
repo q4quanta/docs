@@ -349,157 +349,157 @@
                 <h1 id="python-environment">Python Environment</h1>
 <h3 id="basics">Basics</h3>
 <p>To avoid errors later, it's best to update all the packages in the default environment. Open the Anaconda Prompt application. In the prompt, run the following commands:</p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>conda upgrade conda
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>conda upgrade conda
 conda upgrade --all
-</pre></div>
+</code></pre></div>
 
 
 <p>If you are seeing the following "conda command not found" and are using ZShell, you have to do the following:</p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #336666">export</span> <span style="color: #003333">PATH</span><span style="color: #555555">=</span><span style="color: #CC3300">&quot;/Users/username/anaconda/bin:</span><span style="color: #003333">$PATH</span><span style="color: #CC3300">&quot;</span>
-</pre></div>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code><span style="color: #336666">export</span> <span style="color: #003333">PATH</span><span style="color: #555555">=</span><span style="color: #CC3300">&quot;/Users/username/anaconda/bin:</span><span style="color: #003333">$PATH</span><span style="color: #CC3300">&quot;</span>
+</code></pre></div>
 
 
 <p>or update above command line to your .zsh_config file.</p>
 <p>Once you have Anaconda installed, managing packages is fairly straightforward. To install a package, type</p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>conda install package_name 
-</pre></div>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>conda install package_name 
+</code></pre></div>
 
 
 <p>in your terminal. For example, to install numpy, type </p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>conda install numpy.
-</pre></div>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>conda install numpy.
+</code></pre></div>
 
 
 <p>You can install multiple packages at the same time. Something like conda install numpy scipy pandas will install all those packages simultaneously. It's also possible to specify which version of a package you want by adding the version number such as</p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>conda install <span style="color: #003333">numpy</span><span style="color: #555555">=</span><span style="color: #FF6600">1</span>.10.
-</pre></div>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>conda install <span style="color: #003333">numpy</span><span style="color: #555555">=</span><span style="color: #FF6600">1</span>.10.
+</code></pre></div>
 
 
 <p>Conda also automatically installs dependencies for you. For example scipy depends on numpy, it uses and requires numpy. If you install just scipy (conda install scipy), Conda will also install numpy if it isn't already installed.</p>
 <p>Most of the commands are pretty intuitive. To uninstall, use</p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>conda remove package_name
-</pre></div>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>conda remove package_name
+</code></pre></div>
 
 
 <p>To update a package </p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>conda update package_name
-</pre></div>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>conda update package_name
+</code></pre></div>
 
 
 <p>If you want to update all packages in an environment, which is often useful, use </p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>conda update --all
-</pre></div>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>conda update --all
+</code></pre></div>
 
 
 <p>And finally, to list installed packages, it's </p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>conda list 
-</pre></div>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>conda list 
+</code></pre></div>
 
 
 <p>If you don't know the exact name of the package you're looking for, you can try searching with</p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>conda search search_term
-</pre></div>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>conda search search_term
+</code></pre></div>
 
 
 <p>For example, I know I want to install Beautiful Soup, but I'm not sure of the exact package name. So, I try </p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>conda search beautifulsoup
-</pre></div>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>conda search beautifulsoup
+</code></pre></div>
 
 
 <h3 id="environments">Environments</h3>
 <p>Conda can be used to create environments to isolate your projects. To create an environment, use </p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>conda create -n env_name list of packages in your terminal
-</pre></div>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>conda create -n env_name list of packages in your terminal
+</code></pre></div>
 
 
 <p>Here -n env_name sets the name of your environment (-n for name) and list of packages is the list of packages you want installed in the environment. For example, to create an environment named my_env and install numpy in it, type </p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>conda create -n my_env numpy
-</pre></div>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>conda create -n my_env numpy
+</code></pre></div>
 
 
 <p>When creating an environment, you can specify which version of Python to install in the environment. This is useful when you're working with code in both Python 2.x and Python 3.x. To create an environment with a specific Python version, do something like </p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>conda create -n py3 <span style="color: #003333">python</span><span style="color: #555555">=</span><span style="color: #FF6600">3</span> or conda create -n py2 <span style="color: #003333">python</span><span style="color: #555555">=</span><span style="color: #FF6600">2</span>
-</pre></div>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>conda create -n py3 <span style="color: #003333">python</span><span style="color: #555555">=</span><span style="color: #FF6600">3</span> or conda create -n py2 <span style="color: #003333">python</span><span style="color: #555555">=</span><span style="color: #FF6600">2</span>
+</code></pre></div>
 
 
 <p>I actually have both of these environments on my personal computer. I use them as general environments not tied to any specific project, but rather for general work with each Python version easily accessible. These commands will install the most recent version of Python 3 and 2, respectively. To install a specific version, use </p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>conda create -n py <span style="color: #003333">python</span><span style="color: #555555">=</span><span style="color: #FF6600">3</span>.3
-</pre></div>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>conda create -n py <span style="color: #003333">python</span><span style="color: #555555">=</span><span style="color: #FF6600">3</span>.3
+</code></pre></div>
 
 
 <p>for Python 3.3.</p>
 <p>Once you have an environment created, use </p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #336666">source</span> activate my_env 
-</pre></div>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code><span style="color: #336666">source</span> activate my_env 
+</code></pre></div>
 
 
 <p>to enter it on OSX/Linux. On Windows, use </p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>activate my_env
-</pre></div>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>activate my_env
+</code></pre></div>
 
 
 <p>When you're in the environment, you'll see the environment name in the terminal prompt. Something like (my_env) ~ $. The environment has only a few packages installed by default, plus the ones you installed when creating it. You can check this out with conda list. Installing packages in the environment is the same as before: </p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>conda install package_name
-</pre></div>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>conda install package_name
+</code></pre></div>
 
 
 <p>Only this time, the specific packages you install will only be available when you're in the environment. To leave the environment, type </p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #336666">source</span> deactivate <span style="color: #555555">(</span>on OSX/Linux<span style="color: #555555">)</span>
-</pre></div>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code><span style="color: #336666">source</span> deactivate <span style="color: #555555">(</span>on OSX/Linux<span style="color: #555555">)</span>
+</code></pre></div>
 
 
 <p>On Windows, use</p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>deactivate
-</pre></div>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>deactivate
+</code></pre></div>
 
 
 <h3 id="saving-and-loading-environments">Saving and loading environments</h3>
 <p>A really useful feature is sharing environments so others can install all the packages used in your code, with the correct versions. You can save the packages to a YAML file with </p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>conda env <span style="color: #336666">export</span> &gt; environment.yaml
-</pre></div>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>conda env <span style="color: #336666">export</span> &gt; environment.yaml
+</code></pre></div>
 
 
 <p>The first part </p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>conda env <span style="color: #336666">export</span> 
-</pre></div>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>conda env <span style="color: #336666">export</span> 
+</code></pre></div>
 
 
 <p>writes out all the packages in the environment, including the Python version. 
 Above you can see the name of the environment and all the dependencies (along with versions) are listed. The second part of the export command,</p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>&gt; environment.yaml 
-</pre></div>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>&gt; environment.yaml 
+</code></pre></div>
 
 
 <p>writes the exported text to a YAML file <code>environment.yaml</code>. This file can now be shared and others will be able to create the same environment you used for the project.</p>
 <p>To create an environment from an environment file use</p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>conda env create -f environment.yaml
-</pre></div>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>conda env create -f environment.yaml
+</code></pre></div>
 
 
 <p>This will create a new environment with the same name listed in <code>environment.yaml</code>.</p>
 <h3 id="listing-environments">Listing environments</h3>
 <p>If you forget what your environments are named (happens to me sometimes), use </p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>conda env list 
-</pre></div>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>conda env list 
+</code></pre></div>
 
 
 <p>to list out all the environments you've created. You should see a list of environments, there will be an asterisk next to the environment you're currently in. The default environment, the environment used when you aren't in one, is called <code>root</code>.</p>
 <h3 id="removing-environments">Removing environments</h3>
 <p>If there are environments you don't use anymore, </p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>conda env remove -n env_name 
-</pre></div>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>conda env remove -n env_name 
+</code></pre></div>
 
 
 <p>will remove the specified environment (here, named <code>env_name</code>).</p>
 <h3 id="using-environments">Using environments</h3>
 <p>One thing that’s helped me tremendously is having separate environments for Python 2 and Python 3. I used</p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>conda create -n py2 <span style="color: #003333">python</span><span style="color: #555555">=</span><span style="color: #FF6600">2</span>
-</pre></div>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>conda create -n py2 <span style="color: #003333">python</span><span style="color: #555555">=</span><span style="color: #FF6600">2</span>
+</code></pre></div>
 
 
 <p>and </p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>conda create -n py3 <span style="color: #003333">python</span><span style="color: #555555">=</span><span style="color: #FF6600">3</span> 
-</pre></div>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><code>conda create -n py3 <span style="color: #003333">python</span><span style="color: #555555">=</span><span style="color: #FF6600">3</span> 
+</code></pre></div>
 
 
 <p>to create two separate environments, <code>py2</code> and <code>py3</code>. Now I have a general use environment for each Python version. In each of those environments, I've installed most of the standard data science packages (numpy, scipy, pandas, etc.)</p>
