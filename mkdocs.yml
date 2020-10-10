@@ -1,6 +1,6 @@
 
 
-site_name: Quanta.Guru
+site_name: Introductory Quantaum Computing
 
 
 extra_javascript: 
@@ -9,10 +9,12 @@ extra_javascript:
 markdown_extensions:
     - mdx_math
     
+
+
 theme:
-  name: 'rtd-dropdown'
+  name: 'material'
   highlightjs: true
-  hljs_languages: []
+  hljs_languages: [python]
   include_homepage_in_sidebar: true
   prev_next_buttons_location: bottom
   navigation_depth: 4
@@ -20,9 +22,9 @@ theme:
   sticky_navigation: true
   collapse_navigation: true
  
- 
+
   
-      
+  
 markdown_extensions:
   - codehilite:
       linenums: false
@@ -30,43 +32,29 @@ markdown_extensions:
       use_pygments: true
       noclasses: true
       pygments_style: manni
-
-
+      
 
 nav:
 - Home: index.md
-
-- Getting started:
-  - Guide to starting Python: GettingStarted/anaconda.md
-  - Setting up Python Environment: GettingStarted/env.md
-  - Installing Jupyter Notebook : GettingStarted/jupyter.md
-  - How to Git: GettingStarted/git.md
-
-  
-- Qubit and Gates:
-  - Qubit: qubit/qubit.md
-  - Hadamard Gate: gates/hgate/hgate.md
-  - Rotation Gate: gates/ugate/ugate.md
-  - Pauli Gate: gates/pauli/pauli.md
-  - R-Phi Gate: gates/rphi/rphi.md
-  - CNOT Gate: gates/cnot/cnot.md
-  
-
-
-- Quantum Circuits:
-  - One qubit Circuit: circuits/One-qubit-circuit/One-qubit-circuit.md
-  - Two qubit Circuit: circuits/Two-qubit-circuit/Two-qubit-circuit.md
-  - Three qubit Circuit: circuits/Three-qubit-circuit/Three-qubit-circuit.md
-  - Multi qubit Circuit: circuits/Multi-qubit-circuits/Multi-qubit-circuits.md
-  
-
-
-- Algorithms:
-  - Bell State: circuits/bell/bell.md
-  - Universality: circuits/universality/universality.md
-  - Circuit Decomposition : circuits/circuitDecomposition/circuitDecomposition.md
-  - Quantum Fourier Transform: algorithms/qft/qft.md
-  - Quantum Cryptography: cryptography/cryptography.md
+- Guide to starting Python: GettingStarted/anaconda.md
+- Setting up Python Environment: GettingStarted/env.md
+- Installing Jupyter Notebook : GettingStarted/jupyter.md
+- How to Git: GettingStarted/git.md
+- Qubit: qubit/qubit.md
+- Hadamard Gate: gates/hgate/hgate.md
+- Rotation Gate: gates/ugate/ugate.md
+- Pauli Gate: gates/pauli/pauli.md
+- R-Phi Gate: gates/rphi/rphi.md
+- CNOT Gate: gates/cnot/cnot.md
+- One qubit Circuit: circuits/One-qubit-circuit/One-qubit-circuit.md
+- Two qubit Circuit: circuits/Two-qubit-circuit/Two-qubit-circuit.md
+- Three qubit Circuit: circuits/Three-qubit-circuit/Three-qubit-circuit.md
+- Multi qubit Circuit: circuits/Multi-qubit-circuits/Multi-qubit-circuits.md
+- Bell State: circuits/bell/bell.md
+- Universality: circuits/universality/universality.md
+- Circuit Decomposition : circuits/circuitDecomposition/circuitDecomposition.md
+- Quantum Fourier Transform: algorithms/qft/qft.md
+- Quantum Cryptography: cryptography/cryptography.md
   
   
   
